@@ -1,0 +1,162 @@
+<!--ol class="breadcrumb">
+<button type="button" class="btn btn-primary " onclick="goBack()">
+    <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Về trang trước</button>
+
+    <a class="right" onclick="goBack()">Về trang trước</a>
+</ol-->
+    <div class="col-xs-9 col-md-10" id="chi_tiet">
+    <div class="col-xs-12 col-md-12 pad">
+
+        <div class="panel panel-primary">
+            <div class="panel-heading header">
+                <h3 class="font-size"><?php echo html_escape($node_map->node_name); ?></h3>
+            </div>
+            <div class="panel-body">
+
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><?php echo $data['h1']; ?></h3>
+                    </div>
+                    <div class="panel-body">
+                        <p><?php echo $trinh_tu_data; ?></p>
+                    </div>
+                </div>
+                <div class="row">
+                <div class="col-xs-12 col-md-6">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><?php echo $data['h2']; ?></h3>
+                    </div>
+                    <div class="panel-body">
+                        <p><?php echo $thoi_gian_data; ?></p>
+                    </div>
+                </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><?php echo $data['h3']; ?></h3>
+                    </div>
+                    <div class="panel-body">
+                        <p><?php echo $cach_thuc_data; ?></p>
+                    </div>
+                </div>
+                </div>
+                </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><?php echo $data['h4']; ?></h3>
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><?php echo  $data['h4_1']; ?></h3>
+                            </div>
+                            <div class="panel-body">
+                                <p><?php echo $thanh_phan_data; ?></p>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><?php echo $data['h4_2']; ?></h3>
+                            </div>
+                            <div class="panel-body">
+                                <p><?php echo $thanh_phan_data_1; ?></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                <div class="col-xs-12 col-md-6">
+                <div class="panel panel-info ">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><?php echo $data['h5']; ?></h3>
+                    </div>
+                    <div class="panel-body">
+                        <p><?php echo $giai_quyet_data; ?></p>
+                    </div>
+                </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                <div class="panel panel-info ">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><?php echo $data['h6']; ?></h3>
+                    </div>
+                    <div class="panel-body">
+                        <p><?php echo $doi_tuong_data; ?></p>
+                    </div>
+                </div>
+                </div>
+                </div>
+                <div class="row">
+                <div class="col-xs-12 col-md-6">
+                <div class="panel panel-info ">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><?php echo $data['h7']; ?></h3>
+                    </div>
+                    <div class="panel-body">
+                        <p><?php echo $co_quan_data; ?></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <div class="panel panel-info ">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><?php echo $data['h8']; ?></h3>
+                    </div>
+                    <div class="panel-body">
+                        <p><?php echo $ket_qua_data; ?></p>
+                    </div>
+                </div>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-12 col-md-6">
+                <div class="panel panel-info ">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><?php echo $data['h9']; ?></h3>
+                    </div>
+                    <div class="panel-body">
+                        <p><?php echo $le_phi_data; ?></p>
+                    </div>
+                </div>
+</div>
+<div class="col-xs-12 col-md-6">
+                <div class="panel panel-info ">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><?php echo $data['h10']; ?></h3>
+                    </div>
+                    <div class="panel-body">
+                        <p><?php echo $mau_don_data; ?></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><?php echo $data['h11']; ?></h3>
+                    </div>
+                    <div class="panel-body">
+                        <p><?php echo $yeu_cau_data; ?></p>
+                    </div>
+                </div>
+
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><?php echo $data['h12']; ?></h3>
+                    </div>
+                    <div class="panel-body">
+                        <p><?php echo $can_cu_data; ?></p>
+                    </div>
+                </div>
+
+            </div><!--panel-body-->
+        </div><!--panel-->
+    </div><!--col-xs-12-->
+
+</div>
