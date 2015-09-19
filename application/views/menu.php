@@ -57,7 +57,7 @@
                 <li><a href='#'><span>Giới thiệu</span></a></li>
                 <li class='has-sub'><a href="#"><span>Hành chính tư pháp</span></a>
                     <ul>
-                        <li><a href="<?php echo base_url();?>phan_muc/index/1"><span>Chức thực</span></a></li>
+                        <li><a href="<?php echo base_url();?>phan_muc/index/1"><span>Chứng thực</span></a></li>
                         <li><a href="<?php echo base_url();?>phan_muc/index/2"><span>Khai sinh</span></a></li>
                         <li><a href="<?php echo base_url();?>phan_muc/index/3"><span>Khai tử</span></a></li>
                         <li><a href="<?php echo base_url();?>phan_muc/index/4"><span>Kết hôn</span></a></li>

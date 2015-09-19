@@ -80,6 +80,9 @@ a {
     border-radius: 15px;
     border: 2px solid #018597;
 }
+.panel-default > .panel-heading {
+    border-radius: 15px;
+}
 .panel-info > .panel-heading {
 
     text-align: left;
@@ -92,6 +95,9 @@ a {
 }
 .panel-body {
     padding-bottom: 0;
+}
+.panel {
+    border-radius: 15px;
 }
 .h1, .h2, .h3, h1, h2, h3 {
     margin-top: 10px;
