@@ -1,4 +1,4 @@
-    <div class="col-xs-9 col-md-10" id="chi_tiet">
+    <div class="col-xs-9 col-md-10 pad2" id="chi_tiet">
 <div class="row center">
     <div class="col-xs-12 col-md-4">
         <a href="<?php echo base_url();?>phan_muc/index/1" class="thumbnail">
@@ -33,7 +33,7 @@
     </div>
         <div class="col-xs-12 col-md-4">
         <a href="<?php echo base_url();?>phan_muc/index/7" class="thumbnail">
-            <h3><?php echo "Xem tất cả";?></h3>
+            <h3><?php echo "Các mục còn lại";?></h3>
         </a>
     </div>
 </div>

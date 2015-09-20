@@ -4,7 +4,7 @@
 
     <a class="right" onclick="goBack()">Về trang trước</a>
 </ol-->
-    <div class="col-xs-9 col-md-10" id="chi_tiet">
+    <div class="col-xs-9 col-md-10 pad2" id="chi_tiet">
     <div class="col-xs-12 col-md-12 pad">
 
         <div class="panel panel-primary">

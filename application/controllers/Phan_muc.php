@@ -40,10 +40,26 @@ class Phan_muc extends CI_Controller {
 				$f=" ";
 				break;
 		}
+		$data1=array(
+			 'Chứng thực',
+			'khai sinh',
+			 'khai tử',
+			'kết hôn',
+			'giám hộ',
+			'hộ tịch'
+		);
 		//$f="Chứng thực";
- 		$data = $this->Map->loc_ten($f); 
- 		$num = $this->Map->loc_id($f); 
-		$com = array_combine($num, $data);
+		if($f==" "){
+			$data = $this->Map->loc_ten1($data1);
+			$num = $this->Map->loc_id1($data1);
+			$com = array_combine($num, $data);
+		}else{
+			$data = $this->Map->loc_ten($f);
+			$num = $this->Map->loc_id($f);
+			$com = array_combine($num, $data);
+		}
+
+
 		$this->load->view('content_phan_muc',array(
 					'com'=>$com,
 					));

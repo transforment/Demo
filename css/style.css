@@ -8,7 +8,7 @@ html {
 body {
     background-color: #f0f0f0;
     margin-bottom: 60px;
-    font-family: Tahoma, sans-serif;
+    font-family: "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif;
 }
 .navbar {
     border-radius: 0;
@@ -59,9 +59,17 @@ body {
 }
 
 .thumbnail {
+    display: table;
     border-radius: 25px;
     border: 2px solid #018597;
-
+    width: 100%;
+}
+.thumbnail h3 {
+    display: table-cell;
+    font-size: 17px;
+    vertical-align: middle;
+    text-align: center;
+    height: 50px;
 }
 
 .thumbnail:hover {
@@ -84,10 +92,9 @@ a {
     border-radius: 15px;
 }
 .panel-info > .panel-heading {
-
     text-align: left;
-  border-radius: 15px;
-      border: 2px solid #018597;
+    border-radius: 15px;
+    border: 2px solid #018597;
 }
 .panel-primary {
     border-color: rgba(1, 133, 151, 0.5);
@@ -103,17 +110,17 @@ a {
     margin-top: 10px;
 }
 .h3, h3 {
-    font-size: 18px;
-}
-.font-size {
     font-size: 20px;
 }
 .pad {
     padding-left: 0px;
     padding-right: 0px;
-    
 }
-.button {
+.pad2 {
+    padding-left: 30px;
+    padding-right: 0px;
+}
+.btn {
     margin-bottom: 15px;
 }
 .breadcrumb {
@@ -144,17 +151,22 @@ a {
 }
 .back-to-top {
     position: fixed;
-    bottom: 1em;
+    bottom: 0;
     right: 0;
     display: none;
 }
 .text_user{
+    margin-top: 10px;
      margin-right: 20px;
-     font-size: 25px;
-color: rgb(255,0,0);
+     font-size: 20px;
+    color: white;
+}
+.text_user:hover {
+    color: rgb(255,0,0);
+    cursor: pointer;
 }
 .btn-log{
-        margin-right: 20px; 
+    margin-right: 20px;
 }
 
 
@@ -315,4 +327,37 @@ color: rgb(255,0,0);
 #cssmenu ul ul li.open > a::after,
 #cssmenu ul ul li > a:hover::after {
     border-color: #ffffff;
+}
+
+
+.tooltip {
+    font-size: 16px;
+}
+.tooltip-inner {
+    max-width: 100%;
+    color: #000;
+    background-color: #fff;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+.tooltip.top .tooltip-arrow {
+    bottom: 0;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px 5px 0;
+    border-top-color: #fff;
+}
+.tooltip.top-left .tooltip-arrow {
+    right: 5px;
+    bottom: 0;
+    margin-bottom: -5px;
+    border-width: 5px 5px 0;
+    border-top-color: #fff;
+}
+.tooltip.top-right .tooltip-arrow {
+    bottom: 0;
+    left: 5px;
+    margin-bottom: -5px;
+    border-width: 5px 5px 0;
+    border-top-color: #fff;
 }

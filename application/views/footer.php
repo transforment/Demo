@@ -30,7 +30,7 @@
 
     $('.row').masonry({
         // options
-        itemSelector: '.col-xs-12',
+        itemSelector: '.col-md-6',
     });
 
     function goBack() {
@@ -57,6 +57,13 @@
 
     $('.header').scrollToFixed();
     $('#cssmenu').scrollToFixed();
+
+
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip({
+            delay: { "show": 500}
+        })
+    })
 
 </script>
 

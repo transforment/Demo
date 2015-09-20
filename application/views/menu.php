@@ -49,7 +49,7 @@
     <div class="col-xs-3 col-md-2"id='cssmenu'>
     <div id="sidebar-wrapper">
          <button type="button" class="btn btn-primary" onclick="goBack()">
-    <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Về trang trước</button>
+            <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Về trang trước</button>
         <div id='cssmenu'>
             <ul>
                 <li><a href="<?php echo base_url();?>home">
@@ -63,7 +63,7 @@
                         <li><a href="<?php echo base_url();?>phan_muc/index/4"><span>Kết hôn</span></a></li>
                         <li><a href="<?php echo base_url();?>phan_muc/index/5"><span>Giám hộ</span></a></li>
                         <li><a href="<?php echo base_url();?>phan_muc/index/6"><span>Hộ tịch</span></a></li>
-                        <li><a href="<?php echo base_url();?>phan_muc/index/7"><span>Xem tất cả</span></a></li>
+                        <li><a href="<?php echo base_url();?>phan_muc/index/7"><span>Các mục còn lại</span></a></li>
                     </ul>
                 </li>
                 <li class='last'><a href='#'><span>Liên hệ</span></a></li>

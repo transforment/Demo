@@ -67,7 +67,58 @@ class Map extends CI_Model {
 
         return $array;
     }
-    
+    public function loc_ten1($data){
+        $query = $this->db->get('map');
+        $array=array();
+
+        foreach($query->result_array() as $row){
+            $pos2 = strpos($row['node_name'], $data[2]);
+            $pos1 = strpos($row['node_name'], $data[1]);
+
+                $pos = strpos($row['node_name'], $data[0]);
+            $pos3 = strpos($row['node_name'], $data[3]);
+            $pos4 = strpos($row['node_name'], $data[4]);
+
+            $pos5 = strpos($row['node_name'], $data[5]);
+                if (($pos === false)&&($pos1 === false)&&($pos2 === false)&&($pos3 === false)&&($pos4 === false)&&($pos5 === false)&&($row['p_id']!=0)) {
+
+                    $array[] = $row['node_name'];
+
+
+                } else {
+
+                }
+
+        }
+
+        return $array;
+    }
+public function loc_id1($data){
+    $query = $this->db->get('map');
+    $array=array();
+
+    foreach($query->result_array() as $row){
+        $pos2 = strpos($row['node_name'], $data[2]);
+        $pos1 = strpos($row['node_name'], $data[1]);
+
+        $pos = strpos($row['node_name'], $data[0]);
+        $pos3 = strpos($row['node_name'], $data[3]);
+        $pos4 = strpos($row['node_name'], $data[4]);
+
+        $pos5 = strpos($row['node_name'], $data[5]);
+        if (($pos === false)&&($pos1 === false)&&($pos2 === false)&&($pos3 === false)&&($pos4 === false)&&($pos5 === false)&&($row['p_id']!=0)) {
+
+            $array[] = $row['node_id'];
+
+
+        } else {
+
+        }
+
+}
+
+return $array;
+}
     public function loc_id($id){
         $query = $this->db->get('map');
         $array=array();
