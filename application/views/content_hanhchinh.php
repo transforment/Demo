@@ -32,7 +32,7 @@
         </a>
     </div>
         <div class="col-xs-12 col-md-4">
-        <a href="<?php echo base_url();?>phan_muc/index/7" class="thumbnail">
+        <a href="<?php echo base_url();?>phan_muc/index/9" class="thumbnail">
             <h3><?php echo "Các mục còn lại";?></h3>
         </a>
     </div>

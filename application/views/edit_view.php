@@ -2,91 +2,150 @@
 <div class="container theme-showcase" role="main">
 
 
-<form method="post" class="form-horizontal" action="<?php echo base_url();?>edit/edit_thu_tuc">
-	<div class="input-group col-sm-8">
-		<label for="publication_id" class="col-sm-10">Tên</label>
-		<select name= "publication_id" class="bg-primary col-sm-10">
-			<?php foreach ($com as $id => $name) {
-					echo '<option value="'.html_escape($id).'">'.html_escape($name).'</option>';
-			}
-			?>
-		</select>
+
+	<?php 
+	echo form_open(''.base_url().'edit/edit_thu_tuc/'.$id_node.'');?>	
+	<div>
+		<label for="publication_id" >Tên</label>
+		
+	<?php echo html_escape($node_map->node_name); ?>	
 	</div>
 
 	<div class="input-group col-sm-8">
-		<label for="name">Trình tự</label>
-		<textarea  type="text" name="trinh_tu" class="form-control"value="" placeholder="" cols="60" rows="6"></textarea>
+	
+		<?php 
+		$data1 = array(
+              'name'=>"trinh_tu",'type'=>"text" ,'value'=> $trinh_tu_data,
+              'cols' => "60",'rows' => '5','class'=>"form-control"
+             );
+		$data2 = array(
+              'name' =>"thoi_gian",'type'=>"text" ,'value' => $thoi_gian_data,
+              'cols'=> "60",'rows' => '5','class'=>"form-control"
+           );
+		$data3 = array(
+              'name' =>"cach_thuc",'type'=>"text" ,'value' => $cach_thuc_data,
+              'cols'=> "60",'rows' => '2','class'=>"form-control"
+           );
+		$data4 = array(
+              'name' =>"thanh_phan",'type'=>"text" ,'value' => $thanh_phan_data,
+              'cols'=> "60",'rows' => '5','class'=>"form-control"
+           );
+		$data5 = array(
+              'name' =>"thanh_phan_note",'type'=>"text" ,'value' => $thanh_phan_data_1,
+              'cols'=> "60",'rows' => '1','class'=>"form-control"
+           );
+		$data6 = array(
+              'name' =>"giai_quyet",'type'=>"text" ,'value' => $giai_quyet_data,
+              'cols'=> "60",'rows' => '3','class'=>"form-control"
+           );
+		$data7 = array(
+              'name' =>"doi_tuong",'type'=>"text" ,'value' => $doi_tuong_data,
+              'cols'=> "60",'rows' => '1','class'=>"form-control"
+           );
+		$data8 = array(
+              'name' =>"co_quan",'type'=>"text" ,'value' => $co_quan_data,
+              'cols'=> "60",'rows' => '1','class'=>"form-control"
+           );
+		$data9 = array(
+              'name' =>"ket_qua",'type'=>"text" ,'value' => $ket_qua_data,
+              'cols'=> "60",'rows' => '1','class'=>"form-control"
+           );
+		$data10 = array(
+              'name' =>"le_phi",'type'=>"text" ,'value' => $le_phi_data,
+              'cols'=> "60",'rows' => '3','class'=>"form-control"
+           );
+		$data11 = array(
+              'name' =>"mau_don",'type'=>"text" ,'value' => $mau_don_data,
+              'cols'=> "60",'rows' => '3','class'=>"form-control"
+           );
+		$data12 = array(
+              'name' =>"yeu_cau",'type'=>"text" ,'value' => $yeu_cau_data,
+              'cols'=> "60",'rows' => '6','class'=>"form-control"
+           );
+		$data13 = array(
+              'name' =>"can_cu",'type'=>"text" ,'value' => $can_cu_data,
+              'cols'=> "60",'rows' => '8','class'=>"form-control"
+           );
+
+
+
+		echo form_label('Trình tự ','name');
+		?><br><?php
+		echo form_textarea($data1);?>
+	</div>
+	<div class="input-group col-sm-8">
+		<?php echo form_label('Thời gian ','name');
+		?><br><?php
+	 	echo form_textarea($data2);?>
 	</div>
 
 	<div class="input-group col-sm-8">
-		<label for="name">Thời gian</label>
-		<textarea type="text" name="thoi_gian" class="form-control"value="" placeholder=""cols="60" rows="5"></textarea>
-	</div>
-
-	<div class="input-group col-sm-8">
-		<label for="name">Cách thức</label>
-		<textarea type="text" name="cach_thuc" class="form-control"value="" placeholder=""cols="60" rows="2"></textarea>
+		<?php echo form_label('Thời gian ','name');
+		?><br><?php
+		 echo form_textarea($data3);?>
 
 	</div>
-
-
-
 	<div class="input-group col-sm-8">
-		<label for="name">Thành phần hồ sơ</label>
-		<textarea type="text" name="thanh_phan" class="form-control"value="" placeholder=""cols="60" rows="3"></textarea>
-
+		<?php echo form_label('Thành phần hồ sơ','name');
+		?><br><?php
+		echo form_textarea($data4);?>
 	</div>
 
 		<div class="input-group col-sm-8">
-		<label for="name">Số lượng hồ sơ</label>
-		<input type="text" name="thanh_phan_note" class="form-control"value="" placeholder=""/>
-	</div>
-
-
-
-	<div class="input-group col-sm-8">
-		<label for="name">Thời hạn giải quyết</label>
-		<textarea type="text" name="giai_quyet" class="form-control"value="" placeholder=""cols="60" rows="3"></textarea>
-
-	</div>
-
-
-	<div class="input-group col-sm-8">
-		<label for="name">Đối tượng thực hiện thủ tục hành chính</label>
-		<input type="text" name="doi_tuong" class="form-control"value="" placeholder=""/>
+		<?php echo form_label('Số lượng hồ sơ','name');
+		?><br><?php
+	 	echo form_textarea($data5);?>
 	</div>
 	<div class="input-group col-sm-8">
-		<label for="name">Cơ quan thực hiện thủ tục hành chính</label>
-		<input type="text" name="co_quan" class="form-control"value="" placeholder=""/>
+		<?php echo form_label('Thời hạn giải quyết','name');
+		?><br><?php
+	 	echo form_textarea($data6);?>
 	</div>
-
+	<div class="input-group col-sm-8">
+		<?php echo form_label('Đối tượng thực hiện thủ tục hành chính','name');
+		?><br><?php
+	 	echo form_textarea($data7);?>
+	</div>
+	<div class="input-group col-sm-8">
+		<?php echo form_label('Cơ quan thực hiện thủ tục hành chính ','name');
+		?><br><?php
+	 	echo form_textarea($data8);?>
+	</div>
 		<div class="input-group col-sm-8">
-		<label for="name">Kết quả thực hiện thủ tục hành chính</label>
-		<input type="text" name="ket_qua" class="form-control"value="" placeholder=""/>
+		<?php echo form_label('Kết quả thực hiện thủ tục hành chính','name');
+		?><br><?php
+	 	echo form_textarea($data9);?>
 	</div>
 	<div class="input-group col-sm-8">
-		<label for="name">Phí, lệ phí</label>
-		<textarea type="text" name="le_phi" class="form-control"value="" placeholder=""cols="60" rows="3"></textarea>
-
+		<?php echo form_label('Phí, lệ phí','name');
+		?><br><?php
+		 echo form_textarea($data10);?>
 	</div>
 
 	<div class="input-group col-sm-8">
-		<label for="name">Tên mẫu đơn, mẫu tờ khai</label>
-		<textarea type="text" name="mau_don" class="form-control"value="" placeholder=""cols="60" rows="3"></textarea>
 
+		<?php echo form_label('Tên mẫu đơn, mẫu tờ khai','name');
+		?><br><?php
+	 	echo form_textarea($data11);?>
 	</div>
 	<div class="input-group col-sm-8">
-		<label for="name">Yêu cầu</label>
-		<textarea type="text" name="yeu_cau" class="form-control"value="" placeholder=""cols="60" rows="6"></textarea>
-
+		<?php echo form_label('Yêu cầu ','name');
+		?><br><?php
+	 	echo form_textarea($data12);?>
 	</div>
 	<div class="input-group col-sm-8">
-		<label for="name">Căn cứ pháp lý của thủ tục hành chính</label>
-		<textarea type="text" name="can_cu" class="form-control"value="" placeholder=""cols="60" rows="8"></textarea>
-
+		<?php echo form_label('Căn cứ pháp lý của thủ tục hành chính','name');
+		?><br><?php
+	 	echo form_textarea($data13);?>
 	</div>
 	<div>
-		<input type="submit" class="btn btn-default" value="Save"/>
+	<?php 
+	 echo form_submit('submit','Lưu lại',"btn btn-default");?>
+
+	<?php 
+	echo form_close('');?>
+	<?php echo validation_errors(); ?>	
+
 	</div>
 
 </form>

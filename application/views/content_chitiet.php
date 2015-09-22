@@ -131,7 +131,31 @@
                         <h3 class="panel-title"><?php echo $data['h10']; ?></h3>
                     </div>
                     <div class="panel-body">
-                        <p><?php echo $mau_don_data; ?></p>
+                        <p><?php 
+                       
+                       if(count($mau_don_array)==1){
+                            if((strlen($mau_don_array[0])>7))
+                               {
+                                    $mau_don_array[0] = trim(strip_tags($mau_don_array[0]));
+                                    $mau_don=str_replace("/","",$mau_don_array[0]);
+                                     $mau_don=str_replace(",","",$mau_don);
+                                 echo'+ <a href="'.base_url().'read/read_file/'.$mau_don.'.pdf" 
+                                target="_blank">'.$mau_don_array[0].'</a>';
+                            }else{
+                                echo $mau_don_array[0];
+                            }
+                            }else{
+                                for ($i=1;$i<count($mau_don_array);$i++){
+                                    $mau_don_array[$i] = trim(strip_tags($mau_don_array[$i]));
+                                    $mau_don=str_replace("/","",$mau_don_array[$i]);
+                                    $mau_don=str_replace(",","",$mau_don);
+                                 echo'+ <a href="'.base_url().'read/read_file/'.$mau_don.'.pdf" 
+                                target="_blank">'.$mau_don_array[$i].'</a>';
+                                if ($i+1!=count($mau_don_array) )echo '<br>';
+                            }
+                            }
+
+                        ?></p>
                     </div>
                 </div>
             </div>

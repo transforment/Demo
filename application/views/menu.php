@@ -27,8 +27,9 @@
                     }
                     ?>
             </ul>
+
             <div class="nav navbar-right" >
-                <div class="input-group">
+
             <?php 
             if (isset($_SESSION['name_user']))
              {
@@ -38,9 +39,16 @@
 
                 }
                 ?>
-            </div>
+
             </div>
         </div><!-- /.nav-collapse -->
+        <form  role="search" method="post"action="<?php echo base_url();?>phan_muc/index/7">
+                <div class="input-group">
+                    <input type="text" class="form-control" name ="key_search" placeholder="Gõ tên giấy tờ muốn cấp">
+                    <span class="input-group-btn"><button class="btn btn-default" type="submit">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span></button></span>
+                </div><!-- /input-group -->
+        </form>
     </div><!-- /.container -->
 </nav><!-- /.navbar -->
 
