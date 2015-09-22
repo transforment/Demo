@@ -12,8 +12,6 @@ class Trang_chi_tiet extends CI_Controller {
 	{
 	$this->load->view('header');
 	$this->load->view('menu');
-	//$number=$this->input->post('stt');
-//echo $number;
 	$this->load->model('Map');
 
 	$this->load->model('trinh_tu');//1
@@ -51,22 +49,31 @@ class Trang_chi_tiet extends CI_Controller {
 	$yeu_cau_data=$this->yeu_cau->array_trans($list_chi_tiet[10]);
 	$can_cu_data=$this->can_cu->array_trans($list_chi_tiet[11]);
 
+
+$mau_don_after = trim(strip_tags($mau_don_data));
+$mau_don_after=str_replace(".","",$mau_don_after);
+$mau_don_array=explode('+', $mau_don_after);
+
+if(count($mau_don_array)>1){
+//	for ($i=1;$i<count($mau_don_array),$i++)
+}
+//echo html_escape($mau_don_array[1]);
 		$data=array(
 
-			'h1' => '- Trình tự thực hiện:',
-			'h2'=>'* Thời gian tiếp nhận hồ sơ và trả kết quả:',
-			'h3' => '- Cách thức thực hiện:',
-			'h4' => '- Thành phần, số lượng hồ sơ:',
+			'h1' => '1/ Trình tự thực hiện:',
+			'h2'=>'2/ Thời gian tiếp nhận hồ sơ và trả kết quả:',
+			'h3' => '3/ Cách thức thực hiện:',
+			'h4' => '4/ Thành phần, số lượng hồ sơ:',
 			'h4_1' => 'a) Thành phần hồ sơ bao gồm:',
 			'h4_2' => 'b) Số lượng hồ sơ:',
-			'h5' => '- Thời hạn giải quyết:',
-			'h6' => '- Đối tượng thực hiện thủ tục hành chính:',
-			'h7' => '- Cơ quan thực hiện thủ tục hành chính:',
-			'h8' => '- Kết quả thực hiện thủ tục hành chính:',
-			'h9' => '- Phí, lệ phí:',
-			'h10' => '- Tên mẫu đơn, mẫu tờ khai:',
-			'h11' => '- Yêu cầu, điều kiện thực hiện thủ tục hành chính:',
-			'h12' => '- Căn cứ pháp lý của thủ tục hành chính:',
+			'h5' => '5/ Thời hạn giải quyết:',
+			'h6' => '6/ Đối tượng thực hiện thủ tục hành chính:',
+			'h7' => '7/ Cơ quan thực hiện thủ tục hành chính:',
+			'h8' => '8/ Kết quả thực hiện thủ tục hành chính:',
+			'h9' => '9/ Phí, lệ phí:',
+			'h10' => '10/ Tên mẫu đơn, mẫu tờ khai:',
+			'h11' => '11/ Yêu cầu, điều kiện thực hiện thủ tục hành chính:',
+			'h12' => '12/ Căn cứ pháp lý của thủ tục hành chính:',
 	
 		);
 
@@ -83,7 +90,7 @@ class Trang_chi_tiet extends CI_Controller {
 		,'co_quan_data'=>$co_quan_data
 		,'ket_qua_data'=>$ket_qua_data
 		,'le_phi_data'=>$le_phi_data
-		,'mau_don_data'=>$mau_don_data
+		,'mau_don_array'=>$mau_don_array
 		,'yeu_cau_data'=>$yeu_cau_data
 		,'can_cu_data'=>$can_cu_data
 		,'data'=>$data
