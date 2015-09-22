@@ -20,21 +20,23 @@ class Phan_muc extends CI_Controller {
 
 				break;
 			case '2':
-				$f="khai sinh";
+				$f="Khai sinh";
 				break;
 			case '3':
-				$f="khai tử";
+				$f="Khai tử";
 				break;
 			case '4':
-				$f="kết hôn";
+				$f="Kết hôn";
 				break;
 			case '5':
-				$f="giám hộ";
+				$f="Giám hộ";
 				break;
 			case '6':
-				$f="hộ tịch";
+				$f="Hộ tịch";
 				break;
-
+			case '7':
+				$f=$this->input->post('key_search');;
+				break;
 
 			default:
 				$f=" ";
@@ -50,8 +52,8 @@ class Phan_muc extends CI_Controller {
 		);
 		//$f="Chứng thực";
 		if($f==" "){
-			$data = $this->Map->loc_ten1($data1);
-			$num = $this->Map->loc_id1($data1);
+			$data = $this->Map->loc_ten_left($data1);
+			$num = $this->Map->loc_id_left($data1);
 			$com = array_combine($num, $data);
 		}else{
 			$data = $this->Map->loc_ten($f);
@@ -59,7 +61,10 @@ class Phan_muc extends CI_Controller {
 			$com = array_combine($num, $data);
 		}
 
-
+$text = mb_convert_encoding(' có cục ', 'UTF-8', 'UTF-8');
+$cleaner_input = trim(strip_tags(' ea bó  j . '));
+//echo 'dd'.$text.'dd';
+//echo 'aa'.$cleaner_input.'dd';
 		$this->load->view('content_phan_muc',array(
 					'com'=>$com,
 					));
