@@ -76,8 +76,8 @@ if(count($mau_don_array)>1){
 			'h12' => '12/ Căn cứ pháp lý của thủ tục hành chính:',
 	
 		);
-
-	$this->load->view('content_chitiet',array(
+		if (!isset($_SESSION['name_user'])){
+		$this->load->view('content_chitiet',array(
 		'node_map'=>$node_map
 		
 		,'trinh_tu_data'=>$trinh_tu_data
@@ -95,6 +95,17 @@ if(count($mau_don_array)>1){
 		,'can_cu_data'=>$can_cu_data
 		,'data'=>$data
 		));
+		} else{
+		$this->load->view('content_chitiet_admin'
+			,array(
+				'node_map'=>$node_map
+				,'data'=>$data
+				,'le_phi_data'=>$le_phi_data
+		,'thanh_phan_data'=>$thanh_phan_data
+		,'thanh_phan_data_1'=>$thanh_phan_data_1
+		));
+		}
+
 	$this->load->view('footer');
 	}
 

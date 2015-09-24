@@ -14,11 +14,11 @@ class Home extends CI_Controller {
 			$this->load->view('menu');
 			$this->load->model('Map');
 			$this->load->library('table');
- 			$data = $this->Map->lay_ten_muc();
- 			$num = $this->Map->lay_id(); 
+ 			$data = $this->Map->lay_ten_muc(0);
+ 			$num = $this->Map->lay_id(0); 
 			$com = array_combine($num, $data);
 
-		//	$this->load->view('select',array('com'=>$com,));
+			$this->load->view('home_view',array('com'=>$com,));
 			$this->load->view('footer');
 
 	}

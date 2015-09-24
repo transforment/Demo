@@ -4,7 +4,7 @@
 
     <a class="right" onclick="goBack()">Về trang trước</a>
 </ol-->
-    <div class="col-xs-9 col-md-10 pad2" id="chi_tiet">
+<div class="col-xs-9 col-md-10 pad2" id="chi_tiet">
     <div class="col-xs-12 col-md-12 pad">
 
         <div class="panel panel-primary">
@@ -112,10 +112,10 @@
                         <p><?php echo $ket_qua_data; ?></p>
                     </div>
                 </div>
-</div>
-</div>
-<div class="row">
-<div class="col-xs-12 col-md-6">
+                </div>
+            </div>
+            <div class="row">
+            <div class="col-xs-12 col-md-6">
                 <div class="panel panel-info ">
                     <div class="panel-heading">
                         <h3 class="panel-title"><?php echo $data['h9']; ?></h3>
@@ -124,8 +124,8 @@
                         <p><?php echo $le_phi_data; ?></p>
                     </div>
                 </div>
-</div>
-<div class="col-xs-12 col-md-6">
+                </div>
+            <div class="col-xs-12 col-md-6">
                 <div class="panel panel-info ">
                     <div class="panel-heading">
                         <h3 class="panel-title"><?php echo $data['h10']; ?></h3>
@@ -138,7 +138,7 @@
                                {
                                     $mau_don_array[0] = trim(strip_tags($mau_don_array[0]));
                                     $mau_don=str_replace("/","",$mau_don_array[0]);
-                                     $mau_don=str_replace(",","",$mau_don);
+
                                     $mau_don=str_replace(":","",$mau_don);
                                  echo'+ <a href="'.base_url().'read/read_file/'.$mau_don.'" 
                                 target="_blank">'.$mau_don_array[0].'</a>';
@@ -149,7 +149,7 @@
                                 for ($i=1;$i<count($mau_don_array);$i++){
                                     $mau_don_array[$i] = trim(strip_tags($mau_don_array[$i]));
                                     $mau_don=str_replace("/","",$mau_don_array[$i]);
-                                    $mau_don=str_replace(",","",$mau_don);
+
                                     $mau_don=str_replace(":","",$mau_don);
                                  echo'+ <a href="'.base_url().'read/read_file/'.$mau_don.'" 
                                 target="_blank">'.$mau_don_array[$i].'</a>';

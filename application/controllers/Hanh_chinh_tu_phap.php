@@ -21,7 +21,7 @@ class Hanh_chinh_tu_phap extends CI_Controller {
 			'ht' => 'Hộ tịch',
 		);
 		$this->load->view('content_hanhchinh',$data);
-			$this->load->view('footer');
+		$this->load->view('footer');
 
 	}
 }
