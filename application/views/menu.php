@@ -8,13 +8,14 @@
                 <span class="icon-bar"></span>
             </button>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
+        <div id="navbar" class="collapse navbar-collapse pad-nav">
             <ul class="nav navbar-nav">
                 <li><a href="<?php echo base_url();?>home">
                      <span class="glyphicon glyphicon-home" aria-hidden="true"></span> TRANG CHỦ</a></li>
-                    
-
-                <li><a href="<?php echo base_url();?>hanh_chinh_tu_phap">HÀNH CHÍNH TƯ PHÁP</a></li>
+                <li><a href="<?php echo base_url();?>hanh_chinh_tu_phap">
+                        <span class="glyphicon glyphicon-file" aria-hidden="true"></span> HÀNH CHÍNH TƯ PHÁP</a></li>
+                <li><a href="<?php echo base_url();?>hanh_chinh_dat_dai">
+                        <span class="glyphicon glyphicon-file" aria-hidden="true"></span>  HÀNH CHÍNH ĐẤT ĐAI</a></li>
 
                 <?php 
                  if (isset($_SESSION['name_user']))
@@ -28,21 +29,20 @@
                     ?>
             </ul>
 
-            <div class="nav navbar-right" >
+            <div class="nav navbar-right mar-log" >
 
             <?php 
             if (isset($_SESSION['name_user']))
              {
-                echo '<a class="text_user" >Chào  '.$_SESSION['name_user'].'</a>';
-              echo '   <button type="button" class="btn btn-danger btn-log " onClick=location.href="'.base_url().'admin/logout">
-              <span class="glyphicon glyphicon-off " aria-hidden="true"></span> Đăng xuất</button>';
-
-                }
-                ?>
+                echo '<a class="text_user">Chào  '.$_SESSION['name_user'].'</a>';
+                echo '<button type="button" class="btn btn-danger btn-log" onClick=location.href="'.base_url().'admin/logout">
+                      <span class="glyphicon glyphicon-off " aria-hidden="true"></span> Đăng xuất</button>';
+             }
+             ?>
 
             </div>
         </div><!-- /.nav-collapse -->
-        <form  role="search" method="post"action="<?php echo base_url();?>phan_muc/index/7">
+        <form class="col-md-12 pad-search mar" role="search" method="post"action="<?php echo base_url();?>phan_muc/index/7">
                 <div class="input-group">
                     <input type="text" class="form-control" name ="key_search" placeholder="Gõ tên giấy tờ muốn cấp">
                     <span class="input-group-btn"><button class="btn btn-default" type="submit">
@@ -56,14 +56,14 @@
 <div class="pad" id="bodykkk">
     <div class="col-xs-3 col-md-2"id='cssmenu'>
     <div id="sidebar-wrapper">
-         <button type="button" class="btn btn-primary" onclick="goBack()">
+         <button type="button" class="btn btn-primary mar" onclick="goBack()">
             <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Về trang trước</button>
         <div id='cssmenu'>
             <ul>
                 <li><a href="<?php echo base_url();?>home">
                     <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Trang chủ</a></li>
-                <li><a href='#'><span>Giới thiệu</span></a></li>
-                <li class='has-sub'><a href="#"><span>Hành chính tư pháp</span></a>
+                <li><a href='#'><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Giới thiệu</a></li>
+                <li class='has-sub'><a href="#"><span class="glyphicon glyphicon-file" aria-hidden="true"></span> Hành chính tư pháp</a>
                     <ul>
                         <li><a href="<?php echo base_url();?>phan_muc/index/1"><span>Chứng thực</span></a></li>
                         <li><a href="<?php echo base_url();?>phan_muc/index/2"><span>Khai sinh</span></a></li>
@@ -71,10 +71,12 @@
                         <li><a href="<?php echo base_url();?>phan_muc/index/4"><span>Kết hôn</span></a></li>
                         <li><a href="<?php echo base_url();?>phan_muc/index/5"><span>Giám hộ</span></a></li>
                         <li><a href="<?php echo base_url();?>phan_muc/index/6"><span>Hộ tịch</span></a></li>
-                        <li><a href="<?php echo base_url();?>phan_muc/index/7"><span>Các mục còn lại</span></a></li>
+                        <li><a href="<?php echo base_url();?>phan_muc/index/9"><span>Các mục còn lại</span></a></li>
                     </ul>
                 </li>
-                <li class='last'><a href='#'><span>Liên hệ</span></a></li>
+                <li><a href="<?php echo base_url();?>hanh_chinh_dat_dai">
+                        <span class="glyphicon glyphicon-file" aria-hidden="true"></span> Hành chính đất đai</a>
+                <li><a href='#'><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Liên hệ</a></li>
             </ul>
         </div>
       </div>

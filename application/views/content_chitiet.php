@@ -139,7 +139,8 @@
                                     $mau_don_array[0] = trim(strip_tags($mau_don_array[0]));
                                     $mau_don=str_replace("/","",$mau_don_array[0]);
                                      $mau_don=str_replace(",","",$mau_don);
-                                 echo'+ <a href="'.base_url().'read/read_file/'.$mau_don.'.pdf" 
+                                    $mau_don=str_replace(":","",$mau_don);
+                                 echo'+ <a href="'.base_url().'read/read_file/'.$mau_don.'" 
                                 target="_blank">'.$mau_don_array[0].'</a>';
                             }else{
                                 echo $mau_don_array[0];
@@ -149,7 +150,8 @@
                                     $mau_don_array[$i] = trim(strip_tags($mau_don_array[$i]));
                                     $mau_don=str_replace("/","",$mau_don_array[$i]);
                                     $mau_don=str_replace(",","",$mau_don);
-                                 echo'+ <a href="'.base_url().'read/read_file/'.$mau_don.'.pdf" 
+                                    $mau_don=str_replace(":","",$mau_don);
+                                 echo'+ <a href="'.base_url().'read/read_file/'.$mau_don.'" 
                                 target="_blank">'.$mau_don_array[$i].'</a>';
                                 if ($i+1!=count($mau_don_array) )echo '<br>';
                             }

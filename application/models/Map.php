@@ -81,7 +81,8 @@ class Map extends CI_Model {
             $pos5 = strpos($row['node_name'], $data[5]);
                 if (($pos === false)&&($pos1 === false)&&
                     ($pos2 === false)&&($pos3 === false)&&
-                    ($pos4 === false)&&($pos5 === false)&&($row['p_id']!=0)) {
+                    ($pos4 === false)&&($pos5 === false)&&
+                    ($row['p_id']==1)) {
                     $array[] = $row['node_name'];
                 } else {
                 }
@@ -99,8 +100,9 @@ class Map extends CI_Model {
         $pos4 = strpos($row['node_name'], $data[4]);
         $pos5 = strpos($row['node_name'], $data[5]);
         if (($pos === false)&&($pos1 === false)&&
-            ($pos2 === false)&&($pos3 === false)&&($pos4 === false)
-            &&($pos5 === false)&&($row['p_id']!=0)) {
+            ($pos2 === false)&&($pos3 === false)&&
+            ($pos4 === false)&&($pos5 === false)&&
+            ($row['p_id']==1)) {
             $array[] = $row['node_id'];
         } else {
             }
@@ -119,6 +121,27 @@ class Map extends CI_Model {
         }
 
     return FALSE;
+    }
+
+
+    public function lay_ten_muc2(){
+        $query = $this->db->get('map');
+        $array = array();
+        foreach($query->result_array() as $row){
+            if ($row['p_id']==32)
+                $array[] = $row['node_name'];
+        }
+        return $array;
+    }
+    public function lay_id2(){
+        $query = $this->db->get('map');
+        $array = array();
+        foreach($query->result_array() as $row)
+        {
+            if ($row['p_id']==32)
+                $array[] = $row['node_id'];
+        }
+        return $array;
     }
 
 
