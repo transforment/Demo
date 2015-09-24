@@ -10,6 +10,7 @@ class Phan_muc extends CI_Controller {
 	}
 	public function index($n=1)
 	{
+
 		$this->load->view('header');
 		$this->load->view('menu');
 		$this->load->model('Map');
@@ -17,7 +18,6 @@ class Phan_muc extends CI_Controller {
 		switch ($n) {
 			case '1':
 				$f="Chứng thực";
-
 				break;
 			case '2':
 				$f="Khai sinh";
@@ -65,9 +65,7 @@ $text = mb_convert_encoding(' có cục ', 'UTF-8', 'UTF-8');
 $cleaner_input = trim(strip_tags(' ea bó  j . '));
 //echo 'dd'.$text.'dd';
 //echo 'aa'.$cleaner_input.'dd';
-		$this->load->view('content_phan_muc',array(
-					'com'=>$com,
-					));
+		$this->load->view('content_phan_muc',array('com'=>$com,));
 		$this->load->view('footer');
 	}
 
