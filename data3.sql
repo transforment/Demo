@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 22, 2015 at 08:18 AM
+-- Generation Time: Sep 24, 2015 at 08:57 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -274,14 +274,14 @@ CREATE TABLE IF NOT EXISTS `map` (
   `p_id` int(11) NOT NULL,
   `note` varchar(200) NOT NULL,
   PRIMARY KEY (`node_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=45 ;
 
 --
 -- Dumping data for table `map`
 --
 
 INSERT INTO `map` (`node_id`, `node_name`, `p_id`, `note`) VALUES
-(1, 'HÀNH CHÍNH TƯ PHÁP', 0, ''),
+(1, 'Hành chính tư pháp', 0, ''),
 (2, 'Chứng thực bản sao từ bản chính các giấy tờ, văn bản bằng tiếng Việt', 1, '1/4/8/32/32/1/1/1/16/1/26/31/'),
 (3, 'Chứng thực di chúc', 1, '3/3/1/3/3/3/1/3/3/3/3/3/'),
 (4, 'Chứng thực văn bản từ chối nhận di sản ', 1, '4/4/3/4/4/3/1/4/5/5/3/6/'),
@@ -311,7 +311,20 @@ INSERT INTO `map` (`node_id`, `node_name`, `p_id`, `note`) VALUES
 (28, 'Cấp bản sao các giấy tờ hộ tịch từ sổ hộ tịch (sổ gốc)', 1, '15/4/7/28/28/3/1/17/14/1/23/28/'),
 (29, 'Đăng ký việc nuôi con nuôi thực tế giữa công dân Việt Nam với nhau đang thường trú ở trong nước ', 1, '14/4/8/29/29/3/1/18/13/21/24/23/'),
 (30, 'Cấp giấy xác nhận tình trạng hôn nhân cho công dân Việt Nam cư trú trong nước để đăng ký kết hôn với người nước ngoài tại cơ quan có thẩm quyền của nước ngoài ở nước ngoài ', 1, '17/8/9/30/30/3/1/10/15/23/3/29/'),
-(31, 'Đăng ký việc nhận cha, mẹ con có yếu tố nước ngoài ở khu vực biên giới', 1, '18/8/5/31/31/3/4/19/7/24/25/30/');
+(31, 'Đăng ký việc nhận cha, mẹ con có yếu tố nước ngoài ở khu vực biên giới', 1, '18/8/5/31/31/3/4/19/7/24/25/30/'),
+(32, 'Hành chính trong lĩnh vực đất đai', 0, ''),
+(33, 'Thủ tục cấp đổi giấy chứng nhận quyền sử dụng đất quyền sở hữu nhà ở và tài sản khác gắn liền với đất theo hệ thống bản đồ mới', 32, '33'),
+(34, 'Thủ tục cấp đổi giấy chứng nhận quyền sử dụng đất quyền sở hữu nhà ở và tài sản khác gắn liền với đất do người sử dụng đất có nhu cầu ', 32, '34'),
+(35, 'Thủ tục cấp lại giấy chứng nhận quyền sử dụng đất quyền sở hữu nhà ở và tài sản khác gắn liền với đất do bị mất', 32, '35'),
+(36, 'Đăng ký biến động đất đai, tài sản gắn liền với đất do người được cấp giấy chứng nhận đổi giấy CMND, HK mới', 32, '36'),
+(37, 'Đăng ký biến động đất đai, tài sản gắn liền với đất do người được cấp giấy chứng nhận sai số CMND, ngày cấp giấy CMND, HK', 32, '37'),
+(38, 'Đăng ký biến động đất đai, tài sản gắn liền với đất do người được cấp giấy chứng nhận xóa hộ ', 32, '38'),
+(39, 'Đăng ký biến động đất đai, tài sản gắn liền với đất do điều chỉnh diện tích, số thửa, hình thể thửa đất', 32, '39'),
+(40, 'Chuyển nhượng quyền sử dung đất', 32, '40'),
+(41, 'Tặng, cho quyền sử dung đất', 32, '41'),
+(42, 'Thừa kế quyền sử dung đất', 32, '42'),
+(43, 'Cấp ban đầu quyền sử dung đất', 32, '43'),
+(44, 'Bổ sung tài sản gắn liền với đất', 32, '44');
 
 -- --------------------------------------------------------
 
@@ -333,8 +346,8 @@ INSERT INTO `mau_don` (`id`, `noi_dung`) VALUES
 (1, 'Không.'),
 (2, 'Chưa cập nhật.'),
 (3, '+ Phiếu yêu cầu chứng thực (mẫu số 31/PYC).<br>\r\n+ Di chúc (mẫu số 57/DC).\r\n'),
-(4, '+ Phiếu yêu cầu chứng thực (mẫu số 31/PYC), <br>\r\n+ Văn bản từ chối nhận tài sản thừa kế (mẫu số 60/VBTC).'),
-(5, '+ Phiếu yêu cầu chứng thực (mẫu số 31/PYC),<br>\r\n+ Văn bản từ chối nhận tài sản thừa kế (mẫu số 60/VBTC).'),
+(4, '+ Phiếu yêu cầu chứng thực (mẫu số 31/PYC) <br>\r\n+ Văn bản từ chối nhận tài sản thừa kế (mẫu số 60/VBTC).'),
+(5, '+ Phiếu yêu cầu chứng thực (mẫu số 31/PYC)<br>\r\n+ Văn bản từ chối nhận tài sản thừa kế (mẫu số 60/VBTC)'),
 (6, 'Phiếu yêu cầu chứng thực (mẫu số 31/PYC).'),
 (7, 'Tờ khai đăng ký khai sinh.'),
 (8, 'Tờ khai đăng ký lại việc sinh (đính kèm).'),
@@ -367,7 +380,7 @@ CREATE TABLE IF NOT EXISTS `thanh_phan` (
   `noi_dung` text NOT NULL,
   `note` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=45 ;
 
 --
 -- Dumping data for table `thanh_phan`
@@ -405,7 +418,19 @@ INSERT INTO `thanh_phan` (`id`, `noi_dung`, `note`) VALUES
 (29, '+ Tờ khai đăng ký nuôi con nuôi thực tế.<br>\r\n+ Bản sao Giấy chứng minh nhân dân và sổ hộ khẩu của người nhận con nuôi.<br>\r\n+ Bản sao Giấy chứng minh nhân dân hoặc Giấy khai sinh của người được nhận làm con nuôi.<br>\r\n+ Bản sao Giấy chứng nhận kết hôn của người nhận con nuôi, nếu có.<br>\r\n+ Giấy tờ, tài liệu khác để chứng minh về việc nuôi con nuôi, nếu có.', '01 bộ.'),
 (30, '- Tờ khai cấp Giấy xác nhận tình trạng hôn nhân (TP/HT-2013-TKXNHN).<br>\r\n- Bản sao một trong các giấy tờ để chứng minh về nhân thân như Giấy chứng minh nhân dân, Hộ chiếu hoặc giấy tờ hợp lệ thay thế.<br>\r\n- Bản sao sổ hộ khẩu hoặc sổ tạm trú của người yêu cầu.<br>\r\n- Trường hợp công dân Việt Nam đã ly hôn tại cơ quan có thẩm quyền của nước ngoài thì phải nộp Giấy xác nhận về việc ghi vào sổ hộ tịch việc ly hôn đã tiến hành ở nước ngoài theo quy định của pháp luật Việt Nam.', '01 bộ.'),
 (31, '- Tờ khai nhận cha, mẹ, con (theo mẫu quy định).<br>\r\n- Căn cứ chứng minh quan hệ cha con, mẹ con (nếu có).', '01 bộ.'),
-(32, '- Bản chính.<br>\r\n- Bản sao cần chứng thực. ', 'Tùy theo nhu cầu chứng thực của người dân (cơ quan thực hiện lưu 01 bản sao).');
+(32, '- Bản chính.<br>\r\n- Bản sao cần chứng thực. ', 'Tùy theo nhu cầu chứng thực của người dân (cơ quan thực hiện lưu 01 bản sao).'),
+(33, '+ Đơn đề nghị cấp lại, cấp đổi giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở và tài sản khác gắn liền với đất( mẫu số 10/ĐK).<br>\r\n+ Bản gốc giấy chứng nhận đã cấp.<br>\r\n+ Trích lục( trích đo) bản đồ địa chính<br>\r\n+ Biên bản thẩm tra ranh( nếu tăng giảm diện tích)', ''),
+(34, '+ Đơn đề nghị cấp lại, cấp đổi giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở và tài sản khác gắn liền với đất( mẫu số 10/ĐK).<br>\r\n+ Bản gốc giấy chứng nhận đã cấp.<br>\r\n+ Trích lục bản đồ địa chính.\r\n\r\n', ''),
+(35, '+ Đơn cớ mất có xác nhận của công an.<br>\r\n+ Giấy xác nhận đăng báo, đài truyền thanh.<br> \r\n+ Đơn đề nghị cấp lại, cấp đổi giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở và tài sản khác gắn liền với đất( mẫu số 10/ĐK).<br>\r\n+ Bản sao giấy chứng nhận đã cấp.<br>\r\n+ Thông báo niêm yết mất giấy của UBND trong thời gian 15 ngày.<br>\r\n+ Trích lục bản đồ địa chính.\r\n', ''),
+(36, '+ Đơn điều chỉnh.<br>\r\n+ Đơn đăng ký biến động đất đai, tài sản gắn liền với đất(Mẫu số 09/ĐK).\r\n', ''),
+(37, '+ Đơn điều chỉnh.<br>\r\n+ Đơn đăng ký biến động đất đai, tài sản gắn liền với đất(Mẫu số 09/ĐK).<br>\r\n+ Biên bản sai sót.\r\n', ''),
+(38, '+ Văn bản ủy quyền của những thành viên trong hộ khẩu trên 18 tuổi.<br>\r\n+ Đơn đăng ký biến động đất đai, tài sản gắn liền với đất(Mẫu số 09/ĐK).<br>\r\n+ Trích lục địa chính<br>\r\n+ Tờ khai lệ phí trước bạ<br>\r\n+ Tờ khai thuế thu nhập cá nhân.<br>\r\n', ''),
+(39, '+ Đơn điều chỉnh.<br>\r\n+ Biên bản sai sót.\r\n', ''),
+(40, '+ Hợp đồng (5) <br>\r\n+ Đơn đăng ký biến động đất đai, tài sản gắn liền với đất( Mẫu số 09/ĐK)<br>\r\n+ 2 tờ khai thuế lệ phí trước bạ ( mẫu số 01/LPTB)<br>\r\n+ 2 tờ khai thuế thu nhập cá nhân ( mẫu số 11/KK-TNCN)<br>\r\n+ Bản sao giấy CNQSDĐ<br>\r\n+ Trích lục( trích đo) bản đồ địa chính.<br>\r\n+ Giấy đăng ký kết hôn ( giấy xác nhận tình trạng hôn nhân)<br>\r\n', ''),
+(41, '+ Hợp đồng (5) <br>\r\n+ Đơn đăng ký biến động đất đai, tài sản gắn liền với đất( Mẫu số 09/ĐK)\r\n+ 2 tờ khai thuế lệ phí trước bạ ( mẫu số 01/LPTB)<br>\r\n+ 2 tờ khai thuế thu nhập cá nhân ( mẫu số 11/KK-TNCN)<br>\r\n+ Bản sao giấy CNQSDĐ<br>\r\n+ Trích lục( trích đo) bản đồ địa chính.\r\n+ Giấy đăng ký kết hôn ( giấy xác nhận tình trạng hôn nhân)<br>\r\n+ Giấy khai sinh ( đơn xác nhận mối quan hệ)		', ''),
+(42, '+ Đơn đăng ký thừ kế (5).<br>\r\n+ Đơn đăng ký biến động đất đai, tài sản gắn liền với đất( Mẫu số 09/ĐK)<br> \r\n+ VBPCDS thừa kế (5)<br>\r\n+ Giấy chứng tử<br>\r\n+ 2 tờ khai thuế lệ phí trước bạ ( mẫu số 01/LPTB)<br>\r\n+ 2 tờ khai thuế thu nhập cá nhân ( mẫu số 11/KK-TNCN)<br>\r\n+ Bản sao giấy CNQSDĐ<br>\r\n+ Trích lục( trích đo) bản đồ địa chính.\r\n', ''),
+(43, '+ Đơn đăng ký cấp giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở và tài sản khác gắn liền với đất theo mẫu số 04/ĐK.<br>\r\n+ Bảng tường trình nguồn gốc đất.<br>\r\n+ 2 tờ khai lệ phí trước bạ. ( mẫu số 01/LPTB).<br>\r\n+ 2 tờ khai tiền sử dụng đất.<br>\r\n+ 1 tờ khai diện tích đất ở.', ''),
+(44, '+ Đơn đăng ký cấp giấy chứng nhận quyền sử dụng đất, quyền sở hữu nhà ở và tài sản khác gắn liền với đất theo mẫu số 04/ĐK.(2)<br>\r\n+ Đơn đăng ký biến động đất đai, tài sản gắn liền với đất( Mẫu số 09/ĐK)<br> \r\n+ 1 giấy phép xây dựng<br>\r\n+ 2 tờ khai lệ phí trước bạ (mẫu số 01/LPTB)\r\n', '');
 
 -- --------------------------------------------------------
 
@@ -479,7 +504,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(200) NOT NULL,
   `pass` varchar(200) NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `level` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
@@ -487,8 +512,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `name`, `pass`, `date`) VALUES
-(1, 'hai', 'e727d1464ae12436e899a726da5b2f11d8381b26', '2015-09-17 18:56:19');
+INSERT INTO `user` (`id`, `name`, `pass`, `level`) VALUES
+(1, 'hai', 'e727d1464ae12436e899a726da5b2f11d8381b26', 1);
 
 -- --------------------------------------------------------
 
