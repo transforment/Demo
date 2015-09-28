@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 24, 2015 at 08:57 PM
+-- Generation Time: Sep 28, 2015 at 05:46 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -506,14 +506,18 @@ CREATE TABLE IF NOT EXISTS `user` (
   `pass` varchar(200) NOT NULL,
   `level` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `name`, `pass`, `level`) VALUES
-(1, 'hai', 'e727d1464ae12436e899a726da5b2f11d8381b26', 1);
+(1, 'hai', 'e727d1464ae12436e899a726da5b2f11d8381b26', 1),
+(2, 'admin1', 'e727d1464ae12436e899a726da5b2f11d8381b26', 1),
+(3, 'admin2', 'e727d1464ae12436e899a726da5b2f11d8381b26', 2),
+(4, 'admin3', 'e727d1464ae12436e899a726da5b2f11d8381b26', 3),
+(5, 'admin4', 'e727d1464ae12436e899a726da5b2f11d8381b26', 4);
 
 -- --------------------------------------------------------
 
