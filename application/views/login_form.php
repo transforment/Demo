@@ -2,55 +2,36 @@
 <div class="row" >
 	<?php 
 	echo form_open(''.base_url().'admin');?>
-	<?php echo form_label('Tên: ','name');
-	 echo form_input('name','','id="name"');?>
-<br>
+<table class="table">
+	<tr> 	
+		<td>Tên</td>
+		<td><?php 
+		$data1 = array(
+              'name'=>"name",'type'=>"text" ,
+              'cols' => "40",'rows' => '1','placeholder'=>"Nhập tên");
+		$data2 = array(
+              'name'=>"pass",'type'=>"password" ,
+              'size'  => '38','placeholder'=>"Nhập mật khẩu");
+		echo form_textarea($data1);?></td>
+	</tr>	
+	<tr> 	
+		<td>Mật khẩu</td>
+		<td><?php echo
+		form_password($data2);?></td>
 
-	 	<?php echo form_label('Password: ','pass');
-	 echo form_password('pass','','id="pass"');?>
-	
-
-<br>
-	 	<?php 
-	 echo form_submit('submit','Login');?>
-
-	<?php 
+	</tr>
+	<tr> 	
+		<td></td>
+		<td><?php echo
+		form_submit('submit','Đăng nhập','class="btn btn-primary"');?></td>
+	</tr>
+</table>
+<?php 
 	echo form_close('');?>
-<?php echo validation_errors(); ?>	
+<?php echo validation_errors(); 	
+if (isset($error)){
+    echo "<div class='error'>$error</div>";
+}?>
 </div>
 </div>
 
-<!--
-<div class="col-xs-9 col-md-10">
-	<div class="row" >
-<form class="form-horizontal">
-	<div class="form-group">
-		<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-		<div class="col-sm-4">
-			<input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-		<div class="col-sm-4">
-			<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-		</div>
-	</div>
-	<div class="form-group">
-		<div class="col-sm-offset-2 col-sm-4">
-			<div class="checkbox">
-				<label>
-					<input type="checkbox"> Remember me
-				</label>
-			</div>
-		</div>
-	</div>
-	<div class="form-group">
-		<div class="col-sm-offset-2 col-sm-4">
-			<button type="submit" class="btn btn-default">Sign in</button>
-		</div>
-	</div>
-</form>
-</div>
-</div>
--->

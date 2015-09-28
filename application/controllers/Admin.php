@@ -28,11 +28,22 @@ class Admin extends CI_Controller {
 				verify($this->input->post('name'),$this->input->post('pass'));
 				if($res!==FALSE){
 				$_SESSION['name_user']=$this->input->post('name');
-				echo $res->name;
-				redirect('add');
+				$query = $this->db->get('user');
+
+    			foreach($query->result_array() as $row){
+    			if ($row['name']==$_SESSION['name_user'])
+        		$level = $row['level']; 
+        		}
+				$_SESSION['level']=$level;
+				if($level==2)redirect('admin_phong_ban');
+					else if($level==3)
+						redirect('admin_tra_ho_so');
+							else redirect('home');
+				
 				}else{
 
-					//echo 'hhhhhh';
+					$data["error"]="Sai tên đang nhập hoặc sai mật khẩu";
+    				$this->load->view('login_form',$data);
 				}		
 
 

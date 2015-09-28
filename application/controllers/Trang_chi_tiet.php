@@ -76,7 +76,8 @@ if(count($mau_don_array)>1){
 			'h12' => '12/ Căn cứ pháp lý của thủ tục hành chính:',
 	
 		);
-		if (!isset($_SESSION['name_user'])){
+		if((!isset($_SESSION['name_user']))||
+			($_SESSION['level']!=1)){
 		$this->load->view('content_chitiet',array(
 		'node_map'=>$node_map
 		

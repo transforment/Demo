@@ -6,7 +6,8 @@ class Add extends CI_Controller {
 	{
 		parent::__construct();
 		session_start();
-		if (!isset($_SESSION['name_user'])){
+		if((!isset($_SESSION['name_user']))||
+			($_SESSION['level']!=4)){
 			redirect('home');
 		} else{
 

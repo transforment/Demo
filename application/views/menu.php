@@ -18,14 +18,25 @@
                         <span class="glyphicon glyphicon-file" aria-hidden="true"></span>  HÀNH CHÍNH ĐẤT ĐAI</a></li>
 
                 <?php 
-                 if (isset($_SESSION['name_user']))
-                    {
+                if((isset($_SESSION['name_user']))&&
+                    ($_SESSION['level']==2)){
+                  echo '<li><a href="'.base_url().'admin_phong_ban">
+                  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Hồ sơ cần xử lý</a></li>';
+                    } 
+                if((isset($_SESSION['name_user']))&&
+                    ($_SESSION['level']==3)){
+                  echo '<li><a href="'.base_url().'admin_tra_ho_so">
+                  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Hồ sơ cần trả dân</a></li>';
+                    }                                   
+                if((isset($_SESSION['name_user']))&&
+                    ($_SESSION['level']==4)){
                   echo '<li><a href="'.base_url().'add">
                   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> THÊM MỤC</a></li>';
                     echo ' <li><a href="'.base_url().'edit">
                      <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> SỬA MỤC</a></li>';
               
                     }
+
                     ?>
             </ul>
 

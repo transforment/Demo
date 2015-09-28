@@ -9,21 +9,21 @@ class Map extends CI_Model {
         $test=explode('/', $input);
         return $test;
     }
-    public function lay_ten_muc(){
+    public function lay_ten_muc($p_id){
     $query = $this->db->get('map');
     $array = array();
     foreach($query->result_array() as $row){
-    	if ($row['p_id']==1)
+    	if ($row['p_id']==$p_id)
         $array[] = $row['node_name']; 
         }
     return $array;
     }
-    public function lay_id(){
+    public function lay_id($p_id){
     $query = $this->db->get('map');
     $array = array();
     foreach($query->result_array() as $row)
         {
-        if ($row['p_id']==1)
+        if ($row['p_id']==$p_id)
            $array[] = $row['node_id']; 
         }
     return $array;
@@ -124,25 +124,6 @@ class Map extends CI_Model {
     }
 
 
-    public function lay_ten_muc2(){
-        $query = $this->db->get('map');
-        $array = array();
-        foreach($query->result_array() as $row){
-            if ($row['p_id']==32)
-                $array[] = $row['node_name'];
-        }
-        return $array;
-    }
-    public function lay_id2(){
-        $query = $this->db->get('map');
-        $array = array();
-        foreach($query->result_array() as $row)
-        {
-            if ($row['p_id']==32)
-                $array[] = $row['node_id'];
-        }
-        return $array;
-    }
 
 
 }
