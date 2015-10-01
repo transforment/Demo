@@ -13,6 +13,9 @@ class Trang_chi_tiet extends CI_Controller {
 	$this->load->view('header');
 	$this->load->view('menu');
 	$this->load->model('Map');
+	$this->load->helper('form');
+	$this->load->library('form_validation');
+	$this->load->model('Ho_so');
 
 	$this->load->model('trinh_tu');//1
 	$this->load->model('thoi_gian');//
@@ -54,10 +57,7 @@ $mau_don_after = trim(strip_tags($mau_don_data));
 $mau_don_after=str_replace(".","",$mau_don_after);
 $mau_don_array=explode('+', $mau_don_after);
 
-if(count($mau_don_array)>1){
-//	for ($i=1;$i<count($mau_don_array),$i++)
-}
-//echo html_escape($mau_don_array[1]);
+
 		$data=array(
 
 			'h1' => '1/ Trình tự thực hiện:',
@@ -97,18 +97,80 @@ if(count($mau_don_array)>1){
 		,'data'=>$data
 		));
 		} else{
+
+	//$this->form_validation->set_rules('name','','required');
+//	$this->form_validation->set_rules('cmnd','','callback_is_num');
+		$config = array(
+        array(
+                'field' => 'name',
+                'label' => 'Username',
+                'rules' => 'required',
+
+                 'errors' => array(
+                 'required' => 'Không được để trống ',
+                ),
+        ),
+        array(
+                'field' => 'cmnd',
+                'label' => 'Password',
+                'rules' => 'required|callback_is_num',
+                'errors' => array(
+                 'required' => 'Không được để trống ',
+                ),
+        ),
+
+	);
+
+	$this->form_validation->set_rules($config);
+
+	if($this->form_validation->run()){
+
+	$date_f= $this->input->post('date_f');
+	$list=$this->Ho_so->lay_note($date_f); 
+	$p_id=$this->input->post('p_id');
+	$node_id=$this->input->post('node_id');
+	$p_id=$this->Ho_so->format_num($p_id); 
+	$node_id=$this->Ho_so->format_num($node_id); 
+	if (($list[3]=='pm')&&($list[0]!=12)) $list[0]=$list[0]+12;
+	$mshs=$list[0];
+	for ($i=1;$i<count($list);$i++){
+	if($i!=3)
+	$mshs=$mshs.''. $list[$i].'';}
+	$mshs=$mshs.''. $node_id.'';
+	$mshs=$mshs.''. $p_id.'';
+	$data = array(
+   'mshs' => $mshs,
+   'name' => $this->input->post('name'),
+   'cmnd' => $this->input->post('cmnd'),
+   'date' => $this->input->post('date'),  
+   'status' => '0',
+  	'note' => $this->input->post('note')  
+	);
+	$this->Ho_so->add_ho_so($data); 
+	redirect('Ho_so_da_tao');
+	}
+
+
+
 		$this->load->view('content_chitiet_admin'
 			,array(
 				'node_map'=>$node_map
-				,'data'=>$data
 				,'le_phi_data'=>$le_phi_data
-		,'thanh_phan_data'=>$thanh_phan_data
-		,'thanh_phan_data_1'=>$thanh_phan_data_1
+				,'thanh_phan_data'=>$thanh_phan_data
+				,'thanh_phan_data_1'=>$thanh_phan_data_1
 		));
 		}
 
-	$this->load->view('footer');
+		$this->load->view('footer');
 	}
+		public function is_num($input){
 
+			if(!is_numeric($input)){
+				$this->form_validation->set_message('is_num','CMND phải là số');
+				return FALSE;
+			}
+			return TRUE;
+
+		}
 	
 }

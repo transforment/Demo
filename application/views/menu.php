@@ -19,6 +19,11 @@
 
                 <?php 
                 if((isset($_SESSION['name_user']))&&
+                    ($_SESSION['level']==1)){
+                  echo '<li><a href="'.base_url().'Ho_so_da_tao">
+                  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Hồ sơ đã nhận</a></li>';
+                    } 
+                if((isset($_SESSION['name_user']))&&
                     ($_SESSION['level']==2)){
                   echo '<li><a href="'.base_url().'admin_phong_ban">
                   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Hồ sơ cần xử lý</a></li>';
@@ -46,16 +51,23 @@
             if (isset($_SESSION['name_user']))
              {
                 echo '<a class="text_user">Chào  '.$_SESSION['name_user'].'</a>';
-                echo '<button type="button" class="btn btn-danger btn-log" onClick=location.href="'.base_url().'admin/logout">
+                echo '<button type="button" class="btn btn-danger btn-log" onClick=location.href="'.base_url().'Admin/logout">
                       <span class="glyphicon glyphicon-off " aria-hidden="true"></span> Đăng xuất</button>';
              }
              ?>
 
             </div>
         </div><!-- /.nav-collapse -->
-        <form class="col-md-12 pad-search mar" role="search" method="post"action="<?php echo base_url();?>phan_muc/index/7">
+        <form class="col-md-6 col-xs-12 pad-search mar" role="search" method="post"action="<?php echo base_url();?>phan_muc/index/7">
                 <div class="input-group">
                     <input type="text" class="form-control" name ="key_search" placeholder="Gõ tên giấy tờ muốn cấp">
+                    <span class="input-group-btn"><button class="btn btn-default" type="submit">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span></button></span>
+                </div><!-- /input-group -->
+        </form>
+        <form class="col-md-6 col-xs-12 pad-search mar" role="search" method="post"action="<?php echo base_url();?>Xem_ho_so">
+                <div class="input-group">
+                    <input type="text" class="form-control" name ="num_search" placeholder="Gõ mã số hồ sơ">
                     <span class="input-group-btn"><button class="btn btn-default" type="submit">
                     <span class="glyphicon glyphicon-search" aria-hidden="true"></span></button></span>
                 </div><!-- /input-group -->

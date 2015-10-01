@@ -14,7 +14,7 @@ class Admin extends CI_Controller {
 			$this->load->view('header');
 			$this->load->view('menu');
 		if (isset($_SESSION['name_user'])){
-			redirect('add');
+			redirect('Home');
 		}
 			$this->load->helper('form');
 			$this->load->library('form_validation');
@@ -46,22 +46,15 @@ class Admin extends CI_Controller {
     				$this->load->view('login_form',$data);
 				}		
 
-
-
 			}else{
 
 			}
-
-
 			$this->load->view('login_form');
 			$this->load->view('footer');
 
 	}
 		public function logout()
 	{
-			$this->load->view('header');
-			$this->load->view('menu');
-			$this->load->helper('form');
 		session_destroy();
 		redirect('home');
 	}
