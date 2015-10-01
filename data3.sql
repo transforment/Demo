@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 28, 2015 at 05:46 PM
+-- Generation Time: Oct 01, 2015 at 03:41 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -190,6 +190,35 @@ INSERT INTO `giai_quyet` (`id`, `noi_dung`) VALUES
 (30, '14 ngày làm việc kể từ ngày nhận đủ hồ sơ hợp lệ (trừ thời gian hồ sơ chuyển bưu điện).'),
 (31, '25 ngày làm việc kề từ ngày nhận đủ hồ sơ hợp lệ.'),
 (32, 'Trong ngày làm việc. <br>\r\n+ Trường hợp yêu cầu chứng thực với số lượng lớn thì việc chứng thực có thể được hẹn lại để chứng thực sau nhưng không quá 2 ngày làm việc.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ho_so`
+--
+
+CREATE TABLE IF NOT EXISTS `ho_so` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `mshs` varchar(200) NOT NULL,
+  `name` varchar(200) NOT NULL,
+  `cmnd` int(11) NOT NULL,
+  `date` varchar(200) NOT NULL,
+  `status` int(11) NOT NULL,
+  `note` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+
+--
+-- Dumping data for table `ho_so`
+--
+
+INSERT INTO `ho_so` (`id`, `mshs`, `name`, `cmnd`, `date`, `status`, `note`) VALUES
+(3, '244334011020150301', 'hai', 222222222, '12:43:34pm 01/10/2015', 4, ''),
+(4, '124622011020150401', 'hai1', 333333333, '12:46:22pm 01/10/2015', 3, ''),
+(5, '125009011020152301', 'hai2', 444444444, '12:50:09pm 01/10/2015', 0, ''),
+(6, '173822011020150401', 'hai3', 111111111, '05:38:22pm 01/10/2015', 3, ''),
+(7, '174007011020151801', 'hai4', 234123453, '05:40:07pm 01/10/2015', 1, ''),
+(8, '174107011020150301', 'hai5', 394858282, '05:41:07pm 01/10/2015', 0, '');
 
 -- --------------------------------------------------------
 
