@@ -79,7 +79,7 @@
 <div class="pad" id="bodykkk">
     <div class="col-xs-3 col-md-2"id='cssmenu'>
     <div id="sidebar-wrapper">
-         <button type="button" class="btn btn-primary mar" onclick="goBack()">
+         <button type="button" class="btn btn-danger mar" onclick="goBack()">
             <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Về trang trước</button>
         <div id='cssmenu'>
             <ul>

@@ -6,7 +6,11 @@ class Hanh_chinh_dat_dai extends CI_Controller {
 	{
 		parent::__construct();
 		session_start();
-
+		$this->load->library('breadcrumbs');
+		$this->breadcrumbs->push('Section', '/section');
+		$this->breadcrumbs->push('Page', '/section/page');
+		$this->breadcrumbs->unshift('Home', '/');
+		$this->breadcrumbs->show();
 	}
 	public function index()
 	{

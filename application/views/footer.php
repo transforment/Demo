@@ -1,7 +1,5 @@
-</div><!--body-->
-
+    </div><!--body-->
 </div><!--container-->
-
 
 <footer class="footer">
     <div class="container">
@@ -12,21 +10,17 @@
     </div>
 </footer>
 
-
 <button type="button" class="btn btn-danger back-to-top">Lên đầu trang</button>
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
+
 <script src="<?php echo base_url(); ?>js/jquery-2.1.4.min.js"></script>
 <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
 <script src="<?php echo base_url(); ?>js/masonry.pkgd.min.js"></script>
 <script src="<?php echo base_url(); ?>js/jquery-scrolltofixed-min.js"></script>
 <script src="<?php echo base_url(); ?>js/script.js"></script>
-
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="<?php echo base_url(); ?>js/jquery.jtruncate.pack.js"></script>
 <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
-<script type="text/javascript">
+<script>
 
     $('.row').masonry({
         // options
@@ -34,7 +28,7 @@
     });
 
     function goBack() {
-        window.history.back();
+        history.back();
     }
 
     jQuery(document).ready(function() {
@@ -63,8 +57,11 @@
         $('[data-toggle="tooltip"]').tooltip({
             delay: { "show": 500}
         })
-    })
+    });
 
+    $('.truncate').jTruncate({
+        length: 70,
+    });
 </script>
 
 </body>

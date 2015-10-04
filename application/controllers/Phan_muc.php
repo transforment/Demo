@@ -6,11 +6,14 @@ class Phan_muc extends CI_Controller {
 	{
 		parent::__construct();
 		session_start();
-
+		$this->load->library('breadcrumbs');
+		$this->breadcrumbs->push('Section', '/section');
+		$this->breadcrumbs->push('Page', '/section/page');
+		$this->breadcrumbs->unshift('Home', '/');
+		$this->breadcrumbs->show();
 	}
 	public function index($n=1)
 	{
-
 		$this->load->view('header');
 		$this->load->view('menu');
 		$this->load->model('Map');
