@@ -1,8 +1,10 @@
 <div class="col-xs-9 col-md-10 pad2" id="chi_tiet">
     <ul id="breadcrumb">
-        <li><a href="/Demo/home"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a> </li>
-        <li><a href="/Demo/hanh_chinh_tu_phap"><span class="glyphicon glyphicon-file" aria-hidden="true"></span> Hành chính tư pháp</a></li>
-        <li><a href="/Demo/phan_muc/index/$id_muc"><span class="glyphicon glyphicon-file" aria-hidden="true"></span> $ten_muc</a></li>
+    <?php
+    echo'<li><a href="'.site_url('home').'"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a> </li>
+        <li><a href="'.site_url('hanh_chinh_tu_phap').'"><span class="glyphicon glyphicon-file" aria-hidden="true"></span> Hành chính tư pháp</a></li>
+        <li><a href=""><span class="glyphicon glyphicon-file" aria-hidden="true"></span>'. $str.'</a></li>
+   ';?>
     </ul>
     <div class="col-xs-12 col-md-12 pad">
 

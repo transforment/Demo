@@ -19,8 +19,8 @@ class Edit extends CI_Controller {
 		$this->load->view('menu');
 		$this->load->model('Map');
 		$this->load->library('table');
- 		$data = $this->Map->lay_ten_muc(); 
- 		$num = $this->Map->lay_id(); 
+ 		$data = $this->Map->lay_ten_muc(1); 
+ 		$num = $this->Map->lay_id(1); 
 		$com = array_combine($num, $data);
 			
 		$this->load->view('edit_view_pre',array(
@@ -120,8 +120,8 @@ class Edit extends CI_Controller {
 		$this->load->model('Map');
 		$this->load->model('mau_don');
 		$this->load->library('table');
- 		$data = $this->Map->lay_ten_muc(); 
- 		$num = $this->Map->lay_id(); 
+ 		$data = $this->Map->lay_ten_muc(1); 
+ 		$num = $this->Map->lay_id(1); 
 		$com = array_combine($num, $data);
 		//$id_node=$this->input->post('publication_id');
 

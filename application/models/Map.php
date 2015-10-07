@@ -73,12 +73,12 @@ class Map extends CI_Model {
         $query = $this->db->get('map');
         $array=array();
         foreach($query->result_array() as $row){
-            $pos2 = strpos($row['node_name'], $data[2]);
-            $pos1 = strpos($row['node_name'], $data[1]);
+            $pos2 = strpos($row['node_name'], strtolower($data[2]));
+            $pos1 = strpos($row['node_name'], strtolower($data[1]));
             $pos  = strpos($row['node_name'], $data[0]);
-            $pos3 = strpos($row['node_name'], $data[3]);
-            $pos4 = strpos($row['node_name'], $data[4]);
-            $pos5 = strpos($row['node_name'], $data[5]);
+            $pos3 = strpos($row['node_name'],strtolower( $data[3]));
+            $pos4 = strpos($row['node_name'], strtolower($data[4]));
+            $pos5 = strpos($row['node_name'], strtolower($data[5]));
                 if (($pos === false)&&($pos1 === false)&&
                     ($pos2 === false)&&($pos3 === false)&&
                     ($pos4 === false)&&($pos5 === false)&&
@@ -93,12 +93,12 @@ class Map extends CI_Model {
     $query = $this->db->get('map');
     $array=array();
     foreach($query->result_array() as $row){
-        $pos2 = strpos($row['node_name'], $data[2]);
-        $pos1 = strpos($row['node_name'], $data[1]);
+        $pos2 = strpos($row['node_name'], strtolower($data[2]));
+        $pos1 = strpos($row['node_name'], strtolower($data[1]));
         $pos  = strpos($row['node_name'], $data[0]);
-        $pos3 = strpos($row['node_name'], $data[3]);
-        $pos4 = strpos($row['node_name'], $data[4]);
-        $pos5 = strpos($row['node_name'], $data[5]);
+        $pos3 = strpos($row['node_name'], strtolower($data[3]));
+        $pos4 = strpos($row['node_name'], strtolower($data[4]));
+        $pos5 = strpos($row['node_name'], strtolower($data[5]));
         if (($pos === false)&&($pos1 === false)&&
             ($pos2 === false)&&($pos3 === false)&&
             ($pos4 === false)&&($pos5 === false)&&

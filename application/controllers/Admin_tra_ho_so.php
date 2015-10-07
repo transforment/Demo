@@ -7,7 +7,8 @@ class Admin_tra_ho_so extends CI_Controller {
 		parent::__construct();
 		session_start();
 		if((!isset($_SESSION['name_user']))||
-			($_SESSION['level']!=3)){
+			(($_SESSION['level']!=12)&&
+			($_SESSION['level']!=13))){
 			redirect('home');
 		}
 	}
@@ -20,7 +21,10 @@ class Admin_tra_ho_so extends CI_Controller {
 		$this->load->view('menu');
  		$query = $this->db->get_where('ho_so', array('status' => 3));
  		$query2 = $this->db->get_where('ho_so', array('status' => 4));
-		$this->load->view('tra_hs_view',array('query'=>$query,'query2'=>$query2,));
+		$this->load->view('tra_hs_view',array(
+			'query'=>$query,
+			'query2'=>$query2,
+			));
 		$this->load->view('footer');
 	}
 	public function edit($id=3){

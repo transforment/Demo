@@ -12,7 +12,7 @@
 
     <link href="<?php echo base_url();?>css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url();?>css/style.css" rel="stylesheet">
-
+  
     <script src="<?php echo base_url(); ?>js/jquery-2.1.4.min.js"></script>
     <script src="../../assets/js/ie8-responsive-file-warning.js"></script>
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>

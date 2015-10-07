@@ -7,7 +7,8 @@ class Admin_phong_ban extends CI_Controller {
 		parent::__construct();
 		session_start();
 		if((!isset($_SESSION['name_user']))||
-			($_SESSION['level']!=2)){
+			(($_SESSION['level']!=21)&&
+			($_SESSION['level']!=22))){
 			redirect('home');
 		}
 	}

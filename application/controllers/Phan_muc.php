@@ -38,7 +38,8 @@ class Phan_muc extends CI_Controller {
 				$f="Hộ tịch";
 				break;
 			case '7':
-				$f=$this->input->post('key_search');;
+				$f=$this->input->post('key_search');
+				if ($f=="") $f=" ";
 				break;
 
 			default:
@@ -47,11 +48,13 @@ class Phan_muc extends CI_Controller {
 		}
 		$data1=array(
 			 'Chứng thực',
-			'khai sinh',
-			 'khai tử',
-			'kết hôn',
-			'giám hộ',
-			'hộ tịch'
+			'Khai sinh',
+			 'Khai tử',
+			'Kết hôn',
+			'Giám hộ',
+			'Hộ tịch',
+			'Search',
+			'Mục còn lại'
 		);
 		//$f="Chứng thực";
 		if($f==" "){
@@ -68,7 +71,11 @@ $text = mb_convert_encoding(' có cục ', 'UTF-8', 'UTF-8');
 $cleaner_input = trim(strip_tags(' ea bó  j . '));
 //echo 'dd'.$text.'dd';
 //echo 'aa'.$cleaner_input.'dd';
-		$this->load->view('content_phan_muc',array('com'=>$com,));
+		$ndata=$n-1;
+		if ($ndata>6)$ndata=7;
+		$this->load->view('content_phan_muc',array(
+			'com'=>$com,
+			'data1'=>$data1[$ndata]));
 		$this->load->view('footer');
 	}
 

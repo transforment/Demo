@@ -4,6 +4,9 @@ class User extends CI_Model {
 	public $id;
 	public $name;
 	public $pass;
+	public $hoten;
+	public $level;
+	
 	public function verify($name,$pass){
 		$q=new user();
 

@@ -7,7 +7,9 @@ class Ho_so_da_tao extends CI_Controller {
 		parent::__construct();
 		session_start();
 		if((!isset($_SESSION['name_user']))||
-			($_SESSION['level']!=1)){
+			(($_SESSION['level']!=12)&&
+			($_SESSION['level']!=11)))
+		{
 			redirect('home');
 		}
 	}

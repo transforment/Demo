@@ -19,17 +19,17 @@
 
                 <?php 
                 if((isset($_SESSION['name_user']))&&
-                    ($_SESSION['level']==1)){
+                    (($_SESSION['level']==11)||($_SESSION['level']==12))){
                   echo '<li><a href="'.base_url().'Ho_so_da_tao">
                   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Hồ sơ đã nhận</a></li>';
                     } 
                 if((isset($_SESSION['name_user']))&&
-                    ($_SESSION['level']==2)){
+                     (($_SESSION['level']==21)||($_SESSION['level']==22))){
                   echo '<li><a href="'.base_url().'admin_phong_ban">
                   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Hồ sơ cần xử lý</a></li>';
                     } 
                 if((isset($_SESSION['name_user']))&&
-                    ($_SESSION['level']==3)){
+                     (($_SESSION['level']==13)||($_SESSION['level']==12))){
                   echo '<li><a href="'.base_url().'admin_tra_ho_so">
                   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Hồ sơ cần trả dân</a></li>';
                     }                                   
@@ -41,7 +41,13 @@
                      <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> SỬA MỤC</a></li>';
               
                     }
-
+                if((isset($_SESSION['name_user']))&&
+                    ($_SESSION['level']==100))
+                {
+                  echo '<li><a href="'.base_url().'Quan_ly_nhan_su">
+                  <span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Quản lý nhân sự</a></li>';
+             
+                    }
                     ?>
             </ul>
 
@@ -50,7 +56,8 @@
             <?php 
             if (isset($_SESSION['name_user']))
              {
-                echo '<a class="text_user">Chào  '.$_SESSION['name_user'].'</a>';
+                echo '<a href="'.site_url('Profile').'"  class="text_user"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                '.$_SESSION['name_user'].'</a>';
                 echo '<button type="button" class="btn btn-danger btn-log" onClick=location.href="'.base_url().'Admin/logout">
                       <span class="glyphicon glyphicon-off " aria-hidden="true"></span> Đăng xuất</button>';
              }

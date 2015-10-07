@@ -12,8 +12,10 @@ class Trang_chi_tiet extends CI_Controller {
 		$this->breadcrumbs->unshift('Home', '/');
 		$this->breadcrumbs->show();
 	}
-	public function index($number=2)
+	public function index($str='',$number=2)
 	{
+	header('Content-Type: text/html; charset=utf-8');
+	ini_set('default_charset', 'utf-8');
 	$this->load->view('header');
 	$this->load->view('menu');
 	$this->load->model('Map');
@@ -57,10 +59,18 @@ class Trang_chi_tiet extends CI_Controller {
 	$can_cu_data=$this->can_cu->array_trans($list_chi_tiet[11]);
 
 
-$mau_don_after = trim(strip_tags($mau_don_data));
-$mau_don_after=str_replace(".","",$mau_don_after);
-$mau_don_array=explode('+', $mau_don_after);
-
+	$mau_don_after = trim(strip_tags($mau_don_data));
+	$mau_don_after=str_replace(".","",$mau_don_after);
+	$mau_don_array=explode('+', $mau_don_after);
+	//$str=str_replace("%20"," ",$str);
+	if ($str=='Ch%E1%BB%A9ng%20th%E1%BB%B1c')$str='Chứng thực';
+	else if ($str=='Khai%20sinh')$str='Khai sinh';
+	else if ($str=='Khai%20t%E1%BB%AD')$str='Khai tử';
+	else if ($str=='K%E1%BA%BFt%20h%C3%B4n')$str='Kết hôn';
+	else if ($str=='Gi%C3%A1m%20h%E1%BB%99')$str='Giám hộ';
+	else if ($str=='H%E1%BB%99%20t%E1%BB%8Bch')$str='Hộ tịch';
+	else if ($str=='Search')$str='Kết quả tìm kiếm';
+	else $str='Mục còn lại';
 
 		$data=array(
 
@@ -80,8 +90,10 @@ $mau_don_array=explode('+', $mau_don_after);
 			'h12' => '12/ Căn cứ pháp lý của thủ tục hành chính:',
 	
 		);
+		
 		if((!isset($_SESSION['name_user']))||
-			($_SESSION['level']!=1)){
+			(($_SESSION['level']!=12)&&
+			($_SESSION['level']!=11))){
 		$this->load->view('content_chitiet',array(
 		'node_map'=>$node_map
 		
@@ -99,6 +111,8 @@ $mau_don_array=explode('+', $mau_don_after);
 		,'yeu_cau_data'=>$yeu_cau_data
 		,'can_cu_data'=>$can_cu_data
 		,'data'=>$data
+		,'str'=>$str
+
 		));
 		} else{
 
@@ -156,18 +170,19 @@ $mau_don_array=explode('+', $mau_don_after);
 
 
 
-		$this->load->view('content_chitiet_admin'
+	$this->load->view('content_chitiet_admin'
 			,array(
 				'node_map'=>$node_map
 				,'le_phi_data'=>$le_phi_data
 				,'thanh_phan_data'=>$thanh_phan_data
 				,'thanh_phan_data_1'=>$thanh_phan_data_1
+				,'str'=>$str
 		));
 		}
 
 		$this->load->view('footer');
 	}
-		public function is_num($input){
+	public function is_num($input){
 
 			if(!is_numeric($input)){
 				$this->form_validation->set_message('is_num','CMND phải là số');

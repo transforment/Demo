@@ -35,10 +35,8 @@ class Admin extends CI_Controller {
         		$level = $row['level']; 
         		}
 				$_SESSION['level']=$level;
-				if($level==2)redirect('admin_phong_ban');
-					else if($level==3)
-						redirect('admin_tra_ho_so');
-							else redirect('home');
+			
+				redirect('home');
 				
 				}else{
 
