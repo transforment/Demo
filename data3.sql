@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 01, 2015 at 03:41 PM
+-- Generation Time: Oct 07, 2015 at 08:09 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -213,7 +213,7 @@ CREATE TABLE IF NOT EXISTS `ho_so` (
 --
 
 INSERT INTO `ho_so` (`id`, `mshs`, `name`, `cmnd`, `date`, `status`, `note`) VALUES
-(3, '244334011020150301', 'hai', 222222222, '12:43:34pm 01/10/2015', 4, ''),
+(3, '244334011020150301', 'hai', 222222222, '12:43:34pm 01/10/2015', 5, ''),
 (4, '124622011020150401', 'hai1', 333333333, '12:46:22pm 01/10/2015', 3, ''),
 (5, '125009011020152301', 'hai2', 444444444, '12:50:09pm 01/10/2015', 0, ''),
 (6, '173822011020150401', 'hai3', 111111111, '05:38:22pm 01/10/2015', 3, ''),
@@ -267,7 +267,7 @@ CREATE TABLE IF NOT EXISTS `le_phi` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `noi_dung` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
 
 --
 -- Dumping data for table `le_phi`
@@ -277,19 +277,20 @@ INSERT INTO `le_phi` (`id`, `noi_dung`) VALUES
 (1, 'Lệ phí chứng thực.<br>\r\nMức phí: 2.000 đồng/trang, từ trang thứ 3 trở lên thì thu 1.000 đồng/trang nhưng tối đa không quá 100.000 đồng/bản.'),
 (2, 'Chưa cập nhật.'),
 (3, '+ Lệ phí chứng thực di chúc.<br>\r\n+ Mức phí: 20.000 đồng/bản di chúc\r\n'),
-(4, '+ Lệ phí chứng thực. <br>\r\n+ Mức phí: 10.000đ.'),
-(5, 'Mức phí: 10.000đ.'),
+(4, '+ Lệ phí chứng thực. <br>\r\n+ Mức phí: 10.000 đồng.'),
+(5, 'Mức phí: 10.000 đồng.'),
 (6, 'Mức phí: 10.000 đồng.'),
 (7, 'Không.'),
 (8, '+ Lệ phí xác nhận các giấy tờ hộ tịch.\r\n+ Mức phí: 5.000 đồng/bản.'),
 (9, '+ Lệ phí đăng ký việc giám hộ.<br>\r\n+ Mức phí: 5.000 đồng/trường hợp.'),
 (10, '+ Lệ phí đăng ký chấm dứt, thay đổi việc giám hộ.<br>\r\n+ Mức phí: 5.000 đồng/trường hợp.'),
-(11, '+ Lệ phí nhận cha, mẹ, con.<br>\r\n+ Mức phí: 10.000 đồng/trường hợp.<br>\r\n- Tên mẫu đơn, mẫu tờ khai: (đính kèm).<br>\r\n+ Tờ khai đăng ký việc nhận con.<br>\r\n+ Tờ khai đăng ký việc nhận cha, mẹ (Dùng cho trường hợp cha/mẹ/người giám hộ nhận mẹ/cha cho con chưa thành niên hoặc đã thành niên nhưng mất năng lực hành vi dân sự).<br>\r\n+ Tờ khai đăng ký việc nhận cha, mẹ (Dùng cho trường hợp con đã thành niên nhận cha, mẹ).'),
-(12, '400.000đ/trường hợp.<br>\r\n	Miễn lệ phí: Đối với trường hợp cha dượng hoặc mẹ kế nhận con riêng của vợ hoặc chồng làm con nuôi; cô, cậu, dì, chú, bác ruột nhận cháu làm con nuôi; trẻ em khuyết tật, trẻ em mắc bệnh hiểm nghèo: bị sứt môi hở hàm ếch, trẻ em bị mù một hoặc cả hai mắt, trẻ em bị câm điếc, trẻ em bị khoèo chân, tay, trẻ em không có ngón hoặc bàn chân, tay, trẻ em nhiễm HIV, trẻ em mắc các bệnh về tim, trẻ em bị thoát vị rốn, bẹn, bụng, trẻ em không có hậu môn hoặc bộ phận sinh dục, trẻ em bị các bệnh về máu, trẻ em mắc bệnh cần điều trị cả đời, trẻ em bị khuyết tật khác hoặc mắc bệnh hiểm nghèo khác mà cơ hội được nhận làm con nuôi bị hạn chế và việc nuôi con nuôi ở vùng sâu, vùng xa.'),
+(11, '+ Lệ phí nhận cha, mẹ, con.<br>\r\n+ Mức phí: 10.000 đồng/trường hợp.<br>\r\n'),
+(12, 'Mức phí: 400.000 đồng/trường hợp.<br>\r\nMiễn lệ phí: Đối với trường hợp cha dượng hoặc mẹ kế nhận con riêng của vợ hoặc chồng làm con nuôi; cô, cậu, dì, chú, bác ruột nhận cháu làm con nuôi; trẻ em khuyết tật, trẻ em mắc bệnh hiểm nghèo: bị sứt môi hở hàm ếch, trẻ em bị mù một hoặc cả hai mắt, trẻ em bị câm điếc, trẻ em bị khoèo chân, tay, trẻ em không có ngón hoặc bàn chân, tay, trẻ em nhiễm HIV, trẻ em mắc các bệnh về tim, trẻ em bị thoát vị rốn, bẹn, bụng, trẻ em không có hậu môn hoặc bộ phận sinh dục, trẻ em bị các bệnh về máu, trẻ em mắc bệnh cần điều trị cả đời, trẻ em bị khuyết tật khác hoặc mắc bệnh hiểm nghèo khác mà cơ hội được nhận làm con nuôi bị hạn chế và việc nuôi con nuôi ở vùng sâu, vùng xa.'),
 (13, 'Không'),
 (14, '+ Lệ phí cấp bản sao giấy tờ hộ tịch. <br>\r\n+ Mức phí: 3.000 đồng/bản.'),
 (15, '+ Lệ phí: Cấp giấy xác nhận tình trạng hôn nhân.<br>\r\n+ Mức phí: 5.000 đồng/bản.'),
-(16, '+ Lệ phí chứng thực. <br>\r\n+ Mức phí: 2.000 đồng/trang, từ trang thứ 3 trở lên thì thu 1.000 đồng/trang nhưng tối đa không quá 100.000 đồng/bản.');
+(16, '+ Lệ phí chứng thực. <br>\r\n+ Mức phí: 2.000 đồng/trang, từ trang thứ 3 trở lên thì thu 1.000 đồng/trang nhưng tối đa không quá 100.000 đồng/bản.'),
+(17, '+ Lệ phí nhận cha, mẹ, con.<br>\r\n+ Mức phí: 10.000 đồng/trường hợp.<br>\r\n');
 
 -- --------------------------------------------------------
 
@@ -329,7 +330,7 @@ INSERT INTO `map` (`node_id`, `node_name`, `p_id`, `note`) VALUES
 (17, 'Cấp giấy xác nhận tình trạng hôn nhân', 1, '12/6/1/17/18/3/3/10/8/13/15/19/'),
 (18, 'Đăng ký việc giám hộ', 1, '13/4/1/18/19/3/1/11/9/14/16/20/'),
 (19, 'Đăng ký chấm dứt, thay đổi việc giám hộ ', 1, '13/4/1/19/20/3/1/11/10/15/17/21/'),
-(20, 'Đăng ký việc nhận cha, mẹ, con', 1, '13/4/1/20/21/3/1/12/11/16/18/22/'),
+(20, 'Đăng ký việc nhận cha, mẹ, con', 1, '13/4/1/20/21/3/1/11/17/26/18/22/'),
 (21, 'Đăng ký việc nuôi con nuôi giữa công dân Việt Nam với nhau đang thường trú ở trong nước', 1, '14/4/1/21/22/3/1/13/12/17/19/23/'),
 (22, 'Đăng ký lại việc nuôi con nuôi giữa công dân Việt Nam với nhau đang thường trú ở trong nước ', 1, '14/4/1/22/23/3/1/14/13/18/20/23/'),
 (23, 'Điều chỉnh nội dung trong sổ hộ tịch và các giấy tờ hộ tịch khác', 1, '15/7/6/23/24/3/1/15/7/1/21/24/'),
@@ -365,7 +366,7 @@ CREATE TABLE IF NOT EXISTS `mau_don` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `noi_dung` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
 
 --
 -- Dumping data for table `mau_don`
@@ -396,7 +397,8 @@ INSERT INTO `mau_don` (`id`, `noi_dung`) VALUES
 (22, 'Tờ khai cấp Giấy xác nhận tình trạng hôn nhân'),
 (23, 'Tờ khai cấp Giấy xác nhận tình trạng hôn nhân (TP/HT-2013-TKXNHN).'),
 (24, '+ Tờ khai đăng ký việc nhận con (TP/HT-2012-TKCMC.1).<br>\r\n+ Tờ khai đăng ký việc nhận cha, mẹ (dùng cho trường hợp cha/mẹ/người giám hộ nhận cha mẹ cho con chưa thành niên hoặc đã thành niên nhưng mất năng lực hành vi dân sự)(TP/HT-2012-TKCMC.2).<br>\r\n+ Tờ khai đăng ký việc nhận cha, mẹ (dùng cho trường hợp con đã thành niên nhận cha, mẹ)(TP/HT-2012-TKCMC.3).'),
-(25, 'KHÔNG');
+(25, 'KHÔNG'),
+(26, '+ Tờ khai đăng ký việc nhận con.<br>\r\n+ Tờ khai đăng ký việc nhận cha, mẹ (Dùng cho trường hợp cha/mẹ/người giám hộ nhận mẹ/cha cho con chưa thành niên hoặc đã thành niên nhưng mất năng lực hành vi dân sự).<br>\r\n+ Tờ khai đăng ký việc nhận cha, mẹ (Dùng cho trường hợp con đã thành niên nhận cha, mẹ).');
 
 -- --------------------------------------------------------
 
@@ -531,22 +533,27 @@ INSERT INTO `trinh_tu` (`id`, `noi_dung`) VALUES
 
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `hoten` varchar(200) NOT NULL,
   `name` varchar(200) NOT NULL,
   `pass` varchar(200) NOT NULL,
   `level` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `name`, `pass`, `level`) VALUES
-(1, 'hai', 'e727d1464ae12436e899a726da5b2f11d8381b26', 1),
-(2, 'admin1', 'e727d1464ae12436e899a726da5b2f11d8381b26', 1),
-(3, 'admin2', 'e727d1464ae12436e899a726da5b2f11d8381b26', 2),
-(4, 'admin3', 'e727d1464ae12436e899a726da5b2f11d8381b26', 3),
-(5, 'admin4', 'e727d1464ae12436e899a726da5b2f11d8381b26', 4);
+INSERT INTO `user` (`id`, `hoten`, `name`, `pass`, `level`) VALUES
+(1, 'nguyen quoc hai', 'hai', 'e727d1464ae12436e899a726da5b2f11d8381b26', 1),
+(2, 'Nguyễn văn A', 'tiep nhan', 'e727d1464ae12436e899a726da5b2f11d8381b26', 11),
+(3, 'Nguyễn văn B', 'phong ban tp', 'e727d1464ae12436e899a726da5b2f11d8381b26', 21),
+(4, 'Nguyễn Văn C', 'tra ve', 'e727d1464ae12436e899a726da5b2f11d8381b26', 13),
+(5, '0', 'admin4', 'e727d1464ae12436e899a726da5b2f11d8381b26', 4),
+(7, 'Nguyễn Văn D', 'phong ban dd', 'e727d1464ae12436e899a726da5b2f11d8381b26', 22),
+(8, 'Nguyễn Văn bự', 'ong bu', 'e727d1464ae12436e899a726da5b2f11d8381b26', 100),
+(9, 'Nguyễn Thi E', 'tiep nhan2', 'e727d1464ae12436e899a726da5b2f11d8381b26', 11),
+(10, 'Nguyễn Thị B', 'tiep nhan va tra', 'e727d1464ae12436e899a726da5b2f11d8381b26', 12);
 
 -- --------------------------------------------------------
 
