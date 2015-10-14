@@ -13,12 +13,13 @@
               'name'=>"pass",'type'=>"password" ,
               'size'  => '38','placeholder'=>"Nhập mật khẩu");
 		echo form_textarea($data1);?></td>
+		<td><?php echo form_error('name'); ?></td>
 	</tr>	
 	<tr> 	
 		<td>Mật khẩu</td>
 		<td><?php echo
 		form_password($data2);?></td>
-
+		<td><?php echo form_error('pass'); ?></td>
 	</tr>
 	<tr> 	
 		<td></td>
@@ -28,9 +29,9 @@
 </table>
 <?php 
 	echo form_close('');?>
-<?php echo validation_errors(); 	
+<?php  	
 if (isset($error)){
-    echo "<div class='error'>$error</div>";
+    echo "<div class='alert alert-danger' role='alert'>$error</div>";
 }?>
 </div>
 </div>

@@ -73,13 +73,17 @@ class Profile extends CI_Controller {
                'name' => $this->input->post('namenew')
 
             );
-
+		$check=$this->user->check_name($this->input->post('namenew'));
+		if ($check){
 			$this->db->where('name', $_SESSION['name_user']);
 			$this->db->update('user', $data);
-			 $error=4;
-			  $_SESSION['name_user']= $this->input->post('namenew');
+			$error=4;
+			$_SESSION['name_user']= $this->input->post('namenew');
 			redirect(site_url('Profile/errorview/'.$error.''));
-		
+		}else {
+			$error=5;
+			redirect(site_url('Profile/errorview/'.$error.''));
+		}
 
 
 	}
@@ -97,6 +101,7 @@ class Profile extends CI_Controller {
 		if($e==1)$error="Mật khẩu mới không trùng nhau";	
 		if($e==3)$error="Đã đổi mật khẩu";	
 		if($e==4)$error="Đã đổi tên";
+		if($e==5)$error="Đã có người sử dụng tên này";
 		$this->load->view('profile_view',array(
 			'query'=>$query,
 			'error'=>$error,

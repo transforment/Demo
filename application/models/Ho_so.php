@@ -7,9 +7,142 @@ class Ho_so extends CI_Model {
 	public $date;
 	public $status;	
 	public $note;
+    public $ma_so_can_bo_thu_tien;
 	public function format($input){
         $test=explode('/', $input);
         return $test;
+    }
+    public function lay_ho_so($mcb,$level, $limit, $offset){
+       // $q=new ho_so();
+        $f=0;
+        if(($level==12)||($level==11)){
+            $this->db->where('status', 0 ) 
+                 ->where('ma_so_can_bo_thu_tien',$mcb);
+            $f=1;
+            }
+        if(($level==21)||($level==22)){
+            $this->db->where('status', 1 ) 
+                 ->or_where('status', 2 ); 
+            $f=1;
+            }
+        if($level==13){
+            $this->db->where('status', 3 ); 
+                 
+            $this->db->or_where('status', 4 ) 
+                 ->where('ma_so_can_bo_thu_tien',$mcb);
+            $f=1;
+            }
+        if($f==0)
+            return FALSE;
+        $this->db->limit($limit);
+        $this->db->offset($offset);
+        $q = $this->db->get('ho_so');   
+        return $q;
+
+    }
+    public function lay_ho_so_all($mcb,$level){
+       $f=0;
+        if(($level==12)||($level==11)){
+            $this->db->where('status', 0) 
+                 ->where('ma_so_can_bo_thu_tien',$mcb);
+            $f=1;
+            }
+        if(($level==21)||($level==22)){
+            $this->db->where('status', 1) 
+                 ->or_where('status', 2 ); 
+            $f=1;
+            }
+        if($level==13){
+            $this->db->where('status', 3 ); 
+                 
+            $this->db->or_where('status', 4 ) 
+                 ->where('ma_so_can_bo_thu_tien',$mcb);
+            $f=1;
+            }
+        $q = $this->db->get('ho_so');   
+        if($f==0)
+            return FALSE;        
+            return $q;
+
+    }
+    public function search_ho_so($id, $limit, $offset){
+        $query = $this->db->get('ho_so');
+        $array=array();
+        $low_key=strval ($id);
+       $low_key=strtolower($low_key);
+      foreach($query->result_array() as $row){
+        $low_search=strtolower($row['mshs']);
+        $pos = strpos($low_search, $low_key);
+        $pos1 = strpos($row['cmnd'], $low_key);
+        if (($pos === false)&&($pos1 === false)) {
+ 
+            } else {
+ 
+                $array[] = $row['id']; 
+            }
+
+        }
+        if(count($array)==0) return FALSE;
+        for ($i=0;$i<count($array);$i++){
+            $this->db->or_where('id',  $array[$i]);  
+             }
+        $this->db->limit($limit);
+        $this->db->offset($offset);
+        $q = $this->db->get('ho_so');
+
+        return $q;
+
+       
+    }
+    public function search_ho_so_all($id){
+        $query = $this->db->get('ho_so');
+        $array=array();
+        $low_key=strval ($id);
+       $low_key=strtolower($low_key);
+      foreach($query->result_array() as $row){
+        $low_search=strtolower($row['mshs']);
+        $pos = strpos($low_search, $low_key);
+        $pos1 = strpos($row['cmnd'], $low_key);
+        if (($pos === false)&&($pos1 === false)) {
+ 
+            } else {
+ 
+                $array[] = $row['id']; 
+            }
+
+        }
+        return count($array);
+    }
+    public function loc_mshs($id){
+        $query = $this->db->get('ho_so');
+        $array=array();
+        $low_key=strval ($id);
+       $low_key=strtolower($low_key);
+      foreach($query->result_array() as $row){
+        $low_search=strtolower($row['mshs']);
+        $pos = strpos($low_search, $low_key);
+        $pos1 = strpos($row['cmnd'], $low_key);
+        if (($pos === false)&&($pos1 === false)) {
+ 
+            } else {
+ 
+                $array[] = $row['id']; 
+            }
+
+        }
+
+        return $array;
+    }
+    public  function getAll(){
+        $q = $this->db->get('ho_so');
+
+        if($q->num_rows()>0){
+            foreach($q->result() as $row){
+                $data[] = $row;
+            }
+            return $data;
+        }
+
     }
 	public function format_num($input){
         if($input<10)$test='0'.$input.'';
@@ -19,7 +152,7 @@ class Ho_so extends CI_Model {
 	public function array_trans($val){
 		$data= array();
 		$this->db->where('id', $val);
-   		$q = $this->db->get('Ho_so')->row();
+   		$q = $this->db->get('ho_so')->row();
 		$data= $q->noi_dung;
 	
 	    return $data;
@@ -35,7 +168,7 @@ class Ho_so extends CI_Model {
         return $test;
     }
     public function lay_ten_muc($p_id){
-    $query = $this->db->get('Ho_so');
+    $query = $this->db->get('ho_so');
     $array = array();
     foreach($query->result_array() as $row){
     	if ($row['status']==$p_id)
@@ -44,7 +177,7 @@ class Ho_so extends CI_Model {
     return $array;
     }
     public function lay_id($p_id){
-    $query = $this->db->get('Ho_so');
+    $query = $this->db->get('ho_so');
     $array = array();
     foreach($query->result_array() as $row)
         {
@@ -54,22 +187,16 @@ class Ho_so extends CI_Model {
     return $array;
     }
 	public function add_ho_so($data){
-	$this->db->insert('Ho_so', $data); 
+	$this->db->insert('ho_so', $data);
     }
-    public function loc_mshs($id){
-        $query = $this->db->get('Ho_so');
-        $array=array();
-        $low_key=strtolower($id);
-      foreach($query->result_array() as $row){
-        $low_search=strtolower($row['mshs']);
-        $pos = strpos($low_search, $low_key);
-        if (($pos === false)) {
-  
-            } else {
-                $array[] = $row['id']; 
-            }
-        }
 
-        return $array;
+    public  function list_all($number, $offset){
+        $query =  $this->db->get('ho_so',$number,$offset);
+        return $query->result_array();
+    }
+
+    // đếm tổng số record trong table book
+    public function count_all(){
+        return $this->db->count_all('ho_so');
     }
 }

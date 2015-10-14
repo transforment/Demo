@@ -31,7 +31,7 @@
                 </tr>
                 <?php     
                 if (isset($error)){
-                    echo '<tr><td class="alert alert-danger" role="alert">'.$error.'</td></tr>';
+                    echo '<tr><div class="alert alert-danger" role="alert">'.$error.'</div></tr>';
                     }?>
 				</table></p>
                   

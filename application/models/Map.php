@@ -9,6 +9,17 @@ class Map extends CI_Model {
         $test=explode('/', $input);
         return $test;
     }
+    public function getAll(){
+        $q = $this->db->get('map');
+
+        if($q->num_rows()>0){
+            foreach($q->result() as $row){
+                $data[] = $row;
+            }
+            return $data;
+        }
+
+    }
     public function lay_ten_muc($p_id){
     $query = $this->db->get('map');
     $array = array();
@@ -123,7 +134,28 @@ class Map extends CI_Model {
     return FALSE;
     }
 
+    public function set_pagination(&$config){
+        $config['per_page'] = 2;
+        $config['uri_segment'] = 2;
+        $config['full_tag_open'] = '<ul class="pagination">';
+        $config['full_tag_close'] = '</ul>';
+        $config['prev_link'] = '&laquo;';
+        $config['prev_tag_open'] = '<li>';
+        $config['prev_tag_close'] = '</li>';
+        $config['next_tag_open'] = '<li>';
+        $config['next_tag_close'] = '</li>';
+        $config['cur_tag_open'] = '<li class="active"><a href="#">';
+        $config['cur_tag_close'] = '</a></li>';
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
+        $config['next_link'] = '&raquo;';
+        $config['first_link'] = 'Trang đầu';
+        $config['first_tag_open'] = '<li>';
+        $config['first_tag_close'] = '</li>';
 
-
-
+        $config['last_link'] = 'Trang cuối';
+        $config['last_tag_open'] = '<li>';
+        $config['last_tag_close'] = '</li>';
+        return;
+    }
 }

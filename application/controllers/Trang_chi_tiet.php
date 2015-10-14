@@ -116,80 +116,62 @@ class Trang_chi_tiet extends CI_Controller {
 		));
 		} else{
 
-	//$this->form_validation->set_rules('name','','required');
-//	$this->form_validation->set_rules('cmnd','','callback_is_num');
-		$config = array(
-        array(
-                'field' => 'name',
-                'label' => 'Username',
-                'rules' => 'required',
+			$this->load->model('Ho_so');
+			$this->load->library('form_validation');
 
-                 'errors' => array(
-                 'required' => 'Không được để trống ',
-                ),
-        ),
-        array(
-                'field' => 'cmnd',
-                'label' => 'Password',
-                'rules' => 'required|callback_is_num',
-                'errors' => array(
-                 'required' => 'Không được để trống ',
-                ),
-        ),
-
-	);
-
-	$this->form_validation->set_rules($config);
-
-	if($this->form_validation->run()){
-
-	$date_f= $this->input->post('date_f');
-	$list=$this->Ho_so->lay_note($date_f); 
-	$p_id=$this->input->post('p_id');
-	$node_id=$this->input->post('node_id');
-	$p_id=$this->Ho_so->format_num($p_id); 
-	$node_id=$this->Ho_so->format_num($node_id); 
-	if (($list[3]=='pm')&&($list[0]!=12)) $list[0]=$list[0]+12;
-	$mshs=$list[0];
-	for ($i=1;$i<count($list);$i++){
-	if($i!=3)
-	$mshs=$mshs.''. $list[$i].'';}
-	$mshs=$mshs.''. $node_id.'';
-	$mshs=$mshs.''. $p_id.'';
-	$data = array(
-   'mshs' => $mshs,
-   'name' => $this->input->post('name'),
-   'cmnd' => $this->input->post('cmnd'),
-   'date' => $this->input->post('date'),  
-   'status' => '0',
-  	'note' => $this->input->post('note')  
-	);
-	$this->Ho_so->add_ho_so($data); 
-	redirect('Ho_so_da_tao');
-	}
+			$this->form_validation->set_message('required', '%s chưa nhập.');
+			$this->form_validation->set_message('min_length', '%s: It nhất là %s kí tự.');
+			$this->form_validation->set_message('max_length', '%s: Nhiều nhất là %s kí tự.');
+			$this->form_validation->set_message('regex_match', ' Số %s có 9 chữ số.');
 
 
+			$this->form_validation->set_error_delimiters('<div class="error">','</div>');
 
-	$this->load->view('content_chitiet_admin'
-			,array(
-				'node_map'=>$node_map
-				,'le_phi_data'=>$le_phi_data
-				,'thanh_phan_data'=>$thanh_phan_data
-				,'thanh_phan_data_1'=>$thanh_phan_data_1
-				,'str'=>$str
-		));
+			$this->form_validation->set_rules('dname', 'Tên người dân ', 'required|min_length[3]|max_length[20]');
+
+			$this->form_validation->set_rules('dcmnd', 'CMND', 'required|regex_match[/^[0-9]{9}$/]');
+
+			$this->form_validation->set_rules('dmobile', 'Số điện thoại ', 'required|min_length[10]|max_length[11]');
+
+
+			if($this->form_validation->run() == false) {
+
+				$this->load->view('content_chitiet_admin'
+					,array(
+					'node_map'=>$node_map
+					,'le_phi_data'=>$le_phi_data
+					,'thanh_phan_data'=>$thanh_phan_data
+					,'thanh_phan_data_1'=>$thanh_phan_data_1
+					));
+
+			}else{
+
+
+				$data1 = array(
+					'name' => $this->input->post('dname'),
+					'cmnd' => $this->input->post('dcmnd'),
+					'sdt' => $this->input->post('dmobile'),
+					'mshs' => $this->input->post('ma_Ho_So'),
+					'tien_thu' =>$this->input->post('tong_cong'),
+					'so_ngay_giai_quyet' =>$this->input->post('dsongay')
+				);
+
+				//Truyen du lieu sang co model
+				$this->Ho_so->add_ho_so($data1);
+				$data1['message'] = 'Du lieu duoc nhap thanh cong';
+				$this->load->view('content_chitiet_admin'
+					,array(
+						'node_map'=>$node_map
+					,'le_phi_data'=>$le_phi_data
+					,'thanh_phan_data'=>$thanh_phan_data
+					,'thanh_phan_data_1'=>$thanh_phan_data_1
+					));
+			}
+
 		}
 
 		$this->load->view('footer');
 	}
-	public function is_num($input){
 
-			if(!is_numeric($input)){
-				$this->form_validation->set_message('is_num','CMND phải là số');
-				return FALSE;
-			}
-			return TRUE;
-
-		}
 	
 }

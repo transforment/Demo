@@ -6,156 +6,101 @@
                 <h3 class="font-size">Thông tin nhân sự</h3>
             </div>
             <div class="panel-body">
-                <div class="panel panel-info">
-                <div class="panel-heading">
-                <h3 class="panel-title">Tiếp nhận Hồ sơ</h3>
-                </div>
-                    <div class="panel-body"> 
-                  <?php
-                  foreach ($query->result() as $row){
-                    if ($row->level==11)$vitri='Tiếp nhận Hồ sơ';
-                    if ($row->level==12)$vitri='Tiếp nhận và trả Hồ sơ'; 
-                    if ($row->level==13)$vitri='Trả Hồ sơ'; 
-                    if ($row->level==21)$vitri='Phòng ban Tư Pháp';
-                    if ($row->level==12)$vitri='Phòng ban Đất đai';
-                   if ($row->level==11)
-                        echo '
-                        <p> <table class="table">
-                        <tr>
-                            <td>'.$row->hoten.'</td>
-                            <td><button type="button" class="btn btn-danger" data-toggle="modal" 
-                             data-target="#doiname">Đổi vị trí</button></td> 
-                            <td><button type="button" class="btn btn-danger" data-toggle="modal" 
-                            data-target="#doipass">Xóa tài khoản</button></td>
-                        </tr>
-                        </table></p>';
-                        }?>
-                      
-                
-                <?php     
-                if (isset($error)){
-                    echo '<tr><td></td><td class="error">'.$error.'</td></tr>';
-                    }?>
-				</div>
-                  
-                </div>
-                <div class="panel panel-info">
-                <div class="panel-heading">
-                <h3 class="panel-title">Tiếp nhận và trả Hồ sơ</h3>
-                </div>
-                    <div class="panel-body"> 
-                  <?php
-                  foreach ($query->result() as $row){
-                   if ($row->level==12)
-                        echo '
-                        <p> <table class="table">
-                        <tr>
-                            <td>'.$row->hoten.'</td>
-                            <td><button type="button" class="btn btn-danger" data-toggle="modal" 
-                             data-target="#doiname">Đổi vị trí</button></td> 
-                            <td><button type="button" class="btn btn-danger" data-toggle="modal" 
-                           data-yourParameter="107"  data-target="#doipass">Xóa tài khoản</button></td>
-                        </tr>
-                        </table></p>';
-                        }?>
-                </div>
-   
-                </div>
+<?php 
+    echo form_open(''.base_url().'Quan_ly_nhan_su/add_nhan_su');?>
+        <div class="panel panel-info">
+        <div class="panel-heading">
+        <h3 class="panel-title">Thêm nhân sự</h3>
+        </div>
+        <div class="panel-body">
+<table class="table">
+    <tr>    
+        <td>Họ và Tên</td>
+        <td><?php 
+        $data1 = array(
+              'name'=>"hoten",'type'=>"text" ,
+              'cols' => "40",'rows' => '1','placeholder'=>"Nhập họ tên");
+        $data2 = array(
+              'name'=>"name",'type'=>"text" ,
+              'cols' => "40",'rows' => '1','placeholder'=>"Nhập tên đăng nhập");
+        $data3 = array(
+              'name'=>"mcb",'type'=>"text" ,
+              'cols' => "40",'rows' => '1','placeholder'=>"Nhập mã cán bộ");        
+        echo form_textarea($data1);?></td>
+        <td><?php echo form_error('hoten'); ?></td>
+    </tr>   
+    <tr>    
+        <td>Tên đăng nhập</td>
+        <td><?php echo
+        form_textarea($data2);?></td> 
+        <td><?php echo form_error('name'); ?></td>
 
-                <div class="panel panel-info">
-                <div class="panel-heading">
-                <h3 class="panel-title">Trả Hồ sơ</h3>
-                </div>
-                    <div class="panel-body"> 
-                  <?php
-                  foreach ($query->result() as $row){
-                   if ($row->level==13)
-                        echo '
-                        <p> <table class="table">
-                        <tr>
-                            <td>'.$row->hoten.'</td>
-                            <td><button type="button" class="btn btn-danger" data-toggle="modal" 
-                             data-target="#doiname">Đổi vị trí</button></td> 
-                            <td><button type="button" class="btn btn-danger" data-toggle="modal" 
-                            data-target="#doipass">Xóa tài khoản</button></td>
-                        </tr>
-                        </table></p>';
-                        }?>
-                </div>
-   
-                </div>
-                <div class="panel panel-info">
-                <div class="panel-heading">
-                <h3 class="panel-title">Phòng ban Tư Pháp</h3>
-                </div>
-                    <div class="panel-body"> 
-                  <?php
-                  foreach ($query->result() as $row){
-                   if ($row->level==21)
-                        echo '
-                        <p> <table class="table">
-                        <tr>
-                            <td>'.$row->hoten.'</td>
-                            <td><button type="button" class="btn btn-danger" data-toggle="modal" 
-                             data-target="#doiname">Đổi vị trí</button></td> 
-                            <td><button type="button" class="btn btn-danger" data-toggle="modal" 
-                            data-target="#doipass">Xóa tài khoản</button></td>
-                        </tr>
-                        </table></p>';
-                        }?>
-                </div>
-   
-                </div>
+    </tr>
+    <tr>    
+        <td>Mật khẩu</td>
+        <td>mypass</td> 
 
 
-                 <div class="panel panel-info">
-                <div class="panel-heading">
-                <h3 class="panel-title">Phòng ban Đất đai</h3>
-                </div>
-                    <div class="panel-body"> 
-                  <?php
-                  foreach ($query->result() as $row){
-                   if ($row->level==22)
-                        echo '
-                        <p> <table class="table">
-                        <tr>
-                            <td>'.$row->hoten.'</td>
-                            <td><button type="button" class="btn btn-danger" data-toggle="modal" 
-                             data-target="#doiname">Đổi vị trí</button></td> 
-                            <td><button type="button" class="btn btn-danger" data-toggle="modal" 
-                            data-target="#doipass">Xóa tài khoản</button></td>
-                        </tr>
-                        </table></p>';
-                        }?>
-                </div>
-   
-                </div>              
+    </tr>
+    <tr>    
+        <td>Nhập mã cán bộ</td>
+        <td><?php echo
+        form_textarea($data3);?></td>
+        <td><?php echo form_error('mcb'); ?></td>
+    </tr>
+    <tr>    
+    <td>Vị trí</td>  
+    <td> <select name= "vitri"id="testselectset"class="bg-primary"style="font-size:15px;">
+      <?php  $d = array(
+             '11'=>'Tiếp nhận Hồ sơ',
+             '12'=>'Tiếp nhận và trả Hồ sơ',
+             '13'=>'Trả Hồ sơ',
+             '21'=>'Phòng ban Tư Pháp',
+             '22'=>'Phòng ban Đất đai',
+
+            );
+      foreach ($d as $stt =>$id) {
+          echo '<option class="testselectset" value="'.html_escape($stt).'">'.html_escape($id).'</option>';
+
+
+      }
+      ?></td></tr>
+    </select>
+    <tr>    
+        <td></td>
+        <td><?php 
+        $data = array(
+             'node_id'=>'',
+             'p_id'=>''
+
+            );
+
+        echo form_hidden($data);
+ 
+        echo form_submit('submit','Thêm nhân sự','class="btn btn-primary"');?></td>
+        <td></td>
+    </tr>
+</table>
+</div></div>
+<?php if (isset($error))
+    echo "<div class='alert alert-danger' role='alert'>$error</div>";
+    echo form_close('');?>
+
+       <?php     
+          $this->user->view($query,'Tiếp nhận Hồ sơ');
+          $this->user->view($query,'Tiếp nhận và trả Hồ sơ');
+          $this->user->view($query,'Trả Hồ sơ');
+          $this->user->view($query,'Phòng ban Tư Pháp');
+          $this->user->view($query,'Phòng ban Đất đai');
+            if (isset($error)){
+              echo '<tr><td></td><td class="error">'.$error.'</td></tr>';
+                    }
+            ?>
+
+
 
 
             </div>
         </div>
     </div>        
 </div>
-
-<div class="modal fade" id="doipass" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Xóa</h4>
-      </div>
-      <div class="modal-body">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
-   <button type="button" class="btn btn-primary">Save changes</button>
-    </div>
-    </div>
-  </div>
-</div>
-<script>
-$('#doipass').on('show.bs.modal', function(e) {
-  var yourParameter = e.relatedTarget.dataset.yourParameter;
-  $('#doipass').modal('show');
-});
-</script>

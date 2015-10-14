@@ -19,11 +19,12 @@ class Admin_tra_ho_so extends CI_Controller {
 		$this->load->library('table');
 		$this->load->view('header');
 		$this->load->view('menu');
- 		$query = $this->db->get_where('ho_so', array('status' => 3));
- 		$query2 = $this->db->get_where('ho_so', array('status' => 4));
+ 		//$query = $this->db->get_where('ho_so', array('status' => 3));
+ 		//$query2 = $this->db->get_where('ho_so', array('status' => 4));
+		$query = $this->Ho_so->lay_ho_so_all($_SESSION['ma_can_bo'], $_SESSION['level']);
 		$this->load->view('tra_hs_view',array(
 			'query'=>$query,
-			'query2'=>$query2,
+			
 			));
 		$this->load->view('footer');
 	}
@@ -33,6 +34,7 @@ class Admin_tra_ho_so extends CI_Controller {
 	$this->db->where('id', $id);
 	$this->db->update('ho_so',  array(
                'status' => 4,
+               'ma_so_can_bo_thu_tien'=>$_SESSION['ma_can_bo'],
 
             ));
 	redirect('Admin_tra_ho_so');
@@ -43,7 +45,7 @@ class Admin_tra_ho_so extends CI_Controller {
 	$this->db->where('id', $id);
 	$this->db->update('ho_so',  array(
                'status' => 5,
-
+               'ma_so_can_bo_thu_tien'=>$_SESSION['ma_can_bo'],
             ));
 	redirect('Admin_tra_ho_so');
 	}

@@ -12,9 +12,17 @@
 
     <link href="<?php echo base_url();?>css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url();?>css/style.css" rel="stylesheet">
-  
-    <script src="<?php echo base_url(); ?>js/jquery-2.1.4.min.js"></script>
-    <script src="../../assets/js/ie8-responsive-file-warning.js"></script>
+
+
+    <script src="<?php echo base_url(); ?>js/jquery-1.10.2.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery-ui.js"></script>
+    <script src="<?php echo base_url(); ?>js/bootstrap.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+
+<?php date_default_timezone_set("Asia/Ho_Chi_Minh"); ?>
+
+<script src="../../assets/js/ie8-responsive-file-warning.js"></script>
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>

@@ -27,11 +27,15 @@
                      (($_SESSION['level']==21)||($_SESSION['level']==22))){
                   echo '<li><a href="'.base_url().'admin_phong_ban">
                   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Hồ sơ cần xử lý</a></li>';
+                  echo '<li><a href="'.base_url().'Thong_ke">
+                  <span class="glyphicon glyphicon-stats" aria-hidden="true"></span> Thống kê </a></li>';
                     } 
                 if((isset($_SESSION['name_user']))&&
                      (($_SESSION['level']==13)||($_SESSION['level']==12))){
                   echo '<li><a href="'.base_url().'admin_tra_ho_so">
                   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Hồ sơ cần trả dân</a></li>';
+                  echo '<li><a href="'.base_url().'Thong_ke">
+                  <span class="glyphicon glyphicon-stats" aria-hidden="true"></span> Thống kê </a></li>';
                     }                                   
                 if((isset($_SESSION['name_user']))&&
                     ($_SESSION['level']==4)){
@@ -74,7 +78,7 @@
         </form>
         <form class="col-md-6 col-xs-12 pad-search mar" role="search" method="post"action="<?php echo base_url();?>Xem_ho_so">
                 <div class="input-group">
-                    <input type="text" class="form-control" name ="num_search" placeholder="Gõ mã số hồ sơ">
+                    <input type="text" class="form-control" name ="num_search" placeholder="Gõ mã số hồ sơ hoặc số CMND">
                     <span class="input-group-btn"><button class="btn btn-default" type="submit">
                     <span class="glyphicon glyphicon-search" aria-hidden="true"></span></button></span>
                 </div><!-- /input-group -->

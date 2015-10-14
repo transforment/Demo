@@ -45,7 +45,7 @@ if($noi_dung=='')return ;
 
 	public function edit_edit($noi_dung,
 		&$list_chi_tiet,$id_node){
-if($noi_dung=='')return ;
+			if($noi_dung=='')return ;
 			$this->db->where('noi_dung', $noi_dung);
    			$node_map = $this->db->get('mau_don')->row();
 

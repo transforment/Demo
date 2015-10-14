@@ -24,7 +24,7 @@
 
     $('.row').masonry({
         // options
-        itemSelector: '.col-md-6',
+        itemSelector: '.col-md-6'
     });
 
     function goBack() {
@@ -60,7 +60,11 @@
     });
 
     $('.truncate').jTruncate({
-        length: 70,
+        length: 70
+    });
+
+    $('[data-toggle="confirmation"]').confirmation({
+
     });
 </script>
 

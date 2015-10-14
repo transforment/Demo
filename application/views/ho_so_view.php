@@ -1,17 +1,15 @@
 <div class="col-xs-9 col-md-10 pad2" id="chi_tiet">
-    <div class="row center">
-<table class="table">
-	<tr>   
-		<td>Mã số hồ sơ</td> 
-        <td>Tên</td>
-        <td>Số CMND</td>
-        <td>Trạng thái</td>
-        <td></td>
+  <table class="table">
+    <tr>
+      <th>Mã số hồ sơ</th>
+      <th>Tên</th>
+      <th>Số CMND</th>
+      <th>Trạng thái</th>
+      
+      
     </tr>
           <?php 
-			for($i=0 ;$i<count($data);$i++){
- 			$query= $this->db->get_where('ho_so', array('id' => $data[$i]));
- 			 foreach ($query->result() as $row){
+			foreach ($query->result() as $row){
 				if($row->status==0) $arr='Đang ở bàn tiếp nhận';
 					else if($row->status==1)  $arr='Đang chờ xử lý';
 					else if($row->status==2)  $arr='Đang xử lý';
@@ -26,8 +24,8 @@
     					</tr></div>';
 
           }
-			}
+			
   ?>
 </table>
-    </div>
+  <!--?php echo $this->pagination->create_links(); ?-->
 </div>
