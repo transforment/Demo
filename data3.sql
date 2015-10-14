@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 07, 2015 at 08:09 AM
+-- Generation Time: Oct 14, 2015 at 09:26 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `data3`
+-- Database: `data4`
 --
 
 -- --------------------------------------------------------
@@ -202,23 +202,35 @@ CREATE TABLE IF NOT EXISTS `ho_so` (
   `mshs` varchar(200) NOT NULL,
   `name` varchar(200) NOT NULL,
   `cmnd` int(11) NOT NULL,
-  `date` varchar(200) NOT NULL,
+  `date` int(11) NOT NULL,
   `status` int(11) NOT NULL,
   `note` text NOT NULL,
+  `sdt` text,
+  `so_ngay_giai_quyet` int(11) NOT NULL,
+  `tien_thu` int(11) NOT NULL,
+  `ma_so_can_bo_thu_tien` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
 
 --
 -- Dumping data for table `ho_so`
 --
 
-INSERT INTO `ho_so` (`id`, `mshs`, `name`, `cmnd`, `date`, `status`, `note`) VALUES
-(3, '244334011020150301', 'hai', 222222222, '12:43:34pm 01/10/2015', 5, ''),
-(4, '124622011020150401', 'hai1', 333333333, '12:46:22pm 01/10/2015', 3, ''),
-(5, '125009011020152301', 'hai2', 444444444, '12:50:09pm 01/10/2015', 0, ''),
-(6, '173822011020150401', 'hai3', 111111111, '05:38:22pm 01/10/2015', 3, ''),
-(7, '174007011020151801', 'hai4', 234123453, '05:40:07pm 01/10/2015', 1, ''),
-(8, '174107011020150301', 'hai5', 394858282, '05:41:07pm 01/10/2015', 0, '');
+INSERT INTO `ho_so` (`id`, `mshs`, `name`, `cmnd`, `date`, `status`, `note`, `sdt`, `so_ngay_giai_quyet`, `tien_thu`, `ma_so_can_bo_thu_tien`) VALUES
+(10, '032917-071015-TP02-00', 'Lê Công Tuấn Anh', 212671111, 0, 5, '', '2127848860', 0, 10000, 'trave_01'),
+(11, '062256-071115-TP01-01', 'Lê Bảo An', 212784886, 0, 5, '', '01234567890', 0, 20000, 'trave_02'),
+(12, '062256-071015-TP03-01', 'Lê Bảo Ban', 212784886, 0, 5, '', '01234567890', 0, 20000, 'trave_01'),
+(13, '062356-071015-TP05-00', 'Lê Bảo CAn', 212784886, 0, 5, '', '01234567890', 0, 20000, 'tiep_nhan_va_tra_ve'),
+(14, '062456-071015-TP03-01', 'Lê Bảo DAn', 212784886, 0, 4, '', '01234567890', 0, 20000, 'trave_02'),
+(15, '062556-070615-TP04-01', 'Lê Bảo FAn', 212784886, 0, 0, '', '01234567890', 0, 20000, '02'),
+(16, '062656-070915-TP05-01', 'Lê Bảo GAn', 212784886, 0, 5, '', '01234567890', 0, 20000, 'trave_02'),
+(17, '062756-071015-TP04-01', 'Lê Bảo HAn', 212784886, 0, 5, '', '01234567890', 0, 20000, 'trave_01'),
+(18, '062856-031015-TP06-01', 'Lê Bảo KAn', 212784886, 0, 0, '', '01234567890', 0, 20000, '09'),
+(19, '042256-021015-TP02-01', 'Lê Bảo LAn', 212784886, 0, 0, '', '01234567890', 0, 20000, '02'),
+(20, '072456-041015-TP15-01', 'Lê Bảo Chinh', 212784886, 0, 5, '', '01224542393', 0, 15000, 'trave_01'),
+(21, '110641-101015-TP03-00', 'Lê Anh Khang', 212784886, 0, 0, '', '01274181992', 3, 10000, '02'),
+(22, '031111-131015-TP03-00', 'quoc hai', 233445545, 0, 0, '', '0999999999', 3, 0, '09'),
+(23, '031151-131015-TP03-00', 'quoc hai', 233445654, 0, 0, '', '0999999999', 3, 0, '02');
 
 -- --------------------------------------------------------
 
@@ -303,58 +315,63 @@ CREATE TABLE IF NOT EXISTS `map` (
   `node_name` varchar(200) NOT NULL,
   `p_id` int(11) NOT NULL,
   `note` varchar(200) NOT NULL,
+  `ak_id` varchar(2) NOT NULL,
+  `so_ngay` int(11) NOT NULL,
+  `loai_giay_to` text NOT NULL,
+  `le_phi` int(11) NOT NULL,
   PRIMARY KEY (`node_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=45 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=46 ;
 
 --
 -- Dumping data for table `map`
 --
 
-INSERT INTO `map` (`node_id`, `node_name`, `p_id`, `note`) VALUES
-(1, 'Hành chính tư pháp', 0, ''),
-(2, 'Chứng thực bản sao từ bản chính các giấy tờ, văn bản bằng tiếng Việt', 1, '1/4/8/32/32/1/1/1/16/1/26/31/'),
-(3, 'Chứng thực di chúc', 1, '3/3/1/3/3/3/1/3/3/3/3/3/'),
-(4, 'Chứng thực văn bản từ chối nhận di sản ', 1, '4/4/3/4/4/3/1/4/5/5/3/6/'),
-(5, 'Chứng thực chữ ký trong các giấy tờ, văn bản bằng tiếng Việt ', 1, '5/4/1/5/6/3/1/5/6/6/4/7/'),
-(6, 'Đăng ký khai sinh', 1, '6/4/1/6/7/3/1/6/7/7/5/8/'),
-(7, 'Đăng ký khai sinh cho trẻ em bị bỏ rơi', 1, '6/4/1/7/8/4/1/6/7/1/6/9/'),
-(8, 'Đăng ký khai sinh quá hạn', 1, '6/4/1/8/9/3/1/6/7/1/7/10/'),
-(9, 'Đăng ký lại việc sinh', 1, '6/4/1/9/10/3/1/6/7/8/8/11/'),
-(10, 'Đăng ký khai tử', 1, '7/4/1/10/11/5/1/7/7/1/9/12/'),
-(11, 'Đăng ký khai tử quá hạn', 1, '7/4/1/11/12/3/1/7/7/1/3/13/'),
-(12, 'Đăng ký khai tử cho người bị Tòa án tuyên bố là đã chết', 1, '8/4/1/12/13/3/1/7/7/1/10/14/'),
-(13, 'Đăng ký lại việc tử', 1, '7/4/1/13/14/3/1/7/7/9/11/15/'),
-(14, 'Đăng ký kết hôn', 1, '9/4/1/14/15/3/1/8/7/10/12/16/'),
-(15, 'Đăng ký lại việc kết hôn', 1, '10/4/1/15/16/3/1/8/7/11/13/17/'),
-(16, 'Đăng ký kết hôn có yếu tố nước ngoài ở khu vực biên giới', 1, '11/5/5/16/17/3/3/9/7/12/14/18/'),
-(17, 'Cấp giấy xác nhận tình trạng hôn nhân', 1, '12/6/1/17/18/3/3/10/8/13/15/19/'),
-(18, 'Đăng ký việc giám hộ', 1, '13/4/1/18/19/3/1/11/9/14/16/20/'),
-(19, 'Đăng ký chấm dứt, thay đổi việc giám hộ ', 1, '13/4/1/19/20/3/1/11/10/15/17/21/'),
-(20, 'Đăng ký việc nhận cha, mẹ, con', 1, '13/4/1/20/21/3/1/11/17/26/18/22/'),
-(21, 'Đăng ký việc nuôi con nuôi giữa công dân Việt Nam với nhau đang thường trú ở trong nước', 1, '14/4/1/21/22/3/1/13/12/17/19/23/'),
-(22, 'Đăng ký lại việc nuôi con nuôi giữa công dân Việt Nam với nhau đang thường trú ở trong nước ', 1, '14/4/1/22/23/3/1/14/13/18/20/23/'),
-(23, 'Điều chỉnh nội dung trong sổ hộ tịch và các giấy tờ hộ tịch khác', 1, '15/7/6/23/24/3/1/15/7/1/21/24/'),
-(24, 'Đăng ký thay đổi, cải chính hộ tịch cho người dưới 14 tuổi và bổ sung hộ tịch cho mọi trường hợp, không phân biệt độ tuổi', 1, '15/4/6/24/25/3/1/11/7/19/22/25/'),
-(25, 'Đăng ký thay đổi, cải chính hộ tịch, xác định lại dân tộc, xác định lại giới tính, bổ sung hộ tịch, điều chỉnh hộ tịch cho một số trường hợp đặc biệt', 1, '15/4/1/25/26/3/1/11/7/20/3/26/'),
-(26, 'Ghi vào sổ những nội dung thay đổi cải chính hộ tịch, xác định lại dân tộc, bổ sung hộ tịch, điều chỉnh hộ tịch đã thực hiện tại cấp huyện', 1, '16/4/1/26/27/3/1/16/7/1/3/27/'),
-(27, 'Ghi vào sổ hộ tịch các thay đổi hộ tịch khác bao gồm: Xác định cha, mẹ, con (do Tòa án xác định); thay đổi quốc tịch, ly hôn; hủy việc kết hôn trái pháp luật; chấm dứt nuôi con nuôi', 1, '16/4/1/27/27/3/1/16/7/1/3/27/'),
-(28, 'Cấp bản sao các giấy tờ hộ tịch từ sổ hộ tịch (sổ gốc)', 1, '15/4/7/28/28/3/1/17/14/1/23/28/'),
-(29, 'Đăng ký việc nuôi con nuôi thực tế giữa công dân Việt Nam với nhau đang thường trú ở trong nước ', 1, '14/4/8/29/29/3/1/18/13/21/24/23/'),
-(30, 'Cấp giấy xác nhận tình trạng hôn nhân cho công dân Việt Nam cư trú trong nước để đăng ký kết hôn với người nước ngoài tại cơ quan có thẩm quyền của nước ngoài ở nước ngoài ', 1, '17/8/9/30/30/3/1/10/15/23/3/29/'),
-(31, 'Đăng ký việc nhận cha, mẹ con có yếu tố nước ngoài ở khu vực biên giới', 1, '18/8/5/31/31/3/4/19/7/24/25/30/'),
-(32, 'Hành chính trong lĩnh vực đất đai', 0, ''),
-(33, 'Thủ tục cấp đổi giấy chứng nhận quyền sử dụng đất quyền sở hữu nhà ở và tài sản khác gắn liền với đất theo hệ thống bản đồ mới', 32, '33'),
-(34, 'Thủ tục cấp đổi giấy chứng nhận quyền sử dụng đất quyền sở hữu nhà ở và tài sản khác gắn liền với đất do người sử dụng đất có nhu cầu ', 32, '34'),
-(35, 'Thủ tục cấp lại giấy chứng nhận quyền sử dụng đất quyền sở hữu nhà ở và tài sản khác gắn liền với đất do bị mất', 32, '35'),
-(36, 'Đăng ký biến động đất đai, tài sản gắn liền với đất do người được cấp giấy chứng nhận đổi giấy CMND, HK mới', 32, '36'),
-(37, 'Đăng ký biến động đất đai, tài sản gắn liền với đất do người được cấp giấy chứng nhận sai số CMND, ngày cấp giấy CMND, HK', 32, '37'),
-(38, 'Đăng ký biến động đất đai, tài sản gắn liền với đất do người được cấp giấy chứng nhận xóa hộ ', 32, '38'),
-(39, 'Đăng ký biến động đất đai, tài sản gắn liền với đất do điều chỉnh diện tích, số thửa, hình thể thửa đất', 32, '39'),
-(40, 'Chuyển nhượng quyền sử dung đất', 32, '40'),
-(41, 'Tặng, cho quyền sử dung đất', 32, '41'),
-(42, 'Thừa kế quyền sử dung đất', 32, '42'),
-(43, 'Cấp ban đầu quyền sử dung đất', 32, '43'),
-(44, 'Bổ sung tài sản gắn liền với đất', 32, '44');
+INSERT INTO `map` (`node_id`, `node_name`, `p_id`, `note`, `ak_id`, `so_ngay`, `loai_giay_to`, `le_phi`) VALUES
+(1, 'Hành chính tư pháp', 0, '', '00', 1, '', 0),
+(2, 'Chứng thực bản sao từ bản chính các giấy tờ, văn bản bằng tiếng Việt', 1, '1/4/8/32/32/1/1/1/16/1/26/31/', '01', 1, '+ Bản chính.\r\n+ Bản sao cần chứng thực.', 2000),
+(3, 'Chứng thực di chúc', 1, '3/3/1/3/3/3/1/3/3/3/3/3/', '02', 3, '+Kết quả giám định sức khỏe của người viết di chúc.\r\n+Di chúc.\r\n+Phiếu yêu cầu chứng thực (theo mẫu).\r\n+Xuất trình giấy tờ tuỳ thân (hộ khẩu, chứng minh nhân dân) và giấy tờ cần thiết để chứng minh quyền sở hữu, quyền sử dụng đối với tài sản.', 20000),
+(4, 'Chứng thực văn bản từ chối nhận di sản ', 1, '4/4/3/4/4/3/1/4/5/5/3/6/', '03', 3, '+ Phiếu yêu cầu chứng thực.\r\n+ Văn bản từ chối nhận tài sản thừa kế (mẫu số 60/VBTC).', 10000),
+(5, 'Chứng thực chữ ký trong các giấy tờ, văn bản bằng tiếng Việt ', 1, '5/4/1/5/6/3/1/5/6/6/4/7/', '04', 1, '+ Phiếu yêu cầu chứng thực.\r\n+ Giấy tờ, văn bản mà mình sẽ ký vào đó. \r\n+ Chứng minh nhân dân hoặc hộ chiếu hoặc giấy tờ tùy thân khác để cán bộ tiếp nhận hồ sơ kiểm tra.', 10000),
+(6, 'Đăng ký khai sinh', 1, '6/4/1/6/7/3/1/6/7/7/5/8/', '05', 1, '+ Tờ khai (theo mẫu).\r\n+ Giấy chứng sinh (bản chính).\r\n+ Xuất trình giấy chứng nhận kết hôn (nếu có).\r\n+ Bản sao giấy chứng minh nhân dân hoặc Hộ chiếu của người đi đăng ký hộ tịch để xác định về cá nhân người đó.\r\n+ Bản sao Sổ hộ khẩu, Sổ đăng ký tạm trú (đối với công dân Việt Nam ở trong nước); Thẻ thường trú, Thẻ tạm trú hoặc Chứng nhận tạm trú (đối với người nước ngoài cư trú tại Việt Nam) để làm căn cứ xác định thẩm quyền đăng ký.\r\n+Bản sao các giấy tờ nêu trên, kèm bản chính để đối chiếu hoặc bản sao có chứng thực.', 0),
+(7, 'Đăng ký khai sinh cho trẻ em bị bỏ rơi', 1, '6/4/1/7/8/4/1/6/7/1/6/9/', '06', 1, '+ Biên bản trẻ bị bỏ rơi (do UBND xã lập).\r\n+ Các giấy tờ có liên quan (nếu có).', 0),
+(8, 'Đăng ký khai sinh quá hạn', 1, '6/4/1/8/9/3/1/6/7/1/7/10/', '07', 1, '+ Giấy chứng sinh hoặc các giấy tờ khác có liên quan.\r\n+ Xuất trình: Giấy chứng nhận kết hôn (nếu có).\r\n+ Bản sao giấy chứng minh nhân dân hoặc Hộ chiếu của người đi đăng ký hộ tịch để xác định về cá nhân người đó.\r\n+ Bản sao Sổ hộ khẩu, Sổ đăng ký tạm trú (đối với công dân Việt Nam ở trong nước); Thẻ thường trú, Thẻ tạm trú hoặc Chứng nhận tạm trú (đối với người nước ngoài cư trú tại Việt Nam) để làm căn cứ xác định thẩm quyền đăng ký.\r\n+Bản sao các giấy tờ nêu trên, kèm bản chính để đối chiếu hoặc bản sao có chứng thực.', 0),
+(9, 'Đăng ký lại việc sinh', 1, '6/4/1/9/10/3/1/6/7/8/8/11/', '08', 1, '+ Tờ khai đăng ký lại việc sinh (theo mẫu).\r\n+ Xuất trình bản sao giấy tờ hộ tịch đã cấp hợp lệ trước đây (nếu có); trong trường hợp không có bản sao giấy tờ hộ tịch, thì đương sự phải tự cam đoan về việc đã đăng ký, nhưng sổ hộ tịch không còn lưu được và chịu trách nhiệm về nội dung cam đoan.\r\n+ Bản sao giấy chứng minh nhân dân hoặc Hộ chiếu của người đi đăng ký hộ tịch để xác định về cá nhân người đó.\r\n+ Bản sao Sổ hộ khẩu, Sổ đăng ký tạm trú (đối với công dân Việt Nam ở trong nước); Thẻ thường trú, Thẻ tạm trú hoặc Chứng nhận tạm trú (đối với người nước ngoài cư trú tại Việt Nam) để làm căn cứ xác định thẩm quyền đăng ký.\r\n+Bản sao các giấy tờ nêu trên, kèm bản chính để đối chiếu hoặc bản sao có chứng thực.', 0),
+(10, 'Đăng ký khai tử', 1, '7/4/1/10/11/5/1/7/7/1/9/12/', '09', 1, '+ Giấy báo tử hoặc các giấy tờ thay thế giấy báo tử theo quy định tại Điều 22 của Nghị định số 158/2005/NĐ-CP.\r\n+ Bản sao giấy chứng minh nhân dân hoặc Hộ chiếu của người đi đăng ký hộ tịch để xác định về cá nhân người đó.\r\n+ Bản sao Sổ hộ khẩu, Sổ đăng ký tạm trú (đối với công dân Việt Nam ở trong nước); Thẻ thường trú, Thẻ tạm trú hoặc Chứng nhận tạm trú (đối với người nước ngoài cư trú tại Việt Nam) để làm căn cứ xác định thẩm quyền đăng ký.\r\n+Bản sao các giấy tờ nêu trên, kèm bản chính để đối chiếu hoặc bản sao có chứng thực.', 0),
+(11, 'Đăng ký khai tử quá hạn', 1, '7/4/1/11/12/3/1/7/7/1/3/13/', '10', 1, '+ Giấy báo tử hoặc các giấy tờ thay thế giấy báo tử theo quy định tại điều 22 của Nghị định 158/2005/NĐ-CP.\r\n+ Bản sao giấy chứng minh nhân dân hoặc Hộ chiếu của người đi đăng ký hộ tịch để xác định về cá nhân người đó.\r\n+ Bản sao Sổ hộ khẩu, Sổ đăng ký tạm trú (đối với công dân Việt Nam ở trong nước); Thẻ thường trú, Thẻ tạm trú hoặc Chứng nhận tạm trú (đối với người nước ngoài cư trú tại Việt Nam) để làm căn cứ xác định thẩm quyền đăng ký.\r\n+Bản sao các giấy tờ nêu trên, kèm bản chính để đối chiếu hoặc bản sao có chứng thực.', 0),
+(12, 'Đăng ký khai tử cho người bị Tòa án tuyên bố là đã chết', 1, '8/4/1/12/13/3/1/7/7/1/10/14/', '11', 1, '+ Quyết định của Tòa án tuyên bố chết.\r\n+ Bản sao giấy chứng minh nhân dân hoặc Hộ chiếu của người đi đăng ký hộ tịch để xác định về cá nhân người đó.\r\n+ Bản sao Sổ hộ khẩu, Sổ đăng ký tạm trú (đối với công dân Việt Nam ở trong nước); Thẻ thường trú, Thẻ tạm trú hoặc Chứng nhận tạm trú (đối với người nước ngoài cư trú tại Việt Nam) để làm căn cứ xác định thẩm quyền đăng ký.\r\n+Bản sao các giấy tờ nêu trên, kèm bản chính để đối chiếu hoặc bản sao có chứng thực.', 0),
+(13, 'Đăng ký lại việc tử', 1, '7/4/1/13/14/3/1/7/7/9/11/15/', '12', 1, '+ Tờ khai (theo mẫu).\r\n+ Xuất trình bản sao giấy tờ hộ tịch đã cấp hợp lệ trước đây (nếu có); trong trường hợp không có bản sao giấy tờ hộ tịch, thì đương sự phải tự cam đoan về việc đã đăng ký, nhưng sổ hộ tịch không còn lưu được và chịu trách nhiệm về nội dung cam đoan.\r\n+ Bản sao giấy chứng minh nhân dân hoặc Hộ chiếu của người đi đăng ký hộ tịch để xác định về cá nhân người đó.\r\n+ Bản sao Sổ hộ khẩu, Sổ đăng ký tạm trú (đối với công dân Việt Nam ở trong nước); Thẻ thường trú, Thẻ tạm trú hoặc Chứng nhận tạm trú (đối với người nước ngoài cư trú tại Việt Nam) để làm căn cứ xác định thẩm quyền đăng ký.\r\n+ Bản sao các giấy tờ nêu trên, kèm bản chính để đối chiếu hoặc bản sao có chứng thực.', 0),
+(14, 'Đăng ký kết hôn', 1, '9/4/1/14/15/3/1/8/7/10/12/16/', '13', 1, '+ Tờ khai đăng ký kết hôn (mẫu TP/HT-2013-TKĐKKH).\r\n+ Bản sao giấy chứng minh nhân dân hoặc Hộ chiếu của người đi đăng ký hộ tịch để xác định về cá nhân người đó.\r\n+ Bản sao Sổ hộ khẩu, Sổ đăng ký tạm trú (đối với công dân Việt Nam ở trong nước); Thẻ thường trú, Thẻ tạm trú hoặc Chứng nhận tạm trú (đối với người nước ngoài cư trú tại Việt Nam) để làm căn cứ xác định thẩm quyền đăng ký.\r\n+Bản sao các giấy tờ nêu trên, kèm bản chính để đối chiếu hoặc bản sao có chứng thực.', 0),
+(15, 'Đăng ký lại việc kết hôn', 1, '10/4/1/15/16/3/1/8/7/11/13/17/', '14', 3, '+ Tờ khai (theo mẫu).\r\n+ Xuất trình bản sao giấy tờ hộ tịch đã cấp hợp lệ trước đây (nếu có); trong trường hợp không có bản sao giấy tờ hộ tịch, thì đương sự phải tự cam đoan về việc đã đăng ký, nhưng sổ hộ tịch không còn lưu được và chịu trách nhiệm về nội dung cam đoan. Đối với việc đăng ký lại việc kết hôn, thì bản cam đoan phải có xác nhận của 02 người làm chứng biết rõ về việc đã đăng ký và có xác nhận của Ủy ban nhân dân cấp xã về chữ ký của hai người làm chứng.\r\n+ Bản sao giấy chứng minh nhân dân hoặc Hộ chiếu của người đi đăng ký hộ tịch để xác định về cá nhân người đó.\r\n+ Bản sao Sổ hộ khẩu, Sổ đăng ký tạm trú (đối với công dân Việt Nam ở trong nước); Thẻ thường trú, Thẻ tạm trú hoặc Chứng nhận tạm trú (đối với người nước ngoài cư trú tại Việt Nam) để làm căn cứ xác định thẩm quyền đăng ký.\r\n+Bản sao các giấy tờ nêu trên, kèm bản chính để đối chiếu hoặc bản sao có chứng thực.', 0),
+(16, 'Đăng ký kết hôn có yếu tố nước ngoài ở khu vực biên giới', 1, '11/5/5/16/17/3/3/9/7/12/14/18/', '15', 3, '+ Tờ khai đăng ký kết hôn (mẫu TP/HT-2010-KH.1).\r\n+ Giấy xác nhận tình trạng hôn nhân hoặc Tờ khai đăng ký kết hôn có xác nhận tình trạng hôn nhân đối với công dân Việt Nam; giấy tờ để chứng minh về tình trạng hôn nhân của công dân nước láng giềng do cơ quan có thẩm quyền của nước đó cấp chưa quá 06 tháng, tính đến ngày nhận hồ sơ, xác nhận hiện tại người đó là người không có vợ hoặc không có chồng.\r\n- Đối với công dân Việt Nam đã ly hôn tại cơ quan có thẩm quyền của nước ngoài hoặc người nước ngoài đã ly hôn với công dân Việt Nam tại cơ quan có thẩm quyền của nước ngoài thì phải nộp Giấy xác nhận về việc đã ghi vào sổ hộ tịch việc ly hôn đã tiến hành ở nước ngoài theo quy định của pháp luật Việt Nam.\r\n- Người nộp hồ sơ phải xuất trình giấy tờ sau đây:\r\n+ Giấy chứng minh nhân dân biên giới đối với công dân Việt Nam; trường hợp không có Giấy chứng minh nhân dân biên giới thì xuất trình giấy tờ chứng minh việc thường trú ở khu vực biên giới kèm theo giấy tờ tùy thân khác để kiểm tra.\r\n+ Giấy tờ tùy thân hoặc giấy tờ khác đối với công dân nước láng giềng do cơ quan có thẩm quyền của nước đó cấp để chứng minh việc người đó thường trú ở khu vực biên giới với Việt Nam.', 0),
+(17, 'Cấp giấy xác nhận tình trạng hôn nhân', 1, '12/6/1/17/18/3/3/10/8/13/15/19/', '16', 27, '+ Tờ khai cấp Giấy xác nhận tình trạng hôn nhân (TP/HT-2013-TKXNHN).\r\n+ Bản sao một trong các giấy tờ để chứng minh về nhân thân như Giấy chứng minh nhân dân, Hộ chiếu hoặc giấy tờ hợp lệ thay thế.\r\n+ Bản sao sổ hộ khẩu hoặc sổ tạm trú của người yêu cầu.\r\n+ Trường hợp công dân Việt Nam đã ly hôn tại cơ quan có thẩm quyền của nước ngoài thì phải nộp Giấy xác nhận về việc ghi vào sổ hộ tịch việc ly hôn đã tiến hành ở nước ngoài theo quy định của pháp luật Việt Nam.', 10000),
+(18, 'Đăng ký việc giám hộ', 1, '13/4/1/18/19/3/1/11/9/14/16/20/', '17', 1, '+ Giấy cử giám hộ.\r\n+ Tờ khai (theo mẫu quy định).\r\n+ Bản sao giấy chứng minh nhân dân hoặc Hộ chiếu của người đi đăng ký hộ tịch để xác định về cá nhân người đó.\r\n+ Bản sao Sổ hộ khẩu, Sổ đăng ký tạm trú (đối với công dân Việt Nam ở trong nước); Thẻ thường trú, Thẻ tạm trú hoặc Chứng nhận tạm trú (đối với người nước ngoài cư trú tại Việt Nam) để làm căn cứ xác định thẩm quyền đăng ký.\r\n+ Bản sao các giấy tờ nêu trên, kèm bản chính để đối chiếu hoặc bản sao có chứng thực.', 5000),
+(19, 'Đăng ký chấm dứt, thay đổi việc giám hộ ', 1, '13/4/1/19/20/3/1/11/10/15/17/21/', '18', 5, '+ Tờ khai (theo mẫu).\r\n+ Danh mục tài sản riêng được lập khi đăng ký giám hộ và danh mục tài sản hiện tại của người được giám hộ (nếu có).\r\n+ Quyết định công nhận việc giám hộ đã cấp trước đây.\r\n+ Xuất trình các giấy tờ chứng minh đủ điều kiện chấm dứt, thay đổi việc giám hộ.\r\n+ Bản sao giấy chứng minh nhân dân hoặc Hộ chiếu của người đi đăng ký hộ tịch để xác định về cá nhân người đó.\r\n+ Bản sao Sổ hộ khẩu, Sổ đăng ký tạm trú (đối với công dân Việt Nam ở trong nước); Thẻ thường trú, Thẻ tạm trú hoặc Chứng nhận tạm trú (đối với người nước ngoài cư trú tại Việt Nam) để làm căn cứ xác định thẩm quyền đăng ký.\r\n+ Bản sao các giấy tờ nêu trên, kèm bản chính để đối chiếu hoặc bản sao có chứng thực.', 5000),
+(20, 'Đăng ký việc nhận cha, mẹ, con', 1, '13/4/1/20/21/3/1/12/11/16/18/22/', '19', 2, '+ Tờ khai đăng ký việc nhận con (TP/HT-2012-TKCMC.1).\r\n+ Tờ khai đăng ký việc nhận cha, mẹ (dùng cho trường hợp cha/mẹ/người giám hộ nhận cha mẹ cho con chưa thành niên hoặc đã thành niên nhưng mất năng lực hành vi dân sự)(TP/HT-2012-TKCMC.2).\r\n+ Tờ khai đăng ký việc nhận cha, mẹ (dùng cho trường hợp con đã thành niên nhận cha, mẹ)(TP/HT-2012-TKCMC.3).\r\n+ Xuất trình giấy khai sinh của người con (bản chính hoặc bản sao).\r\n+ Các giấy tờ có liên quan.\r\n+ Đồ vật chứng cứ chứng minh quan hệ cha, mẹ, con.\r\n+ Bản sao giấy chứng minh nhân dân hoặc Hộ chiếu của người đi đăng ký hộ tịch để xác định về cá nhân người đó.\r\n+ Bản sao Sổ hộ khẩu, Sổ đăng ký tạm trú (đối với công dân Việt Nam ở trong nước); Thẻ thường trú, Thẻ tạm trú hoặc Chứng nhận tạm trú (đối với người nước ngoài cư trú tại Việt Nam) để làm căn cứ xác định thẩm quyền đăng ký.\r\n+ Bản sao các giấy tờ nêu trên, kèm bản chính để đối chiếu hoặc bản sao có chứng thực.', 10000),
+(21, 'Đăng ký việc nuôi con nuôi giữa công dân Việt Nam với nhau đang thường trú ở trong nước', 1, '14/4/1/21/22/3/1/13/12/17/19/23/', '20', 3, '', 0),
+(22, 'Đăng ký lại việc nuôi con nuôi giữa công dân Việt Nam với nhau đang thường trú ở trong nước ', 1, '14/4/1/22/23/3/1/14/13/18/20/23/', '21', 30, '', 0),
+(23, 'Điều chỉnh nội dung trong sổ hộ tịch và các giấy tờ hộ tịch khác', 1, '15/7/6/23/24/3/1/15/7/1/21/24/', '22', 5, '+ Bản chính Giấy khai sinh của người cần điều chỉnh hộ tịch.\r\n+ Các giấy tờ hộ tịch khác mà cá nhân có yêu cầu điều chỉnh nội dung không phải là Sổ đăng ký khai sinh và bản chính Giấy khai sinh.\r\n+ Bản sao giấy chứng minh nhân dân hoặc Hộ chiếu của người đi đăng ký hộ tịch để xác định về cá nhân người đó.\r\n+ Bản sao Sổ hộ khẩu, Sổ đăng ký tạm trú (đối với công dân Việt Nam ở trong nước); Thẻ thường trú, Thẻ tạm trú hoặc Chứng nhận tạm trú (đối với người nước ngoài cư trú tại Việt Nam) để làm căn cứ xác định thẩm quyền đăng ký.\r\n+ Bản sao các giấy tờ nêu trên, kèm bản chính để đối chiếu hoặc bản sao có chứng thực. Trong trường hợp gửi qua hệ thống bưu chính thì các giấy tờ có trong thành phần hồ sơ phải là bản sao có chứng thực.', 0),
+(24, 'Đăng ký thay đổi, cải chính hộ tịch cho người dưới 14 tuổi và bổ sung hộ tịch cho mọi trường hợp, không phân biệt độ tuổi', 1, '15/4/6/24/25/3/1/11/7/19/22/25/', '23', 1, '+ Tờ khai (theo mẫu).\r\n+ Xuất trình bản chính Giấy khai sinh của người cần thay đổi, cải chính hộ tịch, xác định lại dân tộc, xác định lại giới tính, bổ sung hộ tịch và các giấy tờ liên quan để làm căn cứ cho việc thay đổi, cải chính hộ tịch, xác định lại dân tộc, xác định lại giới tính, bổ sung hộ tịch.\r\n+ Bản sao giấy chứng minh nhân dân hoặc Hộ chiếu của người đi đăng ký hộ tịch để xác định về cá nhân người đó.\r\n+ Bản sao Sổ hộ khẩu, Sổ đăng ký tạm trú (đối với công dân Việt Nam ở trong nước); Thẻ thường trú, Thẻ tạm trú hoặc Chứng nhận tạm trú (đối với người nước ngoài cư trú tại Việt Nam) để làm căn cứ xác định thẩm quyền đăng ký.\r\n+ Bản sao các giấy tờ nêu trên, kèm bản chính để đối chiếu hoặc bản sao có chứng thực. Trong trường hợp gửi qua hệ thống bưu chính thì các giấy tờ có trong thành phần hồ sơ phải là bản sao có chứng thực.', 0),
+(25, 'Đăng ký thay đổi, cải chính hộ tịch, xác định lại dân tộc, xác định lại giới tính, bổ sung hộ tịch, điều chỉnh hộ tịch cho một số trường hợp đặc biệt', 1, '15/4/1/25/26/3/1/11/7/20/3/26/', '24', 3, '', 0),
+(26, 'Ghi vào sổ những nội dung thay đổi cải chính hộ tịch, xác định lại dân tộc, bổ sung hộ tịch, điều chỉnh hộ tịch đã thực hiện tại cấp huyện', 1, '16/4/1/26/27/3/1/16/7/1/3/27/', '25', 0, '', 0),
+(27, 'Ghi vào sổ hộ tịch các thay đổi hộ tịch khác bao gồm: Xác định cha, mẹ, con (do Tòa án xác định); thay đổi quốc tịch, ly hôn; hủy việc kết hôn trái pháp luật; chấm dứt nuôi con nuôi', 1, '16/4/1/27/27/3/1/16/7/1/3/27/', '26', 0, '', 0),
+(28, 'Cấp bản sao các giấy tờ hộ tịch từ sổ hộ tịch (sổ gốc)', 1, '15/4/7/28/28/3/1/17/14/1/23/28/', '27', 0, '', 3000),
+(29, 'Đăng ký việc nuôi con nuôi thực tế giữa công dân Việt Nam với nhau đang thường trú ở trong nước ', 1, '14/4/8/29/29/3/1/18/13/21/24/23/', '28', 0, '', 0),
+(30, 'Cấp giấy xác nhận tình trạng hôn nhân cho công dân Việt Nam cư trú trong nước để đăng ký kết hôn với người nước ngoài tại cơ quan có thẩm quyền của nước ngoài ở nước ngoài ', 1, '17/8/9/30/30/3/1/10/15/23/3/29/', '29', 0, '', 5000),
+(31, 'Đăng ký việc nhận cha, mẹ con có yếu tố nước ngoài ở khu vực biên giới', 1, '18/8/5/31/31/3/4/19/7/24/25/30/', '30', 0, '', 0),
+(32, 'Hành chính trong lĩnh vực đất đai', 0, '', '0', 0, '', 0),
+(33, 'Thủ tục cấp đổi giấy chứng nhận quyền sử dụng đất quyền sở hữu nhà ở và tài sản khác gắn liền với đất theo hệ thống bản đồ mới', 32, '33', '0', 0, '', 0),
+(34, 'Thủ tục cấp đổi giấy chứng nhận quyền sử dụng đất quyền sở hữu nhà ở và tài sản khác gắn liền với đất do người sử dụng đất có nhu cầu ', 32, '34', '0', 0, '', 0),
+(35, 'Thủ tục cấp lại giấy chứng nhận quyền sử dụng đất quyền sở hữu nhà ở và tài sản khác gắn liền với đất do bị mất', 32, '35', '0', 0, '', 0),
+(36, 'Đăng ký biến động đất đai, tài sản gắn liền với đất do người được cấp giấy chứng nhận đổi giấy CMND, HK mới', 32, '36', '0', 0, '', 0),
+(37, 'Đăng ký biến động đất đai, tài sản gắn liền với đất do người được cấp giấy chứng nhận sai số CMND, ngày cấp giấy CMND, HK', 32, '37', '0', 0, '', 0),
+(38, 'Đăng ký biến động đất đai, tài sản gắn liền với đất do người được cấp giấy chứng nhận xóa hộ ', 32, '38', '0', 0, '', 0),
+(39, 'Đăng ký biến động đất đai, tài sản gắn liền với đất do điều chỉnh diện tích, số thửa, hình thể thửa đất', 32, '39', '0', 0, '', 0),
+(40, 'Chuyển nhượng quyền sử dung đất', 32, '40', '0', 0, '', 0),
+(41, 'Tặng, cho quyền sử dung đất', 32, '41', '0', 0, '', 0),
+(42, 'Thừa kế quyền sử dung đất', 32, '42', '0', 0, '', 0),
+(43, 'Cấp ban đầu quyền sử dung đất', 32, '43', '0', 0, '', 0),
+(44, 'Bổ sung tài sản gắn liền với đất', 32, '44', '0', 0, '', 0),
+(45, 'Đi xe xuống Hà Nội mua cơm', 1, '2/2/2/2/2/2/2/2/2/2/2/2', '', 0, '', 0);
 
 -- --------------------------------------------------------
 
@@ -533,27 +550,29 @@ INSERT INTO `trinh_tu` (`id`, `noi_dung`) VALUES
 
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ma_can_bo` text NOT NULL,
   `hoten` varchar(200) NOT NULL,
   `name` varchar(200) NOT NULL,
   `pass` varchar(200) NOT NULL,
   `level` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `hoten`, `name`, `pass`, `level`) VALUES
-(1, 'nguyen quoc hai', 'hai', 'e727d1464ae12436e899a726da5b2f11d8381b26', 1),
-(2, 'Nguyễn văn A', 'tiep nhan', 'e727d1464ae12436e899a726da5b2f11d8381b26', 11),
-(3, 'Nguyễn văn B', 'phong ban tp', 'e727d1464ae12436e899a726da5b2f11d8381b26', 21),
-(4, 'Nguyễn Văn C', 'tra ve', 'e727d1464ae12436e899a726da5b2f11d8381b26', 13),
-(5, '0', 'admin4', 'e727d1464ae12436e899a726da5b2f11d8381b26', 4),
-(7, 'Nguyễn Văn D', 'phong ban dd', 'e727d1464ae12436e899a726da5b2f11d8381b26', 22),
-(8, 'Nguyễn Văn bự', 'ong bu', 'e727d1464ae12436e899a726da5b2f11d8381b26', 100),
-(9, 'Nguyễn Thi E', 'tiep nhan2', 'e727d1464ae12436e899a726da5b2f11d8381b26', 11),
-(10, 'Nguyễn Thị B', 'tiep nhan va tra', 'e727d1464ae12436e899a726da5b2f11d8381b26', 12);
+INSERT INTO `user` (`id`, `ma_can_bo`, `hoten`, `name`, `pass`, `level`) VALUES
+(1, '01', 'nguyen quoc hai', 'hai', 'e727d1464ae12436e899a726da5b2f11d8381b26', 1),
+(2, '02', 'Nguyễn văn A', 'tiep nhan', 'e727d1464ae12436e899a726da5b2f11d8381b26', 11),
+(3, '03', 'Nguyễn văn B', 'phong ban tp', 'e727d1464ae12436e899a726da5b2f11d8381b26', 21),
+(4, 'trave_01', 'Nguyễn Văn C', 'tra ve', 'e727d1464ae12436e899a726da5b2f11d8381b26', 13),
+(5, '05', '0', 'admin4', 'e727d1464ae12436e899a726da5b2f11d8381b26', 4),
+(7, '07', 'Nguyễn Trí D', 'phong ban dd', 'e727d1464ae12436e899a726da5b2f11d8381b26', 22),
+(8, '08', 'Nguyễn Văn D', 'chu tich', 'e727d1464ae12436e899a726da5b2f11d8381b26', 100),
+(9, '09', 'Nguyễn Thi E', 'tiep nhan2', 'e727d1464ae12436e899a726da5b2f11d8381b26', 11),
+(10, '10', 'Nguyễn Thị B', 'tiep nhan va tra ve', 'e727d1464ae12436e899a726da5b2f11d8381b26', 12),
+(11, 'trave_02', 'Lê Thị D', 'tra ve 02', 'e727d1464ae12436e899a726da5b2f11d8381b26', 13);
 
 -- --------------------------------------------------------
 
