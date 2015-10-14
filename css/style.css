@@ -35,6 +35,16 @@ body {
     color: #ff4901;
     font-weight: bold;
 }
+
+
+.error {
+    color:red;
+    font-size:13px;
+    margin-bottom:-15px
+}
+
+
+
 .foo2 {
     padding-left: 10px;
     padding-right: 10px;
