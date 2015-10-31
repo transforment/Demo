@@ -23,7 +23,16 @@ class Tu_phap extends CI_Controller {
 		);
 		$this->load->view('content_tuphap',array(
 			'dataname'=>$dataname,));
-		$this->load->view('templates/sideright');
+         if(isset($_SESSION['name_user'])){
+            $this->load->model('User');
+            $dataname = $this->User->lay_ten_user($_SESSION['id']);
+            $idchat = $this->User->lay_id_user($_SESSION['id']); 
+            $datachat = array_combine($idchat, $dataname); 
+            
+            $this->load->view('templates/sideright',array('datachat'=>$datachat));
+        
+        }
+        else $this->load->view('templates/sideright');
         $this->load->view('templates/footer');
 	}
 }

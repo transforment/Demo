@@ -16,7 +16,8 @@
 <!-- Kiet JavaScript -->
 <script src="<?php echo base_url('js/yingjie.js'); ?>"></script>
 <script src="<?php echo base_url('js/bootstrap-select.min.js'); ?>"></script>
-
+<script src="<?php echo base_url(); ?>js/node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.js"></script>
+<script src="<?php echo base_url(); ?>js/nodeClient.js"></script>
 
 
 </body>

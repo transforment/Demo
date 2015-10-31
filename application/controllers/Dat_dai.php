@@ -17,7 +17,16 @@ class Dat_dai extends CI_Controller {
 			$num = $this->Map->lay_id(32);
 			$com = array_combine($num, $data);
 		$this->load->view('content_datdai',array('com'=>$com));
-		$this->load->view('templates/sideright');
+         if(isset($_SESSION['name_user'])){
+            $this->load->model('User');
+            $dataname = $this->User->lay_ten_user($_SESSION['id']);
+            $idchat = $this->User->lay_id_user($_SESSION['id']); 
+            $datachat = array_combine($idchat, $dataname); 
+            
+            $this->load->view('templates/sideright',array('datachat'=>$datachat));
+        
+        }
+        else $this->load->view('templates/sideright');
         $this->load->view('templates/footer');
 		
 	}

@@ -173,10 +173,12 @@ body {
     margin-bottom: 10px;
     padding-bottom: 5px;
     border-bottom: 1px dotted #999;
+    max-width: 100%;
 }
 
 .chat li.left .chat-body {
     margin-left: 60px;
+
 }
 
 .chat li.right .chat-body {
@@ -185,6 +187,7 @@ body {
 
 .chat li .chat-body p {
     margin: 0;
+    max-width: 100%;
 }
 
 .panel .slidedown .glyphicon,
@@ -476,6 +479,11 @@ body {
     text-align: center;
 }
 
+.pad {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 .marTop {
     margin-top: 7px;
 }
@@ -532,4 +540,62 @@ p {
     color:red;
     font-size:13px;
     margin-bottom:-15px
+}
+
+/* chat */
+.chat {
+    max-width: 100%;
+}
+
+.bubble{
+    background-color: #F2F2F2;
+    border-radius: 5px;
+    box-shadow: 0 0 6px #B2B2B2;
+    display: inline-block;
+    padding: 10px 18px;
+    position: relative;
+    vertical-align: top;
+}
+
+.bubble::before {
+    background-color: #F2F2F2;
+    content: "\00a0";
+    display: block;
+    height: 16px;
+    position: absolute;
+    top: 11px;
+    transform:             rotate( 29deg ) skew( -35deg );
+    -moz-transform:    rotate( 29deg ) skew( -35deg );
+    -ms-transform:     rotate( 29deg ) skew( -35deg );
+    -o-transform:      rotate( 29deg ) skew( -35deg );
+    -webkit-transform: rotate( 29deg ) skew( -35deg );
+    width:  20px;
+}
+
+.me {
+    float: left;
+    margin: 5px 45px 5px 20px;
+}
+
+.me::before {
+    box-shadow: -2px 2px 2px 0 rgba( 178, 178, 178, .4 );
+    left: -9px;
+}
+
+.you {
+    float: right;
+    margin: 5px 20px 5px 45px;
+    background-color: #BCE8F1;
+}
+
+.you::before {
+    box-shadow: 2px -2px 2px 0 rgba( 178, 178, 178, .4 );
+    right: -9px;
+    background-color: #BCE8F1;
+
+}
+
+.size {
+    width: 50px;
+    hegiht: 50px;
 }
