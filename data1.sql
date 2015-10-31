@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 30, 2015 at 04:24 PM
+-- Generation Time: Oct 31, 2015 at 08:16 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -456,6 +456,31 @@ INSERT INTO `mau_don` (`id`, `noi_dung`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `message`
+--
+
+CREATE TABLE IF NOT EXISTS `message` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) NOT NULL,
+  `vs` varchar(200) NOT NULL,
+  `message` text NOT NULL,
+  `date` varchar(200) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
+
+--
+-- Dumping data for table `message`
+--
+
+INSERT INTO `message` (`id`, `name`, `vs`, `message`, `date`) VALUES
+(16, 'phong ban tp', '2-3', 'hey', '2015-10-31 08:12:47pm'),
+(17, 'tiep nhan tp', '2-3', 'ok', '2015-10-31 08:12:52pm'),
+(18, 'phong ban tp', '3-4', 'hello', '2015-10-31 08:13:09pm'),
+(19, 'tiep nhan tp', '2-3', 'where?', '2015-10-31 08:13:18pm');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `thanh_phan`
 --
 
@@ -604,15 +629,15 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `online`, `ma_can_bo`, `hoten`, `ngay_sinh`, `name`, `pass`, `level`, `Sdt`, `cmnd`, `dia_chi`) VALUES
-(1, 0, '01', 'Lưu Thanh Hải', '01/06/1991', 'hai', 'e727d1464ae12436e899a726da5b2f11d8381b26', 1, '01224542393', '321456322', 'Ktx Bách Khoa'),
+(1, 0, '01', 'Lưu Thanh Hải', '01/06/1991', 'hai', 'e727d1464ae12436e899a726da5b2f11d8381b26', 4, '01224542393', '321456322', 'Ktx Bách Khoa'),
 (2, 1, 'tiepnhantp', 'Nguyễn Quốc Hải', '03/02/1992', 'tiep nhan tp', 'e727d1464ae12436e899a726da5b2f11d8381b26', 11, '01224542393', '451456322', 'Ktx Bách Khoa'),
-(3, 0, 'xulytp', 'Trương Chí Vinh', '01/06/1991', 'phong ban tp', 'e727d1464ae12436e899a726da5b2f11d8381b26', 21, '01224542393', '681456322', 'Ktx Bách Khoa'),
+(3, 1, 'xulytp', 'Trương Chí Vinh', '01/06/1991', 'phong ban tp', 'e727d1464ae12436e899a726da5b2f11d8381b26', 21, '01224542393', '681456322', 'Ktx Bách Khoa'),
 (4, 0, 'trave_tp', 'Ngô Tsui Tsui', '01/06/1991', 'tra ve tp', 'e727d1464ae12436e899a726da5b2f11d8381b26', 13, '01224542393', '121456322', 'Ktx Bách Khoa'),
 (5, 0, '05', 'Trần Đức Đạt', '01/06/1991', 'admin4', 'e727d1464ae12436e899a726da5b2f11d8381b26', 4, '01224542393', '351456322', 'Ktx Bách Khoa'),
 (7, 0, 'xulydd', 'Liêu Say Dậu', '01/06/1991', 'phong ban dd', 'e727d1464ae12436e899a726da5b2f11d8381b26', 22, '01224542393', '321456345', 'Ktx Bách Khoa'),
 (8, 0, '08', 'Dương Bội Yến', '01/06/1991', 'chu tich', 'e727d1464ae12436e899a726da5b2f11d8381b26', 100, '01224542393', '421456322', 'Ktx Bách Khoa'),
 (9, 0, 'tiepnhandc', 'Trương Phi Long', '01/06/1991', 'tiep nhan dd', 'e727d1464ae12436e899a726da5b2f11d8381b26', 11, '01224542393', '321342632', 'Ktx Bách Khoa'),
-(10, 0, 'tiepnhanvatravetp', 'Trần Như Văn', '01/06/1991', 'tiep nhan va tra ve tp', 'e727d1464ae12436e899a726da5b2f11d8381b26', 12, '01224542393', '321432322', 'Ktx Bách Khoa'),
+(10, 1, 'tiepnhanvatravetp', 'Trần Như Văn', '01/06/1991', 'tiep nhan va tra ve tp', 'e727d1464ae12436e899a726da5b2f11d8381b26', 12, '01224542393', '321432322', 'Ktx Bách Khoa'),
 (11, 0, 'travedd', 'Phạm Minh Đạt', '01/06/1991', 'tra ve dd', 'e727d1464ae12436e899a726da5b2f11d8381b26', 13, '01224542393', '321432322', 'Ktx Bách Khoa'),
 (12, 0, 'tiepnhanvatravedd', 'Trương Quang Phương', '01/03/1989', 'tiep nhan va tra ve dd', 'e727d1464ae12436e899a726da5b2f11d8381b26', 12, '01224542393', '321432322', 'Ktx Bách Khoa');
 
