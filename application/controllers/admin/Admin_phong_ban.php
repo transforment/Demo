@@ -35,10 +35,16 @@ class Admin_phong_ban extends CI_Controller {
 
 	public function notifyError($id=3){
 
-		$id = $this->input->post('myYing');
+		$id = $this->input->post('node_id');
 		$this->db->where('id', $id);
+		$val= $this->input->post('ten_rieng_0').'+'.$this->input->post('loi_rieng_0').'+';
+		for ($i = 2;$i<$this->input->post('count')-1;$i++ ) {
+			$val=$val.''.$this->input->post('ten_rieng_'.$i.'').'+'.$this->input->post('loi_rieng_'.$i.'').'+';
+			$i++;
+			}
+		$val=$val.'-'.$this->input->post('error');	
 		$this->db->update('ho_so',array(
-			'error'=>$this->input->post('error')
+			'error'=>$val
 			,'status'=>6
 		));
 		redirect(base_url('admin/admin_phong_ban'));

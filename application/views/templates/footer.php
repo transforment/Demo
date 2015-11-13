@@ -1,17 +1,11 @@
-        <form class="input-group" id="changeto1">
-             <button class="btn btn-warning btn-sm" id="btn_send_mess"type="submit">
-                             Gửi tin nhắn</button>
 
-             <button class="btn btn-warning btn-sm" id="btn_send_mess"type="submit">
-                             Gửi tin nhắn</button>
-    </form>
 </div><!-- /.row -->
 </div><!-- /#page-wrapper -->
 </div><!-- /#wrapper -->
 
 <button type="button" class="btn btn-danger back-to-top radius">Lên đầu trang</button>
 
-<script src="<?php echo base_url('js/jquery.min.js'); ?>"></script><!-- jQuery -->
+<script src="<?php echo base_url('js/jquery-ui.min.js'); ?>"></script><!-- jQuery -->
 <script src="<?php echo base_url('js/bootstrap.min.js'); ?>"></script><!-- Bootstrap Core JavaScript -->
 <script src="<?php echo base_url('js/jasny-bootstrap.min.js'); ?>"></script><!-- Jasny Bootstrap Core JavaScript -->
 <script src="<?php echo base_url('js/metisMenu.min.js'); ?>"></script><!-- Metis Menu Plugin JavaScript -->

@@ -98,7 +98,7 @@
                     <input type="submit"  onclick="compileInputs();" class="btn btn-success btn-lg btn-block" id = 'submit'name="submit" value="Cập nhật hồ sơ">
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <input type="button" onclick="confirm('Bạn có muốn xoá hồ sơ này?')?location.href='<?php  echo base_url('admin/ho_so_da_tao/deleteRow/'.$details->id); ?>':alert(2)" id="delete" class="btn btn-danger btn-lg btn-block"  value="Xoá hồ sơ ">
+                    <input type="button" onclick="confirm('Bạn có muốn xoá hồ sơ này?')?location.href='<?php  echo base_url('admin/Admin_tiep_nhan/deleteRow/'.$details->id); ?>':alert(2)" id="delete" class="btn btn-danger btn-lg btn-block"  value="Xoá hồ sơ ">
                 </div>
                 </div>
                 <!-- When time is ok

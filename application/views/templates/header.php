@@ -25,12 +25,15 @@
     <![endif]-->
 
     <!-- Kiet -->
-    <link href="<?php echo base_url();?>css/bootstrap-select.css" rel="stylesheet">
-    <link href="<?php echo base_url();?>css/jquery-ui_smooth.css" rel="stylesheet">
-    <script src="<?php echo base_url(); ?>js/jquery-1.10.2.js"></script>
+    <!-- <link href="<?php echo base_url();?>css/bootstrap-select.css" rel="stylesheet"> -->
+    <link href="<?php echo base_url();?>css/jquery-ui.min.css" rel="stylesheet">
+    <script src="<?php echo base_url(); ?>js/jquery.js"></script>
 
     
-    <?php date_default_timezone_set("Asia/Ho_Chi_Minh"); ?>
+    <?php date_default_timezone_set("Asia/Ho_Chi_Minh"); 
+        if(isset($_SESSION['name_user']))
+            echo '<input type="hidden" id="id_user" value="'.$_SESSION['id'].'" />';
+            ?>
     <link href="<?php echo base_url('css/bootstrap-select.min.css'); ?>" rel="stylesheet" type="text/css">
         
 

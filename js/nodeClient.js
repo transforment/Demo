@@ -9,16 +9,16 @@ socket.emit( 'new_user',  {name_user: nameVal, id_user: id_user,chat_vs:chat_vs}
 $( "#messageForm" ).submit( function(e) {
 	e.preventDefault();
 	var msg = $( "#messageInput" ).val();
-
+	var avatar = $( "#avatar" ).val();
 	var nameVal = $( "#name_user" ).val();
 	var chat_vs = $( "#chat_vs" ).val();
 	var vs = $( "#vs" ).val();
 	var id_user = $( "#id_user" ).val();
 
-	socket.emit( 'sent_message', { n: nameVal, mess: msg , chat_vs: chat_vs} );
+	socket.emit( 'sent_message', { n: nameVal, mess: msg , chat_vs: chat_vs,avatar:avatar} );
 	$.ajax({
 
-			url:  "http://localhost/Demo_2/admin/Chat/push",
+			url:  "http://localhost/Demo-2/admin/Chat/push",
 		type: "POST",
 
 		data: {'name': nameVal , 'message': msg, 'chat_vs': chat_vs},
@@ -36,24 +36,14 @@ $( "#messageForm" ).submit( function(e) {
 	
 	return false;
 });
-$( "#changeto1" ).submit( function(e) {
+$( "#sent_noti_node" ).submit( function(e) {
 	e.preventDefault();
-        $.amaran({
-            'theme'     :'colorful',
-            'content'   :{
-                bgcolor:'#27ae60',
-                color:'#fff',
-                message:'Lorem ipsum dolor sit amet',
-            },
-            'position'  :'bottom left',
-            'inEffect' :'slideLeft',
-            'outEffect' :'slideLeft',
-            'delay' : 5000
-        });
+	var nameVal = $( "#id_sent_noti" ).val();
+	socket.emit( 'sent_noti', { n: nameVal} );
 	
 	return false;
 });
-
+/*
 $(document).ready(function(){
 	//var nameVal = $( "#nameInput" ).val();
 	//var msg = $( "#messageInput" ).val();
@@ -74,14 +64,17 @@ $(document).ready(function(){
            	var actualContent = $( "#messages_new" ).html();
 			var newMsgContent = ' <p class="text-right">' + msg + '</p> ';
 			var content =  actualContent+newMsgContent ;
-			$( "#messages_new" ).html( content );         
-		}
+			$( "#messages_new" ).html( content );   
+
+   			var div = document.getElementById("chat_wrap_cont");
+   			div.scrollTop = div.scrollHeight - div.clientHeight;
+	}
 
 	});
 	});
 
 
-});
+});*/
 socket.on( 'new_message', function( data ) {
 	var actualContent = $( "#messages_new" ).html();
 	var newMsgContent =data.text;
@@ -89,10 +82,17 @@ socket.on( 'new_message', function( data ) {
 	
 	$( "#messages_new" ).html( content );
 });
-socket.on( 'whisper', function( data ) {
-	var actualContent = $( "#messages_new" ).html();
-	var newMsgContent = '  <p class="text-left">' + data.message + '</p> ';
-	var content =  actualContent+newMsgContent ;
-	
-	$( "#messages_new" ).html( content );
+socket.on( 'new_noti', function( data ) {
+        $.amaran({
+            'theme'     :'colorful',
+            'content'   :{
+                bgcolor:'#27ae60',
+                color:'#fff',
+                message:'Bạn có hồ sơ mới chuyển qua',
+            },
+            'position'  :'top right',
+            'inEffect' :'slideRight',
+            'outEffect' :'slideRight',
+            'delay' : 5000
+        });
 });

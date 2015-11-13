@@ -21,6 +21,7 @@
                 <th></th>
 
             </tr>
+            <form class="input-group" id="sent_noti_node">
             <?php
             foreach ($query->result() as $row){
               echo '<div class="row col-xs-9 col-md-10 pad2"><tr>
@@ -31,7 +32,7 @@
                 if($row->status==0)       
              echo' <td><button type="button" class="btn btn-warning"
                  onclick=location.href="'.base_url().'admin/Admin_tiep_nhan/edit/'.$row->id.'">Chỉnh sửa</button></td>
-              <td><button class="btn btn-danger" 
+              <td><button class="btn btn-danger" type="submit"
                  onclick=location.href="'.base_url().'admin/Admin_tiep_nhan/edit_stt/'.html_escape($row->id).'">Chuyển phòng ban</button></td>
               </tr></div>';
                 if($row->status==1)        
@@ -42,6 +43,7 @@
 
             }
             ?>
+          </form>
         </table>
     </section>
 

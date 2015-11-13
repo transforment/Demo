@@ -41,12 +41,21 @@
 						echo '<td>
 							<button type="button" data-toggle="modal"  class="btn btn-danger" onclick=location.href="'.base_url('admin/admin_tra_ho_so/edit_error/'.$row->id.'').'">Nhận hồ sơ lỗi </buton></td>
 							</tr>';
-					if($row->status==7)
+					if($row->status==7){
+						$da_thu=explode('-', $row->error);
+						$a_da_thu=explode('+', $da_thu[0]);
+						$val=$a_da_thu[0].' '.$a_da_thu[1];
+						for ($i = 2;$i<count($a_da_thu)-1;$i++ ) {
+						$val= $val.' '. $a_da_thu[$i].' '.$a_da_thu[$i+1];
+						 $i++;
+						}
+						$val=$val.' '.$da_thu[1];
 						echo '<td>
 					        '.anchor('admin/admin_tra_ho_so/edit_stt_error/'.$row->id.'','<button class="btn btn-danger">
                 			<i class="icon-plus"></i>Trả hồ sơ lỗi </button>',array(
-                    		'onclick'=>"return confirm('".$row->error."')",)).'</td>
+                    		'onclick'=>"return confirm('".$val."')",)).'</td>
 							</tr>';
+						}
 
 					
 				}?>

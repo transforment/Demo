@@ -24,11 +24,12 @@
 
     <?php
     $today_1 =  date("Ymd");
-    //Lấy dữ liệu từ $thanh_phan_data truyen qua de dung cho viec ho so dinh kem
+    
+    $thanh_phan_data = str_replace('<br>','', $thanh_phan_data);
     $arrayThutuc = explode("+", $thanh_phan_data);
     if(isset($message)){
 
-        echo "<script type='text/javascript'>alert('Thông tin đã được nhập!'); window.location = '/Demo-2/trang_chu';</script>";
+        echo '<script type="text/javascript">alert("Thông tin đã được nhập"); window.location = "'.base_url().'admin/Admin_tiep_nhan";</script>';
 
     }
     ?>
@@ -104,7 +105,7 @@
                                     echo'
                                    <ul class="container-fluid">
                                         <li class="row" >
-                                            <p class="col-sm-2 col-md-2 col-xs-2 "  id ="'.$form.'" style="visibility: hidden">
+                                            <p class="col-sm-2 col-md-2 col-xs-2 "  id ="'.$form.'" >
                                             <input  id = "'.$number.'"  type="number" min="1" max="30" step="1" value="1" size="1">
                                             </p>
                                             <input class="col-sm-1 col-md-1 col-xs-1"  type="checkbox"  name="chk_group" id= "'. $checkBox.'" onclick="display('.$i.')" value="'.$arrayThutuc[$i].'">
@@ -148,10 +149,10 @@
                                     <!--List of temporary textboxs-->
                                     <input type="text" id="ying_ho_so_da_nhan" name = "dying" style="visibility: hidden" >
                                     <!--YingLo-->
-                                    <input type="text" id="today_1"  value="<?php echo date("His",time()+1) ; ?>" style="visibility: hidden" >
-                                    <input type="text" id="today_2" value="<?php echo date("dmy"); ?>" style="visibility: hidden" >
-                                    <input type="text" id="so_ngay" value="<?php echo $so_ngay; ?>" style="visibility: hidden" >
-                                    <input type="text" id="node_id" value="<?php echo $node_map->node_id; ?>" style="visibility: hidden" >
+                                    <input type="hidden" id="today_1"  value="<?php echo date("His",time()+1) ; ?>"  >
+                                    <input type="hidden" id="today_2" value="<?php echo date("dmy"); ?>" >
+                                    <input type="hidden" id="so_ngay" value="<?php echo $so_ngay; ?>"  >
+                                    <input type="hidden" id="node_id" value="<?php echo $node_map->node_id; ?>"  >
 
                                 </div>
                             </div>

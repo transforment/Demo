@@ -93,6 +93,8 @@
         {
             echo '<li><a href="'.base_url('admin/quan_ly_nhan_su').'">
                   <i class="fa fa-users fa-fw"></i> Quản lý nhân sự</a></li>';
+            echo '<li><a href="'.base_url('admin/thong_ke').'">
+                  <i class="fa fa-bar-chart-o  fa-fw"></i> Thống kê </a></li>';
         }
         if (isset($_SESSION['name_user']))
         {

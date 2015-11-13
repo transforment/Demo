@@ -1,25 +1,25 @@
 <div class="col-md-3 col-lg-3 col-xs-12">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <i class="fa fa-bell fa-fw"></i> Notifications Panel
+            <i class="fa fa-bell fa-fw"></i> Bản tin
         </div>
         <!-- /.panel-heading -->
         <div class="panel-body">
             <div class="list-group">
 
                 <a href="#" class="list-group-item">
-                    <i class="fa fa-shopping-cart fa-fw"></i> New Order Placed
+                    <i class="fa fa-shopping-cart fa-fw"></i> Tin mới
                                 <span class="pull-right text-muted small"><em>9:49 AM</em>
                                 </span>
                 </a>
                 <a href="#" class="list-group-item">
-                    <i class="fa fa-money fa-fw"></i> Payment Received
-                                <span class="pull-right text-muted small"><em>Yesterday</em>
+                    <i class="fa fa-money fa-fw"></i> Tin mới
+                                <span class="pull-right text-muted small"><em>Hôm qua</em>
                                 </span>
                 </a>
             </div>
             <!-- /.list-group -->
-            <a href="#" class="btn btn-default btn-block">View All Alerts</a>
+            <a href="#" class="btn btn-default btn-block">Xem tất cả</a>
         </div>
         <!-- /.panel-body -->
     </div>

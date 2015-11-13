@@ -38,10 +38,10 @@
 								</tr>';
             	if ($row->status==2)
             		echo '
-								<td><button type="button"  onclick="m(this.value)" value='.$row->id.' data-toggle="modal" data-target="#myModal" class="btn btn-warning"
-								 >Báo hồ sơ lỗi  </button></td>
-								<td><button type="button" class="btn btn-danger"
-								 onclick=location.href="'.base_url('admin/admin_phong_ban/edit_stt/'.html_escape($row->id).'').'">Xử lý xong</button></td>
+								<td><button type="button"  onclick="m(this.value)" value='.$row->id.' data-toggle="modal" data-target="#myModal" 
+								class="btn btn-warning">Báo hồ sơ lỗi  </button></td>
+								<td><button type="button" class="btn btn-danger"onclick=location.href="
+								 '.base_url('admin/admin_phong_ban/edit_stt/'.html_escape($row->id).'').'">Xử lý xong</button></td>
 								</tr>';
 				if (($row->status==3)||($row->status==6))
             		echo '
@@ -68,9 +68,21 @@
 					</div>
 					<div class="modal-body">
 
-						<?php echo form_open('/admin/admin_phong_ban/notifyError/'.$row->id); ?>
-						<textarea class="form-control" name="error" ></textarea>
-						<input type="text" name="myYing" id="node_id_love" style="visibility: hidden" value="">
+						<?php echo form_open('/admin/admin_phong_ban/notifyError/'); ?>
+						
+							<?php
+							$da_thu = str_replace('<b>','',$row->tt_giay_to_da_thu);
+							$da_thu = str_replace('</b>','', $da_thu);
+							$da_thu=explode('+', $da_thu);
+						echo'<input type="hidden"  name="count"  value="'.count($da_thu).'">';
+					for ($i = 0;$i<count($da_thu)-1;$i++ ) {
+						echo '<input type="hidden" name="ten_rieng_'.$i.'"   value="'.$da_thu[$i].'">
+						'.$da_thu[$i].'<input type="text" name="loi_rieng_'.$i.'"   value=""><br>';
+						 $i++;
+						}
+						?><textarea class="form-control" name="error" rows="3" ></textarea>
+						
+						<input type="hidden" name="node_id" id="node_id"  value="">
 						<div><input type="submit" class="btn btn-danger" value="Xác nhận " name="submit"/></div>
 						<?php echo form_close(); ?>
 
@@ -88,7 +100,7 @@
 
 	function m(myVar){
 
-		document.getElementById('node_id_love').value = myVar;
+		document.getElementById('node_id').value = myVar;
 	}
 
 
