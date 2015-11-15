@@ -16,31 +16,29 @@
             </a>
             ';?>
         </li>
-        <li class="active">
-            <i class="fa fa-file-o"></i> <?php echo html_escape($node_map->node_name); ?>
-        </li>
     </ol>
     <h3 class="page-header marTop"><i class="fa fa-file-o"></i> <?php echo html_escape($node_map->node_name); ?></h3>
 
     <?php
     $today_1 =  date("Ymd");
-    
-    $thanh_phan_data = str_replace('<br>','', $thanh_phan_data);
+    //Lấy dữ liệu từ $thanh_phan_data truyen qua de dung cho viec ho so dinh kem
     $arrayThutuc = explode("+", $thanh_phan_data);
     if(isset($message)){
 
-        echo '<script type="text/javascript">alert("Thông tin đã được nhập"); window.location = "'.base_url().'admin/Admin_tiep_nhan";</script>';
+        echo "<script type='text/javascript'>alert('Thông tin đã được nhập!'); window.location = '/Demo-2/trang_chu';</script>";
 
     }
     ?>
-        <div class="panel-body">
-            <h4 class="page-header marTop">Thông tin của người làm hồ sơ</h4>
+
+    <?php
+    $attributes = array('class'=>'form-horizontal');
+    echo form_open(''.base_url().'Trang_chi_tiet', $attributes);?>
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h4 class="panel-title">Thông tin của người làm hồ sơ </h4>
+        </div>
             <div class="panel-body">
 
-                    
-            <?php               
-            $attributes = array('class'=>'form-horizontal');
-            echo form_open(''.base_url().'Trang_chi_tiet', $attributes);?>
                         <!--Name Field-->
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Họ và tên  </label>
@@ -83,7 +81,7 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Số ngày giải quyết </label>
                             <div class="col-sm-2">
-                                <input class="form-control" id="songay" onBlur="doMacBook();" type="lable" name="songay" >
+                                <input class="form-control" id="songay" onBlur="doMacBookPro();" type="lable" name="songay" >
 
                             </div>
                             <div class="error"><span class="error">* <?php echo form_error('songay'); ?></span></div>
@@ -93,43 +91,77 @@
                         <input type="text" id="ma_Ho_So" name="ma_Ho_So"   style="visibility: hidden" >
 
                         <!--Tài liệu kèm theo đơn -->
-                        <fieldset>
-                            <legend><h4>Giấy tờ kèm theo</h4></legend>
-                            <b style="color:Red;">Số lượng:</b>
 
-                            <?php for ($i = 1; $i <= count($arrayThutuc); $i+=1) { 
-                                 if ($i < count($arrayThutuc)) {
-                                    $checkBox = "chk".$i;
-                                    $form = "myDiv".$i;
-                                    $number = "myNumber".$i;
-                                    echo'
-                                   <ul class="container-fluid">
-                                        <li class="row" >
-                                            <p class="col-sm-2 col-md-2 col-xs-2 "  id ="'.$form.'" >
-                                            <input  id = "'.$number.'"  type="number" min="1" max="30" step="1" value="1" size="1">
-                                            </p>
-                                            <input class="col-sm-1 col-md-1 col-xs-1"  type="checkbox"  name="chk_group" id= "'. $checkBox.'" onclick="display('.$i.')" value="'.$arrayThutuc[$i].'">
-                                            <div class="col-sm-9 col-md-9 col-xs-9"  > '.$arrayThutuc[$i].'</div>
 
-                                        </li>
-                                   </ul>';
-                                 } 
-                             } ?>
-                        </fieldset>
-                        <fieldset>
-                            <legend><h4>Ghi chú đính kèm</h4></legend>
-                            <input class="form-control"  type="text" name="note" ><br>
-                        </fieldset>
-                        <fieldset class="form-horizontal">
-                            <legend><h4>Lệ phí</h4></legend>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">Lệ phí một bản:  </label>
-                                <div class="col-sm-3">
-                                   
-                                <input  onBlur="checkLePhi();" onfocus="if(this.value=='400.000') this.value='';" class="form-control" value="<?php echo $le_phi; ?>" id="lephi" type="text"  readonly <br />
-                                
-                                </div>
-                                <div class="error"> <label class="col-sm-2 control-label">Số bản:  </label><span class="error">
+
+
+
+
+                </div><!--Panel body-->
+    </div>
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h4 class="panel-title">Giấy tờ kèm theo </h4>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-offset-7 col-sm-offset-1">
+                    <b style="color:Red;">Số lượng</b>
+                </div>
+                <div class="clearfix"></div>
+
+            </div>
+
+            <?php for ($i = 1; $i <= count($arrayThutuc); $i+=1) { ?>
+                <?php if ($i < count($arrayThutuc)) {?>
+
+                    <?php
+                    $checkBox = "chk".$i;
+                    $form = "myDiv".$i;
+                    $number = "myNumber".$i;
+                    ?>
+                    <ul class="container-fluid">
+                        <li class="row" >
+                            <div class="col-sm-offset-1 col-sm-6 col-md-offset-1 col-md-6 col-lg-offset-1 col-lg-6"  > <?php echo $arrayThutuc[$i];?></div>
+                            <p class="col-sm-2 col-md-2 col-xs-2 "  id = <?php echo $form  ?> >
+
+                            <input  id = <?php echo $number ?> type="number" min="1" max="30" step="1" value="1" size="1">
+                            </p>
+                            <input class="col-sm-1 col-md-1 col-xs-1"  type="checkbox"  name="chk_group" id= <?php echo $checkBox?> onclick="displa_sssy(<?php echo $i ?>)" value="<?php echo $arrayThutuc[$i];?>">
+
+
+                        </li>
+
+                    </ul>
+                <?php } ?>
+            <?php } ?>
+
+
+        </div>
+    </div>
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h4 class="panel-title">Ghi chú đính kèm   </h4>
+        </div>
+        <div class="panel-body">
+            <textarea class="form-control"   name="note" ></textarea>
+        </div>
+    </div>
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h4 class="panel-title">Lệ phí   </h4>
+        </div>
+        <div class="panel-body">
+            <fieldset class="form-horizontal">
+                <legend><h4>Lệ phí</h4></legend>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Lệ phí một bản:  </label>
+                    <div class="col-sm-3">
+
+                        <input  onBlur="checkLePhi();" onfocus="if(this.value=='400.000') this.value='';" class="form-control" value="<?php echo $le_phi; ?>" id="lephi" type="text"  readonly <br />
+
+                    </div>
+                    <div class="error"> <label class="col-sm-2 control-label">Số bản:  </label><span class="error">
                                     <div class="col-sm-3">
                                         <input  class="form-control" id="sobang" name="sobang" onBlur="doMath();" type="text"  placeholder="Nhập số bản  " <br />
 
@@ -137,46 +169,37 @@
                                              <div class="error"><span class="error">* <?php echo form_error('sobang'); ?><br /</span></div>
 
                                             <br /</span></div>
-                            </div>
+                </div>
 
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">Thành tiền :  </label>
-                                <div class="col-sm-3">
-                                    <input  class="form-control" id="tongcong" name ="tong_cong" type="text"  readonly <br />
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Thành tiền :  </label>
+                    <div class="col-sm-3">
+                        <input  class="form-control" id="tongcong" name ="tong_cong" type="text"  readonly <br />
 
-                                </div>
-                                <div ><i><b>đồng</b></i>
-                                    <!--List of temporary textboxs-->
-                                    <input type="text" id="ying_ho_so_da_nhan" name = "dying" style="visibility: hidden" >
-                                    <!--YingLo-->
-                                    <input type="hidden" id="today_1"  value="<?php echo date("His",time()+1) ; ?>"  >
-                                    <input type="hidden" id="today_2" value="<?php echo date("dmy"); ?>" >
-                                    <input type="hidden" id="so_ngay" value="<?php echo $so_ngay; ?>"  >
-                                    <input type="hidden" id="node_id" value="<?php echo $node_map->node_id; ?>"  >
+                    </div>
+                    <div ><i><b>đồng</b></i>
+                        <!--List of temporary textboxs-->
+                        <input type="text" id="ying_ho_so_da_nhan" name = "dying" style="visibility: hidden" >
+                        <!--YingLo-->
+                        <input type="text" id="today_1"  value="<?php echo date("His",time()+1) ; ?>" style="visibility: hidden" >
+                        <input type="text" id="today_2" value="<?php echo date("dmy"); ?>" style="visibility: hidden" >
+                        <input type="text" id="so_ngay" value="<?php echo $so_ngay; ?>" style="visibility: hidden" >
+                        <input type="text" id="node_id" value="<?php echo $node_map->node_id; ?>" style="visibility: hidden" >
 
-                                </div>
-                            </div>
+                    </div>
+                </div>
 
-                        </fieldset>
+            </fieldset>
+            <input type="submit"  onclick="compileInputs();" class="btn btn-success btn-lg btn-block" id = 'submit'name="submit" value="Nhập hồ sơ">
+        </div>
+    </div>
 
-                        <!-- <input type="checkbox" onclick="myCheckboxFunction();"> -->
+    </form><!-- End form -->
+    </div>
 
 
-                        <input type="submit"  onclick="compileInputs();" class="btn btn-success btn-lg btn-block" id = 'submit'name="submit" value="Nhập hồ sơ">
-
-                    </form><!-- End form -->
-
-                </div><!--Panel body-->
-        </div><!--End body-->
 <script type="text/javascript">
-    //Prevent user from entering characters
-    $("#inputCMND,#inputPhone,#sobang,#lephi,#songay,p").keypress(function(e) {
-        var key_codes = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 0, 8];
 
-        if (!($.inArray(e.which, key_codes) >= 0)) {
-            e.preventDefault();
-        }
-    }); //
     function compileInputs() {
         var inputsThanhPhan = new Array();
         var inputsSoLuong = new Array();
@@ -263,7 +286,7 @@
     if( myProcess.substr(16,2) =="20" ){
         document.getElementById('lephi').readOnly = false;
     }
-    function doMacBook(){
+    function doMacBookPro(){
         var myDayVar = document.getElementById("songay").value;
 
         var string_1 = "TP";

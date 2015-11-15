@@ -20,6 +20,16 @@ if($q->num_rows()>0){
 
 }
 $node_map = $data;
+function functionForSelectTag($str,$length){
+    if(strlen($str) > $length ){
+        $stringCut = substr($str,0,$length);
+        $string = substr($stringCut, 0, strrpos($stringCut, ' '))."...";
+        return $string;
+    }else{
+        return $str;
+    }
+}
+
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -33,24 +43,42 @@ $node_map = $data;
                 <li ><a href="#panel-5">Theo năm </a></li>
             </ul>
         </nav><!--end nav-->
+
+
         <div class="panel" id="panel-1">
-
             <input type="hidden" id="phpVarDay" value="<?php echo $myDay; ?>">
-
             <form class="container-fluid" action="<?php echo base_url('admin/thong_ke/day_filter') ?>" method="post">
                 <div class="row">
                     <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
-                        <lable style="font-weight: bold">Từ ngày</lable>
-                        <input  class="form-control" readonly type="text" id ="datepicker1" name="datepicker1">
+                        <lable  style="font-weight: bold">Từ ngày</lable>
                     </div>
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                        <lable style="font-weight: bold">Đến ngày</lable>
+
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+                        <lable  style="font-weight: bold">Đến ngày</lable>
+
+                    </div>
+
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+                        <lable style="font-weight: bold" >Chọn thủ tục muốn xem </lable>
+                    </div>
+
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+                        <input class=" form-control" readonly type="text" id ="datepicker1" name="datepicker1">
+                    </div>
+
+
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
                         <input class="form-control" readonly type="text" id ="datepicker2" name="datepicker2">
                     </div>
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                        <lable style="font-weight: bold" >Chọn thủ tục muốn xem </lable>
 
-                        <select  name="luachonInDay" class="selectpicker "  data-style="btn-success rm-relish ">
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+                        <select  name="luachonInDay" class="selectpicker form-control" data-live-search="true" data-style="btn-success rm-relish ">
 
                             <option value="all">Xem tất cả các thủ tục</option>
                             <?php
@@ -59,7 +87,8 @@ $node_map = $data;
 
                                     if($i != 31){
                                         $myThing = $node_map[$i]->node_id-1;
-                                        echo '<option value="'.$myThing.' ">'.$node_map[$i]->node_name.'</option>';
+                                        $otherthings=functionForSelectTag($node_map[$i]->node_name,33);
+                                        echo '<option  value="'.$myThing.' ">'.$otherthings.'</option>';
                                     }
 
                                 }
@@ -69,27 +98,29 @@ $node_map = $data;
                                 for($i = 1; $i<31;$i++){
 
                                     $myThing = $node_map[$i]->node_id-1;
-
-                                    echo '<option value="'.$myThing.' ">'.$node_map[$i]->node_name.'</option>';
+                                    $otherthings=functionForSelectTag($node_map[$i]->node_name,33);
+                                    echo '<option  value="'.$myThing.' ">'.$otherthings.'</option>';
                                 }
                             }
 
                             if($_SESSION['level']==22){
                                 for($i = 32; $i<count($node_map);$i++){
                                     $myThing = $node_map[$i]->node_id-1;
-                                    echo '<option value="'.$myThing.' ">'.$node_map[$i]->node_name.'</option>';
+                                    $otherthings=functionForSelectTag($node_map[$i]->node_name,33);
+                                    echo '<option  value="'.$myThing.' ">'.$otherthings.'</option>';
                                 }
                             }
 
 
                             ?>
                         </select>
+                    </div>
 
+
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+                        <input class=" btn btn-info" type="submit" value="Xem thông tin" data-style="btn-primary"  >
                     </div>
-                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
-                        <label></label>
-                        <input class="form-control btn-info" type="submit" value="Xem thông tin" data-style="btn-primary"  >
-                    </div>
+
                 </div>
             </form>
 
@@ -97,16 +128,28 @@ $node_map = $data;
         <div class="panel" id="panel-2">
             <input type="hidden" id="phpVarWeek" value="<?php echo $myWeek; ?>">
 
-            <form class="row" action="<?php echo base_url('admin/thong_ke/week_filter') ?>" method="post">
-                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
+            <form class="container-fluid" action="<?php echo base_url('admin/thong_ke/week_filter') ?>" method="post">
+
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"   >
                         <lable style="font-weight: bold">Chọn ngày trong tuần </lable>
+                    </div>
+
+                    <div class="col-xs-3 col-xs-offset-1 col-sm-offset-1 col-ms-offset-1 col-lg-offset-1 col-sm-3 col-md-3 col-lg-3 ">
+                        <lable style="font-weight: bold">Chọn thủ tục muốn xem  </lable>
+                    </div>
+
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
                         <input  class="form-control" readonly type="text" id ="datepickerWeek" name="weekName"  >
                     </div>
-                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 ">
-                    <lable style="font-weight: bold">Chọn thủ tục muốn xem  </lable>
 
-                        <select  name="luachonWeek" class="selectpicker "  data-style="btn-success rm-relish ">
+                    <div class="col-xs-3 col-xs-offset-1 col-sm-offset-1 col-ms-offset-1 col-lg-offset-1 col-sm-3 col-md-3 col-lg-3 ">
+                        <select  name="luachonWeek" class="selectpicker form-control"  data-style="btn-success rm-relish ">
 
                             <option value="all">Xem tất cả các thủ tục</option>
                             <?php
@@ -115,7 +158,8 @@ $node_map = $data;
 
                                     if($i != 31){
                                         $myThing = $node_map[$i]->node_id-1;
-                                        echo '<option value="'.$myThing.' ">'.$node_map[$i]->node_name.'</option>';
+                                        $otherthings=functionForSelectTag($node_map[$i]->node_name,33);
+                                        echo '<option  value="'.$myThing.' ">'.$otherthings.'</option>';
                                     }
 
                                 }
@@ -125,15 +169,16 @@ $node_map = $data;
                                 for($i = 1; $i<31;$i++){
 
                                     $myThing = $node_map[$i]->node_id-1;
-
-                                    echo '<option value="'.$myThing.' ">'.$node_map[$i]->node_name.'</option>';
+                                    $otherthings=functionForSelectTag($node_map[$i]->node_name,33);
+                                    echo '<option  value="'.$myThing.' ">'.$otherthings.'</option>';
                                 }
                             }
 
                             if($_SESSION['level']==22){
                                 for($i = 32; $i<count($node_map);$i++){
                                     $myThing = $node_map[$i]->node_id-1;
-                                    echo '<option value="'.$myThing.' ">'.$node_map[$i]->node_name.'</option>';
+                                    $otherthings=functionForSelectTag($node_map[$i]->node_name,33);
+                                    echo '<option  value="'.$myThing.' ">'.$otherthings.'</option>';
                                 }
                             }
 
@@ -141,24 +186,39 @@ $node_map = $data;
                             ?>
                         </select>
                     </div>
+
+                    <div class="col-xs-3 col-xs-offset-1 col-sm-offset-1 col-ms-offset-1 col-lg-offset-1 col-sm-3 col-md-3 col-lg-3 ">
+                        <input class="btn btn-info" type="submit" value="Xem thông tin" data-style="btn-primary"  >
+                    </div>
                 </div>
 
-                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
-                    <label></label>
-                    <input class="form-control btn-info" type="submit" value="Xem thông tin" data-style="btn-primary"  >
-                </div>
+
 
             </form>
         </div><!-- End panel-2-Tuan -->
         <div class="panel" id="panel-3">
             <input type="hidden" id="phpVarMonth" value="<?php echo $myMonth; ?>">
             <div >
-                <form class="row" action="<?php echo base_url('admin/thong_ke/month_filter') ?>" method="post">
+                <form class="container-fluid" action="<?php echo base_url('admin/thong_ke/month_filter') ?>" method="post">
 
-                    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <div class="row">
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                             <lable style="font-weight: bold">Chọn tháng</lable>
-                            <select name="thangName" class="selectpicker " data-style="btn-success rm-relish " >
+                        </div>
+                        <div class=" col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                            <lable style="font-weight: bold">Nhập năm </lable>
+                        </div>
+                        <div class="col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            <lable style="font-weight: bold">Chọn thủ tục muốn xem </lable>
+                        </div>
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            <select name="thangName" class="selectpicker form-control " data-style="btn-success rm-relish " >
                                 <option value='01'>Tháng 1</option>
                                 <option value='02'>Tháng 2</option>
                                 <option value='03'>Tháng 3</option>
@@ -172,14 +232,13 @@ $node_map = $data;
                                 <option value='11'>Tháng 11</option>
                                 <option value='12'>Tháng 12</option>
                             </select>
+
                         </div>
-                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
-                            <lable style="font-weight: bold">Nhập năm </lable>
+                        <div class=" col-xs-2 col-sm-2 col-md-2 col-lg-2">
                             <input  class="form-control"  type="text" id ="myYearMonth" name="yearName" value="2015" >
                         </div>
-                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                            <lable style="font-weight: bold">Chọn thủ tục muốn xem </lable>
-                            <select  name="luachonName" class="selectpicker "  data-style="btn-success rm-relish ">
+                        <div class="col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            <select  name="luachonName" class="selectpicker form-control"  data-style="btn-success rm-relish ">
 
                                 <option value="all">Xem tất cả các thủ tục</option>
                                 <?php
@@ -188,7 +247,8 @@ $node_map = $data;
 
                                         if($i != 31){
                                             $myThing = $node_map[$i]->node_id-1;
-                                            echo '<option value="'.$myThing.' ">'.$node_map[$i]->node_name.'</option>';
+                                            $otherthings=functionForSelectTag($node_map[$i]->node_name,33);
+                                            echo '<option  value="'.$myThing.' ">'.$otherthings.'</option>';
                                         }
 
                                     }
@@ -198,15 +258,16 @@ $node_map = $data;
                                     for($i = 1; $i<31;$i++){
 
                                         $myThing = $node_map[$i]->node_id-1;
-
-                                        echo '<option value="'.$myThing.' ">'.$node_map[$i]->node_name.'</option>';
+                                        $otherthings=functionForSelectTag($node_map[$i]->node_name,33);
+                                        echo '<option  value="'.$myThing.' ">'.$otherthings.'</option>';
                                     }
                                 }
 
                                 if($_SESSION['level']==22){
                                     for($i = 32; $i<count($node_map);$i++){
                                         $myThing = $node_map[$i]->node_id-1;
-                                        echo '<option value="'.$myThing.' ">'.$node_map[$i]->node_name.'</option>';
+                                        $otherthings=functionForSelectTag($node_map[$i]->node_name,33);
+                                        echo '<option  value="'.$myThing.' ">'.$otherthings.'</option>';
                                     }
                                 }
 
@@ -214,11 +275,9 @@ $node_map = $data;
                                 ?>
                             </select>
                         </div>
-
-                    </div>
-                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
-                        <label></label>
-                        <input class="form-control btn-info" type="submit" value="Xem thông tin" data-style="btn-primary"  >
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            <input class="btn btn-info" type="submit" value="Xem thông tin" data-style="btn-primary"  >
+                        </div>
                     </div>
 
 
@@ -228,27 +287,37 @@ $node_map = $data;
         <div class="panel" id="panel-4">
             <input type="hidden" id="phpVarQuarter" value="<?php echo $myQuarter; ?>">
             <div>
-                <form class="row" action="<?php echo base_url('admin/thong_ke/quarter_filter') ?>" method="post">
-                    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 ">
-                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
-                            <lable style="font-weight: bold">Chọn Quý </lable>
-                     <select name="quarter" class="selectpicker " data-style="btn-success rm-relish " >
-                            <option value='1'>Quý I</option>
-                            <option value='2'>Quý II</option>
-                            <option value='3'>Quý III</option>
-                            <option value='4'>Quý IV</option>
-                        </select>
-                        </div>
+                <form class="container-fluid" action="<?php echo base_url('admin/thong_ke/quarter_filter') ?>" method="post">
 
-                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
+                    <div class="row">
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            <lable style="font-weight: bold">Chọn Quý </lable>
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                             <lable style="font-weight: bold">Nhập năm </lable>
+                        </div>
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            <lable style="font-weight: bold">Chọn thủ tục muốn xem  </lable>
+                        </div>
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            <select name="quarter" class="selectpicker form-control " data-live-search="true"  data-style="btn-success rm-relish " >
+                                <option value='1'>Quý I</option>
+                                <option value='2'>Quý II</option>
+                                <option value='3'>Quý III</option>
+                                <option value='4'>Quý IV</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                             <input  class="form-control"  type="text" id ="myYearQuarter" name="yearQuarter" value="2015" >
                         </div>
-
-
-                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 ">
-                            <lable style="font-weight: bold">Chọn thủ tục muốn xem  </lable>
-                            <select  name="luachonQuarter" class="selectpicker "  data-style="btn-success rm-relish ">
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            <select  name="luachonQuarter" class="selectpicker form-control" data-live-search="true"  data-style="btn-success rm-relish ">
 
                                 <option value="all">Xem tất cả các thủ tục</option>
                                 <?php
@@ -257,7 +326,8 @@ $node_map = $data;
 
                                         if($i != 31){
                                             $myThing = $node_map[$i]->node_id-1;
-                                            echo '<option value="'.$myThing.' ">'.$node_map[$i]->node_name.'</option>';
+                                            $otherthings=functionForSelectTag($node_map[$i]->node_name,33);
+                                            echo '<option  value="'.$myThing.' ">'.$otherthings.'</option>';
                                         }
 
                                     }
@@ -267,15 +337,16 @@ $node_map = $data;
                                     for($i = 1; $i<31;$i++){
 
                                         $myThing = $node_map[$i]->node_id-1;
-
-                                        echo '<option value="'.$myThing.' ">'.$node_map[$i]->node_name.'</option>';
+                                        $otherthings=functionForSelectTag($node_map[$i]->node_name,33);
+                                        echo '<option  value="'.$myThing.' ">'.$otherthings.'</option>';
                                     }
                                 }
 
                                 if($_SESSION['level']==22){
                                     for($i = 32; $i<count($node_map);$i++){
                                         $myThing = $node_map[$i]->node_id-1;
-                                        echo '<option value="'.$myThing.' ">'.$node_map[$i]->node_name.'</option>';
+                                        $otherthings=functionForSelectTag($node_map[$i]->node_name,33);
+                                        echo '<option  value="'.$myThing.' ">'.$otherthings.'</option>';
                                     }
                                 }
 
@@ -283,15 +354,10 @@ $node_map = $data;
                                 ?>
                             </select>
                         </div>
-
-
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            <input class="btn btn-info" type="submit" value="Xem thông tin" data-style="btn-primary"  >
+                        </div>
                     </div>
-
-                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
-                        <label></label>
-                        <input class="form-control btn-info" type="submit" value="Xem thông tin" data-style="btn-primary"  >
-                    </div>
-
 
                 </form>
             </div>
@@ -302,17 +368,30 @@ $node_map = $data;
             <input type="hidden" id="phpVarYear" value="<?php echo $myYear; ?>">
 
             <form  action="<?php echo base_url('admin/thong_ke/year_filter') ?>" method="post">
-                <div class="row">
-                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                <div class="container-fluid">
 
-                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
-                                <lable style="font-weight: bold">Nhập năm </lable>
-                                <input  class="form-control"  type="text" id ="myYear" name="year" >
+                    <div class="row">
+                        <div class=" col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1  col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
+                            <lable style="font-weight: bold">Nhập năm </lable>
                         </div>
 
                         <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
                             <lable style="font-weight: bold">Chọn thủ tục muốn xem </lable>
-                            <select  name="luachon" class="selectpicker "  data-style="btn-success rm-relish ">
+                        </div>
+
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class=" col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1  col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
+                            <input  class="form-control"  type="text" id ="myYear" name="year" value="2015" >
+                        </div>
+
+                        <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+                            <select  name="luachon" id="selectID" class="selectpicker form-control" data-live-search="true"   data-style="btn-success rm-relish ">
 
                                 <option value="all">Xem tất cả các thủ tục</option>
                                 <?php
@@ -321,7 +400,8 @@ $node_map = $data;
 
                                         if($i != 31){
                                             $myThing = $node_map[$i]->node_id-1;
-                                            echo '<option value="'.$myThing.' ">'.$node_map[$i]->node_name.'</option>';
+                                            $otherthings=functionForSelectTag($node_map[$i]->node_name,33);
+                                            echo '<option  value="'.$myThing.' ">'.$otherthings.'</option>';
                                         }
 
                                     }
@@ -331,15 +411,16 @@ $node_map = $data;
                                     for($i = 1; $i<31;$i++){
 
                                         $myThing = $node_map[$i]->node_id-1;
-
-                                        echo '<option value="'.$myThing.' ">'.$node_map[$i]->node_name.'</option>';
+                                        $otherthings=functionForSelectTag($node_map[$i]->node_name,33);
+                                        echo '<option  value="'.$myThing.' ">'.$otherthings.'</option>';
                                     }
                                 }
 
                                 if($_SESSION['level']==22){
                                     for($i = 32; $i<count($node_map);$i++){
                                         $myThing = $node_map[$i]->node_id-1;
-                                        echo '<option value="'.$myThing.' ">'.$node_map[$i]->node_name.'</option>';
+                                        $otherthings=functionForSelectTag($node_map[$i]->node_name,33);
+                                        echo '<option  value="'.$myThing.' ">'.$otherthings.'</option>';
                                     }
                                 }
 
@@ -347,24 +428,20 @@ $node_map = $data;
                                 ?>
                             </select>
                         </div>
-                    </div>
 
-                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
-                        <label></label>
-                        <input class="form-control btn-info" type="submit" value="Xem thông tin" data-style="btn-primary"  >
-                    </div>
+                        <div class="col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+                            <input class="btn btn-info" type="submit" value="Xem thông tin" data-style="btn-primary"  >
+                        </div>
 
-                </div>
+                    </div>
+                    </div>
 
             </form>
 
         </div><!--end panel 5-Nam-->
     </div><!--end Demo-->
 </div>
-
-
-<?php //Tính tiền tháng năm nếu bấm nút xem thông tin
-
+<?php
 
 if (isset($tuNgay)){
     $myDay = 1;
@@ -425,8 +502,7 @@ if(isset($yearSet)){
 
 }
 
-//Calculations
-
+/*Conditions*/
 function dieuKienChoTraVe($data2,$i){
 
     return (($_SESSION['level']==12 || $_SESSION['level']==13 )&&$data2[$i]->mcb == $_SESSION['ma_can_bo']  && $data2[$i]->status == 5);
@@ -491,7 +567,6 @@ function dieuKienChoThongKeQuy($data2,$i,$nam,$quarter){
 function dieuKienChoThongKeNam($data2,$i,$nam){
     return substr($data2[$i]->mshs, 11, 2) == $nam;
 }
-
 function dieuKienPhongBan($data2,$i){
     return (dieuKienChoTraVe($data2,$i)||
         dieuKienChoPhongBanTuPhap($data2,$i)||
@@ -502,6 +577,7 @@ function dieuKienPhongBan($data2,$i){
 $tempForShowingCondion = 0;
 $tongSoTienThuDuoc = 0;
 
+//Calculations
 
     for ($i = 0; $i < count($data2); $i++){
         if($luaChon=='all'){
@@ -611,7 +687,7 @@ $tongSoTienThuDuoc = 0;
 
     }
 
-    //Show table
+//Show table
 
     if($tempForShowingCondion==0){
         echo'<p style="color: red;font-style: italic ">Không có hồ sơ nào</p>';
@@ -748,7 +824,7 @@ $tongSoTienThuDuoc = 0;
             }
         }
 
-            //For the same purspose
+            //For the same purpose
 
             echo '<tr>
                                   <td colspan="3"></td>
@@ -761,105 +837,125 @@ $tongSoTienThuDuoc = 0;
 
 ?>
 
-
 <script type="text/javascript">
 
+
+
+
+
     $(function() {
-    $("#datepicker1").datepicker();
-    $("#datepicker2").datepicker();
-    $("#datepickerWeek").datepicker();
-  });
+        $("#datepicker1").datepicker();
+        $("#datepicker2").datepicker();
+        $("#datepickerWeek").datepicker();
 
+        //$('#selectID').data('selectpicker').$lis.attr('title', 'New Title').tooltip();
 
-  (function($) {
+        //$('.selectpicker').selectpicker();
+        //$('[title]').tooltip({container: 'body'});
 
-    $(document).ready(function() {
-
-      $('.demo').each(function() {
-
-          var tabs = $(this).find('.tabs a'),
-              panels = $(this).find('.panel').hide();
-          $(".tabs li:eq(0)").addClass("active").show(); //Activate second tab
-          $(".panel:eq(0)").show(); //Show second tab content
-
-
-
-          if($('#phpVarDay').val()==1){
-              tabs.parent().removeClass('active');
-
-              $(".tabs li:eq(0)").addClass("active").show(); //Activate second tab
-              $(".panel:eq(0)").show();
-
-          }
-
-          if($('#phpVarWeek').val()==1||$('#myWeekLove').val()==1){
-
-              tabs.parent().removeClass('active');
-              $(".panel:eq(0)").hide();
-              $(".tabs li:eq(1)").addClass("active").show(); //Activate second tab
-              $(".panel:eq(1)").show();
-
-          }
-
-          if($('#phpVarMonth').val()==1||$('#myMonthLove').val()==1){
-
-              tabs.parent().removeClass('active');
-              // Toggle active class
-              $(".panel:eq(0)").hide();
-
-              //$(this).parent().addClass('active');
-              $(".tabs li:eq(2)").addClass("active").show(); //Activate second tab
-              $(".panel:eq(2)").show();
-
-          }
-
-          if($('#phpVarQuarter').val()==1||$('#myQuarterLove').val()==1){
-
-              tabs.parent().removeClass('active');
-              // Toggle active class
-              $(".panel:eq(0)").hide();
-
-              //$(this).parent().addClass('active');
-              $(".tabs li:eq(3)").addClass("active").show(); //Activate second tab
-              $(".panel:eq(3)").show();
-
-          }
-
-          if($('#phpVarYear').val()==1||$('#myYearLove').val()==1){
-
-              tabs.parent().removeClass('active');
-              // Toggle active class
-              $(".panel:eq(0)").hide();
-
-              //$(this).parent().addClass('active');
-              $(".tabs li:eq(4)").addClass("active").show(); //Activate second tab
-              $(".panel:eq(4)").show();
-
-          }
-
-          tabs.click(function() {
-          var active = $(this).attr("href");
-
-          // Toggle active class
-          tabs.parent().removeClass('active');
-          $(this).parent().addClass('active');
-
-          // Toggle selected panel
-          panels.hide();
-          $(active).show();
-
-          // Prevent default behavior
-          return false;
-        });
-
-
-      });
-
-
+       /* $(document).on('hidden.bs.tooltip', '.dropdown-toggle.selectpicker[title]', function (e) {
+            //$(this).attr('data-original-title', $(this).attr('title'));
+            $(this).text("Kie");
+        });*/
 
     });
 
-  })(jQuery);
+
+
+
+    (function($) {
+
+        $(document).ready(function() {
+            $('.demo').each(function() {
+
+                var tabs = $(this).find('.tabs a'),
+                    panels = $(this).find('.panel').hide();
+                $(".tabs li:eq(0)").addClass("active").show(); //Activate second tab
+                $(".panel:eq(0)").show(); //Show second tab content
+
+
+
+                if($('#phpVarDay').val()==1){
+                    tabs.parent().removeClass('active');
+                    $(".tabs li:eq(0)").addClass("active").show(); //Activate second tab
+                    $(".panel:eq(0)").show();
+
+                }
+
+                if($('#phpVarWeek').val()==1||$('#myWeekLove').val()==1){
+
+                    tabs.parent().removeClass('active');
+                    $(".panel:eq(0)").hide();
+                    $(".tabs li:eq(1)").addClass("active").show(); //Activate second tab
+                    $(".panel:eq(1)").show();
+
+                }
+
+                if($('#phpVarMonth').val()==1||$('#myMonthLove').val()==1){
+
+                    tabs.parent().removeClass('active');
+                    // Toggle active class
+                    $(".panel:eq(0)").hide();
+
+                    //$(this).parent().addClass('active');
+                    $(".tabs li:eq(2)").addClass("active").show(); //Activate second tab
+                    $(".panel:eq(2)").show();
+
+                }
+
+                if($('#phpVarQuarter').val()==1||$('#myQuarterLove').val()==1){
+
+                    tabs.parent().removeClass('active');
+                    // Toggle active class
+                    $(".panel:eq(0)").hide();
+
+                    //$(this).parent().addClass('active');
+                    $(".tabs li:eq(3)").addClass("active").show(); //Activate second tab
+                    $(".panel:eq(3)").show();
+
+                }
+
+                if($('#phpVarYear').val()==1||$('#myYearLove').val()==1){
+
+                    tabs.parent().removeClass('active');
+                    // Toggle active class
+                    $(".panel:eq(0)").hide();
+
+                    //$(this).parent().addClass('active');
+                    $(".tabs li:eq(4)").addClass("active").show(); //Activate second tab
+                    $(".panel:eq(4)").show();
+
+                }
+
+                tabs.click(function() {
+                    var active = $(this).attr("href");
+                    //Something with the table
+                    // Toggle active class
+                    tabs.parent().removeClass('active');
+                    $(this).parent().addClass('active');
+
+                    // Toggle selected panel
+                    panels.hide();
+
+
+                    $(active).show();
+
+                    // Prevent default behavior
+                    return false;
+                });
+
+
+            });
+
+
+
+        });
+
+    })(jQuery);
+
 
 </script>
+
+
+
 

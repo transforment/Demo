@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 09, 2015 at 07:27 PM
+-- Generation Time: Nov 15, 2015 at 12:11 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -201,6 +201,7 @@ CREATE TABLE IF NOT EXISTS `ho_so` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `mshs` varchar(200) NOT NULL,
   `name` varchar(200) NOT NULL,
+  `type` int(11) NOT NULL,
   `cmnd` int(11) NOT NULL,
   `status` int(11) NOT NULL,
   `mcb` varchar(200) NOT NULL,
@@ -212,18 +213,24 @@ CREATE TABLE IF NOT EXISTS `ho_so` (
   `error` text NOT NULL,
   `tien_thu` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
 --
 -- Dumping data for table `ho_so`
 --
 
-INSERT INTO `ho_so` (`id`, `mshs`, `name`, `cmnd`, `status`, `mcb`, `ngay_tra`, `sdt`, `dia_chi`, `tt_giay_to_da_thu`, `note`, `error`, `tien_thu`) VALUES
-(1, '051652-091115-TP02-02', 'quoc hai', 233232323, 0, 'nhanvatra', '', '0999999999', '', ' Kết quả giám định sức khỏe của người viết di chúc.<br>+<b>1</b>+ Di chúc.<br>+<b>1</b>+ Phiếu yêu cầu chứng thực (theo mẫu).<br>+<b>1</b>+ Xuất trình giấy tờ tuỳ thân (hộ khẩu chứng minh nhân dân) và giấy tờ cần thiết để chứng minh quyền sở hữu quyền sử dụng đối với tài sản.<br>+<b>1</b>+', 'Đính kèm hình ảnh', '', 60000),
-(2, '103551-091115-TP10-1', 'Khai tử', 283949595, 5, 'nhanvatra', '09/11/2015', '0999999999', '', '', '', '', 0),
-(3, '105728-091115-DD36-4', 'biến động đất', 232465434, 0, 'nhanvatra', '', '0999999999', '', ' Đơn điều chỉnh.<br>+<b>1</b>+ Đơn đăng ký biến động đất đai tài sản gắn liền với đất(Mẫu số 09/ĐK).<br>+<b>1</b>+ Biên bản sai sót.+<b>5</b>+', '', '', 0),
-(4, '232329-091115-DD32-05', 'sở hửu', 435776767, 2, 'bandd', '', '0999999999', '', ' Đơn đề nghị cấp lại cấp đổi giấy chứng nhận quyền sử dụng đất quyền sở hữu nhà ở và tài sản khác gắn liền với đất( mẫu số 10/ĐK).<br>+<b>1</b>+ Bản gốc giấy chứng nhận đã cấp.<br>+<b>1</b>+ Trích lục( trích đo) bản đồ địa chính<br>+<b>2</b>+ Biên bản thẩm tra ranh( nếu tăng giảm diện tích)+<b>1</b>+', 'Hình ảnh', '', 0),
-(5, '002524-101115-TP14-2', 'Đk kết hôn', 343766765, 8, 'nhanvatra', '09/11/2015', '0999999999', '', ' Tờ khai (theo mẫu).<br>+<b>1</b>+ Xuất trình bản sao giấy tờ hộ tịch đã cấp hợp lệ trước đây (nếu có); trong trường hợp không có bản sao giấy tờ hộ tịch thì đương sự phải tự cam đoan về việc đã đăng ký nhưng sổ hộ tịch không còn lưu được và chịu trách nhiệm về nội dung cam đoan. Đối với việc đăng ký lại việc kết hôn thì bản cam đoan phải có xác nhận của 02 người làm chứng biết rõ về việc đã đăng ký và có xác nhận của Ủy ban nhân dân cấp xã về chữ ký của hai người làm chứng.<br>+<b>1</b>+ Bản sao giấy chứng minh nhân dân hoặc Hộ chiếu của người đi đăng ký hộ tịch để xác định về cá nhân người đó.<br>+<b>1</b>+ Bản sao Sổ hộ khẩu Sổ đăng ký tạm trú (đối với công dân Việt Nam ở trong nước); Thẻ thường trú Thẻ tạm trú hoặc Chứng nhận tạm trú (đối với người nước ngoài cư trú tại Việt Nam) để làm căn cứ xác định thẩm quyền đăng ký.<br>Bản sao các giấy tờ nêu trên kèm bản chính để đối chiếu hoặc bản sao có chứng thực.+<b>1</b>+', '', 'Không đủ hồ sơ', 0);
+INSERT INTO `ho_so` (`id`, `mshs`, `name`, `type`, `cmnd`, `status`, `mcb`, `ngay_tra`, `sdt`, `dia_chi`, `tt_giay_to_da_thu`, `note`, `error`, `tien_thu`) VALUES
+(1, '051652-091115-TP02-02', 'quoc hai', 0, 233232323, 2, 'bantp', '', '0999999999', '', ' Kết quả giám định sức khỏe của người viết di chúc.<br>+<b>1</b>+ Di chúc.<br>+<b>1</b>+ Phiếu yêu cầu chứng thực (theo mẫu).<br>+<b>1</b>+ Xuất trình giấy tờ tuỳ thân (hộ khẩu chứng minh nhân dân) và giấy tờ cần thiết để chứng minh quyền sở hữu quyền sử dụng đối với tài sản.<br>+<b>1</b>+', 'Đính kèm hình ảnh', '', 60000),
+(2, '103551-091115-TP10-1', 'Khai tử', 0, 283949595, 5, 'nhanvatra', '09/11/2015', '0999999999', '', '', '', '', 0),
+(3, '105728-091115-DD36-4', 'biến động đất', 1, 232465434, 2, 'bandd', '', '0999999999', '', ' Đơn điều chỉnh.<br>+<b>1</b>+ Đơn đăng ký biến động đất đai tài sản gắn liền với đất(Mẫu số 09/ĐK).<br>+<b>1</b>+ Biên bản sai sót.+<b>5</b>+', '', '', 0),
+(4, '232329-091115-DD32-05', 'sở hửu', 1, 435776767, 2, 'bandd', '', '0999999999', '', ' Đơn đề nghị cấp lại cấp đổi giấy chứng nhận quyền sử dụng đất quyền sở hữu nhà ở và tài sản khác gắn liền với đất( mẫu số 10/ĐK).<br>+<b>1</b>+ Bản gốc giấy chứng nhận đã cấp.<br>+<b>1</b>+ Trích lục( trích đo) bản đồ địa chính<br>+<b>2</b>+ Biên bản thẩm tra ranh( nếu tăng giảm diện tích)+<b>1</b>+', 'Hình ảnh', '', 0),
+(5, '002524-101115-TP14-2', 'Đk kết hôn', 0, 343766765, 8, 'nhanvatra', '09/11/2015', '0999999999', '', ' Tờ khai (theo mẫu).<br>+<b>1</b>+ Xuất trình bản sao giấy tờ hộ tịch đã cấp hợp lệ trước đây (nếu có); trong trường hợp không có bản sao giấy tờ hộ tịch thì đương sự phải tự cam đoan về việc đã đăng ký nhưng sổ hộ tịch không còn lưu được và chịu trách nhiệm về nội dung cam đoan. Đối với việc đăng ký lại việc kết hôn thì bản cam đoan phải có xác nhận của 02 người làm chứng biết rõ về việc đã đăng ký và có xác nhận của Ủy ban nhân dân cấp xã về chữ ký của hai người làm chứng.<br>+<b>1</b>+ Bản sao giấy chứng minh nhân dân hoặc Hộ chiếu của người đi đăng ký hộ tịch để xác định về cá nhân người đó.<br>+<b>1</b>+ Bản sao Sổ hộ khẩu Sổ đăng ký tạm trú (đối với công dân Việt Nam ở trong nước); Thẻ thường trú Thẻ tạm trú hoặc Chứng nhận tạm trú (đối với người nước ngoài cư trú tại Việt Nam) để làm căn cứ xác định thẩm quyền đăng ký.<br>Bản sao các giấy tờ nêu trên kèm bản chính để đối chiếu hoặc bản sao có chứng thực.+<b>1</b>+', '', 'Không đủ hồ sơ', 0),
+(6, '224246-121115-TP03-3', 'Hồ thế hiệp', 0, 234345456, 2, 'bantp', '', '0999999999', '', ' Phiếu yêu cầu chứng thực.<br>+<b>1</b>+ Văn bản từ chối nhận tài sản thừa kế (mẫu số 60/VBTC).<br>+<b>2</b>+', '', '', 10000),
+(9, '005344-131115-TP03-2', 'hoàng đức', 0, 232323232, 7, 'nhanvatra', '', '0989777676', '', ' Phiếu yêu cầu chứng thực.+<b>1</b>+ Văn bản từ chối nhận tài sản thừa kế (mẫu số 60/VBTC).+<b>1</b>+', '', ' Phiếu yêu cầu chứng thực.+thiếu+ Văn bản từ chối nhận tài sản thừa kế (mẫu số 60/VBTC).+sai+-lỗi', 10000),
+(10, '012238-131115-DD34-5', 'Phúc Quang', 1, 223212342, 2, 'bandd', '', '0999999999', '', ' Đơn cớ mất có xác nhận của công an.<br>+<b>1</b>+ Giấy xác nhận đăng báo đài truyền thanh.<br> +<b>1</b>+ Đơn đề nghị cấp lại cấp đổi giấy chứng nhận quyền sử dụng đất quyền sở hữu nhà ở và tài sản khác gắn liền với đất( mẫu số 10/ĐK).<br>+<b>1</b>+ Bản sao giấy chứng nhận đã cấp.<br>+<b>1</b>+ Thông báo niêm yết mất giấy của UBND trong thời gian 15 ngày.<br>+<b>1</b>+ Trích lục bản đồ địa chính.<br>+<b>1</b>+', '', '', 0),
+(11, '174555-141115-TP13-3', 'Nguyễn văn A', 0, 232343456, 0, 'nhanvatra', '', '0989777676', '', ' Tờ khai đăng ký kết hôn (mẫu TP/HT-2013-TKĐKKH).+<b>1</b>+ Bản sao giấy chứng minh nhân dân hoặc Hộ chiếu của người đi đăng ký hộ tịch để xác định về cá nhân người đó.+<b>1</b>+ Bản sao Sổ hộ khẩu Sổ đăng ký tạm trú (đối với công dân Việt Nam ở trong nước); Thẻ thường trú Thẻ tạm trú hoặc Chứng nhận tạm trú (đối với người nước ngoài cư trú tại Việt Nam) để làm căn cứ xác định thẩm quyền đăng ký.Bản sao các giấy tờ nêu trên kèm bản chính để đối chiếu hoặc bản sao có chứng thực.+<b>1</b>+', '', '', 0),
+(12, '223315-141115-TP18-2', 'Trần Khánh A', 0, 343434434, 0, 'nhanvatra', '', '0989777676', '', ' Tờ khai (theo mẫu).+<b>1</b>+ Danh mục tài sản riêng được lập khi đăng ký giám hộ và danh mục tài sản hiện tại của người được giám hộ (nếu có).+<b>1</b>+ Quyết định công nhận việc giám hộ đã cấp trước đây.+<b>1</b>+ Xuất trình các giấy tờ chứng minh đủ điều kiện chấm dứt thay đổi việc giám hộ.+<b>1</b>+ Bản sao giấy chứng minh nhân dân hoặc Hộ chiếu của người đi đăng ký hộ tịch để xác định về cá nhân người đó.+<b>1</b>+ Bản sao Sổ hộ khẩu Sổ đăng ký tạm trú (đối với công dân Việt Nam ở trong nước); Thẻ thường trú Thẻ tạm trú hoặc Chứng nhận tạm trú (đối với người nước ngoài cư trú tại Việt Nam) để làm căn cứ xác định thẩm quyền đăng ký.+<b>1</b>+ Bản sao các giấy tờ nêu trên kèm bản chính để đối chiếu hoặc bản sao có chứng thực.+<b>1</b>+', '', '', 15000),
+(13, '021010-151115-DD34-3', 'quoc hai', 1, 234354323, 0, 'nhanvatra', '', '0989777676', '', ' Đơn cớ mất có xác nhận của công an.<br>+<b>1</b>+ Giấy xác nhận đăng báo đài truyền thanh.<br> +<b>1</b>+ Đơn đề nghị cấp lại cấp đổi giấy chứng nhận quyền sử dụng đất quyền sở hữu nhà ở và tài sản khác gắn liền với đất( mẫu số 10/ĐK).<br>+<b>1</b>+ Bản sao giấy chứng nhận đã cấp.<br>+<b>1</b>+ Thông báo niêm yết mất giấy của UBND trong thời gian 15 ngày.<br>+<b>1</b>+ Trích lục bản đồ địa chính.<br>+<b>1</b>+', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -418,7 +425,7 @@ CREATE TABLE IF NOT EXISTS `message` (
   `message` text NOT NULL,
   `date` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=29 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=47 ;
 
 --
 -- Dumping data for table `message`
@@ -437,7 +444,25 @@ INSERT INTO `message` (`id`, `name`, `vs`, `message`, `date`) VALUES
 (25, 'phong ban tp', '2-3', 'dude', '2015-11-02 08:09:18pm'),
 (26, 'tiep nhan tp', '2-3', 'what up?', '2015-11-02 08:09:36pm'),
 (27, 'phong ban tp', '2-3', 'fire', '2015-11-02 08:09:47pm'),
-(28, 'chu tich', '3-8', 'hú', '2015-11-02 08:18:33pm');
+(28, 'chu tich', '3-8', 'hú', '2015-11-02 08:18:33pm'),
+(29, 'phong ban tp', '2-3', 'ok', '2015-11-10 05:56:59am'),
+(30, 'phong ban tp', '2-3', 'hey', '2015-11-10 06:00:41am'),
+(31, 'phong ban tp', '2-3', 'bye', '2015-11-10 06:00:55am'),
+(32, 'phong ban tp', '3-10', 'hey', '2015-11-11 07:43:34pm'),
+(33, 'nhan va tra', '3-10', 'what up', '2015-11-11 07:44:44pm'),
+(34, 'phong ban tp', '3-10', 'nothing', '2015-11-11 07:51:46pm'),
+(35, 'nhan va tra', '3-10', 'good', '2015-11-11 07:52:02pm'),
+(36, 'tra ve', '4-8', 'hế lô', '2015-11-12 05:54:19am'),
+(37, 'phong ban tp', '3-10', 'boom', '2015-11-12 05:54:43am'),
+(38, 'chu tich', '4-8', 'what up?', '2015-11-12 05:55:20am'),
+(39, 'phong ban tp', '2-3', 'hey', '2015-11-14 12:05:26pm'),
+(40, 'phong ban tp', '2-3', 'dude', '2015-11-14 12:05:35pm'),
+(41, 'phong ban tp', '2-3', 'fire', '2015-11-14 12:06:56pm'),
+(42, 'phong ban tp', '2-3', 'boom', '2015-11-14 12:07:24pm'),
+(43, 'phong ban dd', '3-7', 'hey', '2015-11-15 08:12:04am'),
+(44, 'phong ban tp', '3-7', 'what  up?', '2015-11-15 08:12:13am'),
+(45, 'tra ve', '3-4', 'hey', '2015-11-15 08:12:31am'),
+(46, 'phong ban tp', '3-4', 'im here', '2015-11-15 08:13:05am');
 
 -- --------------------------------------------------------
 
@@ -468,7 +493,7 @@ INSERT INTO `thanh_phan` (`id`, `noi_dung`, `note`) VALUES
 (9, '+ Tờ khai đăng ký lại việc sinh (theo mẫu).<br>\n+ Xuất trình bản sao giấy tờ hộ tịch đã cấp hợp lệ trước đây (nếu có); trong trường hợp không có bản sao giấy tờ hộ tịch, thì đương sự phải tự cam đoan về việc đã đăng ký, nhưng sổ hộ tịch không còn lưu được và chịu trách nhiệm về nội dung cam đoan.<br>\n+ Bản sao giấy chứng minh nhân dân hoặc Hộ chiếu của người đi đăng ký hộ tịch để xác định về cá nhân người đó.<br>\n+ Bản sao Sổ hộ khẩu, Sổ đăng ký tạm trú (đối với công dân Việt Nam ở trong nước); Thẻ thường trú, Thẻ tạm trú hoặc Chứng nhận tạm trú (đối với người nước ngoài cư trú tại Việt Nam) để làm căn cứ xác định thẩm quyền đăng ký.<br>\nBản sao các giấy tờ nêu trên, kèm bản chính để đối chiếu hoặc bản sao có chứng thực.<br>', '01 bộ.'),
 (10, '+ Giấy báo tử hoặc các giấy tờ thay thế giấy báo tử theo quy định tại Điều 22 của Nghị định số 158/2005/NĐ-CP.<br>\n+ Bản sao giấy chứng minh nhân dân hoặc Hộ chiếu của người đi đăng ký hộ tịch để xác định về cá nhân người đó.<br>\n+ Bản sao Sổ hộ khẩu, Sổ đăng ký tạm trú (đối với công dân Việt Nam ở trong nước); Thẻ thường trú, Thẻ tạm trú hoặc Chứng nhận tạm trú (đối với người nước ngoài cư trú tại Việt Nam) để làm căn cứ xác định thẩm quyền đăng ký.<br>\nBản sao các giấy tờ nêu trên, kèm bản chính để đối chiếu hoặc bản sao có chứng thực.<br>', '01 bộ.'),
 (11, '+ Giấy báo tử hoặc các giấy tờ thay thế giấy báo tử theo quy định tại điều 22 của Nghị định 158/2005/NĐ-CP.<br>\n+ Bản sao giấy chứng minh nhân dân hoặc Hộ chiếu của người đi đăng ký hộ tịch để xác định về cá nhân người đó.<br>\n+ Bản sao Sổ hộ khẩu, Sổ đăng ký tạm trú (đối với công dân Việt Nam ở trong nước); Thẻ thường trú, Thẻ tạm trú hoặc Chứng nhận tạm trú (đối với người nước ngoài cư trú tại Việt Nam) để làm căn cứ xác định thẩm quyền đăng ký.<br>\nBản sao các giấy tờ nêu trên, kèm bản chính để đối chiếu hoặc bản sao có chứng thực.<br>', '01 bộ.'),
-(12, '+ Quyết định của Tòa án tuyên bố chết.<br>\n+ Bản sao giấy chứng minh nhân dân hoặc Hộ chiếu của người đi đăng ký hộ tịch để xác định về cá nhân người đó.<br>\n+ Bản sao Sổ hộ khẩu, Sổ đăng ký tạm trú (đối với công dân Việt Nam ở trong nước); Thẻ thường trú, Thẻ tạm trú hoặc Chứng nhận tạm trú (đối với người nước ngoài cư trú tại Việt Nam) để làm căn cứ xác định thẩm quyền đăng ký.<br>\nBản sao các giấy tờ nêu trên, kèm bản chính để đối chiếu hoặc bản sao có chứng thực.<br>', '01 bộ.'),
+(12, '+ Quyết định của Tòa án tuyên bố chết.<br>\r\n+ Bản sao giấy chứng minh nhân dân hoặc Hộ chiếu của người đi đăng ký hộ tịch để xác định về cá nhân người đó.<br>\r\n+ Bản sao Sổ hộ khẩu, Sổ đăng ký tạm trú (đối với công dân Việt Nam ở trong nước); Thẻ thường trú, Thẻ tạm trú hoặc Chứng nhận tạm trú (đối với người nước ngoài cư trú tại Việt Nam) để làm căn cứ xác định thẩm quyền đăng ký.<br>\r\n+Bản sao các giấy tờ nêu trên, kèm bản chính để đối chiếu hoặc bản sao có chứng thực.<br>', '01 bộ.'),
 (13, '+ Tờ khai (theo mẫu).<br>\n+ Xuất trình bản sao giấy tờ hộ tịch đã cấp hợp lệ trước đây (nếu có); trong trường hợp không có bản sao giấy tờ hộ tịch, thì đương sự phải tự cam đoan về việc đã đăng ký, nhưng sổ hộ tịch không còn lưu được và chịu trách nhiệm về nội dung cam đoan.<br>\n+ Bản sao giấy chứng minh nhân dân hoặc Hộ chiếu của người đi đăng ký hộ tịch để xác định về cá nhân người đó.<br>\n+ Bản sao Sổ hộ khẩu, Sổ đăng ký tạm trú (đối với công dân Việt Nam ở trong nước); Thẻ thường trú, Thẻ tạm trú hoặc Chứng nhận tạm trú (đối với người nước ngoài cư trú tại Việt Nam) để làm căn cứ xác định thẩm quyền đăng ký.<br>\n+ Bản sao các giấy tờ nêu trên, kèm bản chính để đối chiếu hoặc bản sao có chứng thực.<br>', '01 bộ.'),
 (14, '+ Tờ khai đăng ký kết hôn (mẫu TP/HT-2013-TKĐKKH).<br>\n+ Bản sao giấy chứng minh nhân dân hoặc Hộ chiếu của người đi đăng ký hộ tịch để xác định về cá nhân người đó.<br>\n+ Bản sao Sổ hộ khẩu, Sổ đăng ký tạm trú (đối với công dân Việt Nam ở trong nước); Thẻ thường trú, Thẻ tạm trú hoặc Chứng nhận tạm trú (đối với người nước ngoài cư trú tại Việt Nam) để làm căn cứ xác định thẩm quyền đăng ký.<br>\nBản sao các giấy tờ nêu trên, kèm bản chính để đối chiếu hoặc bản sao có chứng thực.<br>', '01 bộ.'),
 (15, '+ Tờ khai (theo mẫu).<br>\r\n+ Xuất trình bản sao giấy tờ hộ tịch đã cấp hợp lệ trước đây (nếu có); trong trường hợp không có bản sao giấy tờ hộ tịch, thì đương sự phải tự cam đoan về việc đã đăng ký, nhưng sổ hộ tịch không còn lưu được và chịu trách nhiệm về nội dung cam đoan. Đối với việc đăng ký lại việc kết hôn, thì bản cam đoan phải có xác nhận của 02 người làm chứng biết rõ về việc đã đăng ký và có xác nhận của Ủy ban nhân dân cấp xã về chữ ký của hai người làm chứng.<br>\r\n+ Bản sao giấy chứng minh nhân dân hoặc Hộ chiếu của người đi đăng ký hộ tịch để xác định về cá nhân người đó.<br>\r\n+ Bản sao Sổ hộ khẩu, Sổ đăng ký tạm trú (đối với công dân Việt Nam ở trong nước); Thẻ thường trú, Thẻ tạm trú hoặc Chứng nhận tạm trú (đối với người nước ngoài cư trú tại Việt Nam) để làm căn cứ xác định thẩm quyền đăng ký.<br>\r\nBản sao các giấy tờ nêu trên, kèm bản chính để đối chiếu hoặc bản sao có chứng thực.', '01'),
@@ -584,7 +609,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `cmnd` text NOT NULL,
   `dia_chi` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `user`

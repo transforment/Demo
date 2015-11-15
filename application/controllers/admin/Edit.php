@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Edit extends CI_Controller {
-	public function __construct()
+public function __construct()
 	{
 		parent::__construct();
 		if((!isset($_SESSION['name_user']))||
@@ -12,7 +12,7 @@ class Edit extends CI_Controller {
 
 		}
 	}
-	public function index()
+public function index()
 	{
 		$data['title'] = 'UBND Huyện Bến Lức';
 		$this->load->view('templates/header', $data);
@@ -29,7 +29,7 @@ class Edit extends CI_Controller {
 		));
 		$this->load->view('templates/footer');
 	}
-	public function begin_edit()
+public function begin_edit()
 	{
 		$data['title'] = 'UBND Huyện Bến Lức';
 		$this->load->view('templates/header', $data);
@@ -117,7 +117,7 @@ class Edit extends CI_Controller {
 		));
 		$this->load->view('templates/footer');
 	}
-	public function edit_thu_tuc($id_node=2)
+public function edit_thu_tuc($id_node=2)
 	{
 		$data['title'] = 'UBND Huyện Bến Lức';
 		$this->load->view('templates/header', $data);

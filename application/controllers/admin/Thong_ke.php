@@ -55,15 +55,11 @@ class Thong_ke extends CI_Controller {
 
                 ));
         }
-
-
         $this->load->view('templates/footer');
 
     }
 
-
-
-    public  function  quarter_filter(){
+public  function  quarter_filter(){
         $myQuater = 0;
         $q = $this->db->get('map');
         if($q->num_rows()>0){
@@ -117,14 +113,9 @@ class Thong_ke extends CI_Controller {
                 ));
         }
 
-
         $this->load->view('templates/footer');
-
-
-
     }
-
-    public  function  year_filter()
+public  function  year_filter()
     {
         $myYear = 0;
 
@@ -133,13 +124,11 @@ class Thong_ke extends CI_Controller {
             foreach ($q->result() as $row) {
                 $data[] = $row;
             }
-
         }
         $node_map = $data;
         $yearSet = $_POST["year"];
         $nam = $_POST["year"];
         $luaChon = $_POST["luachon"];
-
 
         $namDaChonForTesting = (int)$nam;
 
@@ -149,14 +138,10 @@ class Thong_ke extends CI_Controller {
             $nam = substr($nam, 2, 2);
         }
 
-
-        /*$this->load->helper('url');*/
         $data['title'] = 'Thống kê - UBND Huyện Bến Lức';
         $this->load->view('templates/header', $data);
         $this->load->view('templates/aside');
         $this->load->view('templates/nav');
-
-
         $this->load->model('Ho_so');
         $data2 = $this->Ho_so->getAll();
 
@@ -183,15 +168,9 @@ class Thong_ke extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
-
-
-
-
     public function month_filter()
     {
         $myMonth = 0;
-
-        /*$this->load->helper('url');*/
         $data['title'] = 'Thống kê - UBND Huyện Bến Lức';
         $this->load->view('templates/header', $data);
         $this->load->view('templates/aside');
@@ -206,14 +185,12 @@ class Thong_ke extends CI_Controller {
             foreach($q->result() as $row){
                 $data[] = $row;
             }
-
         }
 
         $thangDaChon=$_POST["thangName"];
         $monthSet = $_POST["thangName"];
         $nam= $_POST["yearName"];
         $luachon = $_POST["luachonName"];
-
         $namDaChonForTesting = (int)$nam;
 
         if ($namDaChonForTesting < 2000 || $namDaChonForTesting > 3000) {
@@ -239,16 +216,11 @@ class Thong_ke extends CI_Controller {
 
                 ));
         }
-
         $this->load->view('templates/footer');
-
     }
-
     public function day_filter()
     {
-
-
-        $q = $this->db->get('map');
+       $q = $this->db->get('map');
         if($q->num_rows()>0){
             foreach($q->result() as $row){
                 $data[] = $row;

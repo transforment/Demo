@@ -34,9 +34,21 @@ class Ho_so extends CI_Model {
 
             $f=1;
             }
-        if(($level==21)||($level==22)){
+        if($level==21){
             $this->db->where('status', 1) ;
-           // $this->db->where(substr($this->mshs, 14, 2), 'TP') ;
+            $this->db->where('type', 0) ;
+            
+            $this->db->or_where('status', 2) 
+                 ->where('mcb',$mcb);
+            $this->db->or_where('status', 3) 
+                 ->where('mcb',$mcb);
+            $this->db->or_where('status', 6) 
+                 ->where('mcb',$mcb);
+            $f=1;
+            }
+            if($level==22){
+            $this->db->where('status', 1) ;
+            $this->db->where('type', 1) ;
             
             $this->db->or_where('status', 2) 
                  ->where('mcb',$mcb);

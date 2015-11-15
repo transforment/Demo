@@ -66,10 +66,16 @@
             echo '<li><a href="'.base_url('admin/Admin_tiep_nhan').'">
                   <i class="fa fa-plus fa-fw"></i> Hồ sơ đã nhận <span class="badge right">'.$this->db->where('status',0)->where('mcb',($_SESSION['ma_can_bo']))->count_all_results('ho_so').'</span></a></li>';
         }
-        if((isset($_SESSION['name_user']))&&
-            (($_SESSION['level']==21)||($_SESSION['level']==22))){
+        if((isset($_SESSION['name_user']))&&($_SESSION['level']==21)){
             echo '<li><a href="'.base_url('admin/admin_phong_ban').'">
-                  <i class="fa fa-plus fa-fw"></i> Hồ sơ xử lý <span class="badge right">'.$this->db->where('status',1)->or_where('status', 2) 
+                  <i class="fa fa-plus fa-fw"></i> Hồ sơ xử lý <span class="badge right">'.$this->db->where('status',1)->where('type', 0)->or_where('status', 2) 
+                 ->where('mcb',($_SESSION['ma_can_bo']))->count_all_results('ho_so').'</span></a></li>';
+            echo '<li><a href="'.base_url('admin/thong_ke').'">
+                  <i class="fa fa-bar-chart-o  fa-fw"></i> Thống kê </a></li>';
+        }
+        if((isset($_SESSION['name_user']))&&($_SESSION['level']==22)){
+            echo '<li><a href="'.base_url('admin/admin_phong_ban').'">
+                  <i class="fa fa-plus fa-fw"></i> Hồ sơ xử lý <span class="badge right">'.$this->db->where('status',1)->where('type', 1)->or_where('status', 2) 
                  ->where('mcb',($_SESSION['ma_can_bo']))->count_all_results('ho_so').'</span></a></li>';
             echo '<li><a href="'.base_url('admin/thong_ke').'">
                   <i class="fa fa-bar-chart-o  fa-fw"></i> Thống kê </a></li>';

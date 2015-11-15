@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Trang_chi_tiet extends CI_Controller {
+class Tu_phap_chi_tiet extends CI_Controller {
   public function __construct()
   {
     parent::__construct();
@@ -9,6 +9,8 @@ class Trang_chi_tiet extends CI_Controller {
   }
   public function index($name=1,$number=2)
   {
+    /*header('Content-Type: text/html; charset=utf-8');
+    ini_set('default_charset', 'utf-8');*/
     $data['title'] = 'Hành chính tư pháp - UBND Huyện Bến Lức';
     $this->load->view('templates/header', $data);
     $this->load->view('templates/aside');

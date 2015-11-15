@@ -3,7 +3,7 @@
 </div><!-- /#page-wrapper -->
 </div><!-- /#wrapper -->
 
-<button type="button" class="btn btn-danger back-to-top radius">Lên đầu trang</button>
+<button type="button" class="btn btn-danger back-to-top btn-circle btn-lg"><i class="fa fa-arrow-up"></i></button>
 
 <script src="<?php echo base_url('js/jquery-ui.min.js'); ?>"></script><!-- jQuery -->
 <script src="<?php echo base_url('js/bootstrap.min.js'); ?>"></script><!-- Bootstrap Core JavaScript -->
@@ -13,6 +13,7 @@
 <script src="<?php echo base_url('js/masonry.min.js'); ?>"></script><!-- Masonry JavaScript -->
 <script src="<?php echo base_url('js/demo-2.js'); ?>"></script><!-- Custom Theme JavaScript -->
 <script src="<?php echo base_url('js/jquery.amaran.min.js'); ?>"></script><!-- Amaran jQuery -->
+<script src="<?php echo base_url('js/jquery.dataTables.min.js'); ?>"></script><!-- dataTables jQuery -->
 
 
 <!-- Kiet JavaScript -->
@@ -22,17 +23,17 @@
 <script src="<?php echo base_url(); ?>js/nodeClient.js"></script>
     <script src="<?php echo base_url(); ?>js/bootbox.min.js"></script>
 <script>
-    $('#Start_Notification').on('click',function(){
+    $('.Start_noti').on('click',function(){
         $.amaran({
             'theme'     :'colorful',
             'content'   :{
                 bgcolor:'#27ae60',
                 color:'#fff',
-                message:'Lorem ipsum dolor sit amet',
+                message:'Bạn có hồ sơ mới chuyển qua',
             },
-            'position'  :'bottom left',
-            'inEffect' :'slideLeft',
-            'outEffect' :'slideLeft',
+            'position'  :'top right',
+            'inEffect' :'slideRight',
+            'outEffect' :'slideRight',
             'delay' : 5000
         });
     });

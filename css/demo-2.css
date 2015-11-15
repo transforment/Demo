@@ -132,7 +132,7 @@ body {
 .btn-outline {
     color: inherit;
     background-color: transparent;
-    transition: all .5s;
+    /*transition: all .5s;*/
 }
 
 .btn-primary.btn-outline {
@@ -514,8 +514,8 @@ a:hover {
 
 .back-to-top {
     position: fixed;
-    bottom: 1em;
-    right: 1em;
+    bottom: 50%;
+    right: 0.1%;
     display: none;
 }
 
@@ -546,7 +546,7 @@ p {
 li {list-style-type: none;}
 /**
  * Tables
- */
+ 
 .table-wrap {
     padding: 0 6% 2%;
 }
@@ -565,9 +565,9 @@ table tr th {
     background-color: #303030;
     color: #fff;
     border-right: 1px solid rgba(255,255,255, 0.15);
-    /* Text Shadow */
+    /* Text Shadow 
     text-shadow: 0 -1px 1px rgba(0,0,0, 0.25);
-    /* Gradient */
+    /* Gradient 
     background-image: linear-gradient(bottom, rgb(48,48,48) 0%, rgb(95,95,95) 100%);
     background-image: -o-linear-gradient(bottom, rgb(48,48,48) 0%, rgb(95,95,95) 100%);
     background-image: -moz-linear-gradient(bottom, rgb(48,48,48) 0%, rgb(95,95,95) 100%);
@@ -589,7 +589,7 @@ table tr td {
     border-bottom: 1px solid #e0e0e0;
 }
 
-/* Odds Events*/
+/* Odds Events
 table tr:nth-child(even) td {
     background: #f6f6f6;
 }
@@ -597,11 +597,11 @@ table tr:nth-child(even) td {
 
 
 table th {
-    /*...all th attributes like padding etc*/
+    /*...all th attributes like padding etc
     background-color:#d4e3e5;
     padding: 8px;
 }
-
+*/
 
 /*
 Moi them

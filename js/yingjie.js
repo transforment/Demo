@@ -14,7 +14,7 @@ $("#inputCMND,#myYear,#inputPhone,#sobang,#lephi,#songay,p").keypress(function(e
 }); //
 
 //This function is used for checkbox when checked or unckeched
-function display(a) {
+function display_reference(a) {
 
 
     var myCheckbox = document.getElementById("chk" + a);

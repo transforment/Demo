@@ -71,6 +71,7 @@ class Dat_dai_chi_tiet extends CI_Controller {
 					'dia_chi'=>$this->input->post('diachi'),
 					'tt_giay_to_da_thu' =>$myThuTuc,
 					'status'=> 0,
+					'type'=> 1,
 					'note'=>$this->input->post('note'),
 					'mcb'=> $_SESSION['ma_can_bo']
 				);
@@ -81,6 +82,7 @@ class Dat_dai_chi_tiet extends CI_Controller {
 					,array(
 					'node_map'=>$node_map
 					,'thanh_phan_data'=>$thanh_phan_data
+					,'message'=>$data1['message']
 					));
 			}
 

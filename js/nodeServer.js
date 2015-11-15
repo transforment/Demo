@@ -18,7 +18,7 @@ io.sockets.on( 'connection', function( socket ) {
 		socket.user=data.id_user;
 		nickNames[socket.id] = data.name_user;
 		users[socket.user] = socket;
-console.log( "Client !!!!!!!!!!!!" +data.id_user);
+		console.log( "Client !!!!!!!!!!!!" + data.id_user);
 		joinRoom(socket, data.chat_vs);
 	});
 
@@ -56,15 +56,13 @@ function handleMessageBroadcasting(socket) {
 		//io.sockets.emit( 'message', { name: data.name, message: data.message } );
 
 	});
-	socket.on( 'sent_noti', function( data ) {
-	if (3 in users)
-	{
-	//users[3].emit( 'new_noti', { name: data.n} );
-		users[3].emit( 'new_noti', { name: data.n} );
-		} 
-		else
-		{
-
+	socket.on( 'sent_notify', function( data ) {
+		var res_list = data.list_sent.split("/");
+		for( var i=1;i<res_list.length;i++){
+		if (res_list[i] in users){
+			users[res_list[i]].emit( 'new_notify', { num: data.num} );
+			}else{
+			}
 		}
 	
 		//io.sockets.emit( 'message', { name: data.name, message: data.message } );

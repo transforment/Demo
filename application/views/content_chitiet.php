@@ -31,7 +31,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-12 col-md-6">
+        <div class="col-xs-12 col-md-12">
             <div class="panel panel-info">
                 <div class="panel-heading">
                     <h3 class="panel-title"><?php echo $data['h2']; ?></h3>
@@ -41,7 +41,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-12 col-md-6">
+        <div class="col-xs-12 col-md-12">
             <div class="panel panel-info">
                 <div class="panel-heading">
                     <h3 class="panel-title"><?php echo $data['h3']; ?></h3>
@@ -79,7 +79,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-12 col-md-6">
+        <div class="col-xs-12 col-md-12">
             <div class="panel panel-info ">
                 <div class="panel-heading">
                     <h3 class="panel-title"><?php echo $data['h5']; ?></h3>
@@ -90,7 +90,7 @@
             </div>
         </div>
 
-        <div class="col-xs-12 col-md-6">
+        <div class="col-xs-12 col-md-12">
             <div class="panel panel-info ">
                 <div class="panel-heading">
                     <h3 class="panel-title"><?php echo $data['h6']; ?></h3>
@@ -102,7 +102,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-12 col-md-6">
+        <div class="col-xs-12 col-md-12">
             <div class="panel panel-info ">
                 <div class="panel-heading">
                     <h3 class="panel-title"><?php echo $data['h7']; ?></h3>
@@ -112,7 +112,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-12 col-md-6">
+        <div class="col-xs-12 col-md-12">
             <div class="panel panel-info ">
                 <div class="panel-heading">
                     <h3 class="panel-title"><?php echo $data['h8']; ?></h3>
@@ -124,7 +124,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-12 col-md-6">
+        <div class="col-xs-12 col-md-12">
             <div class="panel panel-info ">
                 <div class="panel-heading">
                     <h3 class="panel-title"><?php echo $data['h9']; ?></h3>
@@ -134,7 +134,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-12 col-md-6">
+        <div class="col-xs-12 col-md-12">
             <div class="panel panel-info ">
                 <div class="panel-heading">
                     <h3 class="panel-title"><?php echo $data['h10']; ?></h3>

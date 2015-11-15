@@ -31,7 +31,9 @@ class Admin_tiep_nhan extends CI_Controller {
 		if($query){
 			//$config_pagination['total_rows'] =$query->num_rows();
 			//$this->pagination->initialize($config_pagination);
-			$this->load->view('admin/tiep_nhan_view',array('query'=>$query,));
+			$this->load->view('admin/tiep_nhan_view',array(
+				'query'=>$query
+				));
 		}
 
 		$this->load->view('templates/footer');

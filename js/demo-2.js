@@ -47,8 +47,8 @@ $('.masonry').masonry({
 
 //  Back to top
 $(document).ready(function() {
-    var offset = 220;
-    var duration = 500;
+    var offset = 20;
+    var duration = 200;
     $(window).scroll(function() {
         if ($(this).scrollTop() > offset) {
             $('.back-to-top').fadeIn(duration);
@@ -70,3 +70,33 @@ $(function () {
         delay: { "show": 500}
     })
 });
+
+// DataTable
+$(document).ready(function() {
+    $('#table').DataTable( {
+        "pagingType": "full_numbers",
+        "displayLength": 25,
+        "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "Tất cả"]],
+        "language": {
+            "decimal": "",
+            "emptyTable": "Không có dữ liệu",
+            "info": "",
+            "infoEmpty": "",
+            "infoFiltered": "",
+            "infoPostFix": "",
+            "thousands": ",",
+            "lengthMenu": "Hiển thị _MENU_",
+            "loadingRecords": "Đang tải...",
+            "processing": "Đang xử lý...",
+            "search": "Tìm kiếm:",
+            "zeroRecords": "Không tìm thấy",
+            "paginate": {
+                "first": "<i class='fa fa-angle-double-left'></i>",
+                "last": "<i class='fa fa-angle-double-right'></i>",
+                "next": "<i class='fa fa-angle-right'></i>",
+                "previous": "<i class='fa fa-angle-left'></i>"
+            }
+        }
+
+    } );
+} );
