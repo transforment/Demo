@@ -50,10 +50,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'trang_chu';
-$route['admin'] = 'admin/admin';
-$route['admin/ho_so_da_tao/(:any)'] = "admin/ho_so_da_tao/index/$1";
-$route['trang_chi_tiet/(:any)'] = 'trang_chi_tiet/index/$1';
-$route['trang_chi_tiet/(:any)/(:any)'] = 'trang_chi_tiet/index/$1/$2';
+//$route['admin'] = 'admin/admin';
+//$route['admin/ho_so_da_tao/(:any)'] = "admin/ho_so_da_tao/index/$1";
+$route['tu_phap_chi_tiet/(:any)'] = 'tu_phap_chi_tiet/index/$1';
+$route['tu_phap_chi_tiet/(:any)/(:any)'] = 'tu_phap_chi_tiet/index/$1/$2';
 $route['phan_muc/(:any)'] = 'phan_muc/index/$1';
 $route['dat_dai_chi_tiet/(:any)'] = 'dat_dai_chi_tiet/index/$1';
 $route['404_override'] = '';

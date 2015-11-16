@@ -22,7 +22,7 @@
 
     <?php foreach ($com as $stt =>$id) {
         echo ' <div class="col-md-6 col-xs-12 marBot">
-                    <a href="'.base_url('trang_chi_tiet/'.$name.'/'.html_escape($stt).'').'" data-toggle="tooltip" data-placement="top" title="'.html_escape($id).'">
+                    <a href="'.base_url('tu_phap_chi_tiet/'.$name.'/'.html_escape($stt).'').'" data-toggle="tooltip" data-placement="top" title="'.html_escape($id).'">
                         <button type="button" class="btn btn-outline btn-primary btn-block custom">
                             <h5 class="truncate"> '.html_escape($id).' </h5>
                         </button>
