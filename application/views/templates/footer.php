@@ -3,7 +3,7 @@
 </div><!-- /#page-wrapper -->
 </div><!-- /#wrapper -->
 
-<button type="button" class="btn btn-danger back-to-top btn-circle btn-lg"><i class="fa fa-arrow-up"></i></button>
+<button type="button" class="btn btn-danger back-to-top btn-circle"><i class="fa fa-arrow-up"></i></button>
 
 <script src="<?php echo base_url('js/jquery-ui.min.js'); ?>"></script><!-- jQuery -->
 <script src="<?php echo base_url('js/bootstrap.min.js'); ?>"></script><!-- Bootstrap Core JavaScript -->

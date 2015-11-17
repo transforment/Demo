@@ -9,7 +9,7 @@ class Xem_ho_so extends CI_Controller {
 		//$this->load->model('Map');
 		//$page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 			//if(!is_numeric($page)){$page = 0;}
-		$data['title'] = 'Thông tin chi tiết hồ sơ - UBND Huyện Bến Lức';
+		$data['title'] = 'Hồ sơ chi tiết - UBND Huyện Bến Lức';
 		$this->load->view('templates/header', $data);
 		$this->load->view('templates/aside');
 		$this->load->view('templates/nav');
@@ -40,7 +40,7 @@ class Xem_ho_so extends CI_Controller {
 	public function details($id=10)
 	{
 		$this->load->model('ho_so');
-		$data['title'] = 'Thông tin chi tiết hồ sơ - UBND Huyện Bến Lức';
+		$data['title'] = 'Hồ sơ chi tiết - UBND Huyện Bến Lức';
 		$this->load->view('templates/header', $data);
 		$this->load->view('templates/aside');
 		$this->load->view('templates/nav');

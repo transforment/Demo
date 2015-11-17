@@ -535,6 +535,12 @@ p {
     background-color: #ff040a;
 }
 
+.cursor {
+    cursor: pointer;
+    color: #ff040a;
+}
+
+
 /* CSS Kiet */
 .error {
     color:red;
@@ -613,7 +619,7 @@ Moi them
  */
 .tabs {
     font-size: 13px; line-height: 20px;
-    margin-top: 6%;
+    /*margin-top: 6%;*/
 }
 .tabs ul:before, .tabs ul:after {
     content: "\0020"; display: block; height: 0; visibility: hidden;

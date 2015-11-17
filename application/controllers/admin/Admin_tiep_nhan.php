@@ -45,11 +45,11 @@ class Admin_tiep_nhan extends CI_Controller {
 		$this->db->update('ho_so',  array(
 			'status' => 1,
 		));
-		redirect('admin/Admin_tiep_nhan');
+		redirect('admin/admin_tiep_nhan');
 	}
 	public function  deleteRow($id=2){
 		$this->db->delete('ho_so',array('id'=>$id));
-		redirect('admin/Admin_tiep_nhan');
+		redirect('admin/admin_tiep_nhan');
 	}
 	public function edit($id=2){
 		$this->db->where('node_id', $id);
@@ -97,7 +97,7 @@ class Admin_tiep_nhan extends CI_Controller {
 				'note'=>$this->input->post('note')
 
 			));
-			redirect('admin/Admin_tiep_nhan');
+			redirect('admin/admin_tiep_nhan');
 		}
 		$this->load->view('templates/footer');
 	}

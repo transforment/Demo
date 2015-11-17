@@ -1,5 +1,8 @@
 <div class="col-lg-12">
     <ol class="breadcrumb">
+        <li class="cursor back">
+            <i class="fa fa-arrow-left"></i>
+        </li>
         <li>
             <a href="<?php echo base_url('trang_chu'); ?>"><i class="fa fa-home"></i> Trang chủ</a>
         </li>
@@ -8,7 +11,7 @@
         </li>
         <li>
             <?php
-            $dataname=array('Chứng thực','Khai sinh','Khai tử','Kết hôn','Giám hộ','Hộ tịch','Các thủ tục còn lại','Search');
+            $dataname=array('Chứng thực','Khai sinh','Khai tử','Kết hôn','Giám hộ','Hộ tịch','Các thủ tục còn lại','Tìm kiếm');
             if (($aname<1)||($aname>8))$aname=7;
             echo '
             <a href="'.base_url('phan_muc/'.$aname.'').'">

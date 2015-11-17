@@ -67,6 +67,17 @@ $node_map = $data;
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <ol class="breadcrumb">
+        <li class="cursor back">
+            <i class="fa fa-arrow-left"></i>
+        </li>
+        <li>
+            <a href="<?php echo base_url('trang_chu'); ?>">
+                <i class="fa fa-home"></i> Trang chủ
+            </a>
+        </li>
+    </ol>
+    <h3 class="page-header marTop"><i class="fa fa-bar-chart-o"></i> Thống kê</h3>
     <div class="demo" id="demo-one">
 
         <nav class="subnav tabs">

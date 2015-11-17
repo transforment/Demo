@@ -1,5 +1,8 @@
 <div class="col-lg-12">
     <ol class="breadcrumb">
+        <li class="cursor back">
+            <i class="fa fa-arrow-left"></i>
+        </li>
         <li class="active">
             <i class="fa fa-home"></i> Trang chủ
         </li>
@@ -9,21 +12,21 @@
 
 <div class="col-md-9 col-lg-9 col-xs-12">
     <div class="masonry">
-<?php foreach ($com as $stt =>$id) {
-    if ($stt==1)$val ='tu_phap';
-    else $val ='dat_dai';
-    echo ' <div class="col-lg-12 col-md-6 marBot">
+        <?php foreach ($com as $stt =>$id) {
+            if ($stt==1)$val ='tu_phap';
+            else $val ='dat_dai';
+            echo ' <div class="col-lg-12 col-md-6 marBot">
                 <a href="'.$val.'" data-toggle="tooltip" data-placement="top" title="'.html_escape($id).'">
                     <button type="button" class="btn btn-outline btn-primary btn-block custom">
                         <h5> '.html_escape($id).' </h5>
                     </button>
                 </a>
             </div> ';
-}  ?>
+        }  ?>
 
 
 
-</div>
+    </div>
 </div>
 <!-- /.col-lg-8 -->
 <!--div class="col-lg-3">
