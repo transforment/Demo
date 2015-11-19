@@ -12,7 +12,7 @@
     <h3 class="page-header marTop"><i class="fa fa-files-o"></i> Hồ sơ đã nhận</h3>
     <div class="panel-body">
         <div class="row">
-            <table id="table" class="display">
+            <table id="table" class="table table-striped table-bordered">
                 <thead>
                 <tr>
                     <th>Mã hồ sơ</th>
@@ -49,15 +49,15 @@
                 if(($row->status==0)&&($row->type==0))
                 echo' <td>
                   <button type="button" class="btn btn-warning"
-                    onclick=location.href="'.base_url().'admin/admin_tiep_nhan/edit/'.$row->id.'">Chỉnh sửa</button>
-                  <button class="btn btn-danger sent_noti_tp" 
+                    onclick=location.href="'.base_url().'admin/admin_tiep_nhan/edit/'.$row->id.'">Chỉnh sửa</button>&nbsp;
+                    <button class="btn btn-danger sent_noti_tp"
                   onclick=location.href="'.base_url().'admin/admin_tiep_nhan/edit_stt/'.$row->id.'">Chuyển phòng ban</button>
                   </td></tr>';
                 if(($row->status==0)&&($row->type==1))
                 echo' <td>
                   <button type="button" class="btn btn-warning"
-                    onclick=location.href="'.base_url().'admin/admin_tiep_nhan/edit/'.$row->id.'">Chỉnh sửa</button>
-                  <button class="btn btn-danger sent_noti_dd" 
+                    onclick=location.href="'.base_url().'admin/admin_tiep_nhan/edit/'.$row->id.'">Chỉnh sửa</button>&nbsp;
+                    <button class="btn btn-danger sent_noti_dd"
                   onclick=location.href="'.base_url().'admin/admin_tiep_nhan/edit_stt/'.$row->id.'">Chuyển phòng ban</button>
                   </td></tr>';
                 if($row->status==1)

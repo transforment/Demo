@@ -13,7 +13,7 @@
 
 	<div class="panel-body">
 		<div class="row">
-			<table id="table" class="display">
+			<table id="table" class="table table-striped table-bordered">
 				<thead>
 				<tr>
 					<th>Mã hồ sơ</th>

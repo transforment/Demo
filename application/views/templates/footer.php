@@ -13,7 +13,10 @@
 <script src="<?php echo base_url('js/masonry.min.js'); ?>"></script><!-- Masonry JavaScript -->
 <script src="<?php echo base_url('js/demo-2.js'); ?>"></script><!-- Custom Theme JavaScript -->
 <script src="<?php echo base_url('js/jquery.amaran.min.js'); ?>"></script><!-- Amaran jQuery -->
-<script src="<?php echo base_url('js/jquery.dataTables.min.js'); ?>"></script><!-- dataTables jQuery -->
+
+<!-- dataTables jQuery -->
+<script src="<?php echo base_url('js/jquery.dataTables.min.js'); ?>"></script>
+<script src="<?php echo base_url('js/dataTables.bootstrap.min.js'); ?>"></script>
 
 
 <!-- Kiet JavaScript -->
