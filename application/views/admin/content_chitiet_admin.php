@@ -130,7 +130,7 @@
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th>#</th>
+                    <th><input id="yingcheckbox" type="checkbox"  onclick="checkbox();" ></th>
                     <th>Loại giấy tờ </th>
                     <th>Số lượng </th>
                 </tr>
@@ -145,9 +145,9 @@
                     $number = "myNumber".$i;
                     ?>
                                 <tr id="2015">
-                                    <td class="col-md-1"><input   type="checkbox"  name="chk_group" id= <?php echo $checkBox?> onclick="display(<?php echo $i ?>)" value="<?php echo $arrayThutuc[$i];?>"></td>
+                                    <td class=" col-md-1"><input class="lovecheckbox"type="checkbox"  name="chk_group" id= <?php echo $checkBox?> onclick="display(<?php echo $i ?>)" value="<?php echo $arrayThutuc[$i];?>"></td>
                                     <td class="col-md-9"><label style="font-weight: normal;"><?php echo $arrayThutuc[$i]?></label></td>
-                                    <td class="col-md-2"><input class="form-control"  id = <?php echo $number ?> type="number" min="0" max="30" step="1" value="0" size="1"></td>
+                                    <td class="col-md-2"><input  class=" lovetextbox form-control"  id = <?php echo $number ?> type="number" min="0" max="30" step="1" value="0" size="1"></td>
                                 </tr>
                 <?php } ?>
             <?php } ?>

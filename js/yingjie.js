@@ -212,7 +212,8 @@ function doMacBookPro(){
 function compileInputs() {
     var inputsThanhPhan = new Array();
     var inputsSoLuong = new Array();
-    $(':checkbox').each(function () {
+    $('.lovecheckbox').each(function () {
+
         if ($(this).is(':checked')) {
             var thenum = this.id.match(/\d+/)[0];
             var soLuong = document.getElementById("myNumber" + thenum);
@@ -225,6 +226,7 @@ function compileInputs() {
         inputsThanhPhan[i] = inputsThanhPhan[i]+"+"+"<b>"+inputsSoLuong[i].value+"</b>"+"+";
     }
     document.getElementById("ying_ho_so_da_nhan").value = inputsThanhPhan;
+
 }
 
 function checkLePhi(){
@@ -250,6 +252,20 @@ $("#inputCMND,#myYear,#myYearMonth,#myYearQuarter,#inputPhone,#sobang,#lephi,#so
         e.preventDefault();
     }
 }); //
+
+function checkbox(){
+var myCheckbox = document.getElementById("yingcheckbox");
+
+    var x = document.getElementsByName('lovetextbox');
+
+    if(myCheckbox.checked){
+        $('.lovecheckbox').prop('checked', true);
+        $('.lovetextbox').val('1');
+    }else{
+        $('.lovecheckbox').prop('checked', false);
+        $('.lovetextbox').val('0');
+    }
+}
 
 //This function is used for checkbox when checked or unckeched
 function display(a) {

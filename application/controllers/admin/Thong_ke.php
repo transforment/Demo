@@ -220,7 +220,7 @@ class Thong_ke extends CI_Controller
             $output = "";
             if (count($q)) {
                 for ($i = 0; $i < count($this->data); $i++) {
-                    $output .= '<li class="lo"><a href=' . ($q[$i]->node_id - 1) . ' onclick="return false;">' . $q[$i]->node_name . '</a></li>';
+                        $output .= '<li class="lo"><a href=' . ($q[$i]->node_id - 1) . ' onclick="return false;">' . $q[$i]->node_name . '</a></li>';
                 }
                 echo $output;
 
