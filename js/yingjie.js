@@ -243,7 +243,7 @@ function checkLePhi(){
 }
 
 //Prevent user from entering characters
-$("#inputCMND,#myYear,#inputPhone,#sobang,#lephi,#songay,#2015").keypress(function(e) {
+$("#inputCMND,#myYear,#myYearMonth,#myYearQuarter,#inputPhone,#sobang,#lephi,#songay,#2015").keypress(function(e) {
     var key_codes = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 0, 8];
 
     if (!($.inArray(e.which, key_codes) >= 0)) {

@@ -126,16 +126,16 @@
             <h4 class="panel-title">Giấy tờ kèm theo </h4>
         </div>
         <div class="panel-body">
-            <div class="row">
-                <div class="col-md-offset-2 col-md-4">
-                    <b>Loại giấy tờ </b>
-                </div>
-                <div class="col-md-offset-4 col-md-2">
-                    <b>Số lượng</b>
-                </div>
 
-
-            </div>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Loại giấy tờ </th>
+                    <th>Số lượng </th>
+                </tr>
+                </thead>
+                <tbody>
 
             <?php for ($i = 1; $i <= count($arrayThutuc); $i+=1) { ?>
                 <?php if ($i < count($arrayThutuc)) {?>
@@ -144,33 +144,17 @@
                     $checkBox = "chk".$i;
                     $number = "myNumber".$i;
                     ?>
-                    <ul class="container-fluid">
-                        <li class="row" >
-                            <div class="col-xs-offset-1 col-xs-1 col-sm-offset-1 col-sm-1 col-md-offset-1 col-md-1 col-lg-offset-1 col-lg-1">
-                                <input  class="form-control" type="checkbox"  name="chk_group" id= <?php echo $checkBox?> onclick="display(<?php echo $i ?>)" value="<?php echo $arrayThutuc[$i];?>">
-
-                            </div>
-
-                            <div class="col-xs-8  col-sm-8  col-md-8  col-lg-8">
-                                <?php
-
-                                $love = $arrayThutuc[$i];
-                                echo '<p>'.$love.'</p>';
-                                ?>
-
-                            </div>
-
-                            <div  id = "2015" class="col-xs-2 col-sm-2  col-md-2  col-lg-2">
-                                <input class="form-control"  id = <?php echo $number ?> type="number" min="0" max="30" step="1" value="0" size="1">
-
-                            </div>
-
-                        </li>
-
-                    </ul>
+                                <tr id="2015">
+                                    <td class="col-md-1"><input   type="checkbox"  name="chk_group" id= <?php echo $checkBox?> onclick="display(<?php echo $i ?>)" value="<?php echo $arrayThutuc[$i];?>"></td>
+                                    <td class="col-md-9"><label style="font-weight: normal;"><?php echo $arrayThutuc[$i]?></label></td>
+                                    <td class="col-md-2"><input class="form-control"  id = <?php echo $number ?> type="number" min="0" max="30" step="1" value="0" size="1"></td>
+                                </tr>
                 <?php } ?>
             <?php } ?>
 
+                </tbody>
+
+            </table>
 
         </div>
     </div>
