@@ -73,6 +73,8 @@ function functionForSelectTag($str,$length){
                             </li>
 
                             <input type="text" name="luachon" id="yunday" style="visibility: hidden;">
+                            <input type="text"  id="base_html" value="<?php echo base_url();?>" style="visibility: hidden;">
+
 
                         </div>
 
@@ -142,10 +144,7 @@ function functionForSelectTag($str,$length){
                         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
                             <input class=" btn btn-info" type="submit" value="Xem thông tin" data-style="btn-primary"  >
                         </div>
-
                     </div>
-
-
                 </form>
             </div><!-- end panel-3Thang-->
             <div class="panel" id="panel-4">
@@ -657,9 +656,12 @@ if($tempForShowingCondion==0){
         myTable.addClass('hiddenClass');
     });
 
+
+    var mylink = document.getElementById('base_html').value;
+    var link = mylink+"admin/thong_ke/search";
+
     function searchday(){
         var searchTxt = $("input[name='searchq']").val();
-        var link = "http://localhost/Demo-2/admin/thong_ke/search";
 
      $.post(link,
             { // Data Sending With Request To Server
@@ -672,9 +674,6 @@ if($tempForShowingCondion==0){
     function searchweek(){
         var searchTxt = $("input[name='searchweeks']").val();
 
-        var link = "http://localhost/Demo-2/admin/thong_ke/search";
-
-
         $.post(link,
             { // Data Sending With Request To Server
                 searchVal:searchTxt
@@ -685,9 +684,6 @@ if($tempForShowingCondion==0){
     }
     function searchmonth(){
         var searchTxt = $("input[name='searchmonths']").val();
-
-        var link = "http://localhost/Demo-2/admin/thong_ke/search";
-
 
         $.post(link,
             { // Data Sending With Request To Server
@@ -701,9 +697,6 @@ if($tempForShowingCondion==0){
 
         var searchTxt = $("input[name='searchquarters']").val();
 
-        var link = "http://localhost/Demo-2/admin/thong_ke/search";
-
-
         $.post(link,
             { // Data Sending With Request To Server
                 searchVal:searchTxt
@@ -714,10 +707,6 @@ if($tempForShowingCondion==0){
     }
     function searchyear(){
         var searchTxt = $("input[name='searchyears']").val();
-
-        var link = "http://localhost/Demo-2/admin/thong_ke/search";
-
-
         $.post(link,
             { // Data Sending With Request To Server
                 searchVal:searchTxt
@@ -732,7 +721,6 @@ if($tempForShowingCondion==0){
         $("#datepicker2").datepicker();
         $("#datepickerWeek").datepicker();
     });
-
 
     (function($) {
 

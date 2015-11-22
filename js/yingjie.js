@@ -8,7 +8,6 @@ function doMath() {
     var lephi = parseInt(document.getElementById('lephi').value);
     var sobang = parseInt(document.getElementById('sobang').value);
     var total = 0;
-    var myVarPro = 1;//
     var myYing = document.getElementById('ma_Ho_So').value;
 
     if( myYing.substr(16,2) =="01" ){
@@ -30,7 +29,6 @@ function doMath() {
 }
 
 $( document ).ready(function() {
-
     var lePhi = document.getElementById("lephi").value;
     if(lePhi != "Yingjie"){
         string_1 = "TP";
@@ -62,15 +60,14 @@ $( document ).ready(function() {
     theString = theString + addCode;
     document.getElementById("ma_Ho_So").value = theString;
     //OK
+
     var myProcess = document.getElementById('ma_Ho_So').value;
     if( myProcess.substr(16,2) =="20" ){
         document.getElementById('lephi').readOnly = false;
     }
 
-
-
-
     var myDayVar = document.getElementById("songay").value;
+
     var myDate = new Date();
 
     var ngayTra = new Date(myDate.getTime()+myDayVar*24*3600*1000);
@@ -80,7 +77,6 @@ $( document ).ready(function() {
     var yyyy = ngayTra.getFullYear();
     var thu = ngayTra.getDay();
     var weekday;
-
 
     switch(thu) {
         case 1:
@@ -120,8 +116,6 @@ $( document ).ready(function() {
             $('#time_info').addClass('anotherClass');
         }
     }
-
-
 
 });
 
@@ -138,7 +132,6 @@ function doMacBookPro(){
     var thu = ngayTra.getDay();
     var weekday;
 
-
     switch(thu) {
         case 1:
             weekday = 'Thứ hai';
@@ -178,8 +171,6 @@ function doMacBookPro(){
             $('#time_info').addClass('anotherClass');
         }
     }
-
-
     var theLifeOfWolf = 0;
     var theLifeOfYing = 0;
     document.getElementById("songay").value = myDayVar;
@@ -255,9 +246,7 @@ $("#inputCMND,#myYear,#myYearMonth,#myYearQuarter,#inputPhone,#sobang,#lephi,#so
 
 function checkbox(){
 var myCheckbox = document.getElementById("yingcheckbox");
-
     var x = document.getElementsByName('lovetextbox');
-
     if(myCheckbox.checked){
         $('.lovecheckbox').prop('checked', true);
         $('.lovetextbox').val('1');
@@ -269,8 +258,6 @@ var myCheckbox = document.getElementById("yingcheckbox");
 
 //This function is used for checkbox when checked or unckeched
 function display(a) {
-
-
     var myCheckbox = document.getElementById("chk" + a);
     var myTextField = document.getElementById("myNumber" + a);
     if (myCheckbox.checked) {
@@ -280,12 +267,3 @@ function display(a) {
     }
 }
 
-function displayDialog(){
-    var yingCheckbox = document.getElementById("yingCheckbox");
-    var yingNote     = document.getElementById("note");
-    if(yingCheckbox.checked){
-        yingNote.style.visibility = "visible";
-    }else{
-        yingNote.style.visibility = "hidden";
-    }
-}

@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10725473-38c2-4cce-82c0-a71d34a0114c" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/admin/content_chitiet_admin_.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/admin/dat_dai_chi_tiet_admin_view_.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/admin/thong_ke_view_old.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Thong_ke.php" afterPath="$PROJECT_DIR$/application/controllers/admin/Thong_ke.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/content_chitiet_admin.php" afterPath="$PROJECT_DIR$/application/views/admin/content_chitiet_admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/dat_dai_chi_tiet_admin_view.php" afterPath="$PROJECT_DIR$/application/views/admin/dat_dai_chi_tiet_admin_view.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/sua_ho_so_view.php" afterPath="$PROJECT_DIR$/application/views/admin/sua_ho_so_view.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/thong_ke_view.php" afterPath="$PROJECT_DIR$/application/views/admin/thong_ke_view.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/yingjie.js" afterPath="$PROJECT_DIR$/js/yingjie.js" />
     </list>
     <ignored path="Demo-2.iws" />
@@ -31,7 +33,7 @@
       <file leaf-file-name="database.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/config/database.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-49.5">
+            <state vertical-scroll-proportion="-0.0">
               <caret line="66" column="48" selection-start-line="66" selection-start-column="48" selection-end-line="66" selection-end-column="48" />
               <folding />
             </state>
@@ -52,20 +54,41 @@
         <entry file="file://$PROJECT_DIR$/js/yingjie.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="187" column="59" selection-start-line="187" selection-start-column="52" selection-end-line="187" selection-end-column="59" />
+              <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="content_chitiet_admin.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/admin/content_chitiet_admin.php">
+      <file leaf-file-name="sua_ho_so_view.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/admin/sua_ho_so_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.5238096">
-              <caret line="156" column="20" selection-start-line="129" selection-start-column="12" selection-end-line="156" selection-end-column="20" />
+            <state vertical-scroll-proportion="21.11111">
+              <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
               <folding>
-                <element signature="n#table#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#label#0;n#div#1;n#div#5;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="thong_ke_view.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/admin/thong_ke_view.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="6.149766">
+              <caret line="146" column="26" selection-start-line="146" selection-start-column="26" selection-end-line="146" selection-end-column="26" />
+              <folding>
+                <marker date="1448202443000" expanded="true" signature="11117:11135" placeholder="..." />
+                <marker date="1448202443000" expanded="true" signature="11422:11440" placeholder="..." />
+                <marker date="1448202443000" expanded="true" signature="11729:11747" placeholder="..." />
+                <marker date="1448202443000" expanded="true" signature="11986:12004" placeholder="..." />
+                <marker date="1448202443000" expanded="true" signature="12270:12617" placeholder="..." />
+                <marker date="1448202443000" expanded="true" signature="18030:18060" placeholder="..." />
+                <marker date="1448202443000" expanded="true" signature="18152:18481" placeholder="..." />
+                <marker date="1448202443000" expanded="true" signature="18180:18453" placeholder="..." />
+                <marker date="1448202443000" expanded="true" signature="18205:18424" placeholder="..." />
+                <marker date="1448202443000" expanded="true" signature="22108:22437" placeholder="..." />
+                <marker date="1448202443000" expanded="false" signature="22284:22314" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -74,20 +97,8 @@
       <file leaf-file-name="dat_dai_chi_tiet_admin_view.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/admin/dat_dai_chi_tiet_admin_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.095238">
-              <caret line="164" column="54" selection-start-line="164" selection-start-column="47" selection-end-line="164" selection-end-column="54" />
-              <folding>
-                <element signature="n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#1;n#form#0;n#div#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Thong_ke.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/controllers/admin/Thong_ke.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.019543974">
-              <caret line="223" column="16" selection-start-line="223" selection-start-column="16" selection-end-line="223" selection-end-column="16" />
+            <state vertical-scroll-proportion="-8.638889">
+              <caret line="86" column="96" selection-start-line="86" selection-start-column="72" selection-end-line="86" selection-end-column="96" />
               <folding />
             </state>
           </provider>
@@ -101,7 +112,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/views/admins/login_form.php" />
         <option value="$PROJECT_DIR$/application/views/content_phan_muc.php" />
         <option value="$PROJECT_DIR$/application/config/autoload.php" />
         <option value="$PROJECT_DIR$/application/config/routes.php" />
@@ -129,7 +139,6 @@
         <option value="$PROJECT_DIR$/application/views/admin/Thong_ke_tu_phap_view.php" />
         <option value="$PROJECT_DIR$/application/views/content_chitiet.php" />
         <option value="$PROJECT_DIR$/application/controllers/Trang_chu.php" />
-        <option value="$PROJECT_DIR$/application/views/admin/thong_ke_view.php" />
         <option value="$PROJECT_DIR$/application/views/admin/thong_ke_tu_phap_view.php" />
         <option value="$PROJECT_DIR$/application/views/admin/thong_ke_dia_chinh_view.php" />
         <option value="$PROJECT_DIR$/application/models/Ho_so.php" />
@@ -149,9 +158,11 @@
         <option value="$PROJECT_DIR$/application/views/admin/ho_so_chi_tiet.php" />
         <option value="$PROJECT_DIR$/application/config/database.php" />
         <option value="$PROJECT_DIR$/application/views/admin/content_chitiet_admin.php" />
-        <option value="$PROJECT_DIR$/js/yingjie.js" />
         <option value="$PROJECT_DIR$/application/views/admin/dat_dai_chi_tiet_admin_view.php" />
         <option value="$PROJECT_DIR$/application/controllers/admin/Thong_ke.php" />
+        <option value="$PROJECT_DIR$/js/yingjie.js" />
+        <option value="$PROJECT_DIR$/application/views/admin/sua_ho_so_view.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/thong_ke_view.php" />
       </list>
     </option>
   </component>
@@ -408,8 +419,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -473,7 +484,7 @@
     <frame x="0" y="23" width="1280" height="773" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24921875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24921875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -530,6 +541,46 @@
     <entry file="file://$PROJECT_DIR$/js/yingjie.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="187" column="59" selection-start-line="187" selection-start-column="52" selection-end-line="187" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/content_chitiet_admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="156" column="20" selection-start-line="129" selection-start-column="12" selection-end-line="156" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/dat_dai_chi_tiet_admin_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="164" column="54" selection-start-line="164" selection-start-column="47" selection-end-line="164" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Ho_so.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/yingjie.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="245" column="49" selection-start-line="245" selection-start-column="49" selection-end-line="245" selection-end-column="49" />
           <folding />
         </state>
@@ -539,10 +590,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="156" column="20" selection-start-line="129" selection-start-column="11" selection-end-line="156" selection-end-column="20" />
-          <folding>
-            <element signature="n#table#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -709,13 +757,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/admin/Edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.682454">
-          <caret line="290" column="1" selection-start-line="290" selection-start-column="1" selection-end-line="290" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/admin/Admin_tra_ho_so.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33907428">
@@ -734,20 +775,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.625">
           <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/edit_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-95.0">
-          <caret line="152" column="6" selection-start-line="152" selection-start-column="6" selection-end-line="152" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/edit_view_pre.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.032292787">
-          <caret line="2" column="79" selection-start-line="2" selection-start-column="79" selection-end-line="2" selection-end-column="79" />
         </state>
       </provider>
     </entry>
@@ -774,7 +801,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-49.5">
+        <state vertical-scroll-proportion="0.0">
           <caret line="66" column="48" selection-start-line="66" selection-start-column="48" selection-end-line="66" selection-end-column="48" />
           <folding />
         </state>
@@ -788,63 +815,96 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/thong_ke_view.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/Trang_chi_tiet.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.54914194">
-          <caret line="284" column="18" selection-start-line="284" selection-start-column="18" selection-end-line="284" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.8876755">
+          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/yingjie.js">
+    <entry file="file://$PROJECT_DIR$/application/views/admin/edit_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="187" column="59" selection-start-line="187" selection-start-column="52" selection-end-line="187" selection-end-column="59" />
+        <state vertical-scroll-proportion="5.897036">
+          <caret line="152" column="6" selection-start-line="152" selection-start-column="6" selection-end-line="152" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/edit_view_pre.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46333852">
+          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/admin/Edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.74726987">
+          <caret line="290" column="1" selection-start-line="290" selection-start-column="1" selection-end-line="290" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/admin/Thong_ke.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9719189">
+          <caret line="230" column="5" selection-start-line="230" selection-start-column="5" selection-end-line="230" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/admin/content_chitiet_admin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.5238096">
+        <state vertical-scroll-proportion="0.42121685">
           <caret line="156" column="20" selection-start-line="129" selection-start-column="12" selection-end-line="156" selection-end-column="20" />
-          <folding>
-            <element signature="n#table#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Trang_chi_tiet.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8876755">
-          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/content_chitiet_admin_.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3762215">
-          <caret line="187" column="54" selection-start-line="187" selection-start-column="47" selection-end-line="187" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/admin/dat_dai_chi_tiet_admin_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.095238">
-          <caret line="164" column="54" selection-start-line="164" selection-start-column="47" selection-end-line="164" selection-end-column="54" />
+        <state vertical-scroll-proportion="-8.638889">
+          <caret line="86" column="96" selection-start-line="86" selection-start-column="72" selection-end-line="86" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/yingjie.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/sua_ho_so_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="21.11111">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding>
-            <element signature="n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#1;n#form#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#label#0;n#div#1;n#div#5;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/admin/Thong_ke.php">
+    <entry file="file://$PROJECT_DIR$/application/views/admin/thong_ke_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.019543974">
-          <caret line="223" column="16" selection-start-line="223" selection-start-column="16" selection-end-line="223" selection-end-column="16" />
-          <folding />
+        <state vertical-scroll-proportion="6.149766">
+          <caret line="146" column="26" selection-start-line="146" selection-start-column="26" selection-end-line="146" selection-end-column="26" />
+          <folding>
+            <marker date="1448202443000" expanded="true" signature="11117:11135" placeholder="..." />
+            <marker date="1448202443000" expanded="true" signature="11422:11440" placeholder="..." />
+            <marker date="1448202443000" expanded="true" signature="11729:11747" placeholder="..." />
+            <marker date="1448202443000" expanded="true" signature="11986:12004" placeholder="..." />
+            <marker date="1448202443000" expanded="true" signature="12270:12617" placeholder="..." />
+            <marker date="1448202443000" expanded="true" signature="18030:18060" placeholder="..." />
+            <marker date="1448202443000" expanded="true" signature="18152:18481" placeholder="..." />
+            <marker date="1448202443000" expanded="true" signature="18180:18453" placeholder="..." />
+            <marker date="1448202443000" expanded="true" signature="18205:18424" placeholder="..." />
+            <marker date="1448202443000" expanded="true" signature="22108:22437" placeholder="..." />
+            <marker date="1448202443000" expanded="false" signature="22284:22314" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
