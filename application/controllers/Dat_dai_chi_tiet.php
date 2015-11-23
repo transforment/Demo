@@ -49,7 +49,7 @@ class Dat_dai_chi_tiet extends CI_Controller {
 			$this->form_validation->set_rules('dname', 'Tên người dân ', 'required|min_length[3]|max_length[20]');
 			$this->form_validation->set_rules('dcmnd', 'CMND', 'required|regex_match[/^[0-9]{9}$/]');
 			$this->form_validation->set_rules('dmobile', 'Số điện thoại ', 'required|min_length[10]|max_length[11]');
-			$this->form_validation->set_rules('dsongay', 'Số ngày', 'required');
+			$this->form_validation->set_rules('songay', 'Số ngày', 'required');
 
 			if($this->form_validation->run() == false) {
 				$this->load->view('admin/dat_dai_chi_tiet_admin_view'
@@ -59,6 +59,7 @@ class Dat_dai_chi_tiet extends CI_Controller {
 					));
 
 			}else{
+
 
 				$myThuTuc =  $this->input->post('dying');
 

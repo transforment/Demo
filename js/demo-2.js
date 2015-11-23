@@ -74,16 +74,16 @@ $(function () {
 // DataTable
 $(document).ready(function() {
     $('#table').DataTable( {
+        "decimal": false,
+        "info": false,
+        "infoEmpty": false,
+        "infoFiltered": false,
+        "infoPostFix": false,
         "pagingType": "full_numbers",
         "displayLength": 25,
         "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "Tất cả"]],
         "language": {
-            "decimal": "",
             "emptyTable": "Không có dữ liệu",
-            "info": "",
-            "infoEmpty": "",
-            "infoFiltered": "",
-            "infoPostFix": "",
             "thousands": ",",
             "lengthMenu": "Hiển thị _MENU_",
             "loadingRecords": "Đang tải...",
@@ -97,6 +97,11 @@ $(document).ready(function() {
                 "previous": "<i class='fa fa-angle-left'></i>"
             }
         }
-
     } );
 } );
+
+// Back
+$('.back').click(function(){
+    parent.history.back();
+    return false;
+});

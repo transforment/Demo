@@ -1,12 +1,15 @@
 <div class="col-lg-12">
     <ol class="breadcrumb">
+        <li class="cursor back">
+            <i class="fa fa-arrow-left"></i>
+        </li>
         <li>
             <a href="<?php echo base_url('trang_chu'); ?>">
                 <i class="fa fa-home"></i> Trang chủ
             </a>
         </li>
     </ol>
-    <h3 class="page-header marTop"><i class="fa fa-plus"></i> Tìm kiếm hồ sơ</h3>
+    <h3 class="page-header marTop"><i class="fa fa-search"></i> Tìm kiếm hồ sơ</h3>
     <div class="panel-body">
         <div class="row">
             <table id="table" class="display">

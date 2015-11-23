@@ -12,7 +12,6 @@ class Trang_chu extends CI_Controller
         $this->load->view('templates/aside');
         $this->load->view('templates/nav');
         $this->load->model('Map');
-        /*$this->load->library('table');*/
         $data = $this->Map->lay_ten_muc(0);
         $num = $this->Map->lay_id(0);
         $com = array_combine($num, $data);
@@ -21,10 +20,8 @@ class Trang_chu extends CI_Controller
             $this->load->model('User');
             $dataname = $this->User->lay_ten_user($_SESSION['id']);
             $idchat = $this->User->lay_id_user($_SESSION['id']); 
-            $datachat = array_combine($idchat, $dataname); 
-            
+            $datachat = array_combine($idchat, $dataname);
             $this->load->view('templates/sideright',array('datachat'=>$datachat));
-        
         }
         else $this->load->view('templates/sideright');
         $this->load->view('templates/footer');

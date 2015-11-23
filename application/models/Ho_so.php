@@ -142,7 +142,32 @@ class Ho_so extends CI_Model {
 
         return $array;
     }
-    public  function getAll(){
+    public  function getRecordsForTK($level,$mcb){
+
+        if(($level==12)||($level==13)){
+
+            $where = "status = '5' AND mcb = '$mcb' ";
+            $this->db->where($where);
+        }
+
+        if($level==21){
+            $where = "status = '5'  AND type='0' ";
+            $this->db->where($where);
+
+        }
+
+        if($level==22){
+            $where = "status = '5' AND type= '1' ";
+            $this->db->where($where);
+
+        }
+
+        if($level==100){
+            $where = "status = '5'";
+            $this->db->where($where);
+
+        }
+
         $q = $this->db->get('ho_so');
 
         if($q->num_rows()>0){

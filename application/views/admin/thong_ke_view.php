@@ -12,14 +12,6 @@ $quarter = 0;
 $nam = 0;
 $thangDaChon = 0;
 
-$q = $this->db->get('map');
-if($q->num_rows()>0){
-    foreach($q->result() as $row){
-        $data[] = $row;
-    }
-
-}
-$node_map = $data;
 function functionForSelectTag($str,$length){
     if(strlen($str) > $length ){
         $stringCut = substr($str,0,$length);
@@ -32,193 +24,99 @@ function functionForSelectTag($str,$length){
 
 ?>
 
+
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <div class="demo" id="demo-one">
-        <nav class="subnav tabs">
-            <ul>
-                <li ><a href="#panel-1">Theo ngày </a></li>
-                <li ><a href="#panel-2">Theo tuần</a></li>
-                <li ><a href="#panel-3">Theo tháng</a></li>
-                <li ><a href="#panel-4">Theo quý </a></li>
-                <li ><a href="#panel-5">Theo năm </a></li>
-            </ul>
-        </nav><!--end nav-->
 
-
-        <div class="panel" id="panel-1">
-            <input type="hidden" id="phpVarDay" value="<?php echo $myDay; ?>">
-            <form class="container-fluid" action="<?php echo base_url('admin/thong_ke/day_filter') ?>" method="post">
-                <div class="row">
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
-                        <lable  style="font-weight: bold">Từ ngày</lable>
-                    </div>
-
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
-                        <lable  style="font-weight: bold">Đến ngày</lable>
-
-                    </div>
-
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
-                        <lable style="font-weight: bold" >Chọn thủ tục muốn xem </lable>
-                    </div>
-
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
-                    </div>
-                </div>
-
-                <div class="row">
-
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
-                        <input class=" form-control" readonly type="text" id ="datepicker1" name="datepicker1">
-                    </div>
-
-
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
-                        <input class="form-control" readonly type="text" id ="datepicker2" name="datepicker2">
-                    </div>
-
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
-                        <select  name="luachonInDay" class="selectpicker form-control" data-live-search="true" data-style="btn-success rm-relish ">
-
-                            <option value="all">Xem tất cả các thủ tục</option>
-                            <?php
-                            if($_SESSION['level']==12||$_SESSION['level']==13||$_SESSION['level']==100){
-                                for($i = 1; $i<=count($node_map);$i++){
-
-                                    if($i != 31){
-                                        $myThing = $node_map[$i]->node_id-1;
-                                        $otherthings=functionForSelectTag($node_map[$i]->node_name,33);
-                                        echo '<option  value="'.$myThing.' ">'.$otherthings.'</option>';
-                                    }
-
-                                }
-                            }
-
-                            if($_SESSION['level']==21){
-                                for($i = 1; $i<31;$i++){
-
-                                    $myThing = $node_map[$i]->node_id-1;
-                                    $otherthings=functionForSelectTag($node_map[$i]->node_name,33);
-                                    echo '<option  value="'.$myThing.' ">'.$otherthings.'</option>';
-                                }
-                            }
-
-                            if($_SESSION['level']==22){
-                                for($i = 32; $i<count($node_map);$i++){
-                                    $myThing = $node_map[$i]->node_id-1;
-                                    $otherthings=functionForSelectTag($node_map[$i]->node_name,33);
-                                    echo '<option  value="'.$myThing.' ">'.$otherthings.'</option>';
-                                }
-                            }
-
-
-                            ?>
-                        </select>
-                    </div>
-
-
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
-                        <input class=" btn btn-info" type="submit" value="Xem thông tin" data-style="btn-primary"  >
-                    </div>
-
-                </div>
-            </form>
-
-        </div><!-- .panel-1-Ngay-->
-        <div class="panel" id="panel-2">
-            <input type="hidden" id="phpVarWeek" value="<?php echo $myWeek; ?>">
-
-            <form class="container-fluid" action="<?php echo base_url('admin/thong_ke/week_filter') ?>" method="post">
-
-                <div class="row">
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"   >
-                        <lable style="font-weight: bold">Chọn ngày trong tuần </lable>
-                    </div>
-
-                    <div class="col-xs-3 col-xs-offset-1 col-sm-offset-1 col-ms-offset-1 col-lg-offset-1 col-sm-3 col-md-3 col-lg-3 ">
-                        <lable style="font-weight: bold">Chọn thủ tục muốn xem  </lable>
-                    </div>
-
-                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
-                        <input  class="form-control" readonly type="text" id ="datepickerWeek" name="weekName"  >
-                    </div>
-
-                    <div class="col-xs-3 col-xs-offset-1 col-sm-offset-1 col-ms-offset-1 col-lg-offset-1 col-sm-3 col-md-3 col-lg-3 ">
-                        <select  name="luachonWeek" class="selectpicker form-control"  data-style="btn-success rm-relish ">
-
-                            <option value="all">Xem tất cả các thủ tục</option>
-                            <?php
-                            if($_SESSION['level']==12||$_SESSION['level']==13||$_SESSION['level']==100){
-                                for($i = 1; $i<=count($node_map);$i++){
-
-                                    if($i != 31){
-                                        $myThing = $node_map[$i]->node_id-1;
-                                        $otherthings=functionForSelectTag($node_map[$i]->node_name,33);
-                                        echo '<option  value="'.$myThing.' ">'.$otherthings.'</option>';
-                                    }
-
-                                }
-                            }
-
-                            if($_SESSION['level']==21){
-                                for($i = 1; $i<31;$i++){
-
-                                    $myThing = $node_map[$i]->node_id-1;
-                                    $otherthings=functionForSelectTag($node_map[$i]->node_name,33);
-                                    echo '<option  value="'.$myThing.' ">'.$otherthings.'</option>';
-                                }
-                            }
-
-                            if($_SESSION['level']==22){
-                                for($i = 32; $i<count($node_map);$i++){
-                                    $myThing = $node_map[$i]->node_id-1;
-                                    $otherthings=functionForSelectTag($node_map[$i]->node_name,33);
-                                    echo '<option  value="'.$myThing.' ">'.$otherthings.'</option>';
-                                }
-                            }
-
-
-                            ?>
-                        </select>
-                    </div>
-
-                    <div class="col-xs-3 col-xs-offset-1 col-sm-offset-1 col-ms-offset-1 col-lg-offset-1 col-sm-3 col-md-3 col-lg-3 ">
-                        <input class="btn btn-info" type="submit" value="Xem thông tin" data-style="btn-primary"  >
-                    </div>
-                </div>
-
-
-
-            </form>
-        </div><!-- End panel-2-Tuan -->
-        <div class="panel" id="panel-3">
-            <input type="hidden" id="phpVarMonth" value="<?php echo $myMonth; ?>">
-            <div >
-                <form class="container-fluid" action="<?php echo base_url('admin/thong_ke/month_filter') ?>" method="post">
+    <ol class="breadcrumb">
+        <li class="cursor back">
+            <i class="fa fa-arrow-left"></i>
+        </li>
+        <li>
+            <a href="<?php echo base_url('trang_chu'); ?>">
+                <i class="fa fa-home"></i> Trang chủ
+            </a>
+        </li>
+    </ol>
+    <h3 class="page-header marTop"><i class="fa fa-bar-chart-o"></i> Thống kê</h3>
+        <div class="demo" id="demo-one">
+            <nav class="subnav tabs">
+                <ul>
+                    <li ><a href="#panel-1">Theo ngày </a></li>
+                    <li ><a href="#panel-2">Theo tuần</a></li>
+                    <li ><a href="#panel-3">Theo tháng</a></li>
+                    <li ><a href="#panel-4">Theo quý </a></li>
+                    <li ><a href="#panel-5">Theo năm </a></li>
+                </ul>
+            </nav><!--end nav-->
+            <style>
+                .top-buffer { margin-top:-5%; }
+            </style>
+            <div class="panel" id="panel-1">
+                <input type="hidden" id="phpVarDay" value="<?php echo $myDay; ?>">
+                <form class="container-fluid" action="<?php echo base_url('admin/thong_ke/day_filter') ?>" method="post">
 
                     <div class="row">
-                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                            <lable style="font-weight: bold">Chọn tháng</lable>
+
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+                            <input class=" form-control" readonly type="text" id ="datepicker1" name="datepicker1" placeholder="Từ ngày">
                         </div>
-                        <div class=" col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                            <lable style="font-weight: bold">Nhập năm </lable>
+
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+                            <input class="form-control" readonly type="text" id ="datepicker2" name="datepicker2" placeholder="Đến ngày">
                         </div>
-                        <div class="col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                            <lable style="font-weight: bold">Chọn thủ tục muốn xem </lable>
-                        </div>
-                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+
+                        <div class="kiet col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
+
+                            <li> <input type="text" id="yahooday"  class=" form-control" name="searchq" placeholder="Tìm thủ tục... " onkeydown="searchday();" ></li>
+                            <li id="outputday" class="wrapper-dropdown">
+
+                            </li>
+
+                            <input type="text" name="luachon" id="yunday" style="visibility: hidden;">
+                            <input type="text"  id="base_html" value="<?php echo base_url();?>" style="visibility: hidden;">
+
 
                         </div>
+
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
+                            <input class=" btn btn-info" type="submit" value="Xem thông tin" data-style="btn-primary"  >
+                        </div>
+                        </div>
+
+
+                </form>
+            </div><!-- .panel-1-Ngay-->
+            <div class="panel" id="panel-2">
+                <input type="hidden" id="phpVarWeek" value="<?php echo $myWeek; ?>">
+                <form class="container-fluid" action="<?php echo base_url('admin/thong_ke/week_filter') ?>" method="post">
+                    <div class="row">
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+                            <input  class="form-control" readonly type="text" id ="datepickerWeek" name="weekName" placeholder="Chọn ngày trong tuần " >
+                        </div>
+
+                        <div class="kiet col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3 col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
+
+                            <li> <input type="text" id="yahooweek" class="form-control" name="searchweeks" placeholder="Tìm thủ tục..." onkeydown="searchweek();"></li>
+                            <li id="outputweek" class="wrapper-dropdown"></li>
+                            <input type="text" name="luachon" id="yunweek" style="visibility: hidden;">
+
+                        </div>
+
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
+                            <input class=" btn btn-info" type="submit" value="Xem thông tin" data-style="btn-primary"  >
+                        </div>
+
                     </div>
 
+                </form>
+            </div><!-- End panel-2-Tuan -->
+            <div class="panel" id="panel-3">
+                <input type="hidden" id="phpVarMonth" value="<?php echo $myMonth; ?>">
+                <form class="container-fluid" action="<?php echo base_url('admin/thong_ke/month_filter') ?>" method="post">
                     <div class="row">
                         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                             <select name="thangName" class="selectpicker form-control " data-style="btn-success rm-relish " >
+                                <option value='#'>Chọn tháng</option>
                                 <option value='01'>Tháng 1</option>
                                 <option value='02'>Tháng 2</option>
                                 <option value='03'>Tháng 3</option>
@@ -232,81 +130,30 @@ function functionForSelectTag($str,$length){
                                 <option value='11'>Tháng 11</option>
                                 <option value='12'>Tháng 12</option>
                             </select>
-
                         </div>
                         <div class=" col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                            <input  class="form-control"  type="text" id ="myYearMonth" name="yearName" value="2015" >
+                            <input  class="form-control"   id ="myYearMonth" name="yearName" type="number" min="2015" step="1" value="2015" >
                         </div>
-                        <div class="col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                            <select  name="luachonName" class="selectpicker form-control"  data-style="btn-success rm-relish ">
+                        <div class="kiet col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
 
-                                <option value="all">Xem tất cả các thủ tục</option>
-                                <?php
-                                if($_SESSION['level']==12||$_SESSION['level']==13||$_SESSION['level']==100){
-                                    for($i = 1; $i<=count($node_map);$i++){
-
-                                        if($i != 31){
-                                            $myThing = $node_map[$i]->node_id-1;
-                                            $otherthings=functionForSelectTag($node_map[$i]->node_name,33);
-                                            echo '<option  value="'.$myThing.' ">'.$otherthings.'</option>';
-                                        }
-
-                                    }
-                                }
-
-                                if($_SESSION['level']==21){
-                                    for($i = 1; $i<31;$i++){
-
-                                        $myThing = $node_map[$i]->node_id-1;
-                                        $otherthings=functionForSelectTag($node_map[$i]->node_name,33);
-                                        echo '<option  value="'.$myThing.' ">'.$otherthings.'</option>';
-                                    }
-                                }
-
-                                if($_SESSION['level']==22){
-                                    for($i = 32; $i<count($node_map);$i++){
-                                        $myThing = $node_map[$i]->node_id-1;
-                                        $otherthings=functionForSelectTag($node_map[$i]->node_name,33);
-                                        echo '<option  value="'.$myThing.' ">'.$otherthings.'</option>';
-                                    }
-                                }
-
-
-                                ?>
-                            </select>
+                            <li><input type="text" id="yahoomonth" class="form-control" name="searchmonths" placeholder="Tìm thủ tục..." onkeydown="searchmonth();"></li>
+                            <li id="outputmonth" class="wrapper-dropdown"></li>
+                            <input type="text" name="luachon" id="yunmonth" style="visibility: hidden;">
                         </div>
-                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                            <input class="btn btn-info" type="submit" value="Xem thông tin" data-style="btn-primary"  >
+
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
+                            <input class=" btn btn-info" type="submit" value="Xem thông tin" data-style="btn-primary"  >
                         </div>
                     </div>
-
-
                 </form>
-            </div>
-        </div><!-- end panel-3Thang-->
-        <div class="panel" id="panel-4">
-            <input type="hidden" id="phpVarQuarter" value="<?php echo $myQuarter; ?>">
-            <div>
+            </div><!-- end panel-3Thang-->
+            <div class="panel" id="panel-4">
+                <input type="hidden" id="phpVarQuarter" value="<?php echo $myQuarter; ?>">
                 <form class="container-fluid" action="<?php echo base_url('admin/thong_ke/quarter_filter') ?>" method="post">
-
                     <div class="row">
                         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                            <lable style="font-weight: bold">Chọn Quý </lable>
-                        </div>
-                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                            <lable style="font-weight: bold">Nhập năm </lable>
-                        </div>
-                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                            <lable style="font-weight: bold">Chọn thủ tục muốn xem  </lable>
-                        </div>
-                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                            <select name="quarter" class="selectpicker form-control " data-live-search="true"  data-style="btn-success rm-relish " >
+                            <select name="quarter" class="selectpicker form-control "  data-style="btn-success rm-relish " >
+                                <option value=''>Chọn quý </option>
                                 <option value='1'>Quý I</option>
                                 <option value='2'>Quý II</option>
                                 <option value='3'>Quý III</option>
@@ -314,133 +161,54 @@ function functionForSelectTag($str,$length){
                             </select>
                         </div>
                         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                            <input  class="form-control"  type="text" id ="myYearQuarter" name="yearQuarter" value="2015" >
+                            <input  class="form-control"   id ="myYearQuarter" name="yearQuarter" type="number" min="2015" step="1" value="2015" >
                         </div>
-                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                            <select  name="luachonQuarter" class="selectpicker form-control" data-live-search="true"  data-style="btn-success rm-relish ">
+                        <div class="kiet col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
 
-                                <option value="all">Xem tất cả các thủ tục</option>
-                                <?php
-                                if($_SESSION['level']==12||$_SESSION['level']==13||$_SESSION['level']==100){
-                                    for($i = 1; $i<=count($node_map);$i++){
+                            <li><input type="text" id="yahooquarter" class="form-control" name="searchquarters" placeholder="Tìm thủ tục..." onkeydown="searchquarter();"></li>
+                            <li id="outputquarter" class="wrapper-dropdown"></li>
+                            <input type="text" name="luachon" id="yunquarter" style="visibility: hidden;">
 
-                                        if($i != 31){
-                                            $myThing = $node_map[$i]->node_id-1;
-                                            $otherthings=functionForSelectTag($node_map[$i]->node_name,33);
-                                            echo '<option  value="'.$myThing.' ">'.$otherthings.'</option>';
-                                        }
-
-                                    }
-                                }
-
-                                if($_SESSION['level']==21){
-                                    for($i = 1; $i<31;$i++){
-
-                                        $myThing = $node_map[$i]->node_id-1;
-                                        $otherthings=functionForSelectTag($node_map[$i]->node_name,33);
-                                        echo '<option  value="'.$myThing.' ">'.$otherthings.'</option>';
-                                    }
-                                }
-
-                                if($_SESSION['level']==22){
-                                    for($i = 32; $i<count($node_map);$i++){
-                                        $myThing = $node_map[$i]->node_id-1;
-                                        $otherthings=functionForSelectTag($node_map[$i]->node_name,33);
-                                        echo '<option  value="'.$myThing.' ">'.$otherthings.'</option>';
-                                    }
-                                }
-
-
-                                ?>
-                            </select>
                         </div>
-                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                            <input class="btn btn-info" type="submit" value="Xem thông tin" data-style="btn-primary"  >
+
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
+                            <input class=" btn btn-info" type="submit" value="Xem thông tin" data-style="btn-primary"  >
                         </div>
+
                     </div>
 
                 </form>
-            </div>
 
-        </div><!-- end panel-4-Quy -->
-        <div class="panel" id="panel-5"><!-- .panel-4 -->
+            </div><!-- end panel-4-Quy -->
+            <div class="panel" id="panel-5"><!-- .panel-4 -->
 
-            <input type="hidden" id="phpVarYear" value="<?php echo $myYear; ?>">
+                <input type="hidden" id="phpVarYear" value="<?php echo $myYear; ?>">
 
-            <form  action="<?php echo base_url('admin/thong_ke/year_filter') ?>" method="post">
-                <div class="container-fluid">
+                <form  action="<?php echo base_url('admin/thong_ke/year_filter') ?>" method="post">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class=" col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
+                                <input  class="form-control"   id ="myYear" name="year"  type="number" min="2015" step="1" value="2015" >
+                            </div>
+                            <div class="kiet col-xs-offset-4 col-sm-offset-4 col-md-offset-4 col-lg-offset-4 col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
+                                <li><input type="text" id="yahooyear" class="form-control" name="searchyears" placeholder="Tìm thủ tục..." onkeydown="searchyear();"></li>
+                                <li id="outputyear" class="wrapper-dropdown"></li>
+                                <input type="text" name="luachon" id="yunyear" style="visibility: hidden;">
 
-                    <div class="row">
-                        <div class=" col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1  col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
-                            <lable style="font-weight: bold">Nhập năm </lable>
+                            </div>
+
+                            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
+                                <input class=" btn btn-info" type="submit" value="Xem thông tin" data-style="btn-primary"  >
+                            </div>
                         </div>
 
-                        <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
-                            <lable style="font-weight: bold">Chọn thủ tục muốn xem </lable>
-                        </div>
+                </form>
 
-                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+            </div><!--end panel 5-Nam-->
 
-                        </div>
+        </div><!--end Demo-->
+    </div><!--end body-->
 
-                    </div>
-
-                    <div class="row">
-                        <div class=" col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1  col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
-                            <input  class="form-control"  type="text" id ="myYear" name="year" value="2015" >
-                        </div>
-
-                        <div class="col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2 col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
-                            <select  name="luachon" id="selectID" class="selectpicker form-control" data-live-search="true"   data-style="btn-success rm-relish ">
-
-                                <option value="all">Xem tất cả các thủ tục</option>
-                                <?php
-                                if($_SESSION['level']==12||$_SESSION['level']==13||$_SESSION['level']==100){
-                                    for($i = 1; $i<=count($node_map);$i++){
-
-                                        if($i != 31){
-                                            $myThing = $node_map[$i]->node_id-1;
-                                            $otherthings=functionForSelectTag($node_map[$i]->node_name,33);
-                                            echo '<option  value="'.$myThing.' ">'.$otherthings.'</option>';
-                                        }
-
-                                    }
-                                }
-
-                                if($_SESSION['level']==21){
-                                    for($i = 1; $i<31;$i++){
-
-                                        $myThing = $node_map[$i]->node_id-1;
-                                        $otherthings=functionForSelectTag($node_map[$i]->node_name,33);
-                                        echo '<option  value="'.$myThing.' ">'.$otherthings.'</option>';
-                                    }
-                                }
-
-                                if($_SESSION['level']==22){
-                                    for($i = 32; $i<count($node_map);$i++){
-                                        $myThing = $node_map[$i]->node_id-1;
-                                        $otherthings=functionForSelectTag($node_map[$i]->node_name,33);
-                                        echo '<option  value="'.$myThing.' ">'.$otherthings.'</option>';
-                                    }
-                                }
-
-
-                                ?>
-                            </select>
-                        </div>
-
-                        <div class="col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
-                            <input class="btn btn-info" type="submit" value="Xem thông tin" data-style="btn-primary"  >
-                        </div>
-
-                    </div>
-                    </div>
-
-            </form>
-
-        </div><!--end panel 5-Nam-->
-    </div><!--end Demo-->
-</div>
 <?php
 
 if (isset($tuNgay)){
@@ -498,40 +266,19 @@ if(isset($yearSet)){
     $nam = $namCaseYear;
     $luaChon = $luaChonCaseYear;
     echo '<input type="text" id="myYearLove" style="visibility: hidden" value = "1">';
-
-
 }
 
 /*Conditions*/
-function dieuKienChoTraVe($data2,$i){
 
-    return (($_SESSION['level']==12 || $_SESSION['level']==13 )&&$data2[$i]->mcb == $_SESSION['ma_can_bo']  && $data2[$i]->status == 5);
-}
-function dieuKienChoPhongBanTuPhap($data2,$i){
-
-    return ($_SESSION['level']==21 && $data2[$i]->status == 5&&substr($data2[$i]->mshs, 14, 2)=="TP");
-}
-function dieuKienChoPhongBanDatDai($data2,$i){
-
-    return ($_SESSION['level']==22  && $data2[$i]->status == 5&&substr($data2[$i]->mshs, 14, 2)=="DD");
-}
-function dieuKienChoPhongBanChuTich($data2,$i){
-
-    return ($_SESSION['level']==100 && $data2[$i]->status == 5);
-}
-function dieuKienChoThongKeNgay($data2,$i,$myTempVarDateString){
-
-    return substr($data2[$i]->mshs, 7, 6) == $myTempVarDateString;
-}
 function dieuKienCoLuaChon($data2,$i,$luaChon){
     $luaChon = (int)($luaChon);
     $myString = (int)(substr($data2[$i]->mshs, 16, 2));
-return ($luaChon == $myString);
+    return ($luaChon == $myString);
 }
 function showContentOfTable($data2,$i,$k){
     echo '<tr>
                       <td>' . $k . '</td>
-                                <td>' . $data2[$i]->mshs . '</td>
+                                <td><a href="'.base_url().'admin/xem_ho_so/details/'.$data2[$i]->id.'"><h5 class="truncate">'.$data2[$i]->mshs.' </h5></a></td>
                                 <td>' . $data2[$i]->name . '</td>
                                 <td>' . $data2[$i]->cmnd . '</td>
                                 <td> ' . $data2[$i]->tien_thu . ' </td>
@@ -539,8 +286,12 @@ function showContentOfTable($data2,$i,$k){
                             </tr>';
 
 }
+function dieuKienChoThongKeNgay($data2,$i,$myTempVarDateString){
+
+    return substr($data2[$i]->mshs, 7, 6) == $myTempVarDateString;
+}
 function dieuKienChoThongKeTuan($data2,$i,$j,$myDateOfWeekArray){
-  return substr($data2[$i]->mshs, 7, 6) == $myDateOfWeekArray[$j];
+    return substr($data2[$i]->mshs, 7, 6) == $myDateOfWeekArray[$j];
 }
 function dieuKienChoThongKeThang($data2,$i,$thangDaChon,$nam){
     return substr($data2[$i]->mshs, 9, 4) == $thangDaChon.$nam;
@@ -565,135 +316,114 @@ function dieuKienChoThongKeQuy($data2,$i,$nam,$quarter){
             &&$quarter==4));
 }
 function dieuKienChoThongKeNam($data2,$i,$nam){
+
     return substr($data2[$i]->mshs, 11, 2) == $nam;
 }
-function dieuKienPhongBan($data2,$i){
-    return (dieuKienChoTraVe($data2,$i)||
-        dieuKienChoPhongBanTuPhap($data2,$i)||
-        dieuKienChoPhongBanDatDai($data2,$i)||
-        dieuKienChoPhongBanChuTich($data2,$i));
-}
-
 $tempForShowingCondion = 0;
 $tongSoTienThuDuoc = 0;
 
 //Calculations
 
-    for ($i = 0; $i < count($data2); $i++){
-        if($luaChon=='all'){
-            //TODO
-            if(isset($tuNgay)){
-
-                for ($j = 0; $j < count($myListDate); $j++) {
-
-                    $myTempVarDateString = substr($myListDate[$j],0,2).substr($myListDate[$j],3,2).substr($myListDate[$j],8,2);
-                    if(dieuKienPhongBan($data2,$i)&&
-                        dieuKienChoThongKeNgay($data2,$i,$myTempVarDateString)){
-                        $tongSoTienThuDuoc = $tongSoTienThuDuoc + $data2[$i]->tien_thu;
-                        $tempForShowingCondion++;
-                    }
-
-                }
-            }
-
-            if(isset($tuanDaChon)){
-                for($j=0;$j <count($myDateOfWeekArray);$j++){
-                    if(dieuKienPhongBan($data2,$i)&& //I am here
-                        dieuKienChoThongKeTuan($data2,$i,$j,$myDateOfWeekArray)){
-                        $tongSoTienThuDuoc = $tongSoTienThuDuoc + $data2[$i]->tien_thu;
-                        $tempForShowingCondion++;
-                    }
-                }
-            }
-
-            if(isset($monthSet)) {
-                if(dieuKienPhongBan($data2,$i)&&
-                    dieuKienChoThongKeThang($data2,$i,$thangDaChon,$nam)){
+for ($i = 0; $i < count($data2); $i++) {
+    if ($luaChon == 'all') {
+        if (isset($tuNgay)) {
+            for ($j = 0; $j < count($myListDate); $j++) {
+                $myTempVarDateString = substr($myListDate[$j], 0, 2) . substr($myListDate[$j], 3, 2) . substr($myListDate[$j], 8, 2);
+                if (dieuKienChoThongKeNgay($data2, $i, $myTempVarDateString)) {
                     $tongSoTienThuDuoc = $tongSoTienThuDuoc + $data2[$i]->tien_thu;
                     $tempForShowingCondion++;
                 }
             }
-
-            if(isset($quarterSet)){
-                if(dieuKienPhongBan($data2,$i)&&
-                    dieuKienChoThongKeQuy($data2,$i,$nam,$quarter)){
-                    $tongSoTienThuDuoc = $tongSoTienThuDuoc + $data2[$i]->tien_thu;
-                    $tempForShowingCondion++;
-                }
-
-            }
-
-            if(isset($yearSet)){
-                if(dieuKienPhongBan($data2,$i)&&
-                    dieuKienChoThongKeNam($data2,$i,$nam)){
-
-                    $tongSoTienThuDuoc = $tongSoTienThuDuoc + $data2[$i]->tien_thu;
-                    $tempForShowingCondion++;
-                }
-
-            }
-
-        }else{
-            //TODO-Else
-            if(isset($tuNgay)){
-                for ($j = 0; $j < count($myListDate); $j++) {
-                    $myTempVarDateString = substr($myListDate[$j],0,2).substr($myListDate[$j],3,2).substr($myListDate[$j],8,2);
-                    if(dieuKienPhongBan($data2,$i)&&
-                        dieuKienChoThongKeNgay($data2,$i,$myTempVarDateString)&&dieuKienCoLuaChon($data2,$i,$luaChon)){
-                        $tongSoTienThuDuoc = $tongSoTienThuDuoc + $data2[$i]->tien_thu;
-                        $tempForShowingCondion++;
-                    }
-                }
-            }
-
-            if(isset($tuanDaChon)){
-                for($j=0;$j <count($myDateOfWeekArray);$j++){
-                    if(dieuKienPhongBan($data2,$i)&&
-                        dieuKienChoThongKeTuan($data2,$i,$j,$myDateOfWeekArray)&&dieuKienCoLuaChon($data2,$i,$luaChon)){
-                        $tongSoTienThuDuoc = $tongSoTienThuDuoc + $data2[$i]->tien_thu;
-                        $tempForShowingCondion++;
-                    }
-                }
-
-            }
-
-            if(isset($monthSet)) {
-                if(dieuKienPhongBan($data2,$i)&&
-                    dieuKienChoThongKeThang($data2,$i,$thangDaChon,$nam)&&dieuKienCoLuaChon($data2,$i,$luaChon)){
+        }
+        if (isset($tuanDaChon)) {
+            for ($j = 0; $j < count($myDateOfWeekArray); $j++) {
+                if (
+                    dieuKienChoThongKeTuan($data2, $i, $j, $myDateOfWeekArray)
+                ) {
                     $tongSoTienThuDuoc = $tongSoTienThuDuoc + $data2[$i]->tien_thu;
                     $tempForShowingCondion++;
                 }
             }
-
-            if(isset($quarterSet)){
-                if(dieuKienPhongBan($data2,$i)&&
-                    dieuKienChoThongKeQuy($data2,$i,$nam,$quarter)&&dieuKienCoLuaChon($data2,$i,$luaChon)){
-                    $tongSoTienThuDuoc = $tongSoTienThuDuoc + $data2[$i]->tien_thu;
-                    $tempForShowingCondion++;
-                }
-
+        }
+        if (isset($monthSet)) {
+            if (dieuKienChoThongKeThang($data2, $i, $thangDaChon, $nam)
+            ) {
+                $tongSoTienThuDuoc = $tongSoTienThuDuoc + $data2[$i]->tien_thu;
+                $tempForShowingCondion++;
             }
-
-            if(isset($yearSet)){
-                if(dieuKienPhongBan($data2,$i)&&
-                    dieuKienChoThongKeNam($data2,$i,$nam)&&dieuKienCoLuaChon($data2,$i,$luaChon)){
-                    $tongSoTienThuDuoc = $tongSoTienThuDuoc + $data2[$i]->tien_thu;
-                    $tempForShowingCondion++;
-                }
-
+        }
+        if (isset($quarterSet)) {
+            if (dieuKienChoThongKeQuy($data2, $i, $nam, $quarter)
+            ) {
+                $tongSoTienThuDuoc = $tongSoTienThuDuoc + $data2[$i]->tien_thu;
+                $tempForShowingCondion++;
             }
 
         }
+        if (isset($yearSet)) {
+            if (dieuKienChoThongKeNam($data2, $i, $nam)
+            ) {
+                $tongSoTienThuDuoc = $tongSoTienThuDuoc + $data2[$i]->tien_thu;
+                $tempForShowingCondion++;
+            }
 
-    }
+        }
+    } else {
+        //TODO-Else
+            if (isset($tuNgay)) {
+                for ($j = 0; $j < count($myListDate); $j++) {
+                    $myTempVarDateString = substr($myListDate[$j], 0, 2) . substr($myListDate[$j], 3, 2) . substr($myListDate[$j], 8, 2);
+                    if (
+                        dieuKienChoThongKeNgay($data2, $i, $myTempVarDateString) && dieuKienCoLuaChon($data2, $i, $luaChon)
+                    ) {
+                        $tongSoTienThuDuoc = $tongSoTienThuDuoc + $data2[$i]->tien_thu;
+                        $tempForShowingCondion++;
+                    }
+                }
+            }
+            if (isset($tuanDaChon)) {
+                for ($j = 0; $j < count($myDateOfWeekArray); $j++) {
+                    if (
+                        dieuKienChoThongKeTuan($data2, $i, $j, $myDateOfWeekArray) && dieuKienCoLuaChon($data2, $i, $luaChon)
+                    ) {
+                        $tongSoTienThuDuoc = $tongSoTienThuDuoc + $data2[$i]->tien_thu;
+                        $tempForShowingCondion++;
+                    }
+                }
+
+            }
+            if (isset($monthSet)) {
+                if (dieuKienChoThongKeThang($data2, $i, $thangDaChon, $nam) && dieuKienCoLuaChon($data2, $i, $luaChon)
+                ) {
+                    $tongSoTienThuDuoc = $tongSoTienThuDuoc + $data2[$i]->tien_thu;
+                    $tempForShowingCondion++;
+                }
+            }
+            if (isset($quarterSet)) {
+                if (dieuKienChoThongKeQuy($data2, $i, $nam, $quarter) && dieuKienCoLuaChon($data2, $i, $luaChon)
+                ) {
+                    $tongSoTienThuDuoc = $tongSoTienThuDuoc + $data2[$i]->tien_thu;
+                    $tempForShowingCondion++;
+                }
+
+            }
+            if (isset($yearSet)) {
+                if (dieuKienChoThongKeNam($data2, $i, $nam) && dieuKienCoLuaChon($data2, $i, $luaChon)) {
+                    $tongSoTienThuDuoc = $tongSoTienThuDuoc + $data2[$i]->tien_thu;
+                    $tempForShowingCondion++;
+                }
+            }
+        }
+}
+
 
 //Show table
 
-    if($tempForShowingCondion==0){
-        echo'<p style="color: red;font-style: italic ">Không có hồ sơ nào</p>';
-    } else {
+if($tempForShowingCondion==0){
+    echo'<p style="color: red;font-style: italic ">Không có hồ sơ nào</p>';
+} else {
 
-        echo '<table class="table table-hover">
+    echo '<table id="myTable" class="table table-hover">
                     <thead>
                     <tr>
                         <th>#</th>
@@ -705,163 +435,292 @@ $tongSoTienThuDuoc = 0;
                     </thead>
                     <tbody>';
 
-        $k = 1;
+    $k = 1;
 
-        for ($i = 0; $i < count($data2); $i++) {
-            if ($luaChon == 'all') {
+    for ($i = 0; $i < count($data2); $i++) {
+        if ($luaChon == 'all') {
 
-                //TODO
+            //TODO
 
-                if (isset($tuNgay)) {
-                    $myDay = 1;
-                    for ($j = 0; $j < count($myListDate); $j++) {
-                        $myTempVarDateString = substr($myListDate[$j], 0, 2) . substr($myListDate[$j], 3, 2) . substr($myListDate[$j], 8, 2);
-                        if (dieuKienPhongBan($data2,$i) &&
-                            dieuKienChoThongKeNgay($data2, $i, $myTempVarDateString)
-                        ) {
-                            showContentOfTable($data2, $i, $k);
-                            $k = $k + 1;
-                        }
-                    }
-                }
-
-                if (isset($tuanDaChon)) {
-
-                    for ($j = 0; $j < count($myDateOfWeekArray); $j++) {
-                        if (dieuKienPhongBan($data2,$i) &&
-                            dieuKienChoThongKeTuan($data2, $i, $j, $myDateOfWeekArray)
-                        ) {
-                            showContentOfTable($data2, $i, $k);
-                            $k++;
-                        }
-                    }
-                }
-
-                if (isset($monthSet)) {
-                    if (dieuKienPhongBan($data2,$i) &&
-                        dieuKienChoThongKeThang($data2, $i, $thangDaChon, $nam)
-                    ) {
-                        showContentOfTable($data2, $i, $k);
-                        $k++;
-                    }
-                }
-
-                if (isset($quarterSet)) {
-                    if (dieuKienPhongBan($data2,$i) &&
-                        dieuKienChoThongKeQuy($data2, $i, $nam, $quarter)
-                    ) {
-                        showContentOfTable($data2, $i, $k);
-                        $k++;
-                    }
-
-                }
-
-                if (isset($yearSet)) {
-                    if (dieuKienPhongBan($data2,$i) &&
-                        dieuKienChoThongKeNam($data2, $i, $nam)
-                    ) {
-                        showContentOfTable($data2, $i, $k);
-                        $k++;
-                    }
-
-                }
-
-            } else {
-                //TODO
-                if (isset($tuNgay)) {
-                    for ($j = 0; $j < count($myListDate); $j++) {
-                        $myTempVarDateString = substr($myListDate[$j], 0, 2) . substr($myListDate[$j], 3, 2) . substr($myListDate[$j], 8, 2);
-                        if (dieuKienPhongBan($data2,$i) &&
-                            dieuKienChoThongKeNgay($data2, $i, $myTempVarDateString) && dieuKienCoLuaChon($data2, $i, $luaChon)
-                        ) {
-                            showContentOfTable($data2, $i, $k);
-                            $k = $k + 1;
-                        }
-                    }
-                }
-
-                if (isset($tuanDaChon)) {
-                    for ($j = 0; $j < count($myDateOfWeekArray); $j++) {
-                        if (dieuKienPhongBan($data2,$i) &&
-                            dieuKienChoThongKeTuan($data2, $i, $j, $myDateOfWeekArray) && dieuKienCoLuaChon($data2, $i, $luaChon)
-                        ) {
-                            showContentOfTable($data2, $i, $k);
-                            $k = $k + 1;
-                        }
-                    }
-
-                }
-
-                if (isset($monthSet)) {
-                    if (dieuKienPhongBan($data2,$i) &&
-                        dieuKienChoThongKeThang($data2, $i, $thangDaChon, $nam) && dieuKienCoLuaChon($data2, $i, $luaChon)
+            if (isset($tuNgay)) {
+                $myDay = 1;
+                for ($j = 0; $j < count($myListDate); $j++) {
+                    $myTempVarDateString = substr($myListDate[$j], 0, 2) . substr($myListDate[$j], 3, 2) . substr($myListDate[$j], 8, 2);
+                    if (dieuKienChoThongKeNgay($data2, $i, $myTempVarDateString)
                     ) {
                         showContentOfTable($data2, $i, $k);
                         $k = $k + 1;
                     }
                 }
+            }
 
-                if (isset($quarterSet)) {
-                    if (dieuKienPhongBan($data2,$i) &&
-                        dieuKienChoThongKeQuy($data2, $i, $nam, $quarter) && dieuKienCoLuaChon($data2, $i, $luaChon)
+            if (isset($tuanDaChon)) {
+                for ($j = 0; $j < count($myDateOfWeekArray); $j++) {
+                    if (dieuKienChoThongKeTuan($data2, $i, $j, $myDateOfWeekArray)
                     ) {
                         showContentOfTable($data2, $i, $k);
-                        $k = $k + 1;
+                        $k++;
                     }
-
                 }
+            }
 
-                if (isset($yearSet)) {
-                    if (dieuKienPhongBan($data2,$i) &&
-                        dieuKienChoThongKeNam($data2, $i, $nam) && dieuKienCoLuaChon($data2, $i, $luaChon)
-                    ) {
-                        showContentOfTable($data2, $i, $k);
-                        $k = $k + 1;
-                    }
+            if (isset($monthSet)) {
+                if (dieuKienChoThongKeThang($data2, $i, $thangDaChon, $nam)
+                ) {
+                    showContentOfTable($data2, $i, $k);
+                    $k++;
+                }
+            }
 
+            if (isset($quarterSet)) {
+                if (dieuKienChoThongKeQuy($data2, $i, $nam, $quarter)
+                ) {
+                    showContentOfTable($data2, $i, $k);
+                    $k++;
                 }
 
             }
+
+            if (isset($yearSet)) {
+                if (dieuKienChoThongKeNam($data2, $i, $nam)
+                ) {
+                    showContentOfTable($data2, $i, $k);
+                    $k++;
+                }
+
+            }
+
+        } else {
+            //TODO
+            if (isset($tuNgay)) {
+                for ($j = 0; $j < count($myListDate); $j++) {
+                    $myTempVarDateString = substr($myListDate[$j], 0, 2) . substr($myListDate[$j], 3, 2) . substr($myListDate[$j], 8, 2);
+                    if (dieuKienChoThongKeNgay($data2, $i, $myTempVarDateString) && dieuKienCoLuaChon($data2, $i, $luaChon)
+                    ) {
+                        showContentOfTable($data2, $i, $k);
+                        $k = $k + 1;
+                    }
+                }
+            }
+
+            if (isset($tuanDaChon)) {
+                for ($j = 0; $j < count($myDateOfWeekArray); $j++) {
+                    if (dieuKienChoThongKeTuan($data2, $i, $j, $myDateOfWeekArray) && dieuKienCoLuaChon($data2, $i, $luaChon)
+                    ) {
+                        showContentOfTable($data2, $i, $k);
+                        $k = $k + 1;
+                    }
+                }
+
+            }
+
+            if (isset($monthSet)) {
+                if (dieuKienChoThongKeThang($data2, $i, $thangDaChon, $nam) && dieuKienCoLuaChon($data2, $i, $luaChon)
+                ) {
+                    showContentOfTable($data2, $i, $k);
+                    $k = $k + 1;
+                }
+            }
+
+            if (isset($quarterSet)) {
+                if (dieuKienChoThongKeQuy($data2, $i, $nam, $quarter) && dieuKienCoLuaChon($data2, $i, $luaChon)
+                ) {
+                    showContentOfTable($data2, $i, $k);
+                    $k = $k + 1;
+                }
+
+            }
+
+            if (isset($yearSet)) {
+                if (dieuKienChoThongKeNam($data2, $i, $nam) && dieuKienCoLuaChon($data2, $i, $luaChon)
+                ) {
+                    showContentOfTable($data2, $i, $k);
+                    $k = $k + 1;
+                }
+
+            }
+
         }
+    }
 
-            //For the same purpose
+    //For the same purpose
 
-            echo '<tr>
+    echo '<tr>
                                   <td colspan="3"></td>
                                   <td><b><em>Tổng tiền:</em></b></td>
                                   <td><b style="font-style: italic; color: red" >' . number_format($tongSoTienThuDuoc, 0, ',', '.') . '  <b><em>đồng</em></b></b></td>
                               </tr>';
 
-            echo '</tbody></table>';
-    }
+    echo '</tbody></table>';
+}
 
 ?>
 
+
 <script type="text/javascript">
 
+    var myTable = $('#myTable');
+
+    $('#outputday').on('click',"a", function() {
+        var txt = $(this).text();
+        document.getElementById("yahooday").value = txt;
+        document.getElementById("yunday").value = $(this).attr('href');
+        if ( ! $('#outputday').is(':focus') ) {
+            $('#outputday').addClass('hiddenClass');
+        }
+        $('#yahooday').on("focus",function(){
+            $('#outputday').removeClass('hiddenClass');
+            $(this).val("");
+            $('.lo').remove();
+        });
+
+    });
+
+    $('#outputweek').on('click',"a", function() {
+        var txt = $(this).text();
+        document.getElementById("yahooweek").value = txt;
+        document.getElementById("yunweek").value = $(this).attr('href');
+        if ( ! $('#outputweek').is(':focus') ) {
+            $('#outputweek').addClass('hiddenClass');
+        }
+
+        $('#yahooweek').on("focus",function(){
+            $('#outputweek').removeClass('hiddenClass');
+            $(this).val("");
+            $('.lo').remove();
+        });
+
+    });
+
+    $('#outputmonth').on('click',"a", function() {
+        var txt = $(this).text();
+        document.getElementById("yahoomonth").value = txt;
+        document.getElementById("yunmonth").value = $(this).attr('href');
+        if ( ! $('#outputmonth').is(':focus') ) {
+            $('#outputmonth').addClass('hiddenClass');
+        }
+
+        $('#yahoomonth').on("focus",function(){
+            $('#outputmonth').removeClass('hiddenClass');
+            $(this).val("");
+            $('.lo').remove();
+        });
+
+    });
+    $('#outputquarter').on('click',"a", function() {
+        var txt = $(this).text();
+        document.getElementById("yahooquarter").value = txt;
+        document.getElementById("yunquarter").value = $(this).attr('href');
+        if ( ! $('#outputquarter').is(':focus') ) {
+            $('#outputquarter').addClass('hiddenClass');
+        }
+
+        $('#yahooquarter').on("focus",function(){
+            $('#outputquarter').removeClass('hiddenClass');
+            $(this).val("");
+            $('.lo').remove();
+        });
+
+    });
+    $('#outputyear').on('click',"a", function() {
+        var txt = $(this).text();
+        document.getElementById("yahooyear").value = txt;
+        document.getElementById("yunyear").value = $(this).attr('href');
+        if ( ! $('#outputyear').is(':focus') ) {
+            $('#outputyear').addClass('hiddenClass');
+        }
+
+        $('#yahooyear').on("focus",function(){
+            $('#outputyear').removeClass('hiddenClass');
+            $(this).val("");
+            $('.lo').remove();
+        });
+
+    });
+
+    $('#yahooday').on("keydown",function() {
+        myTable.addClass('hiddenClass');
+    });
+    $('#yahooweek').on("keydown",function() {
+        myTable.addClass('hiddenClass');
+    });
+    $('#yahoomonth').on("keydown",function() {
+        myTable.addClass('hiddenClass');
+    });
+
+    $('#yahooquarter').on("keydown",function() {
+        myTable.addClass('hiddenClass');
+    });
+
+    $('#yahooyear').on("keydown",function() {
+        myTable.addClass('hiddenClass');
+    });
 
 
+    var mylink = document.getElementById('base_html').value;
+    var link = mylink+"admin/thong_ke/search";
 
+    function searchday(){
+        var searchTxt = $("input[name='searchq']").val();
+
+     $.post(link,
+            { // Data Sending With Request To Server
+                searchVal:searchTxt
+            },
+            function(response){ // Required Callback Function
+                $("#outputday").html(response);
+            });
+    }
+    function searchweek(){
+        var searchTxt = $("input[name='searchweeks']").val();
+
+        $.post(link,
+            { // Data Sending With Request To Server
+                searchVal:searchTxt
+            },
+            function(response){ // Required Callback Function
+                $("#outputweek").html(response);
+            });
+    }
+    function searchmonth(){
+        var searchTxt = $("input[name='searchmonths']").val();
+
+        $.post(link,
+            { // Data Sending With Request To Server
+                searchVal:searchTxt
+            },
+            function(response){ // Required Callback Function
+                $("#outputmonth").html(response);
+            });
+    }
+    function searchquarter(){
+
+        var searchTxt = $("input[name='searchquarters']").val();
+
+        $.post(link,
+            { // Data Sending With Request To Server
+                searchVal:searchTxt
+            },
+            function(response){ // Required Callback Function
+                $("#outputquarter").html(response);
+            });
+    }
+    function searchyear(){
+        var searchTxt = $("input[name='searchyears']").val();
+        $.post(link,
+            { // Data Sending With Request To Server
+                searchVal:searchTxt
+            },
+            function(response){ // Required Callback Function
+                $("#outputyear").html(response);
+            });
+    }
 
     $(function() {
         $("#datepicker1").datepicker();
         $("#datepicker2").datepicker();
         $("#datepickerWeek").datepicker();
-
-        //$('#selectID').data('selectpicker').$lis.attr('title', 'New Title').tooltip();
-
-        //$('.selectpicker').selectpicker();
-        //$('[title]').tooltip({container: 'body'});
-
-       /* $(document).on('hidden.bs.tooltip', '.dropdown-toggle.selectpicker[title]', function (e) {
-            //$(this).attr('data-original-title', $(this).attr('title'));
-            $(this).text("Kie");
-        });*/
-
     });
-
-
-
 
     (function($) {
 
@@ -872,8 +731,6 @@ $tongSoTienThuDuoc = 0;
                     panels = $(this).find('.panel').hide();
                 $(".tabs li:eq(0)").addClass("active").show(); //Activate second tab
                 $(".panel:eq(0)").show(); //Show second tab content
-
-
 
                 if($('#phpVarDay').val()==1){
                     tabs.parent().removeClass('active');
@@ -936,24 +793,16 @@ $tongSoTienThuDuoc = 0;
 
                     // Toggle selected panel
                     panels.hide();
-
-
+                    myTable.hide();
                     $(active).show();
 
                     // Prevent default behavior
                     return false;
                 });
-
-
             });
-
-
-
         });
 
     })(jQuery);
-
-
 </script>
 
 

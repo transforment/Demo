@@ -1,5 +1,8 @@
 <div class="col-lg-12">
     <ol class="breadcrumb">
+        <li class="cursor back">
+            <i class="fa fa-arrow-left"></i>
+        </li>
         <li>
             <a href="<?php echo base_url('trang_chu'); ?>"><i class="fa fa-home"></i> Trang chủ</a>
         </li>
@@ -8,16 +11,13 @@
         </li>
         <li>
             <?php
-            $dataname=array('Chứng thực','Khai sinh','Khai tử','Kết hôn','Giám hộ','Hộ tịch','Các thủ tục còn lại','Search');
+            $dataname=array('Chứng thực','Khai sinh','Khai tử','Kết hôn','Giám hộ','Hộ tịch','Các thủ tục còn lại','Tìm kiếm');
             if (($name<1)||($name>8))$name=7;
             echo '
             <a href="'.base_url('phan_muc/'.$name.'').'">
                 <i class="fa fa-file-o"></i> '.$dataname[$name-1].'
             </a>
             ';?>
-        </li>
-        <li class="active">
-            <i class="fa fa-file-o"></i> <?php echo html_escape($node_map->node_name); ?>
         </li>
     </ol>
     <h3 class="page-header marTop"><i class="fa fa-file-o"></i> <?php echo html_escape($node_map->node_name); ?></h3>

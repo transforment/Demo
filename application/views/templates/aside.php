@@ -17,7 +17,7 @@
             </form>
         </li>
         <li class="sidebar-search">
-            <form role="search" method="post"action="<?php echo base_url();?>admin/Xem_ho_so">
+            <form role="search" method="post"action="<?php echo base_url();?>admin/xem_ho_so">
             <div class="input-group custom-search-form">
                 <input type="text" class="form-control"name ="num_search" placeholder="Gõ mã hồ sơ">
                     <span class="input-group-btn">
@@ -63,19 +63,19 @@
         <?php
         if((isset($_SESSION['name_user']))&&
             (($_SESSION['level']==11)||($_SESSION['level']==12))){
-            echo '<li><a href="'.base_url('admin/Admin_tiep_nhan').'">
-                  <i class="fa fa-plus fa-fw"></i> Hồ sơ đã nhận <span class="badge right">'.$this->db->where('status',0)->where('mcb',($_SESSION['ma_can_bo']))->count_all_results('ho_so').'</span></a></li>';
+            echo '<li><a href="'.base_url('admin/admin_tiep_nhan').'">
+                  <i class="fa fa-files-o fa-fw"></i> Hồ sơ đã nhận <span class="badge right">'.$this->db->where('status',0)->where('mcb',($_SESSION['ma_can_bo']))->count_all_results('ho_so').'</span></a></li>';
         }
         if((isset($_SESSION['name_user']))&&($_SESSION['level']==21)){
             echo '<li><a href="'.base_url('admin/admin_phong_ban').'">
-                  <i class="fa fa-plus fa-fw"></i> Hồ sơ xử lý <span class="badge right">'.$this->db->where('status',1)->where('type', 0)->or_where('status', 2) 
+                  <i class="fa fa-files-o fa-fw"></i> Hồ sơ xử lý <span class="badge right">'.$this->db->where('status',1)->where('type', 0)->or_where('status', 2)
                  ->where('mcb',($_SESSION['ma_can_bo']))->count_all_results('ho_so').'</span></a></li>';
             echo '<li><a href="'.base_url('admin/thong_ke').'">
                   <i class="fa fa-bar-chart-o  fa-fw"></i> Thống kê </a></li>';
         }
         if((isset($_SESSION['name_user']))&&($_SESSION['level']==22)){
             echo '<li><a href="'.base_url('admin/admin_phong_ban').'">
-                  <i class="fa fa-plus fa-fw"></i> Hồ sơ xử lý <span class="badge right">'.$this->db->where('status',1)->where('type', 1)->or_where('status', 2) 
+                  <i class="fa fa-files-o fa-fw"></i> Hồ sơ xử lý <span class="badge right">'.$this->db->where('status',1)->where('type', 1)->or_where('status', 2)
                  ->where('mcb',($_SESSION['ma_can_bo']))->count_all_results('ho_so').'</span></a></li>';
             echo '<li><a href="'.base_url('admin/thong_ke').'">
                   <i class="fa fa-bar-chart-o  fa-fw"></i> Thống kê </a></li>';
@@ -83,9 +83,9 @@
         if((isset($_SESSION['name_user']))&&
             (($_SESSION['level']==13)||($_SESSION['level']==12))){
             echo '<li><a href="'.base_url('admin/admin_tra_ho_so').'">
-                  <i class="fa fa-plus fa-fw"></i> Hồ sơ trả dân <span class="badge right">'.$this->db->where('status',3)->or_where('status',4)->or_where('status',6)->or_where('status',7)->where('mcb',($_SESSION['ma_can_bo']))->count_all_results('ho_so').'</span></a></li>';
+                  <i class="fa fa-files-o fa-fw"></i> Hồ sơ trả dân <span class="badge right">'.$this->db->where('status',3)->or_where('status',4)->or_where('status',6)->or_where('status',7)->where('mcb',($_SESSION['ma_can_bo']))->count_all_results('ho_so').'</span></a></li>';
             echo '<li><a href="'.base_url('admin/thong_ke').'">
-                  <i class="fa fa-bar-chart-o  fa-fw"></i> Thống kê </a></li>';
+                  <i class="fa fa-bar-chart-o fa-fw"></i> Thống kê </a></li>';
         }
         if((isset($_SESSION['name_user']))&&
             ($_SESSION['level']==4)){
@@ -100,7 +100,7 @@
             echo '<li><a href="'.base_url('admin/quan_ly_nhan_su').'">
                   <i class="fa fa-users fa-fw"></i> Quản lý nhân sự</a></li>';
             echo '<li><a href="'.base_url('admin/thong_ke').'">
-                  <i class="fa fa-bar-chart-o  fa-fw"></i> Thống kê </a></li>';
+                  <i class="fa fa-bar-chart-o fa-fw"></i> Thống kê </a></li>';
         }
         if (isset($_SESSION['name_user']))
         {
