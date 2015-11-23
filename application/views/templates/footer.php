@@ -3,7 +3,7 @@
 </div><!-- /#page-wrapper -->
 </div><!-- /#wrapper -->
 
-<button type="button" class="btn btn-danger back-to-top btn-circle btn-lg"><i class="fa fa-arrow-up"></i></button>
+<button type="button" class="btn btn-danger back-to-top btn-circle"><i class="fa fa-arrow-up"></i></button>
 
 <script src="<?php echo base_url('js/jquery-ui.min.js'); ?>"></script><!-- jQuery -->
 <script src="<?php echo base_url('js/bootstrap.min.js'); ?>"></script><!-- Bootstrap Core JavaScript -->
@@ -13,7 +13,10 @@
 <script src="<?php echo base_url('js/masonry.min.js'); ?>"></script><!-- Masonry JavaScript -->
 <script src="<?php echo base_url('js/demo-2.js'); ?>"></script><!-- Custom Theme JavaScript -->
 <script src="<?php echo base_url('js/jquery.amaran.min.js'); ?>"></script><!-- Amaran jQuery -->
-<script src="<?php echo base_url('js/jquery.dataTables.min.js'); ?>"></script><!-- dataTables jQuery -->
+
+<!-- dataTables jQuery -->
+<script src="<?php echo base_url('js/jquery.dataTables.min.js'); ?>"></script>
+<script src="<?php echo base_url('js/dataTables.bootstrap.min.js'); ?>"></script>
 
 
 <!-- Kiet JavaScript -->

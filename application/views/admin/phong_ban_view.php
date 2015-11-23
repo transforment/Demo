@@ -1,19 +1,21 @@
 <div class="col-lg-12">
 	<ol class="breadcrumb">
+		<li class="cursor back">
+			<i class="fa fa-arrow-left"></i>
+		</li>
 		<li>
 			<a href="<?php echo base_url('trang_chu'); ?>"><i class="fa fa-home"></i> Trang chủ</a>
 		</li>
 	</ol>
-	<h3 class="page-header marTop"><i class="fa fa-file-o"></i> Hồ sơ xử lý</h3>
+	<h3 class="page-header marTop"><i class="fa fa-files-o"></i> Hồ sơ xử lý</h3>
 	<div class="panel-body">
 		<div class="row">
-			<table id="table" class="display">
+			<table id="table" class="table table-striped table-bordered">
 				<thead>
 				<tr>
 					<th>Mã số hồ sơ</th>
 					<th>Tên</th>
 					<th>Cmnd</th>
-					<th></th>
 					<th></th>
 				</tr>
 				</thead>
@@ -38,19 +40,17 @@
 				if ($row->status==1)
 					echo '
 						<td><button type="button" class="btn btn-success"onclick=location.href="'.base_url('admin/admin_phong_ban/edit/'.$row->id.'').'">Nhận xử lý</button></td>
-						<td></td>
 					</tr>';
 				if ($row->status==2){
 					echo '
-						<td><button type="button"  onclick="getval('.$row->mshs.')"  data-toggle="modal" data-target="#myModal_'.$row->id.'" class="btn btn-warning sent_noti_tv">Báo hồ sơ lỗi</button></td>
-						<td><button type="button" class="btn btn-danger sent_noti_tv"onclick=location.href="'.base_url('admin/admin_phong_ban/edit_stt/'.$row->id.'').'">Xử lý xong</button></td>
+						<td><button type="button"  onclick="getval('.$row->mshs.')"  data-toggle="modal" data-target="#myModal_'.$row->id.'" class="btn btn-warning sent_noti_tv">Báo hồ sơ lỗi</button>&nbsp;
+						<button type="button" class="btn btn-danger sent_noti_tv"onclick=location.href="'.base_url('admin/admin_phong_ban/edit_stt/'.$row->id.'').'">Xử lý xong</button></td>
 					</tr>';
 					$array_status=$array_status.'/'.$row->id;
 				}
 				if (($row->status==3)||($row->status==6))
 					echo '
 						<td>Đang chờ chuyển hồ sơ</td>
-						<td></td>
 					</tr>';
 			//}
 

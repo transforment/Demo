@@ -535,73 +535,66 @@ p {
     background-color: #ff040a;
 }
 
+.cursor {
+    cursor: pointer;
+    color: #ff040a;
+}
+
+
+
 /* CSS Kiet */
+.myClass{
+    color: red;
+    font-style: italic;
+}
+.anotherClass{
+    font-style: italic;
+}
+
+/*fordropdown*/
+
+
+
+
+.wrapper-dropdown {
+    /* Size and position */
+    position: relative;
+    font-size: 100%;
+
+
+    /* Styles */
+    background: rgb(236,236,236);
+    font-family: "Helvetica Neue",Arial, sans-serif;
+    border-radius: 7px;
+    box-shadow: 0 1px 1px rgba(50,50,50,0.1);
+    outline: none;
+    font-weight: 350;
+
+}
+
+.kiet li a{
+    color: black;
+}
+
+.kiet li a:hover {
+    color:blue;
+}
+
+.kiet li {
+    margin-top: 1px;
+}
+
+
+.hiddenClass{
+    visibility: hidden;
+}
 .error {
     color:red;
     font-size:13px;
     margin-bottom:-15px
 }
-
 /* No dot*/
 li {list-style-type: none;}
-/**
- * Tables
- 
-.table-wrap {
-    padding: 0 6% 2%;
-}
-table {
-    font-size: 13px;
-    line-height: 18px;
-    margin: 2% 2% 0 2%;
-    border-left: 1px solid #e0e0e0;
-}
-
-table tr th, table tr td {
-    padding: 10px 14px;
-    text-align: left;
-}
-table tr th {
-    background-color: #303030;
-    color: #fff;
-    border-right: 1px solid rgba(255,255,255, 0.15);
-    /* Text Shadow 
-    text-shadow: 0 -1px 1px rgba(0,0,0, 0.25);
-    /* Gradient 
-    background-image: linear-gradient(bottom, rgb(48,48,48) 0%, rgb(95,95,95) 100%);
-    background-image: -o-linear-gradient(bottom, rgb(48,48,48) 0%, rgb(95,95,95) 100%);
-    background-image: -moz-linear-gradient(bottom, rgb(48,48,48) 0%, rgb(95,95,95) 100%);
-    background-image: -webkit-linear-gradient(bottom, rgb(48,48,48) 0%, rgb(95,95,95) 100%);
-    background-image: -ms-linear-gradient(bottom, rgb(48,48,48) 0%, rgb(95,95,95) 100%);
-    background-image: -webkit-gradient(
-            linear,
-            left bottom,
-            left top,
-            color-stop(0, rgb(48,48,48)),
-            color-stop(1, rgb(95,95,95))
-    );
-}
-
-
-
-table tr td {
-    border-right: 1px solid #e0e0e0;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-/* Odds Events
-table tr:nth-child(even) td {
-    background: #f6f6f6;
-}
-
-
-
-table th {
-    /*...all th attributes like padding etc
-    background-color:#d4e3e5;
-    padding: 8px;
-}
-*/
 
 /*
 Moi them
@@ -613,7 +606,7 @@ Moi them
  */
 .tabs {
     font-size: 13px; line-height: 20px;
-    margin-top: 6%;
+    /*margin-top: 6%;*/
 }
 .tabs ul:before, .tabs ul:after {
     content: "\0020"; display: block; height: 0; visibility: hidden;

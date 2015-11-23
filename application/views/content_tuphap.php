@@ -1,10 +1,10 @@
 <div class="col-lg-12">
     <ol class="breadcrumb">
+        <li class="cursor back">
+            <i class="fa fa-arrow-left"></i>
+        </li>
         <li>
             <a href="<?php echo base_url('trang_chu'); ?>"><i class="fa fa-home"></i> Trang chủ</a>
-        </li>
-        <li class="active">
-            <i class="fa fa-files-o"></i> Hành chính tư pháp
         </li>
     </ol>
     <h3 class="page-header marTop">Hành chính tư pháp</h3>

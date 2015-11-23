@@ -1,24 +1,22 @@
 <div class="col-lg-12">
     <ol class="breadcrumb">
+        <li class="cursor back">
+            <i class="fa fa-arrow-left"></i>
+        </li>
         <li>
             <a href="<?php echo base_url('trang_chu'); ?>"><i class="fa fa-home"></i> Trang chủ</a>
         </li>
-        <li class="active">
-            <i class="fa fa-user"></i> <?php 
-            echo 'Thông tin cá nhân '.$query->row(1)->name.'';?>
-        </li>
     </ol>
-    <h3 class="page-header marTop"><i class="fa fa-user"></i></i> <?php 
+    <h3 class="page-header marTop"><i class="fa fa-user"></i></i> <?php
             echo 'Thông tin cá nhân '.$query->row(1)->name.'';?></h3>
 </div>
 <div class="panel-body">
     <div class="row">
         <div class="col-md-12 col-md-3 col-lg-3 " align="center" >
-        <?php 
-        echo'<img alt="User Pic" src="'. base_url('upload/'.$query->row(1)->avatar.'').'" 
+        <?php
+        echo'<img alt="User Pic" src="'. base_url('upload/'.$query->row(1)->avatar.'').'"
         class="img-circle img-responsive"> ';
        ?>
-       </form>
         </div>
             <div class="col-md-12 col-md-9 col-lg-9 ">
                 <div class="table-responsive">
@@ -56,11 +54,11 @@
 
                                <tr><td>Địa chỉ</td>
                                 <td>'.$row->dia_chi.'</td>
-                              
+
                                 </tr>
                                <tr><td>Số điện thoại</td>
                                 <td>'.$row->Sdt.'</td>
-                                
+
                                 </tr>
                                 <tr><td>Vị trí</td>
                                 <td>'.$vitri.'</td>

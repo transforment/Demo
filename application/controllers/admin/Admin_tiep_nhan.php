@@ -45,21 +45,19 @@ class Admin_tiep_nhan extends CI_Controller {
 		$this->db->update('ho_so',  array(
 			'status' => 1,
 		));
-		redirect('admin/Admin_tiep_nhan');
+		redirect('admin/admin_tiep_nhan');
 	}
 	public function  deleteRow($id=2){
 		$this->db->delete('ho_so',array('id'=>$id));
-		redirect('admin/Admin_tiep_nhan');
+		redirect('admin/admin_tiep_nhan');
 	}
 	public function edit($id=2){
-		$this->db->where('node_id', $id);
-		$node_map = $this->db->get('map')->row();
-		if (!isset($node_map)) {
-			$this->db->where('node_id', 2);
-			$node_map = $this->db->get('map')->row();
-		}
+
 		$this->db->where('id', $id);
 		$details = $this->db->get('ho_so')->row();
+		if (!isset($details)) {
+			redirect(base_url('admin/admin_tiep_nhan'));
+		}
 
 		$this->form_validation->set_message('required', '%s chưa cập nhật.');
 		$this->form_validation->set_message('min_length', '%s: It nhất là %s kí tự.');
@@ -80,11 +78,9 @@ class Admin_tiep_nhan extends CI_Controller {
 		if($this->form_validation->run() == false) {
 			$this->load->view('admin/sua_ho_so_view', array(
 				'details' => $details,
-				'node_map' => $node_map,
-
 			));
 		}else{
-
+			$data1['message'] = 'Du lieu duoc nhap thanh cong';
 			$this->load->model('Ho_so');
 			$this->db->where('id', $id);
 			$this->db->update('ho_so',  array(
@@ -93,11 +89,15 @@ class Admin_tiep_nhan extends CI_Controller {
 				'sdt' => $this->input->post('dmobile'),
 				'mshs' => $this->input->post('ma_Ho_So'),
 				'dia_chi'=>$this->input->post('diachi'),
-
 				'note'=>$this->input->post('note')
 
 			));
-			redirect('admin/Admin_tiep_nhan');
+
+			$this->load->view('admin/sua_ho_so_view', array(
+					'details' => $details,
+					'message'=>$data1['message']
+			));
+
 		}
 		$this->load->view('templates/footer');
 	}

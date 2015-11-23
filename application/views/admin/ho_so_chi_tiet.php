@@ -1,14 +1,16 @@
 <div class="col-lg-12">
 	<ol class="breadcrumb">
+		<li class="cursor back">
+			<i class="fa fa-arrow-left"></i>
+		</li>
 		<li>
 			<a href="<?php echo base_url('trang_chu'); ?>"><i class="fa fa-home"></i> Trang chủ</a>
 		</li>
 		<li class="active">
-			<i class="fa fa-user"></i> Thông tin chi tiết hồ sơ
+			<i class="fa fa-file-o"></i> Hồ sơ chi tiết
 		</li>
 	</ol>
-<?php echo '<h3 class="page-header marTop"><i class="fa fa-user"></i> 
-		Chi tiết hồ sơ '.$node_map[(int)substr($details->mshs, 16,2)]->node_name.'</h3>';
+<?php echo '<h3 class="page-header marTop"><i class="fa fa-file-o"></i> '.$node_map[(int)substr($details->mshs, 16,2)]->node_name.'</h3>';
 
 	if($details->status==0) $arr='Đang ở bàn tiếp nhận';
 	if($details->status==1)  $arr='Đang chờ xử lý';
