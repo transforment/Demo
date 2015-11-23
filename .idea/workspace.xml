@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10725473-38c2-4cce-82c0-a71d34a0114c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/admin/content_chitiet_admin_.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/admin/dat_dai_chi_tiet_admin_view_.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/application/views/admin/thong_ke_view_old.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Admin_tiep_nhan.php" afterPath="$PROJECT_DIR$/application/controllers/admin/Admin_tiep_nhan.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/admin/Xem_ho_so.php" afterPath="$PROJECT_DIR$/application/controllers/admin/Xem_ho_so.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/sua_ho_so_view.php" afterPath="$PROJECT_DIR$/application/views/admin/sua_ho_so_view.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin/thong_ke_view.php" afterPath="$PROJECT_DIR$/application/views/admin/thong_ke_view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/yingjie.js" afterPath="$PROJECT_DIR$/js/yingjie.js" />
     </list>
     <ignored path="Demo-2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,76 +28,48 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="database.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/config/database.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="66" column="48" selection-start-line="66" selection-start-column="48" selection-end-line="66" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Ho_so.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/Ho_so.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="yingjie.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/yingjie.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sua_ho_so_view.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/admin/sua_ho_so_view.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="21.11111">
-              <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-              <folding>
-                <element signature="n#style#0;n#label#0;n#div#1;n#div#5;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="thong_ke_view.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/admin/thong_ke_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="6.149766">
-              <caret line="146" column="26" selection-start-line="146" selection-start-column="26" selection-end-line="146" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.2882736">
+              <caret line="277" column="42" selection-start-line="277" selection-start-column="42" selection-end-line="277" selection-end-column="42" />
               <folding>
-                <marker date="1448202443000" expanded="true" signature="11117:11135" placeholder="..." />
-                <marker date="1448202443000" expanded="true" signature="11422:11440" placeholder="..." />
-                <marker date="1448202443000" expanded="true" signature="11729:11747" placeholder="..." />
-                <marker date="1448202443000" expanded="true" signature="11986:12004" placeholder="..." />
-                <marker date="1448202443000" expanded="true" signature="12270:12617" placeholder="..." />
-                <marker date="1448202443000" expanded="true" signature="18030:18060" placeholder="..." />
-                <marker date="1448202443000" expanded="true" signature="18152:18481" placeholder="..." />
-                <marker date="1448202443000" expanded="true" signature="18180:18453" placeholder="..." />
-                <marker date="1448202443000" expanded="true" signature="18205:18424" placeholder="..." />
-                <marker date="1448202443000" expanded="true" signature="22108:22437" placeholder="..." />
-                <marker date="1448202443000" expanded="false" signature="22284:22314" placeholder="..." />
+                <marker date="1448271101000" expanded="true" signature="11117:11135" placeholder="..." />
+                <marker date="1448271101000" expanded="true" signature="11422:11440" placeholder="..." />
+                <marker date="1448271101000" expanded="true" signature="11729:11747" placeholder="..." />
+                <marker date="1448271101000" expanded="true" signature="11986:12004" placeholder="..." />
+                <marker date="1448271101000" expanded="true" signature="12270:12359" placeholder="..." />
+                <marker date="1448271101000" expanded="true" signature="12270:12397" placeholder="..." />
+                <marker date="1448271101000" expanded="true" signature="12270:12416" placeholder="..." />
+                <marker date="1448271101000" expanded="true" signature="12270:12438" placeholder="..." />
+                <marker date="1448271101000" expanded="true" signature="12270:12711" placeholder="..." />
+                <marker date="1448271101000" expanded="true" signature="18124:18154" placeholder="..." />
+                <marker date="1448271101000" expanded="true" signature="18246:18575" placeholder="..." />
+                <marker date="1448271101000" expanded="true" signature="18274:18547" placeholder="..." />
+                <marker date="1448271101000" expanded="true" signature="18299:18518" placeholder="..." />
+                <marker date="1448271101000" expanded="true" signature="22202:22531" placeholder="..." />
+                <marker date="1448271101000" expanded="false" signature="22378:22408" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dat_dai_chi_tiet_admin_view.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/admin/dat_dai_chi_tiet_admin_view.php">
+      <file leaf-file-name="tiep_nhan_view.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/admin/tiep_nhan_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.638889">
-              <caret line="86" column="96" selection-start-line="86" selection-start-column="72" selection-end-line="86" selection-end-column="96" />
-              <folding />
+            <state vertical-scroll-proportion="-6.861111">
+              <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+              <folding>
+                <marker date="1447849206000" expanded="true" signature="1876:2100" placeholder="..." />
+                <marker date="1447849206000" expanded="true" signature="1895:2023" placeholder="..." />
+                <marker date="1447849206000" expanded="true" signature="1956:2018" placeholder="..." />
+                <marker date="1447849206000" expanded="true" signature="2184:2585" placeholder="..." />
+                <marker date="1447849206000" expanded="true" signature="2249:2365" placeholder="..." />
+                <marker date="1447849206000" expanded="true" signature="2436:2561" placeholder="..." />
+                <marker date="1447849206000" expanded="true" signature="2674:3075" placeholder="..." />
+                <marker date="1447849206000" expanded="true" signature="2739:2855" placeholder="..." />
+                <marker date="1447849206000" expanded="true" signature="2926:3051" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -112,7 +82,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/views/content_phan_muc.php" />
         <option value="$PROJECT_DIR$/application/config/autoload.php" />
         <option value="$PROJECT_DIR$/application/config/routes.php" />
         <option value="$PROJECT_DIR$/application/models/Map.php" />
@@ -123,7 +92,6 @@
         <option value="$PROJECT_DIR$/application/controllers/admin/Profile.php" />
         <option value="$PROJECT_DIR$/application/views/admin/login_form.php" />
         <option value="$PROJECT_DIR$/application/views/admin/ho_so_view.php" />
-        <option value="$PROJECT_DIR$/application/controllers/admin/Xem_ho_so.php" />
         <option value="$PROJECT_DIR$/application/controllers/Trang_chi_tiet.php" />
         <option value="$PROJECT_DIR$/css/demo-2.css" />
         <option value="$PROJECT_DIR$/application/views/admin/profile_view.php" />
@@ -161,6 +129,8 @@
         <option value="$PROJECT_DIR$/application/views/admin/dat_dai_chi_tiet_admin_view.php" />
         <option value="$PROJECT_DIR$/application/controllers/admin/Thong_ke.php" />
         <option value="$PROJECT_DIR$/js/yingjie.js" />
+        <option value="$PROJECT_DIR$/application/controllers/admin/Xem_ho_so.php" />
+        <option value="$PROJECT_DIR$/application/controllers/admin/Admin_tiep_nhan.php" />
         <option value="$PROJECT_DIR$/application/views/admin/sua_ho_so_view.php" />
         <option value="$PROJECT_DIR$/application/views/admin/thong_ke_view.php" />
       </list>
@@ -426,7 +396,6 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Demo/css/style.css" />
-    <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -484,7 +453,7 @@
     <frame x="0" y="23" width="1280" height="773" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24921875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24921875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -522,14 +491,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/Ho_so.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -550,7 +511,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="156" column="20" selection-start-line="129" selection-start-column="12" selection-end-line="156" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -590,7 +550,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="156" column="20" selection-start-line="129" selection-start-column="11" selection-end-line="156" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -750,13 +709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/tiep_nhan_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7750269">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/admin/Admin_tra_ho_so.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33907428">
@@ -778,13 +730,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/ho_so_chi_tiet.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.5500538">
-          <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/dat_dai_chi_tiet_view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33907428">
@@ -799,34 +744,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="66" column="48" selection-start-line="66" selection-start-column="48" selection-end-line="66" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Ho_so.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Trang_chi_tiet.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8876755">
-          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/admin/edit_view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="5.897036">
           <caret line="152" column="6" selection-start-line="152" selection-start-column="6" selection-end-line="152" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -834,7 +755,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.46333852">
           <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -842,7 +762,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.74726987">
           <caret line="290" column="1" selection-start-line="290" selection-start-column="1" selection-end-line="290" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -850,23 +769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9719189">
           <caret line="230" column="5" selection-start-line="230" selection-start-column="5" selection-end-line="230" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/content_chitiet_admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42121685">
-          <caret line="156" column="20" selection-start-line="129" selection-start-column="12" selection-end-line="156" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/dat_dai_chi_tiet_admin_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.638889">
-          <caret line="86" column="96" selection-start-line="86" selection-start-column="72" selection-end-line="86" selection-end-column="96" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -878,32 +780,125 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/dat_dai_chi_tiet_admin_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="86" column="96" selection-start-line="86" selection-start-column="72" selection-end-line="86" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Ho_so.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.042121686">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.042121686">
+          <caret line="66" column="48" selection-start-line="66" selection-start-column="48" selection-end-line="66" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/admin/Xem_ho_so.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.3055553">
+          <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/content_chitiet_admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.80031204">
+          <caret line="32" column="5" selection-start-line="28" selection-start-column="4" selection-end-line="32" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/ho_so_chi_tiet.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.555555">
+          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+          <folding>
+            <marker date="1447849206000" expanded="true" signature="2100:2283" placeholder="..." />
+            <marker date="1447849206000" expanded="true" signature="2112:2270" placeholder="..." />
+            <marker date="1447849206000" expanded="true" signature="2135:2257" placeholder="..." />
+            <marker date="1447849206000" expanded="false" signature="2154:2172" placeholder="..." />
+            <marker date="1447849206000" expanded="false" signature="2213:2231" placeholder="..." />
+            <marker date="1447849206000" expanded="true" signature="2451:2613" placeholder="..." />
+            <marker date="1447849206000" expanded="false" signature="2471:2487" placeholder="..." />
+            <marker date="1447849206000" expanded="false" signature="2544:2562" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/admin/Admin_tiep_nhan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.0">
+          <caret line="96" column="42" selection-start-line="96" selection-start-column="42" selection-end-line="96" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/admin/sua_ho_so_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="21.11111">
-          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.042121686">
+          <caret line="16" column="131" selection-start-line="16" selection-start-column="131" selection-end-line="16" selection-end-column="131" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Trang_chi_tiet.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.222222">
+          <caret line="174" column="10" selection-start-line="174" selection-start-column="10" selection-end-line="174" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/tiep_nhan_view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.861111">
+          <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
           <folding>
-            <element signature="n#style#0;n#label#0;n#div#1;n#div#5;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <marker date="1447849206000" expanded="true" signature="1876:2100" placeholder="..." />
+            <marker date="1447849206000" expanded="true" signature="1895:2023" placeholder="..." />
+            <marker date="1447849206000" expanded="true" signature="1956:2018" placeholder="..." />
+            <marker date="1447849206000" expanded="true" signature="2184:2585" placeholder="..." />
+            <marker date="1447849206000" expanded="true" signature="2249:2365" placeholder="..." />
+            <marker date="1447849206000" expanded="true" signature="2436:2561" placeholder="..." />
+            <marker date="1447849206000" expanded="true" signature="2674:3075" placeholder="..." />
+            <marker date="1447849206000" expanded="true" signature="2739:2855" placeholder="..." />
+            <marker date="1447849206000" expanded="true" signature="2926:3051" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/admin/thong_ke_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="6.149766">
-          <caret line="146" column="26" selection-start-line="146" selection-start-column="26" selection-end-line="146" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.2882736">
+          <caret line="277" column="42" selection-start-line="277" selection-start-column="42" selection-end-line="277" selection-end-column="42" />
           <folding>
-            <marker date="1448202443000" expanded="true" signature="11117:11135" placeholder="..." />
-            <marker date="1448202443000" expanded="true" signature="11422:11440" placeholder="..." />
-            <marker date="1448202443000" expanded="true" signature="11729:11747" placeholder="..." />
-            <marker date="1448202443000" expanded="true" signature="11986:12004" placeholder="..." />
-            <marker date="1448202443000" expanded="true" signature="12270:12617" placeholder="..." />
-            <marker date="1448202443000" expanded="true" signature="18030:18060" placeholder="..." />
-            <marker date="1448202443000" expanded="true" signature="18152:18481" placeholder="..." />
-            <marker date="1448202443000" expanded="true" signature="18180:18453" placeholder="..." />
-            <marker date="1448202443000" expanded="true" signature="18205:18424" placeholder="..." />
-            <marker date="1448202443000" expanded="true" signature="22108:22437" placeholder="..." />
-            <marker date="1448202443000" expanded="false" signature="22284:22314" placeholder="..." />
+            <marker date="1448271101000" expanded="true" signature="11117:11135" placeholder="..." />
+            <marker date="1448271101000" expanded="true" signature="11422:11440" placeholder="..." />
+            <marker date="1448271101000" expanded="true" signature="11729:11747" placeholder="..." />
+            <marker date="1448271101000" expanded="true" signature="11986:12004" placeholder="..." />
+            <marker date="1448271101000" expanded="true" signature="12270:12359" placeholder="..." />
+            <marker date="1448271101000" expanded="true" signature="12270:12397" placeholder="..." />
+            <marker date="1448271101000" expanded="true" signature="12270:12416" placeholder="..." />
+            <marker date="1448271101000" expanded="true" signature="12270:12438" placeholder="..." />
+            <marker date="1448271101000" expanded="true" signature="12270:12711" placeholder="..." />
+            <marker date="1448271101000" expanded="true" signature="18124:18154" placeholder="..." />
+            <marker date="1448271101000" expanded="true" signature="18246:18575" placeholder="..." />
+            <marker date="1448271101000" expanded="true" signature="18274:18547" placeholder="..." />
+            <marker date="1448271101000" expanded="true" signature="18299:18518" placeholder="..." />
+            <marker date="1448271101000" expanded="true" signature="22202:22531" placeholder="..." />
+            <marker date="1448271101000" expanded="false" signature="22378:22408" placeholder="..." />
           </folding>
         </state>
       </provider>

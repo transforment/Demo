@@ -14,7 +14,7 @@
     //Lấy dữ liệu từ $thanh_phan_data truyen qua de dung cho viec ho so dinh kem
     if(isset($message)){
 
-        echo "<script type='text/javascript'>alert('Thông tin đã được nhập!'); window.location = '/Demo-2/trang_chu';</script>";
+        echo "<script type='text/javascript'>alert('Thông tin đã được cập nhập!'); window.location = '/Demo-2/admin/admin_tiep_nhan';</script>";
    }
    ?>
 

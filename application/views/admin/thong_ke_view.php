@@ -278,7 +278,7 @@ function dieuKienCoLuaChon($data2,$i,$luaChon){
 function showContentOfTable($data2,$i,$k){
     echo '<tr>
                       <td>' . $k . '</td>
-                                <td>' . $data2[$i]->mshs . '</td>
+                                <td><a href="'.base_url().'admin/xem_ho_so/details/'.$data2[$i]->id.'"><h5 class="truncate">'.$data2[$i]->mshs.' </h5></a></td>
                                 <td>' . $data2[$i]->name . '</td>
                                 <td>' . $data2[$i]->cmnd . '</td>
                                 <td> ' . $data2[$i]->tien_thu . ' </td>
