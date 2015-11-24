@@ -51,11 +51,12 @@
 			echo '<p class="bold">'.$details->ngay_tra .'</p>';?>
 		</div>
 
-		<div class="col-xs-18 col-md-12">
+		<div class="col-xs-12 col-md-12">
 	<?php
 			$thong_tin_ho_so_da_thu=explode('+', $details->tt_giay_to_da_thu);
 			if(count($thong_tin_ho_so_da_thu) > 1){
-				echo '			
+				echo '
+			<div class="panel panel-info marTop">
 				<table class="table table-hover ">
 				<thead>
 					<tr class="ying">
@@ -73,12 +74,14 @@
 						 $i++;
 						}
 					echo'</tbody>
-				</table>';
+				</table>
+			</div>
+				';
 			}else 
 				echo '<h4><ins>Giấy tờ đã nhận:</ins></h4><p>Không</p>';?>
 
 		</div>
-		<div class="col-xs-18 col-md-12">
+		<div class="col-xs-12 col-md-12">
 		<?php if  ($details->note!='')
 		echo'<h4><ins>Ghi chú:</ins></h4><p>'.$details->note .'</p>';
 		else 

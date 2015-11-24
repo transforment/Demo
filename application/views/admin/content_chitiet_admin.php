@@ -208,17 +208,17 @@
                 </div>
 
             </div>
-        </div>
-                        <!--List of temporary textboxs-->
-                        <input type="text" id="ying_ho_so_da_nhan" name = "dying" style="visibility: hidden" >
-                        <!--YingLo-->
-                        <input type="text" id="today_1"  value="<?php echo date("His",time()+1) ; ?>" style="visibility: hidden" >
-                        <input type="text" id="today_2" value="<?php echo date("dmy"); ?>" style="visibility: hidden" >
-                        <input type="text" id="so_ngay" value="<?php echo $so_ngay; ?>" style="visibility: hidden" >
-                        <input type="text" id="node_id" value="<?php echo $node_map->node_id; ?>" style="visibility: hidden" >
+            <!--List of temporary textboxs-->
+            <input type="text" id="ying_ho_so_da_nhan" name = "dying" style="visibility: hidden" >
+            <!--YingLo-->
+            <input type="text" id="today_1"  value="<?php echo date("His",time()+1) ; ?>" style="visibility: hidden" >
+            <input type="text" id="today_2" value="<?php echo date("dmy"); ?>" style="visibility: hidden" >
+            <input type="text" id="so_ngay" value="<?php echo $so_ngay; ?>" style="visibility: hidden" >
+            <input type="text" id="node_id" value="<?php echo $node_map->node_id; ?>" style="visibility: hidden" >
 
             <input type="submit"  onclick="compileInputs();" class="btn btn-success btn-lg btn-block" id = 'submit'name="submit" value="Nhập hồ sơ">
         </div>
+
     </div>
 
     </form><!-- End form -->
