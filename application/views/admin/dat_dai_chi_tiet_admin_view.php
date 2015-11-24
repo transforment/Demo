@@ -145,7 +145,7 @@
                             </tbody>
 
                         </table>
-
+                    </div>
                 </div>
 
                 <div class="panel panel-info">
