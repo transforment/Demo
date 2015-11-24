@@ -1,4 +1,4 @@
-<div class="col-md-3 col-lg-3 col-xs-12">
+<div class="col-lg-3">
     <div class="panel panel-default">
         <div class="panel-heading">
             <i class="fa fa-bell fa-fw"></i> Bản tin
