@@ -43,11 +43,9 @@ class Dat_dai_chi_tiet extends CI_Controller {
 			$this->form_validation->set_message('required', '%s chưa nhập.');
 			$this->form_validation->set_message('min_length', '%s: It nhất là %s kí tự.');
 			$this->form_validation->set_message('max_length', '%s: Nhiều nhất là %s kí tự.');
-			$this->form_validation->set_message('regex_match', ' Số %s có 9 chữ số.');
-
 			$this->form_validation->set_error_delimiters('<span class="error">','</span>');
 			$this->form_validation->set_rules('dname', 'Tên người dân ', 'required|min_length[3]|max_length[20]');
-			$this->form_validation->set_rules('dcmnd', 'CMND', 'required|regex_match[/^[0-9]{9}$/]');
+			$this->form_validation->set_rules('dcmnd', 'CMND', 'required|callback_regex_check');
 			$this->form_validation->set_rules('dmobile', 'Số điện thoại ', 'required|min_length[10]|max_length[11]');
 			$this->form_validation->set_rules('songay', 'Số ngày', 'required');
 
@@ -59,10 +57,7 @@ class Dat_dai_chi_tiet extends CI_Controller {
 					));
 
 			}else{
-
-
 				$myThuTuc =  $this->input->post('dying');
-
 				$myThuTuc = str_replace(',','', $myThuTuc); // Replaces , by nothing
 				$data1 = array(
 					'name' => $this->input->post('dname'),
@@ -89,6 +84,17 @@ class Dat_dai_chi_tiet extends CI_Controller {
 
 		}
 		$this->load->view('templates/footer');
+	}
+
+	public function regex_check($str){
+
+		if(preg_match("/^[0-9]{9}$|^[0-9]{12}$/",$str,$matches)!==1){
+			$this->form_validation->set_message('regex_check', ' Số %s có 9 hoặc 12 chữ số.');
+			return FALSE;
+		}else{
+			return TRUE;
+		}
+
 	}
 
 }

@@ -58,6 +58,7 @@
 						</div>';
 
 						}
+					$val="";
 					if($row->status==6)
 						echo '<td>
 							<button type="button"  class="btn btn-info" onclick=location.href="'.base_url('admin/admin_tra_ho_so/edit_error/'.$row->id.'').'">Nhận hồ sơ lỗi </buton></td>

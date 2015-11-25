@@ -29,18 +29,21 @@ function doMath() {
 }
 
 $( document ).ready(function() {
+
+
     var lePhi = document.getElementById("lephi").value;
     if(lePhi != "Yingjie"){
         string_1 = "TP";
     }else {
         string_1 = "DD";
+        so_ngay = 0;
     }
+    var myDayVar = so_ngay;
 
-    var myDayVar = document.getElementById("so_ngay").value;
+
     var theLifeOfWolf = 0;
     var theLifeOfYing = 0;
     document.getElementById("songay").value = myDayVar;
-    var node_id = parseInt(document.getElementById('node_id').value);
 
     if(node_id >1){
         theLifeOfWolf = node_id -1;
@@ -50,7 +53,7 @@ $( document ).ready(function() {
             theLifeOfYing = theLifeOfWolf;
         }
     }
-    var theString = document.getElementById("today_1").value + "-" + document.getElementById("today_2").value + "-" + string_1 + theLifeOfYing + "-" ;
+    var theString = today_1 + "-" + today_2 + "-" + string_1 + theLifeOfYing + "-" ;
     var addCode = 2015;
     if( myDayVar == 0){
         addCode = "00";
@@ -176,9 +179,6 @@ function doMacBookPro(){
     document.getElementById("songay").value = myDayVar;
 
 
-    var node_id = parseInt(document.getElementById('node_id').value);
-
-
     if(node_id >1){
         theLifeOfWolf = node_id -1;
         if(theLifeOfWolf < 10){
@@ -187,7 +187,7 @@ function doMacBookPro(){
             theLifeOfYing = theLifeOfWolf;
         }
     }
-    var theString = document.getElementById("today_1").value + "-" + document.getElementById("today_2").value + "-" + string_1 + theLifeOfYing + "-" ;
+    var theString = today_1+ "-" + today_2+ "-" + string_1 + theLifeOfYing + "-" ;
     var addCode = 2015;
     if( myDayVar == 0){
         addCode = "00";
@@ -196,8 +196,6 @@ function doMacBookPro(){
     }
     theString = theString + addCode;
     document.getElementById("ma_Ho_So").value = theString;
-
-
 }
 
 function compileInputs() {
