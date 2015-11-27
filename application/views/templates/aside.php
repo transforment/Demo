@@ -60,7 +60,12 @@
         <li>
             <a href="<?php echo base_url('dat_dai'); ?>"><i class="fa fa-files-o fa-fw"></i> Hành chính đất đai</a>
         </li>
-        <?php
+        <?php 
+        if (!isset($_SESSION['name_user'])){
+        echo'
+        <li>
+            <a href="'. base_url('admin/admin').'"><i class="fa fa-user fa-fw"></i> Đăng nhập</a>
+        </li>';}
         if((isset($_SESSION['name_user']))&&
             (($_SESSION['level']==11)||($_SESSION['level']==12))){
             echo '<li><a href="'.base_url('admin/admin_tiep_nhan').'">

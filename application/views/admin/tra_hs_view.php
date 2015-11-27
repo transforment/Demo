@@ -36,7 +36,7 @@
 							onclick=location.href="'.base_url('admin/admin_tra_ho_so/edit/'.$row->id.'').'">Nhận hồ sơ</button></td>
 							</tr>';
 					if ($row->status==4){
-						echo '<td><button type="button btn-warning" class="btn btn-warning" data-toggle="modal" data-target="#Modal_view_money_'.$row->id.'" class="btn btn-danger" >Trả hồ sơ</button>&nbsp</td>
+						echo '<td><button type="button btn-warning" class="btn btn-warning" data-toggle="modal" data-target="#Modal_view_money_'.$row->id.'" class="btn btn-danger" >Trả hồ sơ</button></td>
 							</tr>';
 						echo 	
 						'<div id="Modal_view_money_'.$row->id.'" class="modal fade" role="dialog"  >
@@ -58,6 +58,7 @@
 						</div>';
 
 						}
+					$val="";
 					if($row->status==6)
 						echo '<td>
 							<button type="button"  class="btn btn-info" onclick=location.href="'.base_url('admin/admin_tra_ho_so/edit_error/'.$row->id.'').'">Nhận hồ sơ lỗi </buton></td>

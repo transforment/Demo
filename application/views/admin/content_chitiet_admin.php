@@ -22,13 +22,23 @@
     </ol>
     <h3 class="page-header marTop"><i class="fa fa-file-o"></i> <?php echo html_escape($node_map->node_name); ?></h3>
 
+    <script>
+
+        var k = <?php echo json_encode(base_url('trang_chu')); ?>;
+        var today_1 = <?php echo json_encode(date("His",time()+1)); ?>;
+        var today_2 = <?php echo json_encode(date("dmy")); ?>;
+        var so_ngay = <?php echo json_encode($so_ngay); ?>;
+        var node_id = <?php echo json_encode($node_map->node_id); ?>;
+
+    </script>
+
     <?php
     $today_1 =  date("Ymd");
     //Lấy dữ liệu từ $thanh_phan_data truyen qua de dung cho viec ho so dinh kem
     $arrayThutuc = explode("+", $thanh_phan_data);
     if(isset($message)){
 
-        echo "<script type='text/javascript'>alert('Thông tin đã được nhập!'); window.location = '/Demo-2/trang_chu';</script>";
+        echo "<script type='text/javascript'>alert('Thông tin đã được nhập!'); window.location = k</script>";
 
     }
     ?>
@@ -208,20 +218,13 @@
                 </div>
 
             </div>
-        </div>
-                        <!--List of temporary textboxs-->
-                        <input type="text" id="ying_ho_so_da_nhan" name = "dying" style="visibility: hidden" >
-                        <!--YingLo-->
-                        <input type="text" id="today_1"  value="<?php echo date("His",time()+1) ; ?>" style="visibility: hidden" >
-                        <input type="text" id="today_2" value="<?php echo date("dmy"); ?>" style="visibility: hidden" >
-                        <input type="text" id="so_ngay" value="<?php echo $so_ngay; ?>" style="visibility: hidden" >
-                        <input type="text" id="node_id" value="<?php echo $node_map->node_id; ?>" style="visibility: hidden" >
-
+            <!--List of temporary textboxs-->
+            <input type="text" id="ying_ho_so_da_nhan" name = "dying" style="visibility: hidden" >
             <input type="submit"  onclick="compileInputs();" class="btn btn-success btn-lg btn-block" id = 'submit'name="submit" value="Nhập hồ sơ">
         </div>
+
     </div>
 
-    </form><!-- End form -->
 </div>
 
 

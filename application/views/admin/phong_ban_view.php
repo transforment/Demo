@@ -43,8 +43,8 @@
 					</tr>';
 				if ($row->status==2){
 					echo '
-						<td><button type="button"  onclick="getval('.$row->mshs.')"  data-toggle="modal" data-target="#Modal_error_'.$row->id.'" class="btn btn-warning sent_noti_tv">Báo hồ sơ lỗi</button>&nbsp;
-						<button type="button" class="btn btn-danger sent_noti_tv"onclick=location.href="'.base_url('admin/admin_phong_ban/edit_stt/'.$row->id.'').'">Xử lý xong</button></td>
+						<td><button type="button"  onclick="getval('.$row->mshs.')"  data-toggle="modal" data-target="#Modal_error_'.$row->id.'" class="btn btn-warning">Báo hồ sơ lỗi</button>
+						<button data-toggle="modal" data-target="#Modal_confirm_'.$row->id.'" class="btn btn-danger">Xử lý xong</button></td>
 					</tr>';
 						echo'
 					<div id="Modal_error_'.$row->id.'" class="modal fade" role="dialog"  >
@@ -76,7 +76,7 @@
 					<input type="hidden" name="node_id" id="node_id"  value="ddd">
 						</div>
 				<div class="modal-footer">';
-					echo form_submit('submit','Xác nhận lỗi','class="btn btn-danger"');
+					echo form_submit('submit','Xác nhận lỗi','class="btn btn-danger sent_noti_tv"');
 					echo form_close();
 					echo'
                     <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
@@ -85,6 +85,29 @@
 
 				</div>
 				</div>';
+						echo'
+					<div id="Modal_confirm_'.$row->id.'" class="modal fade" role="dialog"  >
+					<div class="modal-dialog">
+			
+					<div class="modal-content">
+					<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Xác nhận đã xử lý</h4>
+					</div>
+					<div class="modal-body">
+
+					Bạn có chắc là hồ sơ mã số <b>'.$row->mshs.'</b> đã hoàn tất';
+					echo'
+						</div>
+					<div class="modal-footer">
+					<button class="btn btn-danger sent_noti_tv"onclick=location.href="'.base_url('admin/admin_phong_ban/edit_stt/'.$row->id.'').'">Xác nhận</button>';
+					echo'
+                    <button class="btn btn-default" data-dismiss="modal">Đóng</button>
+                	</div>
+					</div>
+
+					</div>
+					</div>';
 				}
 				if (($row->status==3)||($row->status==6))
 					echo '

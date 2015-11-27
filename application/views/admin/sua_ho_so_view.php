@@ -8,13 +8,18 @@
         </li>
     </ol>
     <h3 class="page-header marTop"><i class="fa fa-file-o"></i> Chỉnh sửa hồ sơ</h3>
+
+    <script>
+        var k = <?php echo json_encode(base_url('trang_chu')); ?>;
+    </script>
+
     <?php
         $so_ngay_giai_quyet=explode('-', $details->mshs);
         $sngq = substr($so_ngay_giai_quyet[3],0,2);
     //Lấy dữ liệu từ $thanh_phan_data truyen qua de dung cho viec ho so dinh kem
     if(isset($message)){
 
-        echo "<script type='text/javascript'>alert('Thông tin đã được cập nhập!'); window.location = '/Demo-2/admin/admin_tiep_nhan';</script>";
+        echo "<script type='text/javascript'>alert('Thông tin đã được cập nhập!'); window.location = k;</script>";
    }
    ?>
 

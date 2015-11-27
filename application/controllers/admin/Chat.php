@@ -22,7 +22,8 @@ class Chat extends CI_Controller {
         $this->load->view('templates/header', $data);
         $this->load->view('templates/aside');
         $this->load->view('templates/nav');
-
+		if ($this->db->where('id',$vs)->count_all_results('user')!=1)
+			redirect('trang_chu');
 		$this->load->model('Message');
 		$vs_data= $this->Message->talkvs($_SESSION['id'],$vs);
 		if ($vs_data=='---')redirect(base_url('trang_chu'));

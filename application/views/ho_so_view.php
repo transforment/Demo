@@ -12,7 +12,7 @@
     <h3 class="page-header marTop"><i class="fa fa-search"></i> Tìm kiếm hồ sơ</h3>
     <div class="panel-body">
         <div class="row">
-            <table id="table" class="display">
+            <table id="table" class="table table-striped table-bordered">
                 <thead>
                 <tr>
                     <th>Mã hồ sơ</th>

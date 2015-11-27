@@ -10,22 +10,21 @@
     <h3 class="page-header marTop"><i class="fa fa-file-o"></i> Thủ tục</h3>
 </div><!-- /.col-lg-12 -->
 
-<div class="col-md-9 col-lg-9 col-xs-12">
-    <div class="masonry">
-        <?php foreach ($com as $stt =>$id) {
-            if ($stt==1)$val ='tu_phap';
-            else $val ='dat_dai';
-            echo ' <div class="col-lg-12 col-md-6 marBot">
-                <a href="'.$val.'" data-toggle="tooltip" data-placement="top" title="'.html_escape($id).'">
-                    <button type="button" class="btn btn-outline btn-primary btn-block custom">
-                        <h5> '.html_escape($id).' </h5>
-                    </button>
-                </a>
-            </div> ';
-        }  ?>
-
-
-
+<div class="col-lg-9">
+    <div class="row">
+        <div class="masonry">
+            <?php foreach ($com as $stt =>$id) {
+                if ($stt==1)$val ='tu_phap';
+                else $val ='dat_dai';
+                echo ' <div class="col-xs-6 col-md-6 marBot">
+                    <a href="'.$val.'" data-toggle="tooltip" data-placement="top" title="'.html_escape($id).'">
+                        <button type="button" class="btn btn-outline btn-primary btn-block custom">
+                            <h5> '.html_escape($id).' </h5>
+                        </button>
+                    </a>
+                </div> ';
+            }  ?>
+        </div>
     </div>
 </div>
 <!-- /.col-lg-8 -->
