@@ -459,6 +459,40 @@ body {
     border-top-color: #fff;
 }
 
+/* Strike */
+.strike {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap; 
+}
+
+.strike > span {
+    position: relative;
+    display: inline-block;
+}
+
+.strike > span:before,
+.strike > span:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 9999px;
+    height: 1px;
+    background: #000;
+}
+
+.strike > span:before {
+    right: 100%;
+    margin-right: 5px;
+}
+
+.strike > span:after {
+    left: 100%;
+    margin-left: 5px;
+}
+
+
 /* Custom CSS */
 .brand {
     padding-top: 10px;
@@ -608,7 +642,7 @@ Moi them
 /**
  * Tab Nav
  */
-.tabs {
+ .tabs {
     font-size: 13px; line-height: 20px;
     /*margin-top: 6%;*/
 }
@@ -671,16 +705,6 @@ Moi them
     }
 
 }
-/*
-.ui-datepicker .ui-datepicker-next {
-    background: url("../img/nextArr.png") no-repeat scroll -2px center transparent;
-}
-
-.ui-datepicker .ui-datepicker-pre {
-    background: url("../img/prevArr.png") no-repeat scroll -18px -2px transparent;
-    right: 2px;
-}*/
-
 
 
 /*End*/

@@ -291,7 +291,6 @@ class Thong_ke extends CI_Controller
             redirect('admin/thong_ke');
         }
 
-        /*$this->load->helper('url');*/
         $data['title'] = 'Thống kê - UBND Huyện Bến Lức';
         $this->load->view('templates/header', $data);
         $this->load->view('templates/aside');

@@ -105,3 +105,6 @@ $('.back').click(function(){
     parent.history.back();
     return false;
 });
+
+// Chat sroll
+$(".panel-body").scrollTop($(".panel-body")[0].scrollHeight);

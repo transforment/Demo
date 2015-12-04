@@ -15,8 +15,21 @@
     <div class="chat-panel panel panel-default">
         <!-- /.panel-heading -->
         <div class="panel-body">
+            <p class="text-center"><input type="submit" id="load_more" value="Tin nhắn cũ hơn"class="btn btn-info"></p>
+
+            <div class="chat" id="messages_load_more"></div>
 			<div class="chat"id="messages">
-		<?php    foreach ($query->result() as $row){
+		  <?php    
+          $date_chat=date("Y-m-d", strtotime(' +7 day'));
+          foreach ($query->result() as $row){
+            if ($date_chat!=$row->date){
+                $date_chat=$row->date;
+                echo '<div class="strike">
+                        <span>'.$date_chat.'</span>
+                    </div>';
+                echo $date_chat.'<br>';
+
+                }
 			if ($_SESSION['name_user']==$row->name) {
             echo' <div class="col-xs-12 col-md-12 col-lg-12 pad">
                     <div class="bubble you ">'.$row->message.'</div>
@@ -31,11 +44,16 @@
 		?>
 		</div>
 		<div class="chat" id="messages_new"></div>
+        
         </div>
         <div class="panel-footer">
 		<form class="input-group" id="messageForm">
-		<input id="messageInput" type="text" class="form-control input-sm" placeHolder="Gõ tin nhắn ở đây" />
+		<input id="messageInput" onClick="chatViewed();" type="text" class="form-control input-sm" placeHolder="Gõ tin nhắn ở đây" />
 		<?php 
+
+        $date_now = date("Y-m-d", strtotime(' -7 day'));
+       // $week_now=$date_now->format('W');
+        echo '<input type="hidden" id="week_back" value="'.$date_now.'">';
 		echo '<input type="hidden" id="name_user" value="'.$_SESSION['name_user'].'" />';
 		echo '<input type="hidden" id="vs" value="'.$vs.'" />';	
         echo '<input type="hidden" id="avatar" value="'.$avatar.'" />';

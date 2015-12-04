@@ -32,7 +32,7 @@
     <link href="<?php echo base_url('css/bootstrap-select.min.css'); ?>" rel="stylesheet" type="text/css">
     
     <?php date_default_timezone_set("Asia/Ho_Chi_Minh"); 
-
+    echo '<input type="hidden" id="base_url" value="'.base_url().'" />';
    
         if(isset($_SESSION['name_user'])){
             echo '<input type="hidden" id="name_user" value="'.$_SESSION['name_user'].'" />';

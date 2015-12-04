@@ -19,12 +19,15 @@ public  function talkvs($vs1,$vs2){
 	return $out;
 
     }
-public  function old_mess($vs){
-    $this->db->where('vs',$vs );
-     $this->db->limit(10);
+public  function old_mess($vs,$week,$year){
+    $q=new Message();
+    $this->db->where('vs',$vs )
+            ->where('week',$week)
+            ->where('year', $year);
     $q = $this->db->get('message');
 
-  return $q;
+    return $q;
+
 
     }
 

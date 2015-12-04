@@ -11,14 +11,12 @@ var nickNames = {};
 var namesUsed = [];
 var currentRoom = {};
 io.sockets.on( 'connection', function( socket ) {
-
-	console.log( "New client !" );
-
+//	console.log( "New client !" );
 	socket.on('new_user', function(data){
 		socket.user=data.id_user;
 		nickNames[socket.id] = data.name_user;
 		users[socket.user] = socket;
-		console.log( "Client !!!!!!!!!!!!" + data.id_user);
+		console.log( "Client !!" + data.id_user);
 		joinRoom(socket, data.chat_vs);
 	});
 
@@ -44,7 +42,7 @@ function handleMessageBroadcasting(socket) {
 	//	console.log( 'Message received ' + data.name + ":" + data.message );
 
 		socket.broadcast.to(data.chat_vs).emit( 'new_message',{ 
-			text:'<div class="col-xs-12 col-md-12 col-lg-12 pad"><span class="chat-img pull-left"><img src="http://localhost/Demo-2/upload/'+data.avatar+'" alt="User Avatar" class="img-circle size" /></span><div class="bubble me">'+ data.mess + '</div></div>'
+			text:'<div class="col-xs-12 col-md-12 col-lg-12 pad"><span class="chat-img pull-left"><img src="'+data.base_url+'upload/'+data.avatar+'" alt="User Avatar" class="img-circle size" /></span><div class="bubble me">'+ data.mess + '</div></div>'
 			 } );
 	/*if (data.vs in users){
 			users[data.vs].emit( 'new_message', { name: data.n, message: data.mess } );

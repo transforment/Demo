@@ -45,7 +45,7 @@
 
     <?php
     $attributes = array('class'=>'form-horizontal');
-    echo form_open(''.base_url().'Trang_chi_tiet', $attributes);?>
+    echo form_open(''.base_url().'Tu_phap_chi_tiet', $attributes);?>
     <div class="panel panel-info">
         <div class="panel-heading">
             <h4 class="panel-title">Thông tin của người làm hồ sơ </h4>
