@@ -459,37 +459,18 @@ body {
     border-top-color: #fff;
 }
 
-/* Strike */
-.strike {
-    display: block;
+/* Chat-date */
+.dw {
     text-align: center;
-    overflow: hidden;
-    white-space: nowrap; 
+    border-bottom: 1px solid #E8E8E8;
+    color: #BDC1C9;
+    font-size: 11px;
 }
-
-.strike > span {
+.dt {
+    background-color: #FFF;
+    padding: 0px 5px;
     position: relative;
-    display: inline-block;
-}
-
-.strike > span:before,
-.strike > span:after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    width: 9999px;
-    height: 1px;
-    background: #000;
-}
-
-.strike > span:before {
-    right: 100%;
-    margin-right: 5px;
-}
-
-.strike > span:after {
-    left: 100%;
-    margin-left: 5px;
+    top: 9px;
 }
 
 

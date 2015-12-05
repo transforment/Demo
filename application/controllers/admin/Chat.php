@@ -97,10 +97,8 @@ class Chat extends CI_Controller {
 		foreach ($query->result() as $row){
 			if ($date_chat!=$row->date){
                 $date_chat=$row->date;
-               /*echo '<div class="strike">
-                        <span>'.$date_chat.'</span>
-                    </div><br>';*/
-              echo $date_chat.'<br>';
+              
+              echo '<div class="dw"><span class="dt">'.$date_chat.'</span></div><br>';
                 }
 			if ($_SESSION['name_user']==$row->name) {
             echo' <div class="col-xs-12 col-md-12 col-lg-12 pad">

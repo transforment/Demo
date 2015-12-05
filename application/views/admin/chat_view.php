@@ -24,10 +24,8 @@
           foreach ($query->result() as $row){
             if ($date_chat!=$row->date){
                 $date_chat=$row->date;
-                echo '<div class="strike">
-                        <span>'.$date_chat.'</span>
-                    </div>';
-                echo $date_chat.'<br>';
+                
+                echo '<div class="dw"><span class="dt">'.$date_chat.'</span></div><br>';
 
                 }
 			if ($_SESSION['name_user']==$row->name) {
