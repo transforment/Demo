@@ -38,13 +38,30 @@ class Admin_tiep_nhan extends CI_Controller {
 
 		$this->load->view('templates/footer');
 	}
-	public function edit_stt($id=3){
+	public function edit_stt($id=3,$cmnd=0){
 		$this->load->model('Ho_so');
-		/*$this->load->library('table');*/
 		$this->db->where('id', $id);
+
 		$this->db->update('ho_so',  array(
 			'status' => 1,
 		));
+		$this->load->model('Gcm_model');
+  		$selUsers =$cmnd;
+		$greetMsg = 'Hồ sơ của bạn đang chờ xử lý';
+		$respJson =  '{"greetMsg":"'.$greetMsg.'"}';
+		$registation_ids = array();
+
+		$this->db->where('cmnd', $selUsers);
+ 		$query = $this->db->get('gcm_user'); 
+		$registation_ids = array();	
+		foreach ($query->result() as $row){
+		$registation_ids[0]=$row->gcmregid;
+		}			  
+
+	// JSON Msg to be transmitted to selected Users
+		$message = array("m" => $respJson);  
+		$pushsts = $this->Gcm_model->sendPushNotificationToGCM($registation_ids, $message); 
+
 		redirect('admin/admin_tiep_nhan');
 	}
 	public function  deleteRow($id=2){

@@ -23,16 +23,33 @@ class Admin_phong_ban extends CI_Controller {
  		$this->load->view('admin/phong_ban_view',array('query'=>$query,'level'=>$_SESSION['level']));
 		$this->load->view('templates/footer');
 	}
-	public function edit($id=3){
+	public function edit($id=3,$cmnd=9){
 	$this->db->where('id', $id);
 	$this->db->update('ho_so',  array(
                'status' => 2
 		,'mcb'=>$_SESSION['ma_can_bo']
             ));
+		$this->load->model('Gcm_model');
+  		$selUsers =$cmnd;
+		$greetMsg = 'Hồ sơ của bạn đang được xử lý';
+		$respJson =  '{"greetMsg":"'.$greetMsg.'"}';
+		$registation_ids = array();
+
+		$this->db->where('cmnd', $selUsers);
+ 		$query = $this->db->get('gcm_user'); 
+		$registation_ids = array();	
+		foreach ($query->result() as $row){
+		$registation_ids[0]=$row->gcmregid;
+		}			  
+
+	// JSON Msg to be transmitted to selected Users
+		$message = array("m" => $respJson);  
+		$pushsts = $this->Gcm_model->sendPushNotificationToGCM($registation_ids, $message); 
+
 	redirect(base_url('admin/admin_phong_ban'));
 	}
 
-	public function notifyError($id=3){
+	public function notifyError($id=3,$cmnd=9){
 
 		//$id = $this->input->post('node_id');
 		
@@ -47,13 +64,47 @@ class Admin_phong_ban extends CI_Controller {
 			'error'=>$val,
 			'status'=>6
 		));
-		redirect(base_url('admin/admin_phong_ban'));
+		$this->load->model('Gcm_model');
+  		$selUsers =$cmnd;
+		$greetMsg = 'Hồ sơ của bạn có lỗi';
+		$respJson =  '{"greetMsg":"'.$greetMsg.'"}';
+		$registation_ids = array();
+
+		$this->db->where('cmnd', $selUsers);
+ 		$query = $this->db->get('gcm_user'); 
+		$registation_ids = array();	
+		foreach ($query->result() as $row){
+		$registation_ids[0]=$row->gcmregid;
+		}			  
+
+	// JSON Msg to be transmitted to selected Users
+		$message = array("m" => $respJson);  
+		$pushsts = $this->Gcm_model->sendPushNotificationToGCM($registation_ids, $message); 
+
+	redirect(base_url('admin/admin_phong_ban'));
 	}
-	public function edit_stt($id=3){
+	public function edit_stt($id=3,$cmnd=9){
 	$this->db->where('id', $id);
 	$this->db->update('ho_so',  array(
                'status' => 3
             ));
+		$this->load->model('Gcm_model');
+  		$selUsers =$cmnd;
+		$greetMsg = 'Hồ sơ của bạn đã xử lý xong';
+		$respJson =  '{"greetMsg":"'.$greetMsg.'"}';
+		$registation_ids = array();
+
+		$this->db->where('cmnd', $selUsers);
+ 		$query = $this->db->get('gcm_user'); 
+		$registation_ids = array();	
+		foreach ($query->result() as $row){
+		$registation_ids[0]=$row->gcmregid;
+		}			  
+
+	// JSON Msg to be transmitted to selected Users
+		$message = array("m" => $respJson);  
+		$pushsts = $this->Gcm_model->sendPushNotificationToGCM($registation_ids, $message); 
+
 	redirect(base_url('admin/admin_phong_ban'));
 	}
 }

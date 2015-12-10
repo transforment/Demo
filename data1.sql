@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2015 at 06:49 PM
+-- Generation Time: Dec 10, 2015 at 07:58 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -46,6 +46,36 @@ INSERT INTO `cach_thuc` (`id`, `noi_dung`) VALUES
 (7, 'Trực tiếp tại UBND xã, phường, thị trấn hoặc qua hệ thống bưu chính.'),
 (8, ' Trực tiếp tại UBND xã, phường, thị trấn.'),
 (9, 'Trực tiếp tại UBND xã, phường, thị trấn.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `calendar`
+--
+
+CREATE TABLE IF NOT EXISTS `calendar` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ma_can_bo_giao` text NOT NULL,
+  `ma_can_bo_nhan` text NOT NULL,
+  `title` text CHARACTER SET utf32 COLLATE utf32_unicode_ci NOT NULL,
+  `startdate` varchar(48) NOT NULL,
+  `enddate` varchar(48) NOT NULL,
+  `status` int(2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
+
+--
+-- Dumping data for table `calendar`
+--
+
+INSERT INTO `calendar` (`id`, `ma_can_bo_giao`, `ma_can_bo_nhan`, `title`, `startdate`, `enddate`, `status`) VALUES
+(13, 'bantp', 'tiepnhan', '12', '2015-12-10', '2015-12-11', 2),
+(15, 'bantp', 'tiepnhan', '122', '2015-12-09', '2015-12-25', 1),
+(17, '08', 'tiepnhan', 'Some titles', '2015-12-10', '2015-12-11', 1),
+(18, 'bantp', 'tiepnhan', '12', '2015-12-10', '2015-12-11', 1),
+(19, 'bantp', 'bantp', 'Đi học', '2015-12-10', '2015-12-11', 2),
+(20, 'bantp', 'bantp', '123', '2015-12-10', '2015-12-17', 2),
+(21, 'bantp', 'bantp', 'this is the long story that I''ve ever had in my life that we cant find somme how then that is the way', '2015-12-10', '2015-12-17', 1);
 
 -- --------------------------------------------------------
 
@@ -144,6 +174,26 @@ INSERT INTO `doi_tuong` (`id`, `noi_dung`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `gcm_user`
+--
+
+CREATE TABLE IF NOT EXISTS `gcm_user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `cmnd` int(11) NOT NULL,
+  `gcmregid` varchar(200) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `gcm_user`
+--
+
+INSERT INTO `gcm_user` (`id`, `cmnd`, `gcmregid`) VALUES
+(1, 222222222, 'APA91bGt6TUjgsTmCmk2iGA1Mg_441MyNrKtK9GKa0SSHSBTqSNQImxTAKUuckMdWWdB3v2s7Zcgh0FdHjSMo_QKPD3t06qXsokmCojNzYEaZdef6L2HiP2hLl8Jk1c8pRQIoDti97e2Y-QX1ZEZq4gv21AKD-tCKQ');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `giai_quyet`
 --
 
@@ -213,7 +263,7 @@ CREATE TABLE IF NOT EXISTS `ho_so` (
   `error` text NOT NULL,
   `tien_thu` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
 
 --
 -- Dumping data for table `ho_so`
@@ -233,7 +283,8 @@ INSERT INTO `ho_so` (`id`, `mshs`, `name`, `type`, `cmnd`, `status`, `mcb`, `nga
 (14, '223820-241115-TP18-2', 'quoc hai', 0, 343433333, 5, 'nhanvatra', '24/11/2015', '0999999999', '', ' Tờ khai (theo mẫu).<br>+<b>1</b>+ Danh mục tài sản riêng được lập khi đăng ký giám hộ và danh mục tài sản hiện tại của người được giám hộ (nếu có).<br>+<b>1</b>+ Quyết định công nhận việc giám hộ đã cấp trước đây.<br>+<b>1</b>+ Xuất trình các giấy tờ chứng minh đủ điều kiện chấm dứt thay đổi việc giám hộ.<br>+<b>1</b>+ Bản sao giấy chứng minh nhân dân hoặc Hộ chiếu của người đi đăng ký hộ tịch để xác định về cá nhân người đó.<br>+<b>1</b>+ Bản sao Sổ hộ khẩu Sổ đăng ký tạm trú (đối với công dân Việt Nam ở trong nước); Thẻ thường trú Thẻ tạm trú hoặc Chứng nhận tạm trú (đối với người nước ngoài cư trú tại Việt Nam) để làm căn cứ xác định thẩm quyền đăng ký.<br>+<b>1</b>+ Bản sao các giấy tờ nêu trên kèm bản chính để đối chiếu hoặc bản sao có chứng thực.<br>+<b>1</b>+', 'kèm hình ảnh', '', 10000),
 (15, '225015-241115-TP14-15', 'Trần Trung Hiếu', 0, 454555454, 2, 'bantp', '', '0999999999', '', ' Tờ khai (theo mẫu).<br>+<b>1</b>+ Xuất trình bản sao giấy tờ hộ tịch đã cấp hợp lệ trước đây (nếu có); trong trường hợp không có bản sao giấy tờ hộ tịch thì đương sự phải tự cam đoan về việc đã đăng ký nhưng sổ hộ tịch không còn lưu được và chịu trách nhiệm về nội dung cam đoan. Đối với việc đăng ký lại việc kết hôn thì bản cam đoan phải có xác nhận của 02 người làm chứng biết rõ về việc đã đăng ký và có xác nhận của Ủy ban nhân dân cấp xã về chữ ký của hai người làm chứng.<br>+<b>1</b>+ Bản sao giấy chứng minh nhân dân hoặc Hộ chiếu của người đi đăng ký hộ tịch để xác định về cá nhân người đó.<br>+<b>1</b>+ Bản sao Sổ hộ khẩu Sổ đăng ký tạm trú (đối với công dân Việt Nam ở trong nước); Thẻ thường trú Thẻ tạm trú hoặc Chứng nhận tạm trú (đối với người nước ngoài cư trú tại Việt Nam) để làm căn cứ xác định thẩm quyền đăng ký.<br>Bản sao các giấy tờ nêu trên kèm bản chính để đối chiếu hoặc bản sao có chứng thực.+<b>1</b>+', '', '', 0),
 (16, '010118-251115-TP02-5', 'Nguyễn văn C', 0, 343454445, 2, 'bantp', '', '0999999999', '', ' Kết quả giám định sức khỏe của người viết di chúc.<br>+<b>1</b>+ Di chúc.<br>+<b>1</b>+ Phiếu yêu cầu chứng thực (theo mẫu).<br>+<b>1</b>+ Xuất trình giấy tờ tuỳ thân (hộ khẩu chứng minh nhân dân) và giấy tờ cần thiết để chứng minh quyền sở hữu quyền sử dụng đối với tài sản.<br>+<b>1</b>+', '', '', 40000),
-(17, '030910-291115-TP05-4', 'quoc hai', 0, 343444545, 0, 'nhanvatra', '', '0999999999', '', ' Tờ khai (theo mẫu).<br>+<b>1</b>+ Giấy chứng sinh (bản chính).<br>+<b>1</b>+ Xuất trình giấy chứng nhận kết hôn (nếu có).<br>+<b>1</b>+ Bản sao giấy chứng minh nhân dân hoặc Hộ chiếu của người đi đăng ký hộ tịch để xác định về cá nhân người đó.<br>+<b>1</b>+ Bản sao Sổ hộ khẩu Sổ đăng ký tạm trú (đối với công dân Việt Nam ở trong nước); Thẻ thường trú Thẻ tạm trú hoặc Chứng nhận tạm trú (đối với người nước ngoài cư trú tại Việt Nam) để làm căn cứ xác định thẩm quyền đăng ký.<br>Bản sao các giấy tờ nêu trên kèm bản chính để đối chiếu hoặc bản sao có chứng thực.<br>+<b>1</b>+', '', '', 0);
+(17, '030910-291115-TP05-4', 'quoc hai', 0, 343444545, 0, 'nhanvatra', '', '0999999999', '', ' Tờ khai (theo mẫu).<br>+<b>1</b>+ Giấy chứng sinh (bản chính).<br>+<b>1</b>+ Xuất trình giấy chứng nhận kết hôn (nếu có).<br>+<b>1</b>+ Bản sao giấy chứng minh nhân dân hoặc Hộ chiếu của người đi đăng ký hộ tịch để xác định về cá nhân người đó.<br>+<b>1</b>+ Bản sao Sổ hộ khẩu Sổ đăng ký tạm trú (đối với công dân Việt Nam ở trong nước); Thẻ thường trú Thẻ tạm trú hoặc Chứng nhận tạm trú (đối với người nước ngoài cư trú tại Việt Nam) để làm căn cứ xác định thẩm quyền đăng ký.<br>Bản sao các giấy tờ nêu trên kèm bản chính để đối chiếu hoặc bản sao có chứng thực.<br>+<b>1</b>+', '', '', 0),
+(18, '010718-111215-TP17-5', 'Bá Anh', 0, 222222222, 6, 'bantp', '', '0999999999', '', ' Giấy cử giám hộ.<br>+<b>1</b>+ Tờ khai (theo mẫu quy định).<br>+<b>1</b>+ Bản sao giấy chứng minh nhân dân hoặc Hộ chiếu của người đi đăng ký hộ tịch để xác định về cá nhân người đó.<br>+<b>1</b>+ Bản sao Sổ hộ khẩu Sổ đăng ký tạm trú (đối với công dân Việt Nam ở trong nước); Thẻ thường trú Thẻ tạm trú hoặc Chứng nhận tạm trú (đối với người nước ngoài cư trú tại Việt Nam) để làm căn cứ xác định thẩm quyền đăng ký.<br>+<b>1</b>+ Bản sao các giấy tờ nêu trên kèm bản chính để đối chiếu hoặc bản sao có chứng thực.<br>+<b>1</b>+', '', ' Giấy cử giám hộ.++ Tờ khai (theo mẫu quy định).++ Bản sao giấy chứng minh nhân dân hoặc Hộ chiếu của người đi đăng ký hộ tịch để xác định về cá nhân người đó.++ Bản sao Sổ hộ khẩu Sổ đăng ký tạm trú (đối với công dân Việt Nam ở trong nước); Thẻ thường trú Thẻ tạm trú hoặc Chứng nhận tạm trú (đối với người nước ngoài cư trú tại Việt Nam) để làm căn cứ xác định thẩm quyền đăng ký.++ Bản sao các giấy tờ nêu trên kèm bản chính để đối chiếu hoặc bản sao có chứng thực.++-', 5000);
 
 -- --------------------------------------------------------
 
