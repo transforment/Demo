@@ -50,6 +50,15 @@
 			else 
 			echo '<p class="bold">'.$details->ngay_tra .'</p>';?>
 		</div>
+		<div class="col-xs-12 col-md-12">
+			<?php
+			if ((isset($_SESSION['name_user']))&&($details->status==8)&&
+				(($_SESSION['level']==11)||($_SESSION['level']==12)))
+			echo '<button type="button" class="btn btn-primary"
+				onclick=location.href="'.base_url('admin/Admin_tiep_nhan/nhan_lai/'.$details->status.'').'">Nhận lại hồ sơ lỗi
+				</button>';
+			?>
+		</div>
 
 		<div class="col-xs-12 col-md-12">
 	<?php

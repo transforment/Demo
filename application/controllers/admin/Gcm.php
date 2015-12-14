@@ -67,16 +67,33 @@ class Gcm extends CI_Controller {
    			'cmnd' => $cmnd  ,
    			'gcmregId' => $regId 
 			);
-
-		$this->db->insert('gcm_user', $data); 
-		$count_all=$this->db->where('cmnd',$cmnd )->where('gcmregId',$regId)
+		$count1=$this->db->where('cmnd',$cmnd )->count_all_results('gcm_user');
+		$count2=$this->db->where('gcmregId',$regId)->count_all_results('gcm_user');
+		if (($count1>=1)||($count2>=1)){
+			if ($count1>=1) {
+			$this->db->where('cmnd', $cmnd);
+			$this->db->update('gcm_user',  array(
+   			'gcmregId' => $regId
+			}
+			if ($count2>=1) {
+			$this->db->where('gcmregId', $gcmregId);
+			$this->db->update('gcm_user',  array(
+   			'cmnd' => $cmnd  
+			}
+		}else{
+ 			$this->db->insert('gcm_user', $data);
+		));
+		}
+		
+		/*$count_all=$this->db->where('cmnd',$cmnd )->where('gcmregId',$regId)
 			->count_all_results('gcm_user');
 		//echo "Email Id ".$emailID." RegId ".$regId ;
+			
 		if ($count_all==1) {
 			echo "GCM Reg Id bas been shared successfully with Server";
 			} else {			 
 			echo "Error occured while sharing GCM Reg Id with Server web app";			          
-			}
+			}*/
 		
 	}
 

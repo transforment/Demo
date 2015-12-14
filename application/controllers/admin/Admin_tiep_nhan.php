@@ -68,6 +68,16 @@ class Admin_tiep_nhan extends CI_Controller {
 		$this->db->delete('ho_so',array('id'=>$id));
 		redirect('admin/admin_tiep_nhan');
 	}
+	public function  nhan_lai($id=2){
+		$this->db->where('id', $id);
+		$this->db->update('ho_so',  array(
+			'status' => 0,
+			'mcb'=>$_SESSION['ma_can_bo'],
+			// cộng thêm cột num_error
+			
+		));
+		redirect(base_url('admin/Admin_tiep_nhan'));
+	}
 	public function edit($id=2){
 
 		$this->db->where('id', $id);

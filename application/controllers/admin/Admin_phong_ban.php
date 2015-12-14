@@ -24,11 +24,14 @@ class Admin_phong_ban extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
 	public function edit($id=3,$cmnd=9){
-	$this->db->where('id', $id);
-	$this->db->update('ho_so',  array(
+	if ($cmnd!=999999999){
+		$this->db->where('id', $id);
+	
+		$this->db->update('ho_so',  array(
                'status' => 2
 		,'mcb'=>$_SESSION['ma_can_bo']
             ));
+		}
 		$this->load->model('Gcm_model');
   		$selUsers =$cmnd;
 		$greetMsg = 'Hồ sơ của bạn đang được xử lý';
@@ -59,11 +62,14 @@ class Admin_phong_ban extends CI_Controller {
 			$i++;
 			}
 		$val=$val.'-'.$this->input->post('error');	
+		if ($cmnd!=999999998){
 		$this->db->where('id', $id);
+		
 		$this->db->update('ho_so',array(
 			'error'=>$val,
 			'status'=>6
 		));
+		}
 		$this->load->model('Gcm_model');
   		$selUsers =$cmnd;
 		$greetMsg = 'Hồ sơ của bạn có lỗi';
@@ -84,10 +90,13 @@ class Admin_phong_ban extends CI_Controller {
 	redirect(base_url('admin/admin_phong_ban'));
 	}
 	public function edit_stt($id=3,$cmnd=9){
+	if ($cmnd!=999999998){
 	$this->db->where('id', $id);
+	
 	$this->db->update('ho_so',  array(
                'status' => 3
             ));
+}
 		$this->load->model('Gcm_model');
   		$selUsers =$cmnd;
 		$greetMsg = 'Hồ sơ của bạn đã xử lý xong';
