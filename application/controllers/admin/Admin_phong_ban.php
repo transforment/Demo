@@ -35,7 +35,7 @@ class Admin_phong_ban extends CI_Controller {
 		$this->load->model('Gcm_model');
   		$selUsers =$cmnd;
 		$greetMsg = 'Hồ sơ của bạn đang được xử lý';
-		$respJson =  '{"greetMsg":"'.$greetMsg.'"}';
+		$respJson =  '{"greetMsg":"'.$greetMsg.'","id":"'.$id.'"}';
 		$registation_ids = array();
 
 		$this->db->where('cmnd', $selUsers);
@@ -63,17 +63,26 @@ class Admin_phong_ban extends CI_Controller {
 			}
 		$val=$val.'-'.$this->input->post('error');	
 		if ($cmnd!=999999998){
+			/* Kiet*/
+			$this->db->where('id', $id);
+			$q = $this->db->get('ho_so')->result();
+			$myString = $q[0]->lich_su_ho_so."/".$q[0]->mcb;
+			$myNumerrors = $q[0]->num_error + 1;
+			/*End*/
+
 		$this->db->where('id', $id);
 		
 		$this->db->update('ho_so',array(
 			'error'=>$val,
-			'status'=>6
+			'status'=>6,
+			'lich_su_ho_so'=>$myString,
+			'num_error'=>$myNumerrors
 		));
 		}
 		$this->load->model('Gcm_model');
   		$selUsers =$cmnd;
 		$greetMsg = 'Hồ sơ của bạn có lỗi';
-		$respJson =  '{"greetMsg":"'.$greetMsg.'"}';
+		$respJson =  '{"greetMsg":"'.$greetMsg.'","id":"'.$id.'"}';
 		$registation_ids = array();
 
 		$this->db->where('cmnd', $selUsers);
@@ -91,16 +100,22 @@ class Admin_phong_ban extends CI_Controller {
 	}
 	public function edit_stt($id=3,$cmnd=9){
 	if ($cmnd!=999999998){
+
+		$this->db->where('id', $id);
+		$q = $this->db->get('ho_so')->result();
+		$myString = $q[0]->lich_su_ho_so."/".$q[0]->mcb;
+
 	$this->db->where('id', $id);
 	
 	$this->db->update('ho_so',  array(
                'status' => 3
+				,'lich_su_ho_so'=>$myString
             ));
 }
 		$this->load->model('Gcm_model');
   		$selUsers =$cmnd;
 		$greetMsg = 'Hồ sơ của bạn đã xử lý xong';
-		$respJson =  '{"greetMsg":"'.$greetMsg.'"}';
+		$respJson =  '{"greetMsg":"'.$greetMsg.'","id":"'.$id.'"}';
 		$registation_ids = array();
 
 		$this->db->where('cmnd', $selUsers);

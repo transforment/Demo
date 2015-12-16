@@ -30,6 +30,7 @@
     <link href="<?php echo base_url();?>css/jquery-ui.min.css" rel="stylesheet">
     <script src="<?php echo base_url(); ?>js/jquery.js"></script>
     <link href="<?php echo base_url('css/bootstrap-select.min.css'); ?>" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url('css/fullcalendar.css'); ?>" rel="stylesheet" type="text/css">
     
     <?php date_default_timezone_set("Asia/Ho_Chi_Minh"); 
     echo '<input type="hidden" id="base_url" value="'.base_url().'" />';
